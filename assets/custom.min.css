@@ -1,0 +1,89 @@
+.left_col {
+    background: red;
+}
+.body {
+    color: #383838;
+    background: #001933;
+    font-family: Roboto,sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.471;
+}
+
+element.style {
+    border: 0;
+}
+.navbar {
+    margin-bottom: 0;
+}
+.nav_title {
+    width: 230px;
+    float: left;
+    background: #001933;
+    border-radius: 0;
+    height: 57px;
+}
+.notif-tab {
+    background-color: #0a6c59;
+    border-right: 1px solid #ededed;
+}
+
+element.style {
+}
+.nav.navbar-nav>li>a {
+    color: #ffffff!important;
+}
+.navbar-brand, .navbar-nav>li>a {
+    font-weight: 500;
+    line-height: 32px;
+}
+.navbar-brand, .navbar-nav>li>a, .site_title {
+    color: #ECF0F1!important;
+    margin-left: 0!important;
+}
+.nav>li>a {
+    padding: 13px 15px 12px;
+}
+.nav.top_menu>li>a, .nav>li>a {
+    position: relative;
+    display: block;
+}
+@media (min-width: 768px)
+.navbar-nav>li>a {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+.navbar-nav>li>a {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    line-height: 20px;
+}
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+}
+a:visited {
+    box-shadow: 0 12px 16px 0 rgb(0 0 0 / 24%), 0 17px 50px 0 rgb(0 0 0 / 19%);
+}
+.btn.active.focus, .btn.active:focus, .btn.focus, .btn:active.focus, .btn:active:focus, .btn:focus, :active, :focus, :visited, a, a:active, a:focus, a:visited {
+    outline: 0;
+}
+.nav.side-menu>li.active,
+.nav.side-menu>li.current-page {
+    border-right: 5px solid #ff0202;
+}
+
+.nav li.current-page {
+    background: rgb(0 0 0 / 61%);
+}
+
+.nav li li li.current-page {
+    background: 0 0
+}
+
+.nav.side-menu>li.active>a {
+    text-shadow: rgba(0, 0, 0, .25) 0 -1px 0;
+    background: linear-gradient(#0056c5, #3a79b8), #2A3F54;
+    box-shadow: rgba(0, 0, 0, .25) 0 1px 0, inset rgba(255, 255, 255, .16) 0 1px 0
+}

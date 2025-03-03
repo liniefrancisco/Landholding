@@ -1,0 +1,100 @@
+
+/*Button Primary*/
+.btn-custom-primary{
+	    color: white;
+        background-color: #2a3f54;
+        border-color: #999;
+}
+
+.btn-custom-primary:hover{
+		 color: white;
+         background-color: #082038;
+         border-color: #999;
+}
+
+.btn-custom-primary:active{
+		 color: white;
+         background-color: #082038;
+         border-color: #333;
+}
+
+.btn-custom-primary:focus{
+	 	color: white;
+        background-color: #082038;
+        border-color: #333;
+}
+
+/*Button Warning*/
+.btn-custom-warning{
+	    color: #fff;
+    	background-color: #f5aa40;
+    	border-color: #ccab7d;
+}
+
+.btn-custom-warning:hover{
+		color: #fff;
+   	 	background-color: #f59308;
+    	border-color: #dea551;
+}
+
+.btn-custom-warning:active{
+		color: #fff;
+   	 	background-color: #f59308;
+    	border-color: #ffb952;
+}
+
+.btn-custom-warning:focus{
+		color: #fff;
+   	 	background-color: #f59308;
+    	border-color: #ffb952;
+}
+
+/*Button Danger*/
+
+.btn-custom-danger{
+		color: #fff;
+	    background-color: #e64945;
+	    border-color: #d43f3a;
+}
+
+.btn-custom-danger:hover{
+		color: #fff;
+	    background-color: #d80904;
+	    border-color: #ac2925;
+}
+
+.btn-custom-danger:active{
+		color: #fff;
+    	background-color: #ac2925;
+    	border-color: #761c19;
+}
+
+.btn-custom-danger:focus{
+		color: #fff;
+    	background-color: #ac2925;
+    	border-color: #761c19;
+}
+
+
+/*Input Field*/
+
+.field-custom{
+        border: 1px solid #ccc;
+        padding: 6px 12px;
+        height: 34px;
+        box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+
+.field-custom:active{
+     border-color: darkslategray;
+     padding: 6px 12px;
+     height: 34px;
+     box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+
+.field-custom:focus{
+     border-color: darkslategray;
+     padding: 6px 12px;
+     height: 34px;
+     box-shadow: inset 0 1px 1px rgba(0,0,0,.075);  
+}
