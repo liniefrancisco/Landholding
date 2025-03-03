@@ -26,7 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 // $config['base_url'] = 'http://172.16.45.141/landholding';
 //$config['base_url'] = 'http://'.$_SERVER['SERVER_ADDR'].':'.$_SERVER['SERVER_PORT'].'/EBS/iad/manual_deductions'; 
-$config['base_url'] = 'http://localhost/landholding/'; //sdsdsdsd
+$config['base_url'] = 'http://localhost/landholding/';
 // $config['base_url'] = 'http://' . $_SERVER['HTTP_HOST']. '/alturas-healthcare/'; 
 /*
 |--------------------------------------------------------------------------
