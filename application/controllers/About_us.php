@@ -29,7 +29,7 @@ class About_Us extends App_Controller{
 		$data['title'] 	= "About Us";
 		$data 			= $this->Notification();
 
-		if (in_array($this->session->userdata('user_type'), ['Secretary', 'Legal', 'GM', 'Accounting'])) {
+		if (in_array($this->session->userdata('user_type'), ['Secretary', 'Legal', 'GM', 'Accounting', 'CCD'])) {
 			$this->render_template('templates/about_us',$data);
 		}else{
 			redirect('');

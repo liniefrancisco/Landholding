@@ -44,7 +44,6 @@ class Welcome extends App_Controller {
 			$data['approved_acq'] 		= $this->Notification_bar_model->getds_status_approved();
 			$this->render_template('accounting/home',$data);
 		}elseif($this->session->userdata('user_type') == 'CCD'){
-			$data['land_info'] 			= $this->Ccd_notification_model->get_all_approved();
 			$this->render_template('ccd/home',$data);  
 		}else{
 			redirect('login');

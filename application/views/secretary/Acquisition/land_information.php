@@ -19,7 +19,7 @@
 				<div class="x_title">
 					<div class="title_left">
 						<h2 style="word-spacing: 4px; letter-spacing: 1px; font-weight: bold; font-size: 14px;color: #2a3f54;"><i class="fa fa-edit" style="font-size:16px;"></i> Add Land</h2>
-						<div style="float:right;color: #2a3f54;">
+						<div style="float:right">
 							<a type="a" href="<?= base_url() ?>" class="btn btn-custom-warning btn-hover btn-sm"><i class="fa fa-arrow-left"></i> Back</a>
 						</div>
 					</div>

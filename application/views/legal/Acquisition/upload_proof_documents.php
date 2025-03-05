@@ -1077,7 +1077,7 @@
 		$(".send").click(function(){
 			var id = $(this).attr("id");
 			$.ajax({
-				url: "<?php echo base_url('Acquisition/send_documents/'); ?>" + id,
+				url: "<?php echo base_url('Old_Acquisition/send_documents/'); ?>" + id,
 				type: "post",
 				data: {
 					'<?php echo $this->security->get_csrf_token_name(); ?>': '<?php echo $this->security->get_csrf_hash(); ?>'

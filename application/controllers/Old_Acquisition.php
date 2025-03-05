@@ -15,10 +15,20 @@ class Old_Acquisition extends App_Controller{
 		$this->load->helper('url');
 		$this->load->helper('security');
 	}
+	public function Notification(){
+		$data = array();
+		#TAB NOTIFICATION
+	    $data['pending_acq'] 			= $this->Notification_bar_model->getds_status_pending();
+		#Message Notification
+		$recepient 						=  $this->session->userdata('user_id');
+		$data['all_notifications']		= $this->Notification_model->get_notif_per_user($recepient);
+		$data['all_notification_no']	= $this->Notification_model->get_all_notification_no($recepient);
+		return $data;
+	}
 	public function index(){
 		$this->sess_legal();
 		$data['title'] 		= "Old Acquisition";
-		// $data 				= $this->Notification();
+		$data 				= $this->Notification();
 		$data['land_id'] 	= $this->Acquisition_model->getland_old();
 		$count 				= $this->Acquisition_model->geli_rows();
 		$new 				= $this->Acquisition_model->getland_old();
@@ -54,13 +64,15 @@ class Old_Acquisition extends App_Controller{
 				$lot_area 		= str_replace(',', '', $area);
 				$selling_price 	= str_replace(',', '', $price);
 				$total_price 	= str_replace(',', '', $total);
-				$name 			= $this->session->userdata('firstname') . ' ' . $this->session->userdata('lastname');
+				$tag 			= 'Old';
 
-				$this->Acquisition_model->add_land_info($lot_area, $selling_price, $total_price, $name);
+				$this->Acquisition_model->add_land_info($lot_area, $selling_price, $total_price, $tag);
 				$this->Acquisition_model->add_lot_location();
-				if ($this->input->post(['liens', 'easement', 'encumbrances'])) {  
+				if (!empty($this->input->post('liens')) || 
+				    !empty($this->input->post('easement')) || 
+				    !empty($this->input->post('encumbrances'))) {  
 				    $this->Acquisition_model->add_restriction();  
-				} 							
+				}							
 				$this->Acquisition_model->add_owner_id();	 
 				$this->session->set_flashdata('notif','Land Information Saved Successfully!');
 				$is_no = $this->input->post('is_no');
@@ -93,7 +105,7 @@ class Old_Acquisition extends App_Controller{
 	public function owner_info($id){
 		$this->sess_legal();
 		$data['title'] 	= "Old Acquisition";
-		// $data 			= $this->Notification();
+		$data 			= $this->Notification();
 		$data['li'] 	= $this->Acquisition_model->getli_byid($id);
 		$li 			= $this->Acquisition_model->getli_byid($id);
 		$oi 			= $this->Acquisition_model->getoi_byid($id);
@@ -116,7 +128,7 @@ class Old_Acquisition extends App_Controller{
 		$this->form_validation->set_rules('email', 'email', 'valid_email');
 
 		if($this->form_validation->run() == FALSE){
-			$this->render_template('secretary/Acquisition/owner_information',$data);
+			$this->render_template('legal/Acquisition/owner_information',$data);
 		}else{
 			$this->Acquisition_model->add_owner_info($id);
 			$this->Acquisition_model->add_owner_address($oi['id']);
@@ -125,7 +137,7 @@ class Old_Acquisition extends App_Controller{
 			$this->Acquisition_model->add_upload_id($id);
 			$this->Acquisition_model->add_docu_status_id($id);
 			$this->session->set_flashdata('notif','Owner Information Saved Successfully!');
-			redirect('Acquisition/upload_proof/'.$id);
+			redirect('Old_Acquisition/upload_proof/'.$id);
 		}
 	}
 	public function cancel_acq_owner_info($is_no){
@@ -333,7 +345,7 @@ class Old_Acquisition extends App_Controller{
 			}
 
 			$this->session->set_flashdata('notif', 'Successfully Deleted!');
-			redirect('Acquisition/upload_proof/' . $is_no);
+			redirect('Old_Acquisition/upload_proof/' . $is_no);
 		} 
 		if ($this->form_validation->run() == FALSE){
 			$this->render_template('legal/Acquisition/upload_proof_documents/'. $is_no);
@@ -360,7 +372,7 @@ class Old_Acquisition extends App_Controller{
 	}
 	public function pop_up_upload($id){
 		$this->session->set_flashdata('success', 'You are all set and done!. You can edit and update the info here if you missed some data entry.');
-		redirect('Secretary/Execute');
+		redirect('Old_Acquisition');
 	}
 	#ADDRESS
 	public function getregion(){
@@ -447,4 +459,174 @@ class Old_Acquisition extends App_Controller{
 		}
 		echo json_encode($output);
 	}
+	#FORM VALIDATION
+	public function check_isno($str) {
+		$format = substr($str, 0, 3);
+		if($format == "OA-") {
+			$row = $this->Acquisition_model->getforms_byid($str);
+			$land_id = $this->Acquisition_model->getland_old();
+
+			$is_id = 1;
+			foreach($land_id as $li) {
+				$is_id = substr($li['is_no'], 3) + 1;
+			}
+			$is_input = substr($str, 3);
+			if(!ctype_digit($is_input)) { //check if transaction number is no alpa contain
+				$this->form_validation->set_message('check_isno', ''.$str.' is not a valid transaction no.');
+				return FALSE;
+			}
+
+			if($is_id < $is_input) { //check if current transaction no. is lesser than the submitted no.
+				$this->form_validation->set_message('check_isno', ''.$str.' is greater than the current transaction no.');
+				return FALSE;
+			} else {
+				if(substr($row['form_no'], 3) == $is_input) { //check if submitted no. is the same with the submitted no.
+					$this->form_validation->set_message('check_isno', 'The {field} cant be duplicated');
+					return FALSE;
+				} elseif($is_id > $is_input) { //if transaction no. is lesser than 1 then it was invalid.
+					$this->form_validation->set_message('check_isno', ''.$str.' is not valid.');
+					return FALSE;
+				} else {
+					return TRUE;
+				}
+			}
+		} else {
+
+			$this->form_validation->set_message('check_isno', ' '.$str.' is not  valid');
+			return FALSE;
+		}
+	}
+	function check_zipcode($str){
+		if (!ctype_digit($str)){
+			$this->form_validation->set_message('check_zipcode', '{field} contains invalid character');
+			return FALSE;
+		}else{
+			return TRUE;
+		}
+	}
+	function check_currency($inp){
+		$amount = str_replace( ',', '', $inp );
+		if (!preg_match('/^\d+(\.\d{2})?$/', $amount)){
+			$this->form_validation->set_message('check_currency', '{field} is invalid.');
+			return FALSE;
+		}else{
+			if($amount == 0.00){
+			 	$this->form_validation->set_message('check_currency', '{field} cannot be zero value.');
+				return FALSE;
+			}else{
+				return TRUE;
+			}
+		}
+	}
+	function checkDateFormat($date) {
+		$dt = date_create($date);
+		$conv_date = @date_format($dt,"Y-m-d");
+		$day = (int) substr($conv_date, 0, 2);
+		$month = (int) substr($conv_date, 3, 2);
+		$year = (int) substr($conv_date, 6, 4);
+		//return checkdate($month, $day, $year);
+		if(checkdate($month, $day, $year) === FALSE){
+			$this->form_validation->set_message('checkDateFormat', ''.$date.' is not a valid date format.');
+			return FALSE;
+		}else{
+			$current_date = date('Y-m-d');			    		
+			if($date > $current_date){
+				$this->form_validation->set_message('checkDateFormat', ''.$date.' is not a valid date.');
+				return FALSE;
+			}else{
+				return TRUE;
+			}
+		}
+	}
+	function check_title(){
+		$file = $_FILES["lt_file"]['name'];
+
+		if(empty($file)){
+ 			$this->form_validation->set_message('check_title', 'The %s file is required!');
+			return FALSE;
+ 		}else{
+ 			$allowed =  array('gif','png' ,'jpg', 'jpeg');
+ 			$filename = $file;
+			$ext = pathinfo($filename, PATHINFO_EXTENSION);
+
+			if(strlen($filename) > 200){
+				$this->form_validation->set_message('check_title','Rename your %s file, it exceeds the maximum no. of string which is 200');
+				return FALSE;
+			}elseif(!in_array(strtolower($ext), $allowed) ) { //not in array
+				$this->form_validation->set_message('check_title','your %s file is not a valid file format');
+				return FALSE;						
+			}else{
+				return TRUE;
+			}
+ 		}
+	}
+	function check_tax(){
+		$file = $_FILES["tax_file"]['name'];
+		if(empty($file)){
+ 			$this->form_validation->set_message('check_tax', 'The %s file is required!');
+			return FALSE;
+ 		}else{
+ 			$allowed =  array('gif','png' ,'jpg', 'jpeg');
+ 			$filename = $file;
+			$ext = pathinfo($filename, PATHINFO_EXTENSION);
+
+			if(strlen($filename) > 200){
+				$this->form_validation->set_message('check_tax','Rename your %s file, it exceeds the maximum no. of string which is 200');
+				return FALSE;
+			}elseif(!in_array(strtolower($ext), $allowed) ) { //not in array
+				$this->form_validation->set_message('check_tax','your %s file is not a valid file format');
+				return FALSE;						
+			}else{
+				return TRUE;
+			}
+ 		}
+	}
+	function check_sketch(){
+		$file = $_FILES["land_sketch_file"]['name'];
+
+		if(empty($file)){
+ 			$this->form_validation->set_message('check_sketch', 'The %s file is required!');
+			return FALSE;
+ 		}else{
+ 			$allowed =  array('gif','png' ,'jpg', 'jpeg');
+ 			$filename = $file;
+			$ext = pathinfo($filename, PATHINFO_EXTENSION);
+
+			if(strlen($filename) > 200){
+				$this->form_validation->set_message('check_sketch','Rename your %s file, it exceeds the maximum no. of string which is 200');
+				return FALSE;
+			}elseif(!in_array(strtolower($ext), $allowed) ) { //not in array
+				$this->form_validation->set_message('check_sketch','your %s file is not a valid file format');
+				return FALSE;						
+			}else{
+				return TRUE;
+			}
+ 		}
+	}
+	function deleteAll($str) {
+		//It it's a file.
+		if (is_file($str)) {
+			//Attempt to delete it.
+			return unlink($str);
+		}
+		//If it's a directory.
+		elseif (is_dir($str)) {
+			//Get a list of the files in this directory.
+			$scan = glob(rtrim($str,'/').'/*');
+			//Loop through the list of files.
+			foreach($scan as $index=>$path) {
+				//Call our recursive function.
+				$this->deleteAll($path);
+			}
+			//Remove the directory itself.
+			return @rmdir($str);
+		}
+	}
+	function delete_prev_file($str){
+		if (is_file($str)) {
+			//Attempt to delete it.
+			return unlink($str);
+		}
+	}
+	#END
 }

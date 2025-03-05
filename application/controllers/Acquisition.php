@@ -70,13 +70,14 @@ class Acquisition extends App_Controller{
 				$lot_area 		= str_replace(',', '', $area);
 				$selling_price 	= str_replace(',', '', $price);
 				$total_price 	= str_replace(',', '', $total);
-				$name 			= $this->session->userdata('firstname') . ' ' . $this->session->userdata('lastname');
-
-				$this->Acquisition_model->add_land_info($lot_area, $selling_price, $total_price, $name);
+				$tag 			= 'New';
+				$this->Acquisition_model->add_land_info($lot_area, $selling_price, $total_price, $tag);
 				$this->Acquisition_model->add_lot_location();
-				if ($this->input->post(['liens', 'easement', 'encumbrances'])) {  
+				if (!empty($this->input->post('liens')) || 
+				    !empty($this->input->post('easement')) || 
+				    !empty($this->input->post('encumbrances'))) {  
 				    $this->Acquisition_model->add_restriction();  
-				} 							
+				}							
 				$this->Acquisition_model->add_owner_id();	 
 				$this->session->set_flashdata('notif','Land Information Saved Successfully!');
 				$is_no = $this->input->post('is_no');

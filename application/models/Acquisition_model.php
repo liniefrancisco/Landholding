@@ -3,7 +3,7 @@ class Acquisition_model extends CI_Model{
 	//==================================================
 	#CRUD QUERY
 	//==================================================
-	public function add_land_info($lot_area, $price_per, $total_p){
+	public function add_land_info($lot_area, $price_per, $total_p, $tag){
 		$data = array(
 			'is_no' 		=> $this->input->post('is_no'),
 			'date_acquired' => date('Y-m-d'),
@@ -15,7 +15,7 @@ class Acquisition_model extends CI_Model{
 			'lot_size' 		=> $lot_area,
 			'price_per_sqm' => $price_per,
 			'total_price' 	=> $total_p,
-			'tag' 			=> "New",
+			'tag' 			=> $tag,
 		);
 		$this->db->insert('land_info',$data);                                
 	}

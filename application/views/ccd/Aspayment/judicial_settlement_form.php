@@ -24,8 +24,8 @@
             <div class="x_panel animate  fadeInLeft" style="box-shadow: 5px 8px 16px #888888">
                 <div class="x_title">
                     <h2 class="fa fa-bank" style="font-size:15px;"> <b>Settlement</b></h2>
-                    <div style="float:right;color: #2a3f54;">
-                        <a type="a" href="<?= base_url() ?>" class="btn btn-custom-warning btn-hover btn-sm"><i class="fa fa-arrow-left"></i> Back</a>
+                    <div style="float:right">
+                        <a href="#" onclick="window.history.back()" class="btn btn-sm btn-warning"><span class="fa fa-arrow-left" style="color:#fff"></span> Back</a>
                     </div>
                     <div class="clearfix"></div>
                 </div>
@@ -50,24 +50,26 @@
                     } 
                 ?>
 
-                <?php echo form_open_multipart('Ccd/Aspayment', array('id' => 'add_lot'));?>
-                    <input type="hidden" value="OCT" name="oct_folder">
-                    <input type="hidden" value="TCT" name="tct_folder">
-
+                <?php echo form_open_multipart('Aspayment/judicial', array('id' => 'add_lot'));?>
                     <div class="x_panel" style="border-radius:10px;">
-                        <center class="space">
+                        <div class="row text-center space">
                             <img src="<?= base_url('assets/logo/AGC.jpg') ?>" width="200px" height="50px">
                             <h4><b>LAND AS PAYMENT FORM - JUDICIAL SETTLEMENT (LAPF-JS)</b></h4>
-                        </center>
+                        </div>
 
                         <div class="col-md-12 col-sm-12 col-xs-12 space">
-                            <div class="col-md-4 col-xs-4 col-sm-4 form-inline">
+                            <div class="col-md-6 col-xs-6 col-sm-6 form-inline">
                                 <label>LAPF-JS #:</label>
-                                <input class="form-control input_border" type="text" name="js_no" value="<?php echo $js_no; ?>" readonly>
+                                <input type="text" class="form-control" name="js_no" value="<?php echo $js_no; ?>" readonly>
                             </div>
-                            <div class="col-md-4 col-sm-4  col-xs-4 form-inline pull-right">
-                                <label>Date:</label>
-                                <input type="text" class="form-control input_border" id="date" name="date" readonly>
+                            <div class="col-md-6 col-sm-6 col-xs-6 form-inline">
+                                <div class="form-group pull-right">
+                                    <label class="col-md-2">Date:</label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control has-feedback-left" name="date" id="date" readonly >
+                                        <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+                                    </div>
+                                </div>                            
                             </div>
                         </div>
 
@@ -76,15 +78,14 @@
                         </div>
 
                         <div class="col-md-12 col-sm-12 col-xs-12 space">
-                            <div class="col-md-4 col-sm-4 col-xs-4"><label>Case Type:</label></div>
-                            <div class="col-md-4 col-sm-4 col-xs-4">
+                            <div class="col-md-3 col-sm-3 col-xs-3"><label>Case Type:</label></div>
+                            <div class="col-md-3 col-sm-3 col-xs-3">
                                 <label class="r-contain">
                                     <input type="radio" value="Small claim case" name="case_type" <?php echo set_radio('case_type', 'Small claim case', @$_POST['case_type'] == 'Small claim case'); ?> required> Small claim case 
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
-
-                            <div class="col-md-4 col-sm-4 col-xs-4">
+                            <div class="col-md-3 col-sm-3 col-xs-3">
                                 <label class="r-contain">
                                     <input type="radio" value="Collection of Sum Money" name="case_type" <?php if (@$_POST['case_type'] == "Collection of Sum Money") { echo "checked"; } ?> required>Collection of Sum Money 
                                     <span class="checkmark"></span>
@@ -92,74 +93,73 @@
                             </div>
                         </div>
 
-
-                        <div class="col-md-12 space">
+                        <div class="col-md-12 col-sm-12 col-xs-12 space">
                             <div class="col-md-3"><label>Business Unit:</label></div>
                             <div class="col-md-9">
-                                <input class="form-control input_border" type="text" name="business_unit" value="<?= set_value('business_unit'); ?>" required>
+                                <input class="form-control" type="text" name="business_unit" value="<?= set_value('business_unit'); ?>" required>
                             </div>
                         </div>
 
                         <div class="col-md-12 col-sm-12 col-xs-12 space">
                             <div class="col-md-3 col-sm-3 col-xs-3"><label>Customer Name:</label></div>
                             <div class="col-md-3 col-sm-3 col-xs-3">
-                                <input class="form-control input_border txt_cent" type="text" name="customer_fname" value="<?= set_value('customer_fname'); ?>" required>
-                                <h6 class="txt_cent"><i>Firstname</i></h6>
+                                <input class="form-control text-center" type="text" name="customer_fname" value="<?= set_value('customer_fname'); ?>" required>
+                                <h6 class="text-center"><i>Firstname</i></h6>
                             </div>
                             <div class="col-md-3 col-sm-3 col-xs-3">
-                                <input class="form-control input_border txt_cent" type="text" name="customer_mname" value="<?= set_value('customer_mname'); ?>" required>
-                                <h6 class="txt_cent"><i>Middlename</i></h6>
+                                <input class="form-control text-center" type="text" name="customer_mname" value="<?= set_value('customer_mname'); ?>" required>
+                                <h6 class="text-center"><i>Middlename</i></h6>
                             </div>
                             <div class="col-md-3 col-sm-3 col-xs-3">
-                                <input class="form-control input_border txt_cent" type="text" name="customer_lname" value="<?= set_value('customer_lname'); ?>" required>
-                                <h6 class="txt_cent"><i>Lastname</i></h6>
+                                <input class="form-control text-center" type="text" name="customer_lname" value="<?= set_value('customer_lname'); ?>" required>
+                                <h6 class="text-center"><i>Lastname</i></h6>
                             </div>
                         </div>
 
-                        <div class="col-md-12 col-sm-12 col-xs-12 space">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
                             <div class="col-md-3 col-sm-3 col-xs-3"><label>Customer Address:</label></div>
                             <div class="col-md-3 col-sm-3 col-xs-3">
-                                <select class="form-control input_border txt_cent" id="customer_region" name="customer_region" onchange="loadProvince()" value="<?php echo set_value('customer_region'); ?>" required>
+                                <select class="form-control text-center" id="customer_region" name="customer_region" onchange="loadProvince()" value="<?php echo set_value('customer_region'); ?>" required>
                                     <option value="">Select Region</option>
                                 </select>
-                                <h6 class="name_center"><i>Region</i></h6>
-                                <input type="hidden" id="selected_customer_region" name="selected_customer_region" readonly>
+                                <h6 class="text-center"><i>Region</i></h6>
+                                <input type="hidden" id="selected_customer_region" name="customer_region" readonly>
                             </div>
 
                             <div class="col-md-3 col-sm-3 col-xs-3">
-                                <select class="form-control input_border txt_cent" id="customer_province" name="customer_province" onchange="loadCity()" value="<?php echo set_value('customer_province'); ?>" required>
+                                <select class="form-control text-center" id="customer_province" name="customer_province" onchange="loadCity()" value="<?php echo set_value('customer_province'); ?>" required>
                                     <option value="">Select Province</option>
                                 </select>
-                                <h6 class="name_center"><i>Province</i></h6>
+                                <h6 class="text-center"><i>Province</i></h6>
                                 <input type="hidden" id="selected_customer_province" name="selected_customer_province" readonly>
                             </div>
 
                             <div class="col-md-3 col-sm-3 col-xs-3">
-                                <select class="form-control input_border txt_cent" id="customer_town" name="customer_town" onchange="loadBrgy()" value="<?php echo set_value('customer_town'); ?>" required>
+                                <select class="form-control text-center" id="customer_town" name="customer_town" onchange="loadBrgy()" value="<?php echo set_value('customer_town'); ?>" required>
                                     <option value="">Select City</option>
                                 </select>
-                                <h6 class="name_center"><i>City/Municipality</i></h6>
+                                <h6 class="text-center"><i>City/Municipality</i></h6>
                                 <input type="hidden" id="selected_customer_town" name="selected_customer_town" readonly>
                             </div>
 
                             <div class="col-md-3 col-sm-3 col-xs-3"></div>
 
                             <div class="ccol-md-3 col-sm-3 col-xs-3">
-                                <select class="form-control input_border txt_cent" id="customer_barangay" name="customer_barangay" value="<?php echo set_value('customer_barangay'); ?>" required>
+                                <select class="form-control text-center" id="customer_barangay" name="customer_barangay" value="<?php echo set_value('customer_barangay'); ?>" required>
                                     <option value="">Select Barangay</option>
                                 </select>
-                                <h6 class="name_center"><i>Barangay</i></h6>
+                                <h6 class="text-center"><i>Barangay</i></h6>
                                 <input type="hidden" id="selected_customer_barangay" name="selected_customer_barangay" readonly>
                             </div>
 
                             <div class="ccol-md-3 col-sm-3 col-xs-3">
-                                <input type="text" class="form-control input_border txt_cent" name="customer_street" id="customer_street" value="<?php echo set_value('customer_street') ?>" required>
-                                <h6 class="name_center"><i>Street</i></h6>
+                                <input type="text" class="form-control text-center" name="customer_street" id="customer_street" value="<?php echo set_value('customer_street') ?>" required>
+                                <h6 class="text-center"><i>Street</i></h6>
                             </div>
 
                             <div class="ccol-md-3 col-sm-3 col-xs-3">
-                                <input type="text" class="form-control input_border txt_cent" name="customer_zip_code" id="customer_zip_code" value="<?php echo set_value('customer_zip_code') ?>" required readonly>
-                                <h6 class="name_center"><i>Zip Code</i></h6>
+                                <input type="text" class="form-control text-center" name="customer_zip_code" id="customer_zip_code" value="<?php echo set_value('customer_zip_code') ?>" required readonly>
+                                <h6 class="text-center"><i>Zip Code</i></h6>
                             </div>
                         </div>
 
@@ -168,18 +168,20 @@
                         </div>
 
                         <div class="col-md-12 col-sm-12 col-xs-12 space">
-                            <div class="col-md-4 col-xs-4 col-sm-4 form-inline">
+                            <div class="col-md-6 col-xs-6 col-sm-6 form-inline">
                                 <label>Lot :</label>
-                                <input class="form-control input_border" type="text" name="lot" value="<?php if (isset($_POST['lot'])) { echo $_POST['lot'];} ?>" required>
+                                <input class="form-control" type="text" name="lot" value="<?php if (isset($_POST['lot'])) { echo $_POST['lot'];} ?>" required>
                             </div>
-                            <div class="col-md-4 col-sm-4  col-xs-4 form-inline pull-right">
-                                <label>Cad :</label>
-                                <input class="form-control input_border" type="text" name="cad" value="<?php if (isset($_POST['cad'])) { echo $_POST['cad'];} ?>" required>
+                            <div class="col-md-6 col-sm-6 col-xs-6 form-inline">
+                                <div class="form-group pull-right">
+                                    <label>Cad :</label>
+                                    <input class="form-control" type="text" name="cad" value="<?php if (isset($_POST['cad'])) { echo $_POST['cad'];} ?>" required>
+                                </div>
                             </div>
                         </div>
 
                         <div class="col-md-12 col-sm-12 col-xs-12 space">
-                            <div class="col-md-3 col-sm-3 col-xs-3 lot_type" style="height:29px;"><label>Lot Type:</label></div>
+                            <div class="col-md-3 col-sm-3 col-xs-3 lot_type" style="height:31px;"><label>Lot Type:</label></div>
                             <div class="col-md-3 col-sm-3 col-xs-3 lot_type">
                                 <label class="r-contain">
                                     <input type="radio" name="lot_type" value="Agricultural" <?php if (@$_POST['lot_type'] == "Agricultural") { echo "checked"; } ?> required>Agricultural 
@@ -203,44 +205,44 @@
                         <div class="col-md-12 col-sm-12 col-xs-12 space">
                             <div class="col-md-3 col-sm-3 col-xs-3"><label>Lot Owner:</div>
                             <div class="col-md-3 col-sm-3 col-xs-3">
-                                <input type="text" name="lot_fname" value="<?php if (isset($_POST['lot_fname'])) { echo $_POST['lot_fname']; } ?>" class="form-control input_border name_center" required>
-                                <h6 class="name_center"><i>Firstname</i></h6>
+                                <input type="text" class="form-control text-center" name="lot_fname" value="<?php if (isset($_POST['lot_fname'])) { echo $_POST['lot_fname']; } ?>" required>
+                                <h6 class="text-center"><i>Firstname</i></h6>
                             </div>
                             <div class="col-md-3 col-sm-3 col-xs-3">
-                                <input type="text" name="lot_mname" value="<?php if (isset($_POST['lot_mname'])) { echo $_POST['lot_mname']; } ?>" class="form-control input_border name_center" required>
-                                <h6 class="name_center"><i>Middlename</i></h6>
+                                <input type="text" class="form-control text-center" name="lot_mname" value="<?php if (isset($_POST['lot_mname'])) { echo $_POST['lot_mname']; } ?>" required>
+                                <h6 class="text-center"><i>Middlename</i></h6>
                             </div>
                             <div class="col-md-3 col-sm-3 col-xs-3">
-                                <input type="text" name="lot_lname" value="<?php if (isset($_POST['lot_lname'])) { echo $_POST['lot_lname']; } ?>" class="form-control input_border name_center" required>
-                                <h6 class="name_center"><i>Lastname</i></h6>
+                                <input type="text" class="form-control text-center" name="lot_lname" value="<?php if (isset($_POST['lot_lname'])) { echo $_POST['lot_lname']; } ?>" required>
+                                <h6 class="text-center"><i>Lastname</i></h6>
                             </div>
                         </div>
 
                         <div class="col-md-12 col-sm-12 col-xs-12 space">
-                            <div class="col-md-4 col-sm-4 col-xs-4"><label>Gender:</label></div>
-                            <div class="col-md-4 col-sm-4 col-xs-4">
-                                <label>
-                                    <input type="radio" name="gender" value="Male" required <?php if(@$_POST['gender'] == "Male"){ echo "checked"; } ?>>
-                                    <label class="control-label">Male</label>
+                            <div class="col-md-3 col-sm-3 col-xs-3"><label>Gender:</label></div>
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                                <label class="r-contain">
+                                    <input type="radio" name="gender" value="Male" <?php if(@$_POST['gender'] == "Male"){ echo "checked"; } ?> required>Male
+                                    <span class="checkmark"></span>
                                 </label>
                             </div>
-                            <div class="col-md-4 col-sm-4 col-xs-4">
-                                <label>
-                                    <input type="radio" name="gender" value="Female" required <?php if(@$_POST['gender'] == "Female"){ echo "checked"; } ?>>
-                                    <label class="control-label">Female</label>
+                            <div class="col-md-3 col-sm-3 col-xs-3">
+                                <label class="r-contain">
+                                    <input type="radio" name="gender" value="Female" <?php if(@$_POST['gender'] == "Female"){ echo "checked"; } ?> required>Female
+                                    <span class="checkmark"></span>
                                 </label>
                             </div>
                         </div>
 
                         <div class="col-md-12 col-sm-12 col-xs-12 space">
-                            <div class="col-md-4 col-sm-4 col-xs-4"><label>Vital Status:</label></div>
-                            <div class="col-md-4 col-sm-4 col-xs-4">
+                            <div class="col-md-3 col-sm-3 col-xs-3"><label>Vital Status:</label></div>
+                            <div class="col-md-3 col-sm-3 col-xs-3">
                                 <label class="r-contain">
                                     <input type="radio" name="vital_status" value="Alive" <?php if (@$_POST['vital_status'] == "Alive") { echo "checked"; } ?> required>Alive
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
-                            <div class="col-md-4 col-sm-4 col-xs-4">
+                            <div class="col-md-3 col-sm-3 col-xs-3">
                                 <label class="r-contain">
                                     <input type="radio" name="vital_status" value="Deceased" <?php if (@$_POST['vital_status'] == "Deceased") { echo "checked"; } ?> required>Deceased 
                                     <span class="checkmark"></span>
@@ -251,58 +253,58 @@
                         <div class="col-md-12 col-sm-12 col-xs-12 space">
                             <div class="col-md-3 col-sm-3 col-xs-3"><label>Lot Location:</div>
                             <div class="col-md-3 col-sm-3 col-xs-3">
-                                <select class="form-control input_border txt_cent" id="lot_region" name="lot_region" onchange="loadProvince1()" value="<?php echo set_value('lot_region'); ?>" required>
+                                <select class="form-control text-center" id="lot_region" name="lot_region" onchange="loadProvince1()" value="<?php echo set_value('lot_region'); ?>" required>
                                     <option value="">Select Region</option>
                                 </select>
                                 <input type="hidden" id="selected_lot_region" name="selected_lot_region" readonly>
-                                <h6 class="name_center"><i>Region</i></h6>
+                                <h6 class="text-center"><i>Region</i></h6>
                             </div>
 
                             <div class="col-md-3 col-sm-3 col-xs-3">
-                                <select class="form-control input_border txt_cent" id="lot_province" name="lot_province" onchange="loadCity1()" value="<?php echo set_value('lot_province'); ?>" required>
+                                <select class="form-control text-center" id="lot_province" name="lot_province" onchange="loadCity1()" value="<?php echo set_value('lot_province'); ?>" required>
                                     <option value="">Select Province</option>
                                 </select>
                                 <input type="hidden" id="selected_lot_province" name="selected_lot_province" readonly>
-                                <h6 class="name_center"><i>Province</i></h6>
+                                <h6 class="text-center"><i>Province</i></h6>
                             </div>
 
                             <div class="col-md-3 col-sm-3 col-xs-3">
-                                <select class="form-control input_border txt_cent" id="lot_town" name="lot_town" onchange="loadBrgy1()" value="<?php echo set_value('lot_town'); ?>" required>
+                                <select class="form-control text-center" id="lot_town" name="lot_town" onchange="loadBrgy1()" value="<?php echo set_value('lot_town'); ?>" required>
                                     <option value="">Select City</option>
                                 </select>
                                 <input type="hidden" id="selected_lot_town" name="selected_lot_town" readonly>
-                                <h6 class="name_center"><i>City/Municipality</i></h6>
+                                <h6 class="text-center"><i>City/Municipality</i></h6>
                             </div>
 
                             <div class="col-md-3 col-sm-3 col-xs-3"><label></div>
 
                             <div class="col-md-3 col-sm-3 col-xs-3">
-                                <select class="form-control input_border txt_cent" id="lot_barangay" name="lot_barangay" value="<?php echo set_value('lot_barangay'); ?>" required>
+                                <select class="form-control text-center" id="lot_barangay" name="lot_barangay" value="<?php echo set_value('lot_barangay'); ?>" required>
                                     <option value="">Select Barangay</option>
                                 </select>
                                 <input type="hidden" id="selected_lot_barangay" name="selected_lot_barangay" readonly>
-                                <h6 class="name_center"><i>Barangay</i></h6>
+                                <h6 class="text-center"><i>Barangay</i></h6>
                             </div>
 
                             <div class="col-md-3 col-sm-3 col-xs-3">
-                                <input type="text" class="form-control input_border txt_cent" name="lot_street" id="lot_street" value="<?php echo set_value('lot_street') ?>" required>
-                                <h6 class="name_center"><i>Street</i></h6>
+                                <input type="text" class="form-control text-center" name="lot_street" id="lot_street" value="<?php echo set_value('lot_street') ?>" required>
+                                <h6 class="text-center"><i>Street</i></h6>
                             </div>
                             <div class="col-md-3 col-sm-3 col-xs-3">
-                                <input type="text" class="form-control input_border txt_cent" name="lot_zip_code" id="lot_zip_code" value="<?php echo set_value('lot_zip_code') ?>" required readonly>
-                                <h6 class="name_center"><i>Zipcode</i></h6>
+                                <input type="text" class="form-control text-center" name="lot_zip_code" id="lot_zip_code" value="<?php echo set_value('lot_zip_code') ?>" required readonly>
+                                <h6 class="text-center"><i>Zipcode</i></h6>
                             </div>
                         </div>
 
                         <div class="col-md-12 col-sm-12 col-xs-12 space">
-                            <div class="col-md-4 col-sm-4 col-xs-4"><label>Lot for bidding:</label></div>
-                            <div class="col-md-4 col-sm-4 col-xs-4">
+                            <div class="col-md-3 col-sm-3 col-xs-3"><label>Lot for bidding:</label></div>
+                            <div class="col-md-3 col-sm-3 col-xs-3">
                                 <label class="r-contain">
                                     <input type="radio" name="lot_s" value="Portion" <?php if (@$_POST['lot_s'] == "Portion") { echo "checked"; } ?> required> Portion
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
-                            <div class="col-md-4 col-sm-4 col-xs-4">
+                            <div class="col-md-3 col-sm-3 col-xs-3">
                                 <label class="r-contain">
                                     <input type="radio" name="lot_s" value="Whole" <?php if (@$_POST['lot_s'] == "Whole") { echo "checked"; } ?> required> Whole 
                                     <span class="checkmark"></span>
@@ -311,23 +313,24 @@
                         </div>
 
                         <div class="col-md-12 col-sm-12 col-xs-12 space">
-                            <div class="col-md-3 col-sm-3 col-xs-3 form-inline"><label>Lot Size:</label> </div>
-                            <div class="col-md-4 col-sm-4 col-xs-4 form-inline">
-                                <input type="text" value="<?php if (isset($_POST['lot_size'])) { echo $_POST['lot_size']; } ?>" name="lot_size" class="form-control input_border" id="lotsize" required><label>sq/m</label>
+                            <div class="col-md-3 col-sm-3 col-xs-3 form-inline"><label>Lot Size:</label></div>
+                            <div class="col-md-9 col-sm-9 col-xs-9 form-inline">
+                                <input type="text" value="<?php if (isset($_POST['lot_size'])) { echo $_POST['lot_size']; } ?>" name="lot_size" class="form-control inb" id="lotsize" required>
+                                <label>sq/m</label>
                             </div>
                         </div>
 
                         <div class="col-md-12 col-sm-12 col-xs-12 space">
-                            <div class="col-md-4 col-sm-4 col-xs-4">
+                            <div class="col-md-3 col-sm-3 col-xs-3">
                                 <label>Available Proof of Title/Ownership:</label>
                             </div>
-                            <div class="col-md-4 col-sm-4 col-xs-4">
+                            <div class="col-md-3 col-sm-3 col-xs-3">
                                 <label class="r-contain">
                                     <input type="radio" name="available_proof" value="oct" <?php if (@$_POST['available_proof'] == "oct") { echo "checked"; } ?> class="proof">Original Certificate of Title (OCT) 
                                     <span class="checkmark"></span>
                                 </label>
                             </div>
-                            <div class="col-md-4 col-sm-4 col-xs-4">
+                            <div class="col-md-3 col-sm-3 col-xs-3">
                                 <label class="r-contain">
                                     <input type="radio" name="available_proof" value="tct" <?php if (@$_POST['available_proof'] == "tct") { echo "checked"; } ?> class="proof">Transfer Certificate of Title (TCT) 
                                     <span class="checkmark"></span>
@@ -374,10 +377,10 @@
 
                         <div class="col-md-12 col-sm-12 col-xs-12 space">
                             <div class="col-md-4 col-sm-4 col-xs-4 form-inline"><label>Bid Price: ₱</label>
-                                <input type="text" name="bid_price" value="<?php if (isset($_POST['bid_price'])) { echo $_POST['bid_price']; } ?>" class="form-control input_border" id="bidding_price">
+                                <input type="text" name="bid_price" value="<?php if (isset($_POST['bid_price'])) { echo $_POST['bid_price']; } ?>" class="form-control inb" id="bidding_price">
                             </div>
                             <div class="col-md-6 col-sm-6 col-xs-6 form-inline"><label>Status:</label>
-                                <input type="text" name="status" value="<?php if (isset($_POST['status'])) { echo $_POST['status']; } ?>" class="form-control input_border"><label>Highest Bidder</label>
+                                <input type="text" name="status" value="<?php if (isset($_POST['status'])) { echo $_POST['status']; } ?>" class="form-control inb"><label>Highest Bidder</label>
                             </div>
                         </div>
                     </div>
@@ -398,12 +401,11 @@
         $("#date").datepicker({
             dateFormat: 'mm/dd/yy',
         });
-
         // Set current date
-        var d = new Date();
-        var month = d.getMonth() + 1;
-        var day = d.getDate();
-        var output = (month < 10 ? '0' : '') + month + '/' + (day < 10 ? '0' : '') + day + '/' + d.getFullYear();
+        var d       = new Date();
+        var month   = d.getMonth() + 1;
+        var day     = d.getDate();
+        var output  = (month < 10 ? '0' : '') + month + '/' + (day < 10 ? '0' : '') + day + '/' + d.getFullYear();
         $("#date").val(output);
     });
 </script>

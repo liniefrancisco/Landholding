@@ -33,7 +33,7 @@ class Owned extends App_Controller{
 		$data['title'] 	= "Owned Land";
 		$data 			= $this->Notification();
 
-		if (in_array($this->session->userdata('user_type'), ['Secretary', 'Legal', 'GM', 'Accounting'])) {
+		if (in_array($this->session->userdata('user_type'), ['Secretary', 'Legal', 'GM', 'Accounting', 'CCD'])) {
 			$this->render_template('secretary/Owned/owned_land', $data);
 		}else{
 			redirect('');

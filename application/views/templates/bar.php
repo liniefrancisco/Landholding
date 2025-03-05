@@ -70,8 +70,8 @@
 	                                        <li><a href="<?= base_url('Old_Acquisition'); ?>">Add Land</a></li>
 	                                        <li><a>Aspayment <span class="fa fa-chevron-down"></span></a>
 	                                            <ul class="nav child_menu">
-	                                                <li><a href="<?= base_url('Legal_f/registry/judicial') ?>">Judicial</a></li>
-	                                                <li><a href="<?= base_url('Legal_f/registry/extrajudicial') ?>">Extrajudicial</a></li>
+	                                                <li><a href="<?= base_url('Old_Aspayment/judicial') ?>">Judicial</a></li>
+	                                                <li><a href="<?= base_url('Old_Aspayment/extrajudicial') ?>">Extrajudicial</a></li>
 	                                            </ul>
 	                                        </li>
 	                                    </ul>
@@ -137,7 +137,7 @@
 									<li><a href="<?= base_url(); ?>"><i class="fa fa-home"></i>Home</a></li>
 									<li><a><i class="fa fa-edit"></i> Aspayment <span class="fa fa-chevron-down"></span></a>
 										<ul class="nav child_menu">
-											<li class="sub_menu"><a href="<?= base_url('Ccd/Aspayment');?>">Judicial </a></li>
+											<li class="sub_menu"><a href="<?= base_url('Aspayment/judicial');?>">Judicial </a></li>
 											<li><a href="<?= base_url('Ccd/Aspayment/extrajudicial');?>">Extrajudicial </a> </li>
 										</ul>
 									</li>
@@ -149,8 +149,8 @@
 											<li><a href="<?= base_url('Ccd/Requests/pending_judicial');?>">Judicial</a></li>
 										</ul>
 									</li> -->
-									<li><a href="<?= base_url('Ccd/Owned/owned_land');?>"><i class="fa fa-tags"></i> Owned</a></li>
-									<li><a href="<?= base_url('Ccd/About_Us/about_us')?>"><i class="fa fa-info"></i>About Us</a></li>
+									<li><a href="<?= base_url('Owned')?>"><i class="fa fa-map-signs"></i>Owned Land</a></li>
+									<li><a href="<?= base_url('About_Us')?>"><i class="fa fa-info"></i>About Us</a></li>
 								<?php } ?>
 								<!--====================END CCD SIDEBAR====================-->
 
