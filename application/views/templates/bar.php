@@ -76,23 +76,23 @@
 	                                        </li>
 	                                    </ul>
 	                                </li>
-	                                <li><a><i class="fa fa-cloud-upload"></i> Land Titling <span class="fa fa-chevron-down"></span></a>
+	                                <!-- <li><a><i class="fa fa-cloud-upload"></i> Land Titling <span class="fa fa-chevron-down"></span></a>
 	                                    <ul class="nav child_menu">
 	                                        <li><a href="<?= base_url('Legal_f/land/titling_old'); ?>">Acquisition</a></li>
 	                                        <li><a href="<?= base_url('Legal_f/land/extrajudicial'); ?>">Extrajudicial</a></li>
 	                                        <li><a href="<?= base_url('Legal_f/land/judicial'); ?>">Judicial</a></li>
 	                                    </ul>
-	                                </li>
-	                                <li><a><i class="fa fa-certificate"></i> Land Profile <span class="fa fa-chevron-down"></span></a>
+	                                </li> -->
+	                                <!-- <li><a><i class="fa fa-certificate"></i> Land Profile <span class="fa fa-chevron-down"></span></a>
 	                                    <ul class="nav child_menu">
 	                                        <li><a href="<?= base_url('Legal_f/land/land_acq_old'); ?>">Acquisition</a></li>
 	                                        <li><a href="<?= base_url('Legal_f/land/land_extra_old'); ?>">Extrajudicial</a></li>
 	                                        <li><a href="<?= base_url('Legal_f/land/land_judicial_old'); ?>">Judicial</a></li>
 	                                    </ul>
-	                                </li>
-	                                <li><a href="<?= base_url('Legal_f/Aspayment/judicial_request') ?>"><i class="fa fa-gavel"></i>Judicial Request</a></li>
+	                                </li> -->
+	                                <!-- <li><a href="<?= base_url('Legal_f/Aspayment/judicial_request') ?>"><i class="fa fa-gavel"></i>Judicial Request</a></li>
 	                                <li><a href="<?= base_url('Legal_f/rpt'); ?>"><i class="fa fa-clipboard"></i>Real Property Tax</a></li>
-	                                <li><a href="<?= base_url('Legal_f/report'); ?>"><i class="fa fa-print"></i> Reports</a></li>
+	                                <li><a href="<?= base_url('Legal_f/report'); ?>"><i class="fa fa-print"></i> Reports</a></li> -->
 									<li><a href="<?= base_url('Acquisition/Acquisition_tbl')?>">
 										<i class="fa fa-files-o"></i> Document Review
 										<?php if ($pending_acq > 0): ?>
