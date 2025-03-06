@@ -193,3 +193,33 @@ ERROR - 2025-03-06 02:16:38 --> Severity: error --> Exception: Unable to locate 
 ERROR - 2025-03-06 02:26:28 --> Severity: Warning --> Undefined variable $pending_acq C:\laragon\www\Landholding\application\views\templates\bar.php 98
 ERROR - 2025-03-06 02:26:28 --> Severity: error --> Exception: Unable to locate the model you have specified: Registry_model C:\laragon\www\Landholding\system\core\Loader.php 348
 ERROR - 2025-03-06 16:55:50 --> Severity: Parsing Error --> syntax error, unexpected ':', expecting ';' or '{' C:\laragon\www\Landholding\system\libraries\Session\drivers\Session_files_driver.php 133
+ERROR - 2025-03-06 17:28:27 --> Severity: Parsing Error --> syntax error, unexpected ':', expecting ';' or '{' C:\laragon\www\Landholding\system\libraries\Session\drivers\Session_files_driver.php 133
+ERROR - 2025-03-06 17:28:48 --> Severity: Parsing Error --> syntax error, unexpected ':', expecting ';' or '{' C:\laragon\www\Landholding\system\libraries\Session\drivers\Session_files_driver.php 133
+ERROR - 2025-03-06 17:33:21 --> Severity: Parsing Error --> syntax error, unexpected ':', expecting ';' or '{' C:\laragon\www\Landholding\system\libraries\Session\drivers\Session_files_driver.php 133
+ERROR - 2025-03-06 17:33:22 --> Severity: Parsing Error --> syntax error, unexpected ':', expecting ';' or '{' C:\laragon\www\Landholding\system\libraries\Session\drivers\Session_files_driver.php 133
+ERROR - 2025-03-06 17:33:30 --> Severity: Parsing Error --> syntax error, unexpected ':', expecting ';' or '{' C:\laragon\www\Landholding\system\libraries\Session\drivers\Session_files_driver.php 133
+ERROR - 2025-03-06 17:33:31 --> Severity: Parsing Error --> syntax error, unexpected ':', expecting ';' or '{' C:\laragon\www\Landholding\system\libraries\Session\drivers\Session_files_driver.php 133
+ERROR - 2025-03-06 17:33:31 --> Severity: Parsing Error --> syntax error, unexpected ':', expecting ';' or '{' C:\laragon\www\Landholding\system\libraries\Session\drivers\Session_files_driver.php 133
+ERROR - 2025-03-06 17:33:33 --> Severity: Parsing Error --> syntax error, unexpected ':', expecting ';' or '{' C:\laragon\www\Landholding\system\libraries\Session\drivers\Session_files_driver.php 133
+ERROR - 2025-03-06 17:33:34 --> Severity: Parsing Error --> syntax error, unexpected ':', expecting ';' or '{' C:\laragon\www\Landholding\system\libraries\Session\drivers\Session_files_driver.php 133
+ERROR - 2025-03-06 17:33:36 --> Severity: Parsing Error --> syntax error, unexpected ':', expecting ';' or '{' C:\laragon\www\Landholding\system\libraries\Session\drivers\Session_files_driver.php 133
+ERROR - 2025-03-06 17:33:36 --> Severity: Parsing Error --> syntax error, unexpected ':', expecting ';' or '{' C:\laragon\www\Landholding\system\libraries\Session\drivers\Session_files_driver.php 133
+ERROR - 2025-03-06 17:33:37 --> Severity: Parsing Error --> syntax error, unexpected ':', expecting ';' or '{' C:\laragon\www\Landholding\system\libraries\Session\drivers\Session_files_driver.php 133
+ERROR - 2025-03-06 17:33:37 --> Severity: Parsing Error --> syntax error, unexpected ':', expecting ';' or '{' C:\laragon\www\Landholding\system\libraries\Session\drivers\Session_files_driver.php 133
+ERROR - 2025-03-06 17:33:37 --> Severity: Parsing Error --> syntax error, unexpected ':', expecting ';' or '{' C:\laragon\www\Landholding\system\libraries\Session\drivers\Session_files_driver.php 133
+ERROR - 2025-03-06 17:33:37 --> Severity: Parsing Error --> syntax error, unexpected ':', expecting ';' or '{' C:\laragon\www\Landholding\system\libraries\Session\drivers\Session_files_driver.php 133
+ERROR - 2025-03-06 17:33:57 --> Severity: Parsing Error --> syntax error, unexpected ':', expecting ';' or '{' C:\laragon\www\Landholding\system\libraries\Session\drivers\Session_files_driver.php 133
+ERROR - 2025-03-06 17:33:57 --> Severity: Parsing Error --> syntax error, unexpected ':', expecting ';' or '{' C:\laragon\www\Landholding\system\libraries\Session\drivers\Session_files_driver.php 133
+ERROR - 2025-03-06 17:33:57 --> Severity: Parsing Error --> syntax error, unexpected ':', expecting ';' or '{' C:\laragon\www\Landholding\system\libraries\Session\drivers\Session_files_driver.php 133
+ERROR - 2025-03-06 17:33:57 --> Severity: Parsing Error --> syntax error, unexpected ':', expecting ';' or '{' C:\laragon\www\Landholding\system\libraries\Session\drivers\Session_files_driver.php 133
+ERROR - 2025-03-06 17:34:26 --> Severity: Parsing Error --> syntax error, unexpected ':', expecting ';' or '{' C:\laragon\www\Landholding\system\libraries\Session\drivers\Session_files_driver.php 133
+ERROR - 2025-03-06 17:34:26 --> Severity: Parsing Error --> syntax error, unexpected ':', expecting ';' or '{' C:\laragon\www\Landholding\system\libraries\Session\drivers\Session_files_driver.php 133
+ERROR - 2025-03-06 17:34:27 --> Severity: Parsing Error --> syntax error, unexpected ':', expecting ';' or '{' C:\laragon\www\Landholding\system\libraries\Session\drivers\Session_files_driver.php 133
+ERROR - 2025-03-06 17:34:27 --> Severity: Parsing Error --> syntax error, unexpected ':', expecting ';' or '{' C:\laragon\www\Landholding\system\libraries\Session\drivers\Session_files_driver.php 133
+ERROR - 2025-03-06 17:34:27 --> Severity: Parsing Error --> syntax error, unexpected ':', expecting ';' or '{' C:\laragon\www\Landholding\system\libraries\Session\drivers\Session_files_driver.php 133
+ERROR - 2025-03-06 17:34:27 --> Severity: Parsing Error --> syntax error, unexpected ':', expecting ';' or '{' C:\laragon\www\Landholding\system\libraries\Session\drivers\Session_files_driver.php 133
+ERROR - 2025-03-06 17:34:27 --> Severity: Parsing Error --> syntax error, unexpected ':', expecting ';' or '{' C:\laragon\www\Landholding\system\libraries\Session\drivers\Session_files_driver.php 133
+ERROR - 2025-03-06 17:34:28 --> Severity: Parsing Error --> syntax error, unexpected ':', expecting ';' or '{' C:\laragon\www\Landholding\system\libraries\Session\drivers\Session_files_driver.php 133
+ERROR - 2025-03-06 17:34:28 --> Severity: Parsing Error --> syntax error, unexpected ':', expecting ';' or '{' C:\laragon\www\Landholding\system\libraries\Session\drivers\Session_files_driver.php 133
+ERROR - 2025-03-06 17:34:28 --> Severity: Parsing Error --> syntax error, unexpected ':', expecting ';' or '{' C:\laragon\www\Landholding\system\libraries\Session\drivers\Session_files_driver.php 133
+ERROR - 2025-03-06 17:34:28 --> Severity: Parsing Error --> syntax error, unexpected ':', expecting ';' or '{' C:\laragon\www\Landholding\system\libraries\Session\drivers\Session_files_driver.php 133
