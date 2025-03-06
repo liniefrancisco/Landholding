@@ -1,3 +1,4 @@
+<script src="<?php echo base_url();?>assets/import/all_js_for_my_own_script/address.js"></script>
 <?php if (validation_errors()) { ?>
     <div class="alert alert-danger alert-dismissible fade in" role="alert" style="position: fixed; bottom: 10px; right: 10px; z-index: 99; cursor: pointer;" id="saved">
         <?php echo '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>' . validation_errors('<i class="fa fa-remove"></i> '); ?>

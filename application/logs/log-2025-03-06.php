@@ -45,3 +45,7 @@ ERROR - 2025-03-06 08:34:57 --> Severity: error --> Exception: Call to a member 
 ERROR - 2025-03-06 08:37:21 --> Severity: Warning --> Undefined variable $all_notifications C:\laragon\www\landholding\application\views\templates\bar.php 183
 ERROR - 2025-03-06 08:37:21 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\laragon\www\landholding\application\views\templates\bar.php 183
 ERROR - 2025-03-06 08:37:21 --> Severity: Warning --> Undefined variable $all_notification_no C:\laragon\www\landholding\application\views\templates\bar.php 227
+ERROR - 2025-03-06 08:47:39 --> Severity: Warning --> Undefined variable $land_info C:\laragon\www\landholding\application\views\ccd\home.php 60
+ERROR - 2025-03-06 08:47:39 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\laragon\www\landholding\application\views\ccd\home.php 60
+ERROR - 2025-03-06 08:48:15 --> Severity: Warning --> Undefined variable $land_info C:\laragon\www\landholding\application\views\ccd\home.php 60
+ERROR - 2025-03-06 08:48:15 --> Severity: Warning --> foreach() argument must be of type array|object, null given C:\laragon\www\landholding\application\views\ccd\home.php 60

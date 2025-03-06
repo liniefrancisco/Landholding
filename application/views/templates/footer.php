@@ -61,7 +61,7 @@
 <!-- my own script -->
 <script src="<?php echo base_url();?>assets/import/all_js_for_my_own_script/radiohead_purchase_type.js"></script>
 <script src="<?php echo base_url();?>assets/import/all_js_for_my_own_script/bootstrap-datetimepicker.min.js"></script>
-<script src="<?php echo base_url();?>assets/import/all_js_for_my_own_script/address.js"></script>
+<!-- <script src="<?php echo base_url();?>assets/import/all_js_for_my_own_script/address.js"></script> -->
 <!-- auto complete suggestion -->
 <!-- Datatables -->
 <script src="<?php echo base_url();?>assets/import/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
