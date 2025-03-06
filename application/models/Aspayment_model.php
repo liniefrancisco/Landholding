@@ -183,4 +183,45 @@ class Aspayment_model extends CI_Model{
         $query = $this->db->query("SELECT * FROM land_info WHERE tag='Old LAPF-ES' ");
         return $query->result_array();
     }
+    public function get_tesdaregion(){
+        $result = $this->db->select("regDesc, regCode")
+        ->get("refregion");
+        return $result->result();
+    }
+    public function get_tesdaprovince($regCode){
+        $result = $this->db->where(array('regCode' => $regCode))
+        ->select("provDesc, provCode")
+        ->get("refprovince");
+        return $result->result();
+    }
+    public function get_tesdacitymun($provCode){
+        $result = $this->db->where(array('provCode' => $provCode))
+        ->select("citymunDesc, citymunCode, zipcode")
+        ->get("refcitymun");
+        return $result->result();
+    }
+    public function get_tesdabrgy($citymunCode){
+        $result = $this->db->where(array('citymunCode' => $citymunCode))
+            ->select("brgyDesc, brgyCode")
+            ->get("refbrgy");
+        return $result->result();
+    }
+    public function get_province($regCode){
+        $result = $this->db->where(array('regCode' => $regCode))
+            ->select("provDesc, provCode")
+            ->get("refprovince");
+        return $result->result();
+    }
+    public function get_citymun($provCode){
+        $result = $this->db->where(array('provCode' => $provCode))
+        ->select("citymunDesc, citymunCode")
+        ->get("refcitymun");
+        return $result->result();
+    }
+    public function get_brgy($citymunCode){
+        $result = $this->db->where(array('citymunCode' => $citymunCode))
+        ->select("brgyDesc, brgyCode")
+        ->get("refbrgy");
+        return $result->result();
+    }
 }

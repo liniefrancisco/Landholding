@@ -69,6 +69,91 @@ class Aspayment extends App_Controller{
 			redirect('');
 		}
 	}
+	#ADDRESS
+	public function getregion(){
+		$result = $this->Aspayment_model->get_tesdaregion();
+		$output = [];
+		$i 		= 0;
+		foreach ($result as $value) {
+			$output[$i]['regDesc'] = $value->regDesc;
+			$output[$i]['regCode'] = $value->regCode;
+			$i++;
+		}
+		echo json_encode($output);
+	}
+	public function getprovince(){
+		$regCode 	= $_POST['regCode'];
+		$result 	= $this->Aspayment_model->get_tesdaprovince($regCode);
+		$output 	= [];
+		$i 			= 0;
+		foreach ($result as $value) {
+			$output[$i]['provDesc'] = $value->provDesc;
+			$output[$i]['provCode'] = $value->provCode;
+			$i++;
+		}
+		echo json_encode($output);
+	}
+	public function getcitymun(){
+		$provCode 	= $_POST['provCode'];
+		$result 	= $this->Aspayment_model->get_tesdacitymun($provCode);
+		$output 	= [];
+		$i 			= 0;
+		foreach ($result as $value) {
+			$output[$i]['citymunDesc'] 	= $value->citymunDesc;
+			$output[$i]['citymunCode'] 	= $value->citymunCode;
+			$output[$i]['zipcode'] 		= $value->zipcode;
+			$i++;
+		}
+		echo json_encode($output);
+	}
+	public function getbrgy(){
+		$citymunCode 	= $_POST['citymunCode'];
+		$result 		= $this->Aspayment_model->get_tesdabrgy($citymunCode);
+		$output 		= [];
+		$i 				= 0;
+		foreach ($result as $value) {
+			$output[$i]['brgyDesc'] = $value->brgyDesc;
+			$output[$i]['brgyCode'] = $value->brgyCode;
+			$i++;
+		}
+		echo json_encode($output);
+	}
+	public function province(){
+		$regCode 	= $_POST['regCode'];
+		$result 	= $this->Aspayment_model->get_province($regCode);
+		$output 	= [];
+		$i 			= 0;
+		foreach ($result as $value) {
+			$output[$i]['provDesc'] = $value->provDesc;
+			$output[$i]['provCode'] = $value->provCode;
+			$i++;
+		}
+		echo json_encode($output);
+	}
+	public function citymun(){
+		$provCode 	= $_POST['provCode'];
+		$result 	= $this->Aspayment_model->get_citymun($provCode);
+		$output 	= [];
+		$i 			= 0;
+		foreach ($result as $value) {
+			$output[$i]['citymunDesc'] = $value->citymunDesc;
+			$output[$i]['citymunCode'] = $value->citymunCode;
+			$i++;
+		}
+		echo json_encode($output);
+	}
+	public function brgy(){
+		$citymunCode 	= $_POST['citymunCode'];
+		$result 		= $this->Aspayment_model->get_brgy($citymunCode);
+		$output 		= [];
+		$i 				= 0;
+		foreach ($result as $value) {
+			$output[$i]['brgyDesc'] = $value->brgyDesc;
+			$output[$i]['brgyCode'] = $value->brgyCode;
+			$i++;
+		}
+		echo json_encode($output);
+	}
 	#VALIDATION
 	public function check_jsno_new($str){
 		$row 	= $this->Aspayment_model->getforms_byid($str);

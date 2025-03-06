@@ -515,7 +515,7 @@
 </script>
 
 <!--====================CUSTOMER ADDRESS====================-->
-<script type="text/javascript"> 
+<!-- <script type="text/javascript"> 
     function loadRegion() {
         $.ajax({
             url: "<?php echo site_url("Ccd/Aspayment/getregion") ?>",
@@ -650,7 +650,7 @@
             $("#selected_customer_barangay").val(selectedBarangay);
         });
     }
-</script>
+</script> -->
 <!--====================END CUSTOMER ADDRESS====================-->
 
 <!--====================LOT LOCATION====================-->
@@ -811,3 +811,7 @@
         float: left;
     }
 </style>
+
+<script>
+    var getRegionUrl = "<?php echo site_url('Aspayment/getregion'); ?>";
+</script>

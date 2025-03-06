@@ -308,12 +308,11 @@
 	    $("#date_acquired").datepicker({
 	        dateFormat: 'mm/dd/yy',
 	    });
-
 	    // Set current date
-	    var d = new Date();
-	    var month = d.getMonth() + 1;
-	    var day = d.getDate();
-	    var output = (month < 10 ? '0' : '') + month + '/' + (day < 10 ? '0' : '') + day + '/' + d.getFullYear();
+	    var d 		= new Date();
+	    var month 	= d.getMonth() + 1;
+	    var day 	= d.getDate();
+	    var output 	= (month < 10 ? '0' : '') + month + '/' + (day < 10 ? '0' : '') + day + '/' + d.getFullYear();
 	    $("#date_acquired").val(output);
 	});
 </script>
@@ -341,8 +340,8 @@
 			window.btn_clicked = true;
 		});
 
-		var $form = $('#add_acq'),
-		origForm = $form.serialize();
+		var $form 	= $('#add_acq'),
+		origForm 	= $form.serialize();
 		$('#add_acq :input').on('change input', function() {
 			if($form.serialize() !== origForm){
 				window.onbeforeunload = function(){
