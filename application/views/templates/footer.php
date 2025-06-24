@@ -103,11 +103,6 @@
 <script src="<?php echo base_url();?>assets/import/vendors/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
 <script src="<?php echo base_url();?>assets/import/vendors/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
 <script src="<?php echo base_url();?>node_modules/flatpickr/dist/flatpickr.min.js"></script>
-<!-- Sweet Alert -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<!-- Animated CSS -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-
 <!--====================END JQUERIES====================-->
 
 <style type="text/css">
@@ -127,96 +122,18 @@
 
 <?php if($this->session->flashdata('success')): ?>
 <script>
-	document.addEventListener("DOMContentLoaded", function() {
-		Swal.fire({
-			icon: 'success',
-			title: 'Success!',
-			html: '<strong><?= $this->session->flashdata('success'); ?></strong>',
-			showConfirmButton: false,
-			timer: 3000,
-			background: '#f0f9f8',
-			color: '#0f5132',
-			width: '40em',
-			padding: '2em',
-			showClass: {
-				popup: 'animate__animated animate__fadeInDown'
-			},
-			hideClass: {
-				popup: 'animate__animated animate__fadeOutUp'
-			},
-			customClass: {
-				popup: 'rounded-4 shadow-lg'
-			}
-		});
-  	});
-</script>
-<?php endif; ?>
-
-<?php if($this->session->flashdata('error')): ?>
-<script>
-	document.addEventListener("DOMContentLoaded", function() {
-		Swal.fire({
-			icon: 'error',
-			title: 'Oops!',
-			html: '<strong><?= $this->session->flashdata('error'); ?></strong>',
-			confirmButtonText: 'Close',
-			confirmButtonColor: '#e3342f',
-			background: '#fff0f0',
-			color: '#842029',
-			width: '40em',
-			padding: '2em',
-			showClass: {
-				popup: 'animate_animated animate_shakeX'
-			},
-			hideClass: {
-				popup: 'animate__animated animate__fadeOutUp'
-			},
-			customClass: {
-				popup: 'rounded-4 shadow-lg'
-			}
-		});
-	});
-</script>
-<?php endif; ?>
-
-<?php $this->session->unset_userdata('success'); ?>
-<?php $this->session->unset_userdata('error'); ?>
-
-<script>
 	$(document).ready(function(){
-		//SECRETARY ==================================================
-		function initializeAcquisitionTable(tableId, status) {//ACQUISITION TABLE
-		    $('#' + tableId).DataTable({
-		        fixedHeader: false,
-		        processing: true,
-		        serverSide: true,
-		        order: [],
-		        ajax: {
-		            url: "<?php echo base_url('Acquisition/acquisition_datatable/'); ?>",
-		            type: "POST",
-		            data: function(d) {
-		                d.status = status;
-		            }
-		        },
-		        columnDefs: [{
-		            targets: [0],
-		            orderable: true
-		        }]
-		    });
-		}
-		initializeAcquisitionTable('pending_acquisition_datatable', 'Pending');
-		initializeAcquisitionTable('reviewed_acquisition_datatable', 'Reviewed');
-		initializeAcquisitionTable('returned_acquisition_datatable', 'Returned');
-		initializeAcquisitionTable('disapproved_acquisition_datatable', 'Disapproved');
-		initializeAcquisitionTable('approved_acquisition_datatable', 'Approved');
-		
-		$('#inprogress_datatable').DataTable( {//INPROGRESS TABLE
+		//==================================================
+		//SECRETARY
+		//==================================================
+		//EXECUTE TABLE
+		$('#pending_new_acquisition_datatable').DataTable( {
 			fixedHeader: false,
 			"processing": true,
 			"serverSide": true,
 			"order": [],
 			"ajax": {
-				"url": "<?php echo base_url('Payment/inprogress_datatable/'); ?>",
+				"url": "<?php echo base_url('Acquisition/pending_new_acquisition_datatable'); ?>",
 				"type": "POST"
 			},
 			"columnDefs": [{ 
@@ -224,7 +141,79 @@
 				"orderable": true
 			}]
 		});
-		$('#owned_land').DataTable({//OWNED TABLE
+		$('#reviewed_new_acquisition_datatable').DataTable( {
+			fixedHeader: false,
+			"processing": true,
+			"serverSide": true,
+			"order": [],
+			"ajax": {
+				"url": "<?php echo base_url('Acquisition/reviewed_new_acquisition_datatable/'); ?>",
+				"type": "POST"
+			},
+			"columnDefs": [{ 
+				"targets": [0],
+				"orderable": true
+			}],
+		});
+		$('#approved_new_acquisition_datatable').DataTable( {
+			fixedHeader: false,
+			"processing": true,
+			"serverSide": true,
+			"order": [],
+			"ajax": {
+				"url": "<?php echo base_url('Acquisition/approved_new_acquisition_datatable/'); ?>",
+				"type": "POST"
+			},
+			"columnDefs": [{ 
+				"targets": [0],
+				"orderable": true
+			}]
+		});
+		$('#returned_new_acquisition_datatable').DataTable( {
+			fixedHeader: false,
+			"processing": true,
+			"serverSide": true,
+			"order": [],
+			"ajax": {
+				"url": "<?php echo base_url('Acquisition/returned_new_acquisition_datatable/'); ?>",
+				"type": "POST"
+			},
+			"columnDefs": [{ 
+				"targets": [0],
+				"orderable": true
+			}]
+		});
+		$('#disapproved_new_acquisition_datatable').DataTable( {
+			fixedHeader: false,
+			"processing": true,
+			"serverSide": true,
+			"order": [],
+			"ajax": {
+				"url": "<?php echo base_url('Acquisition/disapproved_new_acquisition_datatable/'); ?>",
+				"type": "POST"
+			},
+			"columnDefs": [{ 
+				"targets": [0],
+				"orderable": true
+			}]
+		});
+		// INPROGRESS TABLE
+		$('#payment_datatable').DataTable( {
+			fixedHeader: false,
+			"processing": true,
+			"serverSide": true,
+			"order": [],
+			"ajax": {
+				"url": "<?php echo base_url('Payment/payment_datatable/'); ?>",
+				"type": "POST"
+			},
+			"columnDefs": [{ 
+				"targets": [0],
+				"orderable": true
+			}]
+		});
+		//OWNED TABLE
+		$('#owned_land').DataTable( {
 			fixedHeader: false,
 			"processing": true,
 			"serverSide": true,
@@ -238,108 +227,100 @@
 				"orderable": true
 			}]
 		});
-		//GM ==================================================
-		function initializePaymentTable(tableId, status) {//PAYMENT TABLE
-		    $('#' + tableId).DataTable({
-		        fixedHeader: false,
-		        processing: true,
-		        serverSide: true,
-		        order: [],
-		        ajax: {
-		            url: "<?php echo base_url('Payment/payment_datatable/'); ?>",
-		            type: "POST",
-		            data: function(d) {
-		                d.status = status;
-		            }
-		        },
-		        columnDefs: [{
-		            targets: [0],
-		            orderable: true
-		        }]
-		    });
-		}
-		initializePaymentTable('pending_datatable', 'Pending');
-		initializePaymentTable('approved_datatable', 'Approved');
-		initializePaymentTable('disapproved_datatable', 'Disapproved');
-		initializePaymentTable('paid_datatable', 'Paid');
-		//ACCOUNTING ==================================================
-		function initializeCRFTable(tableId, status) {//CRF TABLE
-		    $('#' + tableId).DataTable({
-		        fixedHeader: false,
-		        processing: true,
-		        serverSide: true,
-		        order: [],
-		        ajax: {
-		            url: "<?php echo base_url('Payment/crf_datatable/'); ?>",
-		            type: "POST",
-		            data: function(d) {
-		                d.status = status;
-		            }
-		        },
-		        columnDefs: [{
-		            targets: [0],
-		            orderable: true
-		        }]
-		    });
-		}
-		initializeCRFTable('pending_crf_datatable', 'Approved');
-		initializeCRFTable('history_crf_datatable', 'Paid');
-
-		
-		// RPTAX_DATATABLE ======================
-		// var rptaxTable;
-
-		// function initializeRptaxTable() {
-    	// 	if ($.fn.DataTable.isDataTable('#Rptax_datatable')) {
-        // 		rptaxTable.clear().destroy(); // destroy if already initialized
-    	// 	}
-
-    	// 	rptaxTable = $('#Rptax_datatable').DataTable({
-        // 		fixedHeader: false,
-        // 		processing: true,
-        // 		serverSide: true,
-        // 		order: [],
-        // 		ajax: {
-        //     		url: "<?php echo base_url('Rpt/Rptax_datatable'); ?>",
-        //     		type: "POST",
-        //     		data: function (d) {
-        //         		d.region = $('#selectedRegion').val();
-        //         		d.province = $('#selectedProvince').val();
-        //         		d.town = $('#selectedCity').val();
-        //     		}
-        // 		},
-        // 		columns: [
-        //     		{ title: "IS No" },
-        //     		{ title: "Lot Owner" },
-        //     		{ title: "Lot Type" },
-        //     		{ title: "Lot Location" },
-        //     		{ title: "Tax Declaration No." },
-        //     		{ title: "Lot No." },
-        //     		{ title: "Action", orderable: false }
-        // 		],
-        // 		columnDefs: [{
-        //     		targets: [0],
-        //     		orderable: true
-        // 		}]
-    	// 	});
-		// }
-
-		// Call on town dropdown change
-		$('#selectedCity').on('change', function () {
-    		initializeRptaxTable(); // load or reload table on change
+		//==================================================
+		//GM
+		//==================================================
+		//PAYMENT REQUEST DATATABLE
+		$('#pending_payment_datatable').DataTable( {
+			fixedHeader: false,
+			"processing": true,
+			"serverSide": true,
+			"order": [],
+			"ajax": {
+				"url": "<?php echo base_url('Payment/pending_payment_datatable/'); ?>",
+				"type": "POST"
+			},
+			"columnDefs": [{ 
+				"targets": [0],
+				"orderable": true
+			}]
 		});
-
-		// Optional: reset button clears table
-		$('#resetButton').on('click', function () {
-    		if (rptaxTable) {
-        		rptaxTable.clear().draw();
-    		}
+		$('#approved_payment_datatable').DataTable( {
+			fixedHeader: false,
+			"processing": true,
+			"serverSide": true,
+			"order": [],
+			"ajax": {
+				"url": "<?php echo base_url('Payment/approved_payment_datatable/'); ?>",
+				"type": "POST"
+			},
+			"columnDefs": [{ 
+				"targets": [0],
+				"orderable": true
+			}]
 		});
-
-
-
-		
-		$('#inprogress1_datatable').DataTable( {//INPROGRESS TABLE
+		$('#disapproved_payment_datatable').DataTable( {
+			fixedHeader: false,
+			"processing": true,
+			"serverSide": true,
+			"order": [],
+			"ajax": {
+				"url": "<?php echo base_url('Payment/disapproved_payment_datatable/'); ?>",
+				"type": "POST"
+			},
+			"columnDefs": [{ 
+				"targets": [0],
+				"orderable": true
+			}]
+		});
+		$('#paid_payment_datatable').DataTable( {
+			fixedHeader: false,
+			"processing": true,
+			"serverSide": true,
+			"order": [],
+			"ajax": {
+				"url": "<?php echo base_url('Payment/paid_payment_datatable/'); ?>",
+				"type": "POST"
+			},
+			"columnDefs": [{ 
+				"targets": [0],
+				"orderable": true
+			}]
+		});
+		//==================================================
+		//ACCOUNTING
+		//==================================================
+		//PAYMENT REQUEST
+		$('#pending_crf_datatable').DataTable( {
+			fixedHeader: false,
+			"processing": true,
+			"serverSide": true,
+			"order": [],
+			"ajax": {
+				"url": "<?php echo base_url('Payment/pending_crf_datatable/'); ?>",
+				"type": "POST"
+			},
+			"columnDefs": [{ 
+				"targets": [0],
+				"orderable": true
+			}]
+		});
+		$('#history_crf_datatable').DataTable( {
+			fixedHeader: false,
+			"processing": true,
+			"serverSide": true,
+			"order": [],
+			"ajax": {
+				"url": "<?php echo base_url('Payment/history_crf_datatable/'); ?>",
+				"type": "POST"
+			},
+			"columnDefs": [{ 
+				"targets": [0],
+				"orderable": true
+			}]
+		});
+		//IN PROGRESS
+		$('#inprogress1_datatable').DataTable( {
 			fixedHeader: false,
 			"processing": true,
 			"serverSide": true,
@@ -354,120 +335,245 @@
 			}]
 
 		});
-
-
-		//LEGAL ================================================== 
-		var selectedIds = new Set(); // store selected values across pages
-		var rpt_table = $('#rpt_datatable').DataTable({
-		    fixedHeader: false,
-		    processing: true,
-		    serverSide: true,
-		    order: [],
-		    ajax: {
-		        url: "<?php echo base_url('Rpt/Rpt_datatable/'); ?>",
-		        type: "POST",
-		        data: function(d) {
-		            d.region   = $('#selectedRegion').val();
-		            d.province = $('#selectedProvince').val();
-		            d.town     = $('#selectedCity').val();
-		        }
-		    },
-		    columnDefs: [{
-		        targets: [0],
-		        orderable: true
-		    }],
-
-		    drawCallback: function (settings) {
-		        // Re-check previously selected rows after table reload
-		        $('.row-check').each(function () {
-		            if (selectedIds.has($(this).val())) {
-		                $(this).prop('checked', true);
-		            }
-		        });
-		        // Handle individual row checkbox toggle
-		        $('.row-check').off('change').on('change', function () {
-		            const value = $(this).val();
-		            if (this.checked) {
-		                selectedIds.add(value);
-		            } else {
-		                selectedIds.delete(value);
-		                $('#checkAll').prop('checked', false);
-		            }
-		        });
-		    }
+		//==================================================
+		//LEGAL 
+		//==================================================
+		$('#titling_lists').DataTable({
+			fixedHeader: false,
+			"processing": true,
+			"serverSide": true,
+			"order": [],
+			"ajax": {
+				"url": "<?php echo base_url('Land/get_titling_Lists/'); ?>",
+				"type": "POST"
+			},
+			"columnDefs": [{ 
+				"targets": [0],
+				"orderable": true
+			}]
 		});
-		$('#checkAll').on('change', function () {// Handle "Check All" toggle
-		    const isChecked = this.checked;
-		    const currentPageRows = rpt_table.rows({ page: 'current' }).nodes();
 
-		    $('input.row-check', currentPageRows).each(function () {
-		        $(this).prop('checked', isChecked);
-		        const value = $(this).val();
-		        if (isChecked) {
-		            selectedIds.add(value);
-		        } else {
-		            selectedIds.delete(value);
-		        }
-		    });
+					 $('#rpt_lists').DataTable({
+							fixedHeader: false,
+							"processing": true,
+							// DataTables server-side processing mode
+							"serverSide": true,
+							// Initial no order.
+							"order": [],
+							// Load data from an Ajax source
+							"ajax": {
+									"url": "<?php echo base_url('Rpt/get_rpt_Lists/'); ?>",
+									"type": "POST"
+							},
+							//Set column definition initialisation properties
+							"columnDefs": [{ 
+									"targets": [0],
+									"orderable": true
+							}]
+					});
+
+					 $('#land_lists').DataTable({
+							fixedHeader: false,
+							"processing": true,
+							// DataTables server-side processing mode
+							"serverSide": true,
+							// Initial no order.
+							"order": [],
+							// Load data from an Ajax source
+							"ajax": {
+									"url": "<?php echo base_url('Land/get_land_Lists/'); ?>",
+									"type": "POST"
+							},
+							//Set column definition initialisation properties
+							"columnDefs": [{ 
+									"targets": [0],
+									"orderable": true
+							}]
+					});
+
+					 $('#legal_lot_ownedLists').DataTable({
+							fixedHeader: false,
+							"processing": true,
+							// DataTables server-side processing mode
+							"serverSide": true,
+							// Initial no order.
+							"order": [],
+							// Load data from an Ajax source
+							"ajax": {
+									"url": "<?php echo base_url('Owned/get_legal_owned_Lists/'); ?>",
+									"type": "POST"
+							},
+							//Set column definition initialisation properties
+							"columnDefs": [{ 
+									"targets": [0],
+									"orderable": true
+							}]
+					});
+
+				$('#examplecdn').DataTable( {
+							dom: 'Bfrtip',
+							buttons: ['print'],
+							fixedHeader: false,
+							"processing": true,
+							"serverSide": true,
+							"order": [],
+							"ajax": {
+									"url": "<?php echo base_url('Report/get_all_report_Lists/'); ?>",
+									"type": "POST"
+							},
+							"columnDefs": [{ 
+									"targets": [0],
+									"orderable": false
+							}]
+				} );
+
+				// $('#largest_lot_tbl').dataTable({ //calling jquery table
+				//     fixedHeader: false,
+				// }); 
+
+				// $('#smallest_lot_tbl').dataTable({ //calling jquery table
+				//     fixedHeader: false
+				// }); 
+
+				$('#report_tct_status').DataTable( {
+							fixedHeader: false,
+							"serverSide": true,
+							"order": [],
+							"ajax": {
+									"url": "<?php echo base_url('Report/get_all_tct_status/'); ?>",
+									"type": "POST"
+							},
+							"columnDefs": [{ 
+									"targets": [0],
+									"orderable": false
+							}]
+				} );
+
+				$('#incomplete_titling').DataTable( {
+							fixedHeader: false,
+							"processing": true,
+							"serverSide": true,
+							"order": [],
+							"ajax": {
+									"url": "<?php echo base_url('Land/get_incomplete_titling_Lists/'); ?>",
+									"type": "POST"
+							},
+							"columnDefs": [{ 
+									"targets": [0],
+									"orderable": true
+							}]
+				} );
+		//==================================================
+		//END LEGAL 
+		//==================================================
+
+		//==================================================
+		//CCD
+		//==================================================
+		//EXECUTE TABLE
+		$('#data_ccd_execute_pending_table').DataTable( {
+			fixedHeader: false,
+			"processing": true,
+			"serverSide": true,
+			"order": [],
+			"ajax": {
+				"url": "<?php echo base_url('Ccd/Execute/data_ccd_execute_pending_table/'); ?>",
+				"type": "POST"
+			},
+			"columnDefs": [{ 
+				"targets": [0],
+				"orderable": true
+			}]
 		});
-		$('#searchBtn').on('click', function () {//Handle Search
-		    rpt_table.draw();
+		$('#data_ccd_execute_approved_table').DataTable( {
+			fixedHeader: false,
+			"processing": true,
+			"serverSide": true,
+			"order": [],
+			"ajax": {
+				"url": "<?php echo base_url('Ccd/Execute/data_ccd_execute_approved_table/'); ?>",
+				"type": "POST"
+			},
+			"columnDefs": [{ 
+				"targets": [0],
+				"orderable": true
+			}]
 		});
-		//CCD ==================================================
-		function initializeAspaymentTable(tableId, status) {//ASPAYMENT TABLE
-		    $('#' + tableId).DataTable({
-		        fixedHeader: false,
-		        processing: true,
-		        serverSide: true,
-		        order: [],
-		        ajax: {
-		            url: "<?php echo base_url('Aspayment/Aspayment_datatable/'); ?>",
-		            type: "POST",
-		            data: function(d) {
-		                d.status = status;
-		            }
-		        },
-		        columnDefs: [{
-		            targets: [0],
-		            orderable: true
-		        }]
-		    });
-		}
-		initializeAspaymentTable('pending_aspayment_datatable', 'Pending');
-		initializeAspaymentTable('approved_aspayment_datatable', 'Approved');
-		initializeAspaymentTable('disapproved_aspayment_datatable', 'Disapproved');
-		initializeAspaymentTable('paid_aspayment_datatable', 'Paid');
-		//END ==================================================
+		$('#data_ccd_execute_disapproved_table').DataTable( {
+			fixedHeader: false,
+			"processing": true,
+			"serverSide": true,
+			"order": [],
+			"ajax": {
+				"url": "<?php echo base_url('Ccd/Execute/data_ccd_execute_disapproved_table/'); ?>",
+				"type": "POST"
+			},
+			"columnDefs": [{ 
+				"targets": [0],
+				"orderable": true
+			}]
+		});
+		//END EXECUTE TABLE
+
+		//OWNED TABLE
+		$('#ccd_owned_land').DataTable( {
+			fixedHeader: false,
+			"processing": true,
+			"serverSide": true,
+			"order": [],
+			"ajax": {
+				"url": "<?php echo base_url('Ccd/Owned/get_owned_land/'); ?>",
+				"type": "POST"
+			},
+			"columnDefs": [{ 
+				"targets": [0],
+				"orderable": true
+			}]
+		});
+		//END OWNED TABLE
+		//==================================================
+		//END CCD
+		//==================================================
 	});		
 </script>
 
-<script type="text/javascript">//viewing the profile content of lot details
-	$('#lot_info').submit(function(event) {
-		var id 	= $(".v-identifier").attr('id');
-		var req = $.ajax({
-			type: "POST",
-			url: "<?php echo base_url('Land/view_document/"+id+"'); ?>",
-			data: {view: $('#view_select').val()},
-			dataType: 'html',
-			beforeSend: function () {
-				$("#loading").css("visibility", "visible").fadeIn(0);
-			},
-			complete: function () {
-				$('#lot_info')[0].reset();
-				$("#loading").css("visibility", "visible").fadeOut(2000);
-			}
+
+
+
+<!-- viewing the profile content of lot details /////////////////////////////////////////////////////////////// -->
+		<script type="text/javascript">
+		$('#lot_info').submit(function(event) {
+				var id = $(".v-identifier").attr('id');
+				// var opsel = document.forms["view_lot_info"]["view_lot"].value;
+
+						var req = $.ajax({
+								type: "POST",
+								url: "<?php echo base_url('Land/view_document/"+id+"'); ?>",
+								data: {view: $('#view_select').val()},
+								dataType: 'html',
+								beforeSend: function () {
+										$("#loading").css("visibility", "visible").fadeIn(0);
+								},
+								complete: function () {
+										$('#lot_info')[0].reset();
+										$("#loading").css("visibility", "visible").fadeOut(2000);
+								}
+						});
+						req.done(function (data) {
+							 $('.ledger').html(data);
+						});
+						event.preventDefault();
+						return false;  //stop the actual form post !important!
 		});
-		req.done(function (data) {
-			$('.ledger').html(data);
-		});
-		event.preventDefault();
-		return false;  //stop the actual form post !important!
-	});
+
+		//FUNTION RELOAD
+		function refresh() {
+				window.location.reload();
+		}
+		//END FUNTION RELOAD
 		
-	function refresh(){//FUNTION RELOAD
-		window.location.reload();
-	}
-</script>
+		</script>
+<!-- end viewing lot ////////////////////////////////////////////////////////////////////////////////////////////-->
 
 <script type="text/javascript">//zoom view icon 
 	function bigImg(x) {
@@ -714,5 +820,28 @@
 		});
 	}		
 </script>
+<!-- locks user account  ========== -->
+<!-- <script type="text/javascript">
+		var timeout;
+		document.onmousemove = function(){
+			clearTimeout(timeout);
+			timeout = setTimeout(function(){
+				// alert("move your mouse");
+				//$('.user-locked-modal').modal('show');
+
+						$('.user-locked-modal').modal({
+								show: true,
+								keyboard: false,
+								backdrop: 'static'
+						});
 
 
+		}, 60000); //10 mins
+		}
+</script> -->
+<!-- end lock user account ========= -->
+
+
+	</body>   
+</html>
+		

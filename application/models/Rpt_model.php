@@ -1,17 +1,5 @@
 <?php
 class Rpt_model extends CI_Model{
-
-    public $column_order = array(
-        null, 
-        'owner_info.lastname',
-        'owner_info.firstname',
-        'land_info.tax_dec_no',
-        'land_info.lot',
-        'lot_location.baranggay',
-        'lot_location.municipality',
-        'payment_requests.control_no'
-    );
-
 	#QUERY ==================================================
 	public function select_rpt_yearpaid_asc_result($is_no){
         $sql 	= "SELECT * from real_property_tax  where is_no = ? ORDER BY year_paid ASC ";
@@ -32,10 +20,6 @@ class Rpt_model extends CI_Model{
         $query = $this->db->get_where('real_property_tax', ['is_no' => $is_no]);
         return $query->result_array();
     }
-    public function insert_crf_rpt($data) {
-		return $this->db->insert('check_request_form', $data);
-	}
-
 	#CRUD QUERY ==================================================
 	public function add_assessment($is_no){
 		$data = array(
@@ -57,15 +41,10 @@ class Rpt_model extends CI_Model{
         $yr_pd  = $this->input->post('year_paid');
         $amount = $this->input->post('amount');
         $amnt   = str_replace( ',', '', $amount );
-        $img    = isset($_FILES['file']['name']) ? $_FILES['file']['name'] : null;
 
         if($_FILES AND $_FILES["file"]['name']):
             if(!file_exists('./assets/img/rpt_uploads/'.$is_no)):
                 @mkdir('./assets/img/rpt_uploads/'.$is_no);
-            endif;
-
-            if(!file_exists('./assets/img/rpt_uploads/'.$is_no.'/'.$img)):
-                @mkdir('./assets/img/rpt_uploads/'.$is_no.'/'.$img);
             endif;
 
             $targetPaths = getcwd().'/assets/img/rpt_uploads/'.$is_no.'/'.$img;

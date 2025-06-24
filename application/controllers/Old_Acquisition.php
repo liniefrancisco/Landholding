@@ -30,7 +30,7 @@ class Old_Acquisition extends App_Controller{
 		$data['title'] 		= "Old Acquisition";
 		$data 				= $this->Notification();
 		$data['land_id'] 	= $this->Acquisition_model->getland_old();
-		$count 				= $this->Acquisition_model->geli_rows();
+		$count 				= $this->Acquisition_model->getli_num();
 		$new 				= $this->Acquisition_model->getland_old();
 		$oi 				= null;
 		$ud 				= null;

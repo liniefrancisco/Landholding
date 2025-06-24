@@ -110,15 +110,11 @@ class Acquisition_model extends CI_Model{
 		}
 	}
 	public function add_upload_id($id){
-		$data = array(
-			'is_no' => $id,
-		);
+		$data = array('is_no' => $id);
 		$this->db->insert('uploaded_documents',$data);
 	}
 	public function add_docu_status_id($id){
-		$data = array(
-			'is_no' => $id,
-		);
+		$data = array('is_no' => $id);
 		$this->db->insert('document_status',$data);
 	}
 	public function delete_forms($id){
@@ -914,12 +910,37 @@ class Acquisition_model extends CI_Model{
 		$query = $this->db->query("SELECT * FROM land_info WHERE tag='New' ");
 		return $query->result_array();
 	}
-	public function getli_rows(){
+	public function getli_num(){
 		$query = $this->db->query("SELECT * FROM land_info ");
 		return $query->num_rows();
 	}
 	public function getli_byid($id){
 		$query = $this->db->get_where('land_info', array('is_no' => $id));
+		return $query->row_array();
+	}
+    public function getregistry_land(){
+		$query = $this->db->query("
+			SELECT *
+			FROM land_info li
+			JOIN document_status ds ON li.is_no = ds.is_no
+			WHERE ds.status = 'Approved'
+		");
+		return $query->result_array();
+	}
+	public function get_ll_asc($province, $city) {
+	    $sql = "
+	        SELECT *
+	        FROM lot_location ll
+	        WHERE ll.province = ?
+	        AND ll.municipality = ?
+	        ORDER BY ll.municipality ASC
+	    ";
+	    
+	    $query = $this->db->query($sql, array($province, $city));
+	    return $query->result_array();
+	}
+	public function getassessments(){
+		$query = $this->db->query("SELECT * FROM assessments");
 		return $query->row_array();
 	}
 	public function getoi_byid($id){
@@ -948,6 +969,10 @@ class Acquisition_model extends CI_Model{
 	}
 	public function getud_byid($id){
 		$query = $this->db->get_where('uploaded_documents', array('is_no' => $id));
+		return $query->row_array();
+	}
+	public function gettitling_byid($id){
+		$query = $this->db->get_where('titling', array('is_no' => $id));
 		return $query->row_array();
 	}
 	public function getds_byid($id){

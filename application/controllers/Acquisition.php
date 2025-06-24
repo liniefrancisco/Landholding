@@ -38,7 +38,7 @@ class Acquisition extends App_Controller{
 		$data['title'] 		= "New Acquisition";
 		$data 				= $this->Notification();
 		$data['land_id'] 	= $this->Acquisition_model->getland_new();
-		$count 				= $this->Acquisition_model->geli_rows();
+		$count 				= $this->Acquisition_model->getli_num();
 		$new 				= $this->Acquisition_model->getland_new();
 		$oi 				= null;
 		$ud 				= null;
