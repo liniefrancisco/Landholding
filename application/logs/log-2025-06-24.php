@@ -1,6 +1,7 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
 ERROR - 2025-06-24 10:35:38 --> Severity: error --> Exception: Unable to locate the model you have specified: Land_model C:\laragon\www\landholding\system\core\Loader.php 348
+<<<<<<< HEAD
 INFO - 2025-06-24 18:13:04 --> Config Class Initialized
 INFO - 2025-06-24 18:13:04 --> Hooks Class Initialized
 DEBUG - 2025-06-24 18:13:04 --> Accessing maintenance hook!
@@ -395,3 +396,105 @@ INFO - 2025-06-24 18:14:47 --> File loaded: C:\laragon\www\Landholding\applicati
 INFO - 2025-06-24 18:14:47 --> File loaded: C:\laragon\www\Landholding\application\views\templates/bar.php
 INFO - 2025-06-24 18:14:47 --> File loaded: C:\laragon\www\Landholding\application\views\accounting/home.php
 ERROR - 2025-06-24 18:14:47 --> Severity: error --> Exception: syntax error, unexpected end of file, expecting "elseif" or "else" or "endif" C:\laragon\www\Landholding\application\views\templates\footer.php 847
+=======
+ERROR - 2025-06-24 10:36:51 --> 404 Page Not Found: Legal_f/rpt
+>>>>>>> origin
+INFO - 2025-06-24 18:21:35 --> Config Class Initialized
+INFO - 2025-06-24 18:21:35 --> Hooks Class Initialized
+DEBUG - 2025-06-24 18:21:35 --> Accessing maintenance hook!
+DEBUG - 2025-06-24 18:21:35 --> UTF-8 Support Enabled
+INFO - 2025-06-24 18:21:35 --> Utf8 Class Initialized
+INFO - 2025-06-24 18:21:35 --> URI Class Initialized
+INFO - 2025-06-24 18:21:35 --> Router Class Initialized
+INFO - 2025-06-24 18:21:35 --> Output Class Initialized
+INFO - 2025-06-24 18:21:35 --> Security Class Initialized
+DEBUG - 2025-06-24 18:21:35 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-06-24 18:21:35 --> Input Class Initialized
+INFO - 2025-06-24 18:21:35 --> Language Class Initialized
+INFO - 2025-06-24 18:21:35 --> Loader Class Initialized
+INFO - 2025-06-24 18:21:35 --> Helper loaded: url_helper
+INFO - 2025-06-24 18:21:35 --> Database Driver Class Initialized
+DEBUG - 2025-06-24 18:21:35 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-06-24 18:21:35 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-06-24 18:21:35 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-06-24 18:21:35 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-06-24 18:21:35 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-06-24 18:21:35 --> Encryption Class Initialized
+INFO - 2025-06-24 18:21:35 --> Controller Class Initialized
+INFO - 2025-06-24 18:21:35 --> Model "Account_model" initialized
+INFO - 2025-06-24 18:21:35 --> Model "Notification_model" initialized
+INFO - 2025-06-24 18:21:35 --> Model "Notification_bar_model" initialized
+INFO - 2025-06-24 18:21:35 --> Helper loaded: form_helper
+INFO - 2025-06-24 18:21:35 --> Form Validation Class Initialized
+DEBUG - 2025-06-24 18:21:35 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-06-24 18:21:35 --> User Agent Class Initialized
+INFO - 2025-06-24 18:21:35 --> File loaded: C:\laragon\www\Landholding\application\views\templates/header.php
+INFO - 2025-06-24 18:21:35 --> File loaded: C:\laragon\www\Landholding\application\views\templates/bar.php
+INFO - 2025-06-24 18:21:35 --> File loaded: C:\laragon\www\Landholding\application\views\accounting/home.php
+ERROR - 2025-06-24 18:21:35 --> Severity: error --> Exception: syntax error, unexpected end of file, expecting "elseif" or "else" or "endif" C:\laragon\www\Landholding\application\views\templates\footer.php 846
+INFO - 2025-06-24 18:21:35 --> Config Class Initialized
+INFO - 2025-06-24 18:21:35 --> Hooks Class Initialized
+DEBUG - 2025-06-24 18:21:35 --> Accessing maintenance hook!
+DEBUG - 2025-06-24 18:21:35 --> UTF-8 Support Enabled
+INFO - 2025-06-24 18:21:35 --> Utf8 Class Initialized
+INFO - 2025-06-24 18:21:35 --> URI Class Initialized
+INFO - 2025-06-24 18:21:35 --> Router Class Initialized
+INFO - 2025-06-24 18:21:35 --> Output Class Initialized
+INFO - 2025-06-24 18:21:35 --> Security Class Initialized
+DEBUG - 2025-06-24 18:21:35 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-06-24 18:21:35 --> Input Class Initialized
+INFO - 2025-06-24 18:21:35 --> Language Class Initialized
+INFO - 2025-06-24 18:21:35 --> Loader Class Initialized
+INFO - 2025-06-24 18:21:35 --> Helper loaded: url_helper
+INFO - 2025-06-24 18:21:35 --> Database Driver Class Initialized
+DEBUG - 2025-06-24 18:21:35 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-06-24 18:21:35 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-06-24 18:21:35 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-06-24 18:21:35 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-06-24 18:21:35 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-06-24 18:21:35 --> Encryption Class Initialized
+INFO - 2025-06-24 18:21:35 --> Controller Class Initialized
+INFO - 2025-06-24 18:21:35 --> Model "Account_model" initialized
+INFO - 2025-06-24 18:21:35 --> Model "Notification_model" initialized
+INFO - 2025-06-24 18:21:35 --> Model "Notification_bar_model" initialized
+INFO - 2025-06-24 18:21:35 --> Helper loaded: form_helper
+INFO - 2025-06-24 18:21:35 --> Form Validation Class Initialized
+DEBUG - 2025-06-24 18:21:35 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-06-24 18:21:35 --> User Agent Class Initialized
+INFO - 2025-06-24 18:21:35 --> File loaded: C:\laragon\www\Landholding\application\views\templates/header.php
+INFO - 2025-06-24 18:21:35 --> File loaded: C:\laragon\www\Landholding\application\views\templates/bar.php
+INFO - 2025-06-24 18:21:35 --> File loaded: C:\laragon\www\Landholding\application\views\accounting/home.php
+ERROR - 2025-06-24 18:21:35 --> Severity: error --> Exception: syntax error, unexpected end of file, expecting "elseif" or "else" or "endif" C:\laragon\www\Landholding\application\views\templates\footer.php 846
+INFO - 2025-06-24 18:21:36 --> Config Class Initialized
+INFO - 2025-06-24 18:21:36 --> Hooks Class Initialized
+DEBUG - 2025-06-24 18:21:36 --> Accessing maintenance hook!
+DEBUG - 2025-06-24 18:21:36 --> UTF-8 Support Enabled
+INFO - 2025-06-24 18:21:36 --> Utf8 Class Initialized
+INFO - 2025-06-24 18:21:36 --> URI Class Initialized
+INFO - 2025-06-24 18:21:36 --> Router Class Initialized
+INFO - 2025-06-24 18:21:36 --> Output Class Initialized
+INFO - 2025-06-24 18:21:36 --> Security Class Initialized
+DEBUG - 2025-06-24 18:21:36 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-06-24 18:21:36 --> Input Class Initialized
+INFO - 2025-06-24 18:21:36 --> Language Class Initialized
+INFO - 2025-06-24 18:21:36 --> Loader Class Initialized
+INFO - 2025-06-24 18:21:36 --> Helper loaded: url_helper
+INFO - 2025-06-24 18:21:36 --> Database Driver Class Initialized
+DEBUG - 2025-06-24 18:21:36 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-06-24 18:21:36 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-06-24 18:21:36 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-06-24 18:21:36 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-06-24 18:21:36 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-06-24 18:21:36 --> Encryption Class Initialized
+INFO - 2025-06-24 18:21:36 --> Controller Class Initialized
+INFO - 2025-06-24 18:21:36 --> Model "Account_model" initialized
+INFO - 2025-06-24 18:21:36 --> Model "Notification_model" initialized
+INFO - 2025-06-24 18:21:36 --> Model "Notification_bar_model" initialized
+INFO - 2025-06-24 18:21:36 --> Helper loaded: form_helper
+INFO - 2025-06-24 18:21:36 --> Form Validation Class Initialized
+DEBUG - 2025-06-24 18:21:36 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-06-24 18:21:36 --> User Agent Class Initialized
+INFO - 2025-06-24 18:21:36 --> File loaded: C:\laragon\www\Landholding\application\views\templates/header.php
+INFO - 2025-06-24 18:21:36 --> File loaded: C:\laragon\www\Landholding\application\views\templates/bar.php
+INFO - 2025-06-24 18:21:36 --> File loaded: C:\laragon\www\Landholding\application\views\accounting/home.php
+ERROR - 2025-06-24 18:21:36 --> Severity: error --> Exception: syntax error, unexpected end of file, expecting "elseif" or "else" or "endif" C:\laragon\www\Landholding\application\views\templates\footer.php 846
