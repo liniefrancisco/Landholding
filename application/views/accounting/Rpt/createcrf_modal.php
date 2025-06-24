@@ -32,9 +32,15 @@
         <div class="row">
           <?php echo form_open_multipart('Rpt/submit_crf_rpt/'); ?>
           <!-- Hidden inputs here -->
-            <input type="hidden" name="pr_id" id="pr_id" value="">
+
+          <input type="hidden" name="pr_id" id="pr_id" value="<?= isset($pr_id) ? $pr_id : '' ?>">
+          <input type="hidden" name="is_no" id="is_no" value="<?= isset($is_no) ? $is_no : '' ?>">
+          <input type="hidden" name="type" id="type" value="<?= isset($type) ? $type : '' ?>">
+          
+
+            <!-- <input type="hidden" name="pr_id" id="pr_id" value="">
             <input type="hidden" name="is_no" id="is_no" value="">
-            <input type="hidden" name="type" id="type" value="">
+            <input type="hidden" name="type" id="type" value=""> -->
 
             <div class="col-md-12 col-xs-12 col-sm-12" style="padding-top:15px;">
               <div class="col-md-2 col-xs-2 col-sm-2">
@@ -54,6 +60,34 @@
               </div>
             </div>
 
+            <!-- Add Tax Year To Be Paid dropdown -->
+            <div class="col-md-12 col-xs-12 col-sm-12" style="padding-top:15px;" id="taxYearGroup">
+              <div class="col-md-2 col-xs-2 col-sm-2">
+                <label>Tax Year to be Paid:</label>
+              </div>
+              <div class="col-md-5 col-xs-5 col-sm-5">
+                <select name="tax_year_paid" class="form-control inb">
+                  <option value="">-- Select Year & Month --</option>
+                  <?php
+                    $start_year = 2000;
+                    $end_year = date('Y') + 5;
+                    $months = [
+                      '01' => 'January', '02' => 'February', '03' => 'March',
+                      '04' => 'April', '05' => 'May', '06' => 'June',
+                      '07' => 'July', '08' => 'August', '09' => 'September',
+                      '10' => 'October', '11' => 'November', '12' => 'December'
+                    ]; 
+
+                    for ($year = $start_year; $year <= $end_year; $year++) {
+                      foreach ($months as $num => $name) {
+                        echo "<option value=\"$year-$num\">$name $year</option>";
+                      }                      
+                    }
+                  ?>
+                </select>
+              </div>
+            </div>
+
             <div class="col-md-12 col-xs-12 col-sm-12">
               <div class="col-md-2 col-xs-2 col-sm-2">
                 <label>Pay to:</label>
@@ -70,7 +104,7 @@
               <div class="col-md-10 col-xs-10 col-sm-10">
                 <div class="input-group">
                   <span class="input-group-addon">₱</span>
-                  <input type="text" class="form-control inb" name="amount" id="amount" required placeholder="Enter amount (e.g., 1,000.00)">
+                  <input type="text" class="form-control inb" name="amount" id="amount" required placeholder="Enter Amount (e.g., 1,000.00)">
                 </div>
               </div>
             </div>
@@ -229,6 +263,20 @@
     return str.replace(/\s+/g, ' ').trim();
   }
 </script>
+
+<!-- <script>
+document.querySelector('form').addEventListener('submit', function(e) {
+    const type = document.querySelector('[name="type"]').value;
+    const taxYear = document.querySelector('[name="tax_year_paid"]').value;
+
+    if (type === 'RPT' && taxYear === '') {
+        alert('Please select Tax Year to be Paid for RPT type.');
+        e.preventDefault();
+    }
+});
+</script> -->
+
+
 
 
 

@@ -3,7 +3,6 @@
 		<?php echo '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">×</span></button>' . validation_errors('<i class="fa fa-remove"></i> '); ?>
   	</div>
 <?php } ?>
-
 <!--====================PAGE CONTENT====================-->
 <div class="right_col" role="main">
   	<div class="row row_container">
@@ -45,7 +44,7 @@
 	  		<?php } ?>
 	  		<!--====================END FLASH DATA====================-->
 
-	  		<div class="x_panel animate fadeIn" style="box-shadow: 7px 6px 16px #888888;">
+	  		<div class="x_panel animate slideInDown" style="box-shadow: 7px 6px 16px #888888;">
 				<div class="x_title">
 				  	<h2 class="fa fa-user"> <b>User Profile</b></h2>
 				  	<div class="clearfix"></div>
@@ -56,29 +55,29 @@
 					<?php echo form_open_multipart('account'); ?>
 						<div class="row">
 							<!--====================IMAGE====================-->
-		 					<div class="col-md-6 ">
-								<div class="form-group">
-								  	<div class="profile_picture">
-										<?php if ($this->session->userdata('image') == '') { ?>
-									  		<img id="display-img" class="col-md-6" src="<?= base_url() ?>assets/logo/default.png" alt="Profile Image" />
-										<?php } else { ?>
-									  		<img id="display-img" class="col-md-6" src="<?= base_url('assets/img/users/' . $this->session->userdata('user_type') . '/' . $this->session->userdata('image')) ?>" alt="Profile Image" />
-										<?php } ?>
-								  	</div>
-									<div class="col-md-12 text-center">
-										<h4>Profile Image</h4>
+		 					<div class="col-md-5" style="box-shadow: 7px 6px 16px #888888;">
+		 						<div class="profile_picture text-center">
+									<div class="form-group">
+									  	<div class="col-md-12">
+											<?php if ($this->session->userdata('image') == ''){ ?>
+										  		<img class="col-md-12" id="display-img" src="<?= base_url() ?>assets/logo/default.png" alt="Profile Image">
+											<?php }else{ ?>
+										  		<img class="col-md-12" id="display-img" src="<?= base_url('assets/img/users/' . $this->session->userdata('user_type') . '/' . $this->session->userdata('image')) ?>" alt="Profile Image">
+											<?php } ?>
+									  	</div>
+										<div class="col-md-12">
+											<h4>Profile Image</h4>
+										</div>
 									</div>
 								</div>
 		  					</div>
-		  					<!--====================END IMAGE====================-->
-
+		  					<div class="col-md-1"></div>
 		  					<!--====================USER ACCOUNT====================-->
-		  					<div class="col-md-6">
+		  					<div class="col-md-6" style="box-shadow: -3px 0px 16px #888888;">
 								<div class="registration-form">
 			  						<p class="text-center"><b>USER ACCOUNT</b></p><hr>
-
 			  						<div class="form-group">
-										<label for="username">Username:</label>
+										<label>Username:</label>
 										<div class="input-group">
 										  	<div class="input-group-addon"><i class="glyphicon glyphicon-user"></i></div>
 										  	<input type="hidden" name="old_username" value="<?= $this->session->userdata('username') ?>">
@@ -92,7 +91,7 @@
 										<div class="input-group">
 				  							<div class="input-group-addon"><i class="glyphicon glyphicon-eye-close" id="change"></i></div>
 				  							<input type="hidden" name="old_password" value="<?= $this->encryption->decrypt($this->session->userdata('password')) ?>">
-				  							<input type="password" id="pword" name="pass" value="<?= $this->encryption->decrypt($this->session->userdata('password')) ?>" placeholder="Password" class="form-control" required>
+				  							<input type="password" class="form-control" id="pword" name="password" value="<?= $this->encryption->decrypt($this->session->userdata('password')) ?>" placeholder="Password" required>
 										</div>
 
 										<div class="form-group">
@@ -114,10 +113,10 @@
 <!--====================END PAGE CONTENT====================-->
 
 <script type="text/javascript">
-	function readURL(input) {
-		if (input.files && input.files[0]) {
+	function readURL(input){
+		if(input.files && input.files[0]){
 			var reader = new FileReader();
-			reader.onload = function (e) {
+			reader.onload = function (e){
 				$('#display-img')
 				.attr('src', e.target.result)
 				.width(340)
@@ -126,22 +125,19 @@
 			reader.readAsDataURL(input.files[0]);
 		}
 	}
-
-	document.addEventListener("DOMContentLoaded", function (event) {
-		$("#change").click(function () {
+	document.addEventListener("DOMContentLoaded", function (event){
+		$("#change").click(function (){
 			var p = $("#pword").attr("type");
-			if (p == "text") {
+			if(p == "text"){
 				$("#pword").attr("type", "password");
 				$("#change").attr("class", "glyphicon glyphicon-eye-close");
-			}else {
+			}else{
 				$("#pword").attr("type", "text");
 				$("#change").attr("class", "glyphicon glyphicon-eye-open");
 			}
 		});
 	});
 </script>
-
-
 <script type="text/javascript">
 	var _validFileExtensions = [".jpg", ".jpeg", ".bmp", ".gif", ".png"];
 	function ValidateSingleInput(oInput) {
@@ -170,23 +166,21 @@
 
 <style type="text/css">
 	.registration-form {
-		max-width: 400px;
-		margin: 50px auto;
-		background-color: #fff;
-		padding: 20px;
-		border-radius: 5px;
+		max-width:400px;
+		margin:50px auto;
+		background-color:#fff;
+		padding:20px;
+		border-radius:5px;
 		box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 	}
 	.profile_picture {
 		display: flex;
-		justify-content: center;
 		align-items: center;
-		max-width: 500px;
-		margin: 50px auto;
-		margin-bottom: 5px;
-		background-color: #fff;
-		padding: 10px;
-		border-radius: 5px;
+		max-width:400px;
+		margin:50px auto;
+		background-color:#fff;
+		padding:20px;
+		border-radius:5px;
 		box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 	}
 </style>

@@ -24,15 +24,14 @@
 								?>
 							</a>
 						</div>
-
 						<div class="profile_info">
 							<span>Welcome,</span>
 							<h2 style="overflow: hidden;text-overflow:ellipsis;width: 128px;"><?php echo ucfirst($this->session->userdata('firstname')).' '.ucfirst($this->session->userdata('lastname')) ?></h2>
 							<span><?php echo ucfirst($this->session->userdata('user_type')) ?></span>
 						</div>
 					</div>
-					
-					<div id="sidebar-menu" class="main_menu_side hidden-print main_menu"><!--====================SIDEBAR MENU====================-->
+					<!--====================SIDEBAR MENU====================-->
+					<div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
 						<div class="menu_section"><br/>
 							<h3>General</h3>
 							<div class="clearfix"></div>
@@ -46,23 +45,26 @@
 											<li><a href="<?= base_url('Admin/ListAccount_tbl'); ?>"><i class="fa fa-reorder"></i> List of Account</a></li>
 										</ul>
 									</li>
-									<li><a href="<?= base_url('Admin/ErrorLogs_tbl');?>"><i class="fa fa-exclamation-triangle"></i> Error Logs 
-										<?php if ($error_logs  > 0): ?>
-								            <sup><span class="badge_custom bg-red"><?php echo $error_logs ; ?></span></sup>
-								        <?php endif; ?>
-									</a></li>
+									<li>
+										<a href="<?= base_url('Admin/ErrorLogs_tbl');?>"><i class="fa fa-exclamation-triangle"></i> Error Logs 
+											<?php if ($error_logs  > 0): ?>
+												<sup><span class="badge_custom bg-red"><?php echo $error_logs ; ?></span></sup>
+											<?php endif; ?>
+										</a>
+									</li>
 								<?php } ?>
 								<!--====================SECRETARY SIDEBAR====================-->
 								<?php if ($this->session->userdata('user_type') == "Secretary"){ ?>
 									<li><a href="<?= base_url(); ?>"><i class="fa fa-dashboard"></i>Dashboard</a></li>
 									<li><a href="<?= base_url('Acquisition');?>"><i class="fa fa-edit"></i>New Acquisition</a></li>
-									<li><a href="<?= base_url('Acquisition/Acquisition_tbl');?>"><i class="fa fa-thumbs-up"></i>Execute
-									 	<?php if ($pending_acq > 0): ?>
-								            <sup><span class="badge_custom bg-red"><?php echo $pending_acq; ?></span></sup>
-								        <?php endif; ?>
-								    </a></li>
-									<li><a href="<?= base_url('Payment');?>"><i class="fa fa-area-chart"></i>In Progress
-								    </a></li>
+									<li>
+										<a href="<?= base_url('Acquisition/Acquisition_tbl');?>"><i class="fa fa-thumbs-up"></i>Execute
+											<?php if ($pending_acq > 0): ?>
+												<sup><span class="badge_custom bg-red"><?php echo $pending_acq; ?></span></sup>
+											<?php endif; ?>
+										</a>
+									</li>
+									<li><a href="<?= base_url('Payment');?>"><i class="fa fa-area-chart"></i>In Progress</a></li>
 									<li><a href="<?= base_url('Owned')?>"><i class="fa fa-map-signs"></i>Owned Land</a></li>
 									<li><a href="<?= base_url('About_us')?>"><i class="fa fa-info"></i>About Us</a></li>
 								<?php } ?>
@@ -70,58 +72,69 @@
 								<?php if ($this->session->userdata('user_type') == "Legal"){ ?>
 									<li><a href="<?= base_url(); ?>"><i class="fa fa-home"></i>Home</a></li>
 									<li><a><i class="fa fa-edit"></i>Registry<span class="fa fa-chevron-down"></span></a>
-	                                    <ul class="nav child_menu">
-	                                        <li><a href="<?= base_url('Old_Acquisition'); ?>">Add Land</a></li>
-	                                        <li><a>Aspayment <span class="fa fa-chevron-down"></span></a>
-	                                            <ul class="nav child_menu">
-	                                                <li><a href="<?= base_url('Old_Aspayment/judicial') ?>">Judicial</a></li>
-	                                                <li><a href="<?= base_url('Old_Aspayment/extrajudicial') ?>">Extrajudicial</a></li>
-	                                            </ul>
-	                                        </li>
-	                                    </ul>
-	                                </li>
-									<li><a href="<?= base_url('Acquisition/Acquisition_tbl')?>">
-										<i class="fa fa-book"></i> Document Review
-										<?php if ($pending_acq > 0): ?>
-								            <sup><span class="badge_custom bg-red"><?php echo $pending_acq; ?></span></sup>
-								        <?php endif; ?>
-									</a></li>
-									<!-- <li><a href="<?= base_url('Rpt/monitoring_tbl')?>"><i class="fa fa-server"></i>Tax Payment Monitoring</a></li> -->
+										<ul class="nav child_menu">
+											<li><a href="<?= base_url('Old_Acquisition'); ?>">Add Land</a></li>
+											<li><a>Aspayment <span class="fa fa-chevron-down"></span></a>
+												<ul class="nav child_menu">
+													<li><a href="<?= base_url('Old_Aspayment/judicial') ?>">Judicial</a></li>
+													<li><a href="<?= base_url('Old_Aspayment/extrajudicial') ?>">Extrajudicial</a></li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<a href="<?= base_url('Acquisition/Acquisition_tbl')?>">
+											<i class="fa fa-book"></i> Document Review
+											<?php if ($pending_acq > 0): ?>
+												<sup><span class="badge_custom bg-red"><?php echo $pending_acq; ?></span></sup>
+											<?php endif; ?>
+										</a>
+									</li>
 									<li><a href="<?= base_url('Rpt')?>"><i class="fa fa-area-chart"></i>Real Property Tax</a></li>
+									<li><a href="<?= base_url('Land_Profile')?>"><i class="fa fa-tree"></i> Land Profile</a></li>
+									<li><a href="<?= base_url('report'); ?>"><i class="fa fa-print"></i> Reports</a></li>
 									<li><a href="<?= base_url('Owned')?>"><i class="fa fa-map-signs"></i>Owned Land</a></li>
 									<li><a href="<?= base_url('About_us')?>"><i class="fa fa-info"></i>About Us</a></li>
 								<?php } ?>
 								<!--====================ACCOUNTING SIDEBAR====================-->
 								<?php if ($this->session->userdata('user_type') == "Accounting"){ ?>
 									<li><a href="<?= base_url(); ?>"><i class="fa fa-home"></i> Dashboard</a> </li>
-									<li><a href="<?= base_url('Payment/Crf_tbl'); ?>"><i class="fa fa-edit"></i>Payment Request
-										<?php if ($approved_payment > 0): ?>
-								            <sup><span class="badge_custom bg-red"><?php echo $approved_payment; ?></span></sup>
-								        <?php endif; ?>
-								    </a></li>
-									<li><a href="<?= base_url('Rpt/Rpt_table'); ?>"><i class="fa fa-area-chart"></i>Real Property Tax</a></li>
+									<li>
+										<a href="<?= base_url('Payment/Crf_tbl'); ?>"><i class="fa fa-edit"></i>Payment Request
+											<?php if ($approved_payment > 0): ?>
+												<sup><span class="badge_custom bg-red"><?php echo $approved_payment; ?></span></sup>
+											<?php endif; ?>
+										</a>
+									</li>
+									<li><a href="<?= base_url('Rpt/Rpt_tbl'); ?>"><i class="fa fa-area-chart"></i>Real Property Tax</a></li>
 									<li><a href="<?= base_url('Payment/inprogress1_tbl'); ?>"><i class="fa fa-line-chart"></i>In Progress </a></li>
-									<li><a href="<?= base_url('Owned');?>"><i class="fa fa-map-signs"></i> Owned</a></li>
-									<li><a href="<?= base_url('About_us')?>"><i class="fa fa-info"></i>About Us</a></li>
+									<li><a href="<?= base_url('Owned')?>"><i class="fa fa-map-signs"></i>Owned Land</a></li>
+									<li><a href="<?= base_url('About_Us')?>"><i class="fa fa-info"></i>About Us</a></li>
 								<?php } ?>
 								<!--====================GM SIDEBAR====================-->
 								<?php if ($this->session->userdata('user_type') == "GM"){ ?>
 									<li><a href="<?= base_url(); ?>"><i class="fa fa-dashboard"></i> Dashboard</a></li>
-									<li><a href="<?= base_url('Acquisition/Acquisition_tbl'); ?>"><i class="fa fa-thumbs-up"></i>Acquisition
-								        <?php if ($reviewed_acq > 0): ?>
-								            <sup><span class="badge_custom bg-red"><?php echo $reviewed_acq; ?></span></sup>
-								        <?php endif; ?>
-									</a></li>
-									<li><a href="<?= base_url('Payment/Payment_tbl');?>"><i class="fa fa-money"></i>Payment 
-										<?php if ($pending_payment > 0): ?>
-								            <sup><span class="badge_custom bg-red"><?php echo $pending_payment; ?></span></sup>
-								        <?php endif; ?>
-									</a></li>
-									<li><a href="<?= base_url('Aspayment/Aspayment_tbl');?>"><i class="fa fa-thumbs-up"></i>Aspayment
-										<?php if ($pending_aspayment > 0): ?>
-								            <sup><span class="badge_custom bg-red"><?php echo $pending_aspayment; ?></span></sup>
-								        <?php endif; ?>
-								    </a></li>
+									<li>
+										<a href="<?= base_url('Acquisition/Acquisition_tbl'); ?>"><i class="fa fa-thumbs-up"></i>Acquisition
+											<?php if ($reviewed_acq > 0): ?>
+												<sup><span class="badge_custom bg-red"><?php echo $reviewed_acq; ?></span></sup>
+											<?php endif; ?>
+										</a>
+									</li>
+									<li>
+										<a href="<?= base_url('Payment/Payment_tbl');?>"><i class="fa fa-money"></i>Payment 
+											<?php if ($pending_payment > 0): ?>
+												<sup><span class="badge_custom bg-red"><?php echo $pending_payment; ?></span></sup>
+											<?php endif; ?>
+										</a>
+									</li>
+									<li>
+										<a href="<?= base_url('Aspayment/Aspayment_tbl');?>"><i class="fa fa-thumbs-up"></i>Aspayment
+											<?php if ($pending_aspayment > 0): ?>
+												<sup><span class="badge_custom bg-red"><?php echo $pending_aspayment; ?></span></sup>
+											<?php endif; ?>
+										</a>
+									</li>
 									<li><a href="<?= base_url('Owned')?>"><i class="fa fa-map-signs"></i>Owned Land</a></li>
 									<li><a href="<?= base_url('About_us')?>"><i class="fa fa-info"></i>About Us</a></li>
 								<?php } ?>
@@ -134,11 +147,13 @@
 											<li><a href="<?= base_url('Aspayment/extrajudicial');?>">Extrajudicial</a></li>
 										</ul>
 									</li>
-									<li><a href="<?= base_url('Aspayment/Aspayment_tbl');?>"><i class="fa fa-thumbs-up"></i>Execute
-										<?php if ($pending_aspayment > 0): ?>
-								            <sup><span class="badge_custom bg-red"><?php echo $pending_aspayment; ?></span></sup>
-								        <?php endif; ?>
-								    </a></li>
+									<li>
+										<a href="<?= base_url('Aspayment/Aspayment_tbl');?>"><i class="fa fa-thumbs-up"></i>Execute
+											<?php if ($pending_aspayment > 0): ?>
+												<sup><span class="badge_custom bg-red"><?php echo $pending_aspayment; ?></span></sup>
+											<?php endif; ?>
+										</a>
+									</li>
 									<li><a href="<?= base_url('');?>"><i class="fa fa-area-chart"></i>In Progress</a></li>
 									<li><a href="<?= base_url('Owned')?>"><i class="fa fa-map-signs"></i>Owned Land</a></li>
 									<li><a href="<?= base_url('About_us')?>"><i class="fa fa-info"></i>About Us</a></li>
@@ -149,8 +164,8 @@
 					</div><!--====================END SIDEBAR MENU====================-->
 				</div>
 			</div>
-			
-			<div class="top_nav"><!--====================TOP NAVIGATION====================-->
+			<!--====================TOP NAVIGATION====================-->
+			<div class="top_nav">
 				<div class="nav_menu">
 					<nav>
 						<div class="nav toggle"><a id="menu_toggle"><i class="fa fa-bars"></i></a></div>
@@ -197,7 +212,7 @@
 													class="open" id="<?php echo $value['id']; ?>"
 												
 													<?php if($value['status'] == 'read'){ ?>
-													 	style="color: black;" 
+														style="color: black;" 
 													<?php } ?>
 												>
 
@@ -229,7 +244,8 @@
 						</ul>
 					</nav>
 				</div>
-			</div><!--====================END TOP NAVIGATION====================-->
+			</div>
+			<!--====================END TOP NAVIGATION====================-->
 
 <script type="text/javascript">
 	function scrollSmoothToBottom() {
@@ -255,7 +271,7 @@
 </script>
 <style type="text/css">
 	.left_col .scroll-view {
-	    overflow-y: auto;
-	    max-height: 100vh;
+		overflow-y: auto;
+		max-height: 100vh;
 	}
 </style>

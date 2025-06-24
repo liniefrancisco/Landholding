@@ -21,10 +21,21 @@ class Aspayment_model extends CI_Model{
         $this->db->insert('customer_info', $data);
     }
     public function add_customer_add($is_no){
-        $region             = $this->db->query("SELECT regDesc FROM refregion WHERE regCode = ?", [$this->input->post('customer_region')])->row()->regDesc ?? '';
-        $province           = $this->db->query("SELECT provDesc FROM refprovince WHERE provCode = ?", [$this->input->post('customer_province')])->row()->provDesc ?? '';
-        $municipality       = ucwords(explode('|', $this->input->post('customer_municipality'))[1] ?? '');
-        $barangay           = $this->db->query("SELECT brgyDesc FROM refbrgy WHERE brgyCode = ?", [$this->input->post('customer_barangay')])->row()->brgyDesc ?? '';
+        // Region
+        $row = $this->db->query("SELECT regDesc FROM refregion WHERE regCode = ?", [$this->input->post('customer_region')])->row();
+        $region = isset($row->regDesc) ? $row->regDesc : '';
+
+        // Province
+        $row = $this->db->query("SELECT provDesc FROM refprovince WHERE provCode = ?", [$this->input->post('customer_province')])->row();
+        $province = isset($row->provDesc) ? $row->provDesc : '';
+
+        // Barangay
+        $row = $this->db->query("SELECT brgyDesc FROM refbrgy WHERE brgyCode = ?", [$this->input->post('customer_barangay')])->row();
+        $barangay = isset($row->brgyDesc) ? $row->brgyDesc : '';
+
+        // Municipality
+        $municipality = ucwords(isset(explode('|', $this->input->post('customer_municipality'))[1]) ? explode('|', $this->input->post('customer_municipality'))[1] : '');
+
 
         $data = array(
         	'customer_id' 	=> $is_no,
@@ -63,10 +74,21 @@ class Aspayment_model extends CI_Model{
         $this->db->insert('owner_info', $data);
     }
     public function add_lot_location($is_no) {
-        $region             = $this->db->query("SELECT regDesc FROM refregion WHERE regCode = ?", [$this->input->post('lot_region')])->row()->regDesc ?? '';
-        $province           = $this->db->query("SELECT provDesc FROM refprovince WHERE provCode = ?", [$this->input->post('lot_province')])->row()->provDesc ?? '';
-        $municipality       = ucwords(explode('|', $this->input->post('lot_town'))[1] ?? '');
-        $barangay           = $this->db->query("SELECT brgyDesc FROM refbrgy WHERE brgyCode = ?", [$this->input->post('lot_barangay')])->row()->brgyDesc ?? '';
+        // Region
+        $row = $this->db->query("SELECT regDesc FROM refregion WHERE regCode = ?", [$this->input->post('customer_region')])->row();
+        $region = isset($row->regDesc) ? $row->regDesc : '';
+
+        // Province
+        $row = $this->db->query("SELECT provDesc FROM refprovince WHERE provCode = ?", [$this->input->post('customer_province')])->row();
+        $province = isset($row->provDesc) ? $row->provDesc : '';
+
+        // Barangay
+        $row = $this->db->query("SELECT brgyDesc FROM refbrgy WHERE brgyCode = ?", [$this->input->post('customer_barangay')])->row();
+        $barangay = isset($row->brgyDesc) ? $row->brgyDesc : '';
+
+        // Municipality
+        $municipality = ucwords(isset(explode('|', $this->input->post('customer_municipality'))[1]) ? explode('|', $this->input->post('customer_municipality'))[1] : '');
+
 
         $data = array(
             'is_no'         => $is_no,
@@ -158,6 +180,21 @@ class Aspayment_model extends CI_Model{
             if (!file_exists('./assets/img/es_uploads/' . $is_no . '/' . $oct_folder . '/' . $oct_file)):
                 @mkdir('./assets/img/es_uploads/' . $is_no . '/' . $oct_folder . '/' . $oct_file);
             endif;
+            if (!file_exists('./assets/img/es_uploads/' . $is_no . '/' . $oct_folder . '/' . $oct_file)):
+                @mkdir('./assets/img/es_uploads/' . $is_no . '/' . $oct_folder . '/' . $oct_file);
+            endif;
+
+            $targetPaths    = getcwd() . '/assets/img/es_uploads/' . $is_no . '/' . $oct_folder . '/' . $oct_file;
+            $img            = $this->upload_images($targetPaths, "oct");
+
+            // Save
+            $data = array(
+                'is_no' => $is_no,
+                'oct'   => $img, 
+            );
+            $this->db->insert('uploaded_documents', $data);
+            // Close
+        endif;
 
             $targetPaths    = getcwd() . '/assets/img/es_uploads/' . $is_no . '/' . $oct_folder . '/' . $oct_file;
             $img            = $this->upload_images($targetPaths, "oct");

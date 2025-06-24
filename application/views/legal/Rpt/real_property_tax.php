@@ -52,9 +52,10 @@
                 </div>
 
                 <?php 
-                    $query = $this->db->get_where('assessments', array('is_no' => $li['is_no']));
-                    $count = $query->num_rows();
-                    if ($count == 0) {
+                    $query  = $this->db->get_where('assessments', array('is_no' => $li['is_no']));
+                    $count  = $query->num_rows();
+
+                    if($count == 0){
                 ?>
                     <div class="col-md-12 text-center space" id="set">
                         <button class="btn btn-primary" 
@@ -98,7 +99,7 @@
                         </div>
                     </div>
                     <!--====================END ASSESSMENT LEVEL MODAL====================-->
-                <?php } else { ?>
+                <?php }else{ ?>
                     <div class="col-md-12">
                         <!--====================FLASH DATA====================-->
                         <div class="col-md-12">

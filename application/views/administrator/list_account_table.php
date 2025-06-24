@@ -43,27 +43,9 @@
 									?>
 								</td>
 								<td><?php echo $ul['user_type'] ?></td>
-								<!-- Safely handle possible null date_created -->
-								<td>
-									<?php
-									 echo  !empty($ul['date_created']) ?
-									 		date("M/d/y h:i:s a", strtotime($ul['date_created'])) :
-											'Wala'; 
-											?>
-								</td>
-								<!-- Safely handle possible null last_login -->
-								<td>
-									<?php
-									 echo !empty($ul['last_login']) ? 
-									 		date("M/d/y h:i:s a", strtotime($ul['last_login'])) : 
-									 		''; 
-									 ?>
-								</td>
-								<td><center><button class="btn btn-danger btn-xs" data-dismiss="modal"  data-toggle="modal" data-target=".remove_<?php echo $ul['user_id']; ?>">
-									<i class="fa fa-trash"></i> 
-								</button>
-									</center>
-								</td>
+								<td><?php echo  date("M/d/y h:i:s a", strtotime($ul['date_created'])); ?></td>
+								<td><?php echo ($ul['last_login']) ? date("M/d/y h:i:s a", strtotime($ul['last_login'])) : ''; ?></td>
+								<td><center><button class="btn btn-danger btn-xs" data-dismiss="modal"  data-toggle="modal" data-target=".remove_<?php echo $ul['user_id']; ?>"><i class="fa fa-trash"></i> </button></center></td>
 							</tr>
 						<?php } } ?>
 					</tbody>

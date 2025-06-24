@@ -4,81 +4,85 @@
 		<title>Summary of Payment</title>
 		<link href="<?php echo base_url();?>/assets/import/vendors/bootstrap/dist/css/bootstrap.min.css" rel="text/stylesheet">
 	</head>
-	<body style="font-size:11px;">
-			<?php
-				$rbal 	= $this->Pdf_model->getremaining_balance($is_no);
-				$a_paid = $this->Pdf_model->getpaid_ca($is_no);
-			?>
-			<div style="border-bottom:2px solid black; ">
-				<img src="<?= base_url('assets/logo/AGC.jpg') ?>" width="170px" height="45px"> 
-				<h4 style="margin-left: 250px; margin-top: -40px; font-weight: bold;"><b class="serif">Land Holding Management System </b></h4> 
-				<h5 style="margin-left: 265px; padding-top: -10px"><b class="serif">Summary of Payment as of <?php echo date('F-d-Y') ?></b></h5>
-			</div>
+	<body>
+		<div style="border-bottom:2px solid black">
+			<img src="<?= base_url('assets/logo/AGC.jpg') ?>" width="170px" height="40px"> 
+			<h4 class="serif" style="margin-left:350px;margin-top:-40px;font-weight:bold">Land Holding Management System</h4> 
+			<h5 class="serif" style="margin-left:380px; padding-top:-10px">Summary of Payment as of <?php echo date('F-d-Y') ?></h5>
+		</div>
+		<?php
+    		$get_remaining_balance = $this->Payment_model->getLatestRemainingBalance($is_no);
+		?>
+		<table class="table table-striped table-bordered space">
+		    <thead>
+		        <tr>
+		            <th style="background-color:#3B444B;color:#fff;font-size:11px;text-align:center;width:22%">PAYEE</th>
+		            <th style="background-color:#3B444B;color:#fff;font-size:11px;text-align:center">AMOUNT PAYABLE</th>
+		            <th style="background-color:#3B444B;color:#fff;font-size:11px;text-align:center">TRANSACTION DATE</th>
+		            <th style="background-color:#3B444B;color:#fff;font-size:11px;text-align:center">CONTROL NO.</th>
+		            <th style="background-color:#3B444B;color:#fff;font-size:11px;text-align:center">TYPE OF REQUEST</th>
+		            <th style="background-color:#3B444B;color:#fff;font-size:11px;text-align:center">AMOUNT</th>
+		        </tr>
+		    </thead>
+		    <tbody>
+		        <?php
+		            $payee_name   = $oi['firstname'] . ($oi['middlename'] ? ' ' . $oi['middlename'][0] . '. ' : ' ') . $oi['lastname'];
+		            $payee_amount = number_format($li['total_price'], 2);
+		            $has_payment  = false;
+		            $rows         = [];
 
-			<table class="table table-striped table-bordered dt-responsive table-hover" width="100%" style="margin-top:20px">
-				<thead>
-					<tr>
-						<th style="background-color:#3B444B;color:#fff;text-align:center">PAYEE</th>
-						<th style="background-color:#3B444B;color:#fff;text-align:center">TOTAL AMOUNT PAYABLE</th>
-						<th style="background-color:#3B444B;color:#fff;text-align:center">TRANSACTION DATE</th>
-						<th style="background-color:#3B444B;color:#fff;text-align:center">CONTROL NO.</th>
-						<th style="background-color:#3B444B;color:#fff;text-align:center">TYPE OF REQUEST</th>
-						<th style="background-color:#3B444B;color:#fff;text-align:center">AMOUNT</th>
-					</tr>
-				</thead>
-				<tbody>
-					<tr>
-						<td class="text-center"><?php echo $oi['firstname'] ?>  <?php if($oi['middlename']){  $m = $oi['middlename']; echo $m[0].'. '; }else{ echo " "; }  ?><?php echo $oi['lastname'] ?></td>
-						<td class="text-center">₱ <?php echo number_format($li['total_price'],2) ?></td>
+		            foreach ($getpt_byid_result as $pt) {
+		                foreach ($getpr_byid_result as $pr) {
+		                    if ($pt['pr_id'] == $pr['id'] && $pr['status'] == 'Paid') {
+		                        $has_payment = true;
+		                        $rows[] = [
+		                            'transaction_date' => date("M. d, Y H:i:s", strtotime($pt['transaction_date'])),
+		                            'control_no'       => $pr['control_no'],
+		                            'type'             => $pr['type'],
+		                            'amount'           => number_format($pt['amount'], 2),
+		                            'balance'          => number_format($get_remaining_balance['remaining_balance'], 2)
+		                        ];
+		                    }
+		                }
+		            }
 
-						<?php 
-							$counter = 0; 
-							foreach($pt_details as $pt){
-								$counter++;
-								foreach($pr_details as $pr){
-									if($pt['control_no'] == $pr['control_no']){
-										$data = $this->Pdf_model->getca_transaction($pr['control_no']);
-						?>
-										<td class="text-center"><?php $date= date_create($data['transaction_date']); echo date_format($date,"M-d-Y"); ?></td>
-										<td class="text-center"><?php echo $pr['control_no'] ?></td>
-										<td class="text-center"><?php echo $pr['type'] ?></td>
-										<td class="text-center"><?php echo number_format($pt['amount'],2); ?></td>
-					</tr>
+		            $rowspan = count($rows);
 
-						<?php if($counter < count($pt_details)):?>
-							<tr>   
-								<td></td>
-								<td></td>
-						<?php endif; ?>
-						<?php }}} ?>
-
-						<?php if($a_paid == 0){ 
-							echo '<td colspan="4" class="pdf-text-right"><code><center> No Payment History </center></code></td>';
-						}else{ ?>
-								</tr>
-								<tr>
-										<td colspan="4"></td>
-										<td class="pdf-text-right text-danger"> Balance :</td>
-										<td class="pdf-text-left text-danger">₱<?php echo number_format($rbal['remaining_balance'],2) ?></td>
-								</tr>
-						<?php } ?>        
-				</tbody>
-			</table>
+		            if ($rowspan > 0) {
+		                foreach ($rows as $index => $row) {
+		                    echo "<tr>";
+		                    if ($index == 0) {
+		                        echo "<td rowspan='{$rowspan}' style='font-size:11px;text-align:center'>{$payee_name}</td>";
+		                        echo "<td rowspan='{$rowspan}' style='font-size:11px;text-align:center'>₱ {$payee_amount}</td>";
+		                    }
+		                    echo "<td style='font-size:11px;text-align:center'>{$row['transaction_date']}</td>";
+		                    echo "<td style='font-size:11px;text-align:center'>{$row['control_no']}</td>";
+		                    echo "<td style='font-size:11px;text-align:center'>{$row['type']}</td>";
+		                    echo "<td style='font-size:11px;text-align:center'>₱ {$row['amount']}</td>";
+		                    echo "</tr>";
+		                }
+		                echo "<tr>
+		                        <td colspan='6' style='font-size:11px;text-align:right'><code>Balance: ₱{$row['balance']}</code></td>
+		                      </tr>";
+		            } else {
+		                echo "<tr>
+		                        <td style='font-size:11px;text-align:center'>{$payee_name}</td>
+		                        <td style='font-size:11px;text-align:center'>₱ {$payee_amount}</td>
+		                        <td colspan='4' style='font-size:11px;text-align:center'><code>No Payment History</code></td>
+		                      </tr>";
+		            }
+		        ?>
+		    </tbody>
+		</table>
 	</body>
 </html>     
 					
 <style type="text/css">
-	b.serif {
-		font-family: "Times New Roman", Times, serif;
+	.serif {
+		font-family:"Times New Roman",Times,serif
 	}
-	.sansserif {
-		font-family: Arial, Helvetica, sans-serif;
-	}
-	.header{
-		background-color: black; color: white;
-	}
-	th, td {
+	th,td{
 		border: 1px solid black;
-		padding:7px;
+		padding:6px;
 	}
 </style>

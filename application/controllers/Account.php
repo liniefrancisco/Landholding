@@ -4,66 +4,45 @@ class Account extends App_Controller{
 		parent::__construct();
 		$this->not_logged_in();
 		// Load the model
-		$this->load->model('Secretary/Secretary_notification_model');
-		$this->load->model('Legal/Legal_notification_model');
-		$this->load->model('Gm/Gm_notification_model');
-		$this->load->model('Accounting/Accounting_notification_model');
+		$this->load->model('Notification_bar_model');
+		$this->load->model('Notification_model');
 		$this->load->model('Account_model');
 		$this->load->helper('form');
 		$this->load->library('form_validation');
 		$this->load->library('encryption');
 	}
-
-	//==================================================
-	//USER PROFILE
-	//==================================================
+	public function Notification(){
+		$data = array();
+		#TAB NOTIFICATION
+	    $data['pending_acq'] 			= $this->Notification_bar_model->getds_status_pending();
+		#Message Notification
+		$recepient 						=  $this->session->userdata('user_id');
+		$data['all_notifications']		= $this->Notification_model->get_notif_per_user($recepient);
+		$data['all_notification_no']	= $this->Notification_model->get_all_notification_no($recepient);
+		return $data;
+	}
 	public function index(){     
 		$data['title'] = "Profile";
-		//SECRETARY SIDEBAR NOTIFICATION
-		$data['secretary_execute'] = $this->Secretary_notification_model->get_execute_count();
-		$data['secretary_inprogress'] = $this->Secretary_notification_model->getli_status_approved();
-		$data['secretary_owned'] = $this->Secretary_notification_model->getli_status_approved();
-		//END SECRETARY SIDEBAR NOTIFICATION
+		$data 		  = $this->Notification();
+		$username 	  = $this->input->post('username');
+		$password 	  = $this->input->post('password'); 
+		$old_username = $this->input->post('old_username');
+		$old_password = $this->input->post('old_password');
 
-		//LEGAL SIDEBAR NOTIFICATION
-		$data['legal_documents'] = $this->Legal_notification_model->get_documents_count();
-		//END LEGAL SIDEBAR NOTIFICATION
-
-		//GM SIDEBAR NOTIFICATION
-		$data['gm_acquisition'] = $this->Gm_notification_model->get_acquisition_count();
-		$data['gm_payment_request'] = $this->Gm_notification_model->get_payment_request_count();
-		//END GM SIDEBAR NOTIFICATION
-
-		//ACCOUNTING SIDEBAR NOTIFICATION
-		$data['accounting_payment_request'] = $this->Accounting_notification_model->payment_request_notification();
-		//END ACCOUNTING SIDEBAR NOTIFICATION
-
-		//Message Notification
-		$recepient = $this->session->userdata('user_id');
-		$data['all_notifications'] = $this->Secretary_notification_model->get_notif_per_user($recepient);
-		$data['all_notification_no'] = $this->Secretary_notification_model->get_all_notification_no($recepient);
-		//End
-
-		$un = $this->input->post('username');
-		$ps = $this->input->post('pass'); 
-		$old_un = $this->input->post('old_username');
-		$old_ps = $this->input->post('old_password');
-
-		if($un != $old_un){
+		if($username != $old_username){
 			$this->form_validation->set_rules('username', 'Username', 'required|min_length[4]|max_length[50]|alpha_numeric|callback_check_uname');
-		}
-		if($ps != $old_ps){
-			$this->form_validation->set_rules('pass', 'Password', 'required|min_length[8]|max_length[50]|alpha_numeric');
+		}if($password != $old_password){
+			$this->form_validation->set_rules('password', 'Password', 'required|min_length[5]|max_length[50]|alpha_numeric');
 		}
 		$this->form_validation->set_rules('file', 'Profile Picture', 'callback_check_file');
 
 		if ($this->form_validation->run() == FALSE){
 			$this->render_template('account/user_account',$data);
 		}else{
-			$id= $this->session->userdata('user_id');
-			$us = $this->Account_model->getuser_byid($id);
-			$fr_form = $un.$ps;
-			$fr_db = $us['username'].$this->encryption->decrypt($us['password']);
+			$id 	 = $this->session->userdata('user_id');
+			$user 	 = $this->Account_model->getuser_byid($id);
+			$fr_form = $username.$password;
+			$fr_db   = $user['username'].$this->encryption->decrypt($user['password']);
 						
 			if($_FILES["file"]['name']){
 				$this->Account_model->update_profile($id);

@@ -27,7 +27,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 // $config['base_url'] = 'http://172.16.45.141/landholding';
 //$config['base_url'] = 'http://'.$_SERVER['SERVER_ADDR'].':'.$_SERVER['SERVER_PORT'].'/EBS/iad/manual_deductions'; 
 $config['base_url'] = 'http://localhost/landholding/';
-//try
 //why always identical
 // $config['base_url'] = 'http://' . $_SERVER['HTTP_HOST']. '/alturas-healthcare/'; 
 /*
@@ -163,7 +162,8 @@ $config['composer_autoload'] = FALSE;
 | DO NOT CHANGE THIS UNLESS YOU FULLY UNDERSTAND THE REPERCUSSIONS!!
 |
 */
-$config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-';
+// $config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-';
+$config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-\(\)';
 
 /*
 |--------------------------------------------------------------------------
