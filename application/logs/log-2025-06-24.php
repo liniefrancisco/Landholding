@@ -1,6 +1,7 @@
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 INFO - 2025-06-24 20:05:09 --> Config Class Initialized
 INFO - 2025-06-24 20:05:09 --> Hooks Class Initialized
 DEBUG - 2025-06-24 20:05:09 --> Accessing maintenance hook!
@@ -2054,6 +2055,8 @@ INFO - 2025-06-24 20:29:01 --> File loaded: C:\laragon\www\Landholding\applicati
 INFO - 2025-06-24 20:29:01 --> Final output sent to browser
 DEBUG - 2025-06-24 20:29:01 --> Total execution time: 0.0525
 =======
+=======
+>>>>>>> origin
 ERROR - 2025-06-24 10:35:38 --> Severity: error --> Exception: Unable to locate the model you have specified: Land_model C:\laragon\www\landholding\system\core\Loader.php 348
 <<<<<<< HEAD
 INFO - 2025-06-24 18:13:04 --> Config Class Initialized
@@ -2452,6 +2455,7 @@ INFO - 2025-06-24 18:14:47 --> File loaded: C:\laragon\www\Landholding\applicati
 ERROR - 2025-06-24 18:14:47 --> Severity: error --> Exception: syntax error, unexpected end of file, expecting "elseif" or "else" or "endif" C:\laragon\www\Landholding\application\views\templates\footer.php 847
 =======
 ERROR - 2025-06-24 10:36:51 --> 404 Page Not Found: Legal_f/rpt
+<<<<<<< HEAD
 >>>>>>> origin
 INFO - 2025-06-24 18:21:35 --> Config Class Initialized
 INFO - 2025-06-24 18:21:35 --> Hooks Class Initialized
@@ -24544,3 +24548,13 @@ DEBUG - 2025-06-24 22:54:24 --> Session class already loaded. Second attempt ign
 INFO - 2025-06-24 22:54:24 --> User Agent Class Initialized
 INFO - 2025-06-24 22:54:24 --> Final output sent to browser
 DEBUG - 2025-06-24 22:54:24 --> Total execution time: 0.1936
+=======
+ERROR - 2025-06-24 14:20:33 --> 404 Page Not Found: Rpt/Rpt_tbl
+ERROR - 2025-06-24 14:26:56 --> 404 Page Not Found: Rpt/Rpt_tbl
+=======
+ERROR - 2025-06-24 11:06:04 --> Severity: Warning --> Trying to access array offset on value of type null C:\laragon\www\landholding\application\views\legal\Rpt\real_property_tax.php 228
+ERROR - 2025-06-24 11:06:04 --> Severity: Warning --> Trying to access array offset on value of type null C:\laragon\www\landholding\application\views\legal\Rpt\real_property_tax.php 235
+ERROR - 2025-06-24 11:06:04 --> Severity: 8192 --> number_format(): Passing null to parameter #1 ($num) of type float is deprecated C:\laragon\www\landholding\application\views\legal\Rpt\real_property_tax.php 235
+ERROR - 2025-06-24 13:18:00 --> 404 Page Not Found: Rpt/Rpt_tbl
+>>>>>>> linie_local
+>>>>>>> origin

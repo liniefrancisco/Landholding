@@ -62,6 +62,7 @@
 <script src="<?php echo base_url();?>assets/import/all_js_for_my_own_script/radiohead_purchase_type.js"></script>
 <script src="<?php echo base_url();?>assets/import/all_js_for_my_own_script/bootstrap-datetimepicker.min.js"></script>
 <script src="<?php echo base_url();?>assets/import/all_js_for_my_own_script/navtabs.js"></script>
+<script src="<?php echo base_url();?>assets/import/all_js_for_my_own_script/dropify.js"></script>
 <script src="<?php echo base_url();?>assets/import/all_js_for_my_own_script/photoviewer.js"></script>
 <script src="<?php echo base_url();?>assets/import/all_js_for_my_own_script/mvTop.js"></script>
 <!-- Datatables -->
@@ -715,7 +716,90 @@
 	}		
 </script>
 
+<script>//Loads region, province, and city
+	$(document).ready(function () {
+	    const site = "<?php echo site_url('Acquisition/'); ?>";
 
-	</body>   
-</html>
-	
+	    function appendOptions(selector, placeholder, data, getValue, getText) {
+	        const $el = $(selector).html(`<option value="">${placeholder}</option>`);
+	        data.forEach(item => {
+	            $el.append(`<option value="${getValue(item)}">${getText(item)}</option>`);
+	        });
+	    }
+	    function splitVal(val) {
+	        return val ? val.split('|') : ['', ''];
+	    }
+	    function loadRegion() {
+	        $.post(site + "getregion", data => {
+	            const regions = JSON.parse(data);
+	            appendOptions('#region', 'Select Region', regions,
+	                r => `${r.regCode}|${r.regDesc}`,
+	                r => r.regDesc
+	            );
+	        });
+	    }
+	    function loadProvince() {
+	        const [regCode, regDesc] = splitVal($("#region").val());
+	        $("#selectedRegion").val(regDesc);
+	        $("#selectedProvince, #selectedCity, #selectedBaranggay, #zipcode").val('');
+	        $("#province, #town, #barangay").empty();
+
+	        $.post(site + "getprovince", { regCode }, data => {
+	            appendOptions('#province', 'Select Province', data,
+	                p => `${p.provCode}|${p.provDesc}`,
+	                p => p.provDesc
+	            );
+	        }, 'json');
+	    }
+	    function loadCity() {
+	        const [provCode, provDesc] = splitVal($("#province").val());
+	        $("#selectedProvince").val(provDesc);
+
+	        $.post(site + "getcitymun", { provCode }, data => {
+	        	 console.log("City data loaded:", data);
+	            appendOptions('#town', 'Select City/Municipality', data,
+	                c => `${c.citymunCode}|${c.citymunDesc}|${c.zipcode}`,
+	                // Display cleaned name (without ZIP in parentheses)
+            		c => c.citymunDesc.replace(/\s*\(\d{4,}\)\s*$/, '')
+	            );
+	        }, 'json');
+	    }
+	    function loadBrgy() {
+	        const [citymunCode] = splitVal($("#town").val());
+	        const [, citymunDesc] = splitVal($("#town").val());
+	        // Remove ZIP in parentheses if present
+		    const cleanCityName = citymunDesc.replace(/\s*\(\d{4,}\)\s*$/, '');
+		    $("#selectedCity").val(cleanCityName);
+
+	        $.post(site + "getbrgy", { citymunCode }, data => {
+	            appendOptions('#barangay', 'Select Barangay', data,
+	                b => `${b.brgyCode}|${b.brgyDesc}`,
+	                b => b.brgyDesc
+	            );
+	        }, 'json');
+	    }
+
+	    // Event bindings
+	    $('#region').on('change', function () {
+	        loadProvince();
+	    });
+
+	    $('#province').on('change', function () {
+	        loadCity();
+	    });
+
+	    $('#town').on('change', function () {
+	        const [, cityName, zipcode] = splitVal($(this).val());
+	        $("#selectedCity").val(cityName);
+	        $("#zipcode").val(zipcode);
+	        loadBrgy();
+	    });
+
+	    $('#barangay').on('change', function () {
+	        $("#selectedBaranggay").val($(this).find(':selected').text());
+	    });
+
+	    // Initialize
+	    loadRegion();
+	});
+</script>

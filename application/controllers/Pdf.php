@@ -5,7 +5,8 @@ class Pdf extends App_Controller{
         parent::__construct();
         $this->not_logged_in();
         // Load the model
-        $this->load->model('Pdf_model');
+        $this->load->model('Rpt_model');
+        $this->load->model('Payment_model');
         $this->load->model('Acquisition_model');
         $this->load->helper('form');
         $this->load->library('form_validation');
@@ -20,17 +21,36 @@ class Pdf extends App_Controller{
         $data['pt_details'] = $this->Pdf_model->getpt_details($is_no);
         $data['pr_details'] = $this->Pdf_model->getpr_details($is_no);
 
-        $html           = $this->load->view('secretary/Progress/summary_of_payment_pdf', $data, true); 
-        $pdfFilePath    ="summary of payment".".pdf"; 
-        $pdf            = $this->m_pdf->load();
-        $stylesheet     = '<style>'.file_get_contents('assets/import/vendors/bootstrap/dist/css/bootstrap.min.css').'</style>';
-        $css            = '<style>'.file_get_contents('assets/import/build/css/custom.min.css').'</style>';
+        $html        = $this->load->view('secretary/Progress/summary_of_payment_pdf', $data, true); 
+        $pdfFilePath = "summary of payment".".pdf"; 
+        $pdf         = $this->m_pdf->load();
+        $stylesheet  = '<style>'.file_get_contents('assets/import/vendors/bootstrap/dist/css/bootstrap.min.css').'</style>';
+        $css         = '<style>'.file_get_contents('assets/import/build/css/custom.min.css').'</style>';
         // apply external css
         $pdf->WriteHTML($css);
         $pdf->WriteHTML($stylesheet);
         $pdf->WriteHTML($html);
         $pdf->Output($html, "I");
         exit;
+    }
+    public function generate_due_rpt($province, $city, $year){
+        $decode_province = base64_decode(urldecode($province));
+        $decode_city     = base64_decode(urldecode($city));
+        $decode_year     = base64_decode(urldecode($year));
+
+        $data['title']        = "Due RPT";
+        $data['year']         = $decode_year;
+        $data['land_info']    = $this->Acquisition_model->getregistry_land();
+        $data['lot_location'] = $this->Acquisition_model->get_ll_asc($decode_province, $decode_city);
+        $data['assessments']  = $this->Acquisition_model->getassessments();
+
+        $this->load->library('m_pdf');
+        $html = $this->load->view('legal/Rpt/due_rpt_pdf', $data, true);
+        $pdfFilePath = "due rpt" . ".pdf";
+        $pdf = $this->m_pdf->load();
+
+        $pdf->WriteHTML($html);
+        $pdf->Output($html, "I");
     }
     public function previousnisiya($is_no){
         $pdf = new FPDF();
