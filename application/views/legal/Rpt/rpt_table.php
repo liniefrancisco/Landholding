@@ -82,7 +82,7 @@
                                             <ul class="dropdown-menu bg-white" aria-labelledby="optionMenuBtn">
                                                 <li><button class="dropdown-item bg-white btn-xs" id="searchBtn" title="Search"><i class="fa fa-search text-primary"></i> Search</button></li>
                                                 <li><button class="dropdown-item bg-white btn-xs" id="generateBtn" title="Generate"><i class="fa fa-file-pdf-o text-danger"></i> Generate Due RPT</button></li>
-                                                <li><button class="dropdown-item bg-white btn-xs" id="postBtn" title="Post" data-toggle="modal" data-target="#postConfirmationModal"><i class="fa fa-send text-success"></i> Post</button></li>
+                                                <li><button class="dropdown-item bg-white btn-xs" id="postBtn" title="Post" data-toggle="modal" data-target="#uploadRptBillingModal"><i class="fa fa-send text-success"></i> Post</button></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -157,6 +157,24 @@
     </div>
 </div>
 <!--====================END PAGE CONTENT====================-->
+<div class="modal fade" id="uploadRptBillingModal" style="margin-top:100px;">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header bg-info">
+                <button type="button" class="close" id="dclose" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h5 class="modal-title" id="myModalLabel"><i class="fa fa-check-square-o"></i> Upload RPT Billing</h5>
+            </div>
+            <div class="modal-body">
+                <label class="col-md-3"><small>Attach File</small></label>
+                <input type="file" class="dropify" name="file" data-height="150" data-max-file-size="10M" accept=".jpg, .jpeg, .png, .pdf" onchange="previewFile(this);" required>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info btn-sm" id="confirmPostBtn">Upload</button>
+                <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="modal fade" id="postConfirmationModal" style="margin-top:100px;">
     <div class="modal-dialog modal-sm">
@@ -264,11 +282,17 @@
         let region   = $('#selectedRegion').val();
         let province = $('#selectedProvince').val();
         let city     = $('#selectedCity').val();
+        let year     = $('#year').val();
+
+        //Encrypt
+        let encodedProvince = btoa(province);
+        let encodedCity     = btoa(city);
+        let encodedYear     = btoa(year);
 
         let url = "<?php echo base_url('Pdf/generate_due_rpt'); ?>/" + 
-                  encodeURIComponent(region) + "/" + 
-                  encodeURIComponent(province) + "/" + 
-                  encodeURIComponent(city);
+                    encodeURIComponent(encodedProvince) + "/" + 
+                    encodeURIComponent(encodedCity) + "/" +
+                    encodeURIComponent(encodedYear);
 
         window.open(url, '_blank');
     });

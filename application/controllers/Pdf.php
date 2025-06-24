@@ -5,6 +5,7 @@ class Pdf extends App_Controller{
         parent::__construct();
         $this->not_logged_in();
         // Load the model
+        $this->load->model('Rpt_model');
         $this->load->model('Payment_model');
         $this->load->model('Acquisition_model');
         $this->load->helper('form');
@@ -20,11 +21,11 @@ class Pdf extends App_Controller{
         $data['getpt_byid_result'] = $this->Payment_model->getpt_byid_result($is_no);
         $data['getpr_byid_result'] = $this->Payment_model->getpr_byid_result($is_no);
 
-        $html           = $this->load->view('secretary/Progress/summary_of_payment_pdf', $data, true); 
-        $pdfFilePath    ="summary of payment".".pdf"; 
-        $pdf            = $this->m_pdf->load();
-        $stylesheet     = '<style>'.file_get_contents('assets/import/vendors/bootstrap/dist/css/bootstrap.min.css').'</style>';
-        $css            = '<style>'.file_get_contents('assets/import/build/css/custom.min.css').'</style>';
+        $html        = $this->load->view('secretary/Progress/summary_of_payment_pdf', $data, true); 
+        $pdfFilePath = "summary of payment".".pdf"; 
+        $pdf         = $this->m_pdf->load();
+        $stylesheet  = '<style>'.file_get_contents('assets/import/vendors/bootstrap/dist/css/bootstrap.min.css').'</style>';
+        $css         = '<style>'.file_get_contents('assets/import/build/css/custom.min.css').'</style>';
         // apply external css
         $pdf->WriteHTML($css);
         $pdf->WriteHTML($stylesheet);
@@ -32,10 +33,15 @@ class Pdf extends App_Controller{
         $pdf->Output($html, "I");
         exit;
     }
-    public function generate_due_rpt($province = null, $city = null){
-        $data['title'] = "Due RPT";
+    public function generate_due_rpt($province, $city, $year){
+        $decode_province = base64_decode(urldecode($province));
+        $decode_city     = base64_decode(urldecode($city));
+        $decode_year     = base64_decode(urldecode($year));
+
+        $data['title']        = "Due RPT";
+        $data['year']         = $decode_year;
         $data['land_info']    = $this->Acquisition_model->getregistry_land();
-        $data['lot_location'] = $this->Acquisition_model->get_ll_asc($province, $city);
+        $data['lot_location'] = $this->Acquisition_model->get_ll_asc($decode_province, $decode_city);
         $data['assessments']  = $this->Acquisition_model->getassessments();
 
         $this->load->library('m_pdf');
