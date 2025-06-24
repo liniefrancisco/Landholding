@@ -261,7 +261,7 @@ class Datatable_model extends CI_Model{
 					$town = preg_replace('/\s*\(\d+\)/', '', $town);
 				}
 
-				//Build Query Once
+				// Build query (this is the ONLY query you'll run
 				$this->db->select('
 					land_info.is_no,
 					owner_info.firstname,
@@ -273,53 +273,18 @@ class Datatable_model extends CI_Model{
 					lot_location.province,
 					real_property_tax.status,
 					payment_requests.id AS pr_id,
-					payment_requests.is_no AS payment_is_no,
-					payment_requests.type AS pr_type
+					COALESCE(payment_requests.is_no, land_info.is_no) AS payment_is_no,
+					payment_requests.type AS pr_type,
 				');
 				$this->db->from('land_info');
-				$this->db->join('real_property_tax', 'real_property_tax.is_no = land_info.is_no', 'left');
+
+				// LEFT JOIN with condition in JOIN (not in WHERE)
+				$this->db->join('real_property_tax', 'real_property_tax.is_no = land_info.is_no AND real_property_tax.status = "Pending"', 'left');
 				$this->db->join('owner_info', 'owner_info.is_no = land_info.is_no', 'left');
 				$this->db->join('lot_location', 'lot_location.is_no = land_info.is_no', 'left');
-				$this->db->join('document_status','document_status.is_no = land_info.is_no', 'left');
-				$this->db->join('payment_requests','payment_requests.is_no = land_info.is_no', 'left');
-				$this->db->join('check_request_form', 'check_request_form.pr_id = payment_requests.id', 'left');
-				// Optional: filter by real_property_tax status (if applicable)
-				$this->db->where('real_property_tax.status', 'Pending');
-
-				//Apply Filters
-				if (!empty($region)) {
-					$this->db->where('lot_location.region', $region);
-				}
-				if (!empty($province)) {
-					$this->db->where('lot_location.province', $province);
-				}
-				if (!empty($town)) {
-					
-					$this->db->where('lot_location.municipality', $town);
-				}
-
-				$this->db->reset_query();
-
-				// Rebuild query for execution (important, since compiled select resets query builder)
-				$this->db->select('
-					land_info.*,
-					lot_location.*,
-					owner_info.*,
-					real_property_tax.*,
-					payment_requests.id AS pr_id,
-					payment_requests.is_no AS payment_is_no,
-					payment_requests.type AS pr_type					
-				');
-
-				$this->db->from('land_info');
-				$this->db->join('real_property_tax', 'real_property_tax.is_no = land_info.is_no', 'left');
-				$this->db->join('owner_info', 'owner_info.is_no = land_info.is_no', 'left');
-				$this->db->join('lot_location', 'lot_location.is_no = land_info.is_no', 'left');
-				$this->db->join('document_status','document_status.is_no = land_info.is_no', 'left');
-				$this->db->join('payment_requests','payment_requests.is_no = land_info.is_no', 'left');
-				$this->db->join('check_request_form', 'check_request_form.pr_id = payment_requests.id', 'left');
-				//$this->db->where('real_property_tax.status', 'Pending');
-
+				$this->db->join('document_status', 'document_status.is_no = land_info.is_no', 'left');
+				$this->db->join('payment_requests', 'payment_requests.is_no = land_info.is_no', 'left');
+				$this->db->join();
 				// Reapply filters
 				if (!empty($region)) {
 					$this->db->where('lot_location.region', $region);
