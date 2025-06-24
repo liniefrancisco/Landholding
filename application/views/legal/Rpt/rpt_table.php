@@ -82,7 +82,7 @@
                                             <ul class="dropdown-menu bg-white" aria-labelledby="optionMenuBtn">
                                                 <li><button class="dropdown-item bg-white btn-xs" id="searchBtn" title="Search"><i class="fa fa-search text-primary"></i> Search</button></li>
                                                 <li><button class="dropdown-item bg-white btn-xs" id="generateBtn" title="Generate"><i class="fa fa-file-pdf-o text-danger"></i> Generate Due RPT</button></li>
-                                                <li><button class="dropdown-item bg-white btn-xs" id="postBtn" title="Post" data-toggle="modal" data-target="#postConfirmationModal"><i class="fa fa-send text-success"></i> Post</button></li>
+                                                <li><button class="dropdown-item bg-white btn-xs" id="postBtn" title="Post" data-toggle="modal" data-target="#uploadRptBillingModal"><i class="fa fa-send text-success"></i> Post</button></li>
                                             </ul>
                                         </div>
                                     </div>
@@ -157,8 +157,26 @@
     </div>
 </div>
 <!--====================END PAGE CONTENT====================-->
+<div class="modal fade" id="uploadRptBillingModal" style="margin-top:100px;">
+    <div class="modal-dialog modal-md">
+        <div class="modal-content">
+            <div class="modal-header bg-green">
+                <button type="button" class="close" id="dclose" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h5 class="modal-title" id="myModalLabel"><i class="fa fa-check-square-o"></i> Upload RPT Billing</h5>
+            </div>
+            <div class="modal-body">
+                <label class="col-md-3"><small>Attach File</small></label>
+                <input type="file" class="dropify" name="file" data-height="150" data-max-file-size="10M" accept=".jpg, .jpeg, .png, .pdf" onchange="previewFile(this);" required>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success btn-sm" id="PostBtn">Post</button>
+                <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
 
-<div class="modal fade" id="postConfirmationModal" style="margin-top:100px;">
+<!-- <div class="modal fade" id="postConfirmationModal" style="margin-top:100px;">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-header bg-green">
@@ -174,7 +192,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 
 <script>//updates the dropdown button label to show the selected action (Search, Generate, Post)
@@ -213,7 +231,7 @@
     checkFilters();
 </script>
 <script>
-    $('#confirmPostBtn').on('click', function() { //Handle Post
+    $('#PostBtn').on('click', function() { //Handle Post
         var selected = [];
         $('.row-check:checked').each(function() {
             selected.push($(this).val());
@@ -223,13 +241,61 @@
             alert("Please select at least one item to post.");
             return;
         }
+
+        var fileInput = $('input[type="file"]')[0].files[0];
+        if (!fileInput) {
+            alert("Please attach a file before posting.");
+            return;
+        }
+
         // AJAX post selected IDs
+        // $.ajax({
+        //     url: '<?= base_url("Rpt/Post_PerMunicipality") ?>', // Your controller method
+        //     type: 'POST',
+        //     data: { is_no: selected },
+        //     success: function(response) {
+        //         var res = JSON.parse(response); // Parse the JSON string
+        //         if (res.status === 'success') {
+        //             Swal.fire({
+        //                 icon: 'success',
+        //                 title: 'Posted Successfully',
+        //                 text: 'The selected items have been posted!',
+        //                 confirmButtonColor: '#3085d6',
+        //                 confirmButtonText: 'OK'
+        //             }).then(() => {
+        //                 window.location.reload();
+        //             });
+        //         } else {
+        //             Swal.fire({
+        //                 icon: 'error',
+        //                 title: 'Error',
+        //                 text: res.message || 'Something went wrong.'
+        //             });
+        //         }
+        //     },
+        //     error: function() {
+        //         Swal.fire({
+        //             icon: 'error',
+        //             title: 'Server Error',
+        //             text: 'Failed to post data. Please try again.'
+        //         });
+        //     }
+        // });
+
+        var formData = new FormData();
+        selected.forEach((id) => {
+            formData.append('is_no[]', id);
+        });
+        formData.append('file', fileInput); // Match the name="file" in input
+
         $.ajax({
-            url: '<?= base_url("Rpt/Post_PerMunicipality") ?>', // Your controller method
+            url: '<?= base_url("Rpt/Post_PerMunicipality") ?>',
             type: 'POST',
-            data: { is_no: selected },
-            success: function(response) {
-                var res = JSON.parse(response); // Parse the JSON string
+            data: formData,
+            contentType: false, // Required for file upload
+            processData: false, // Prevent jQuery from processing data
+            success: function (response) {
+                var res = JSON.parse(response);
                 if (res.status === 'success') {
                     Swal.fire({
                         icon: 'success',
@@ -248,7 +314,7 @@
                     });
                 }
             },
-            error: function() {
+            error: function () {
                 Swal.fire({
                     icon: 'error',
                     title: 'Server Error',
@@ -264,11 +330,17 @@
         let region   = $('#selectedRegion').val();
         let province = $('#selectedProvince').val();
         let city     = $('#selectedCity').val();
+        let year     = $('#year').val();
+
+        //Encrypt
+        let encodedProvince = btoa(province);
+        let encodedCity     = btoa(city);
+        let encodedYear     = btoa(year);
 
         let url = "<?php echo base_url('Pdf/generate_due_rpt'); ?>/" + 
-                  encodeURIComponent(region) + "/" + 
-                  encodeURIComponent(province) + "/" + 
-                  encodeURIComponent(city);
+                    encodeURIComponent(encodedProvince) + "/" + 
+                    encodeURIComponent(encodedCity) + "/" +
+                    encodeURIComponent(encodedYear);
 
         window.open(url, '_blank');
     });

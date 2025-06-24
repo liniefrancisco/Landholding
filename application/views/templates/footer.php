@@ -62,6 +62,7 @@
 <script src="<?php echo base_url();?>assets/import/all_js_for_my_own_script/radiohead_purchase_type.js"></script>
 <script src="<?php echo base_url();?>assets/import/all_js_for_my_own_script/bootstrap-datetimepicker.min.js"></script>
 <script src="<?php echo base_url();?>assets/import/all_js_for_my_own_script/navtabs.js"></script>
+<script src="<?php echo base_url();?>assets/import/all_js_for_my_own_script/dropify.js"></script>
 <script src="<?php echo base_url();?>assets/import/all_js_for_my_own_script/photoviewer.js"></script>
 <script src="<?php echo base_url();?>assets/import/all_js_for_my_own_script/mvTop.js"></script>
 <!-- Datatables -->

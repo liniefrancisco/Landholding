@@ -105,16 +105,11 @@ class Rpt extends App_Controller{
 		$this->render_template('legal/Rpt/real_property_tax',$data);
 	}
 	public function Post_PerMunicipality() {
-	    $is_nos = $this->input->post('is_no'); // this is an array
+	    $is_nos = $this->input->post('is_no');
 
 	    if (!empty($is_nos)) {
 	        foreach ($is_nos as $is_no) {
-	            $data = array(
-	                'posted_date' => date('Y-m-d'),
-	                'is_no'       => $is_no,
-	                'status'      => 'Pending'
-	            );
-	            $this->db->insert('real_property_tax', $data);
+	        	$this->Rpt_model->post_rpt($is_no);
 	        }
 	        echo json_encode(['status' => 'success']);
 	    } else {
