@@ -106,7 +106,7 @@
 											<?php endif; ?>
 										</a>
 									</li>
-									<li><a href="<?= base_url('Rpt/Rpt_tbl'); ?>"><i class="fa fa-area-chart"></i>Real Property Tax</a></li>
+									<li><a href="<?= base_url('Rpt/Rpt_table'); ?>"><i class="fa fa-area-chart"></i>Real Property Tax</a></li>
 									<li><a href="<?= base_url('Payment/inprogress1_tbl'); ?>"><i class="fa fa-line-chart"></i>In Progress </a></li>
 									<li><a href="<?= base_url('Owned')?>"><i class="fa fa-map-signs"></i>Owned Land</a></li>
 									<li><a href="<?= base_url('About_Us')?>"><i class="fa fa-info"></i>About Us</a></li>
