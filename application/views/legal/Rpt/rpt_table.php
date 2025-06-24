@@ -160,7 +160,7 @@
 <div class="modal fade" id="uploadRptBillingModal" style="margin-top:100px;">
     <div class="modal-dialog modal-md">
         <div class="modal-content">
-            <div class="modal-header bg-info">
+            <div class="modal-header bg-green">
                 <button type="button" class="close" id="dclose" data-dismiss="modal" aria-hidden="true">&times;</button>
                 <h5 class="modal-title" id="myModalLabel"><i class="fa fa-check-square-o"></i> Upload RPT Billing</h5>
             </div>
@@ -169,14 +169,14 @@
                 <input type="file" class="dropify" name="file" data-height="150" data-max-file-size="10M" accept=".jpg, .jpeg, .png, .pdf" onchange="previewFile(this);" required>
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-info btn-sm" id="confirmPostBtn">Upload</button>
+                <button type="button" class="btn btn-success btn-sm" id="PostBtn">Post</button>
                 <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
             </div>
         </div>
     </div>
 </div>
 
-<div class="modal fade" id="postConfirmationModal" style="margin-top:100px;">
+<!-- <div class="modal fade" id="postConfirmationModal" style="margin-top:100px;">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-header bg-green">
@@ -192,7 +192,7 @@
             </div>
         </div>
     </div>
-</div>
+</div> -->
 
 
 <script>//updates the dropdown button label to show the selected action (Search, Generate, Post)
@@ -231,7 +231,7 @@
     checkFilters();
 </script>
 <script>
-    $('#confirmPostBtn').on('click', function() { //Handle Post
+    $('#PostBtn').on('click', function() { //Handle Post
         var selected = [];
         $('.row-check:checked').each(function() {
             selected.push($(this).val());

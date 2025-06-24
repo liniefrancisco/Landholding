@@ -62,6 +62,7 @@
 <script src="<?php echo base_url();?>assets/import/all_js_for_my_own_script/radiohead_purchase_type.js"></script>
 <script src="<?php echo base_url();?>assets/import/all_js_for_my_own_script/bootstrap-datetimepicker.min.js"></script>
 <script src="<?php echo base_url();?>assets/import/all_js_for_my_own_script/navtabs.js"></script>
+<script src="<?php echo base_url();?>assets/import/all_js_for_my_own_script/dropify.js"></script>
 <script src="<?php echo base_url();?>assets/import/all_js_for_my_own_script/photoviewer.js"></script>
 <script src="<?php echo base_url();?>assets/import/all_js_for_my_own_script/mvTop.js"></script>
 <!-- Datatables -->
@@ -731,15 +732,4 @@
 	    // Initialize
 	    loadRegion();
 	});
-</script>
-
-<script>//Dropify
-	$(document).ready(function () {
-        var drop = $(".dropify").dropify({
-            messages: {
-                default: "Drop files here or click to browse",
-                replace: "Drag and drop a image or file here or click to replace",
-            },
-        });
-    });
 </script>

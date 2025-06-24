@@ -112,6 +112,7 @@ class Rpt extends App_Controller{
 	            $data = array(
 	                'posted_date' => date('Y-m-d'),
 	                'is_no'       => $is_no,
+	                'rpt_bill'    => $this->input->post('file'),
 	                'status'      => 'Pending'
 	            );
 	            $this->db->insert('real_property_tax', $data);
