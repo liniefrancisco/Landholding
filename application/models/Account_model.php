@@ -129,10 +129,10 @@ class Account_model extends CI_Model{
         return $user;
     }
     public function check_username($un){
-        $user = array();
-        $query = $this->db->select('*')->from('users')
-                          ->where(array('username' => $un))
-                          ->get()->result_array();       
+        $user   = array();
+        $query  = $this->db->select('*')->from('users')
+                           ->where(array('username' => $un))
+                           ->get()->result_array();       
 
         foreach ($query as $u){
             $user = $u;

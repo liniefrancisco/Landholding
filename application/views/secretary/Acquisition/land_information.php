@@ -14,7 +14,7 @@
 					<i class="glyphicon glyphicon-ok"></i> <?php echo $this->session->flashdata('notif'); ?>
 				</div>
 			<?php } ?>
-			<!--====================FLASH DATA====================-->
+			<!--====================END FLASH DATA====================-->
 			<div class="x_panel animate slideInDown" style="border:1px; !important;box-shadow: 7px 6px 16px #888888;">
 				<div class="x_title">
 					<div class="title_left">
@@ -68,8 +68,8 @@
 								</div>                            
 							</div>
 					
-							<div class="col-md-12 col-xs-12 col-sm-12" style="border-top: 1px solid #ff6600; border-bottom: 1px solid #ff6600">
-								<center><h5 style="letter-spacing: 10px;"><b>LAND INFORMATION</b></h5></center>
+							<div class="col-md-12 col-xs-12 col-sm-12 text-center" style="border-top: 1px solid #ff6600; border-bottom: 1px solid #ff6600">
+								<h5 style="letter-spacing:10px;">LAND INFORMATION</h5>
 							</div>
 
 							<input type="hidden"  name="p_by" value="<?php echo ucfirst($this->session->userdata('firstname')).' '.ucfirst($this->session->userdata('lastname'))?>" class="form-control" onkeydown="return false" readonly/>
@@ -294,7 +294,7 @@
 					</div>
 					<!--====================END BODY====================-->
 					<div class="col-md-12">
-						<input class="btn btn-custom-primary send btn-sm pull-right" type="submit" name="submit" value="Proceed">
+						<input class="btn btn-custom-primary btn-sm pull-right send" type="submit" name="submit" value="Proceed">
 					</div>
 				</form>
 			</div>
@@ -308,12 +308,11 @@
 	    $("#date_acquired").datepicker({
 	        dateFormat: 'mm/dd/yy',
 	    });
-
 	    // Set current date
-	    var d = new Date();
-	    var month = d.getMonth() + 1;
-	    var day = d.getDate();
-	    var output = (month < 10 ? '0' : '') + month + '/' + (day < 10 ? '0' : '') + day + '/' + d.getFullYear();
+	    var d 		= new Date();
+	    var month 	= d.getMonth() + 1;
+	    var day 	= d.getDate();
+	    var output 	= (month < 10 ? '0' : '') + month + '/' + (day < 10 ? '0' : '') + day + '/' + d.getFullYear();
 	    $("#date_acquired").val(output);
 	});
 </script>
@@ -341,8 +340,8 @@
 			window.btn_clicked = true;
 		});
 
-		var $form = $('#add_acq'),
-		origForm = $form.serialize();
+		var $form 	= $('#add_acq'),
+		origForm 	= $form.serialize();
 		$('#add_acq :input').on('change input', function() {
 			if($form.serialize() !== origForm){
 				window.onbeforeunload = function(){
@@ -492,8 +491,6 @@
 	}
 </script>
 
-
-<!--====================STYLE====================-->
 <style type="text/css">
 	.l_info{         
 		width: 100%;
@@ -632,4 +629,3 @@
 		padding-left:0px
 	}
 </style>
-<!--====================STYLE====================-->

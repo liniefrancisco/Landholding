@@ -1,68 +1,11 @@
-<!--====================MODAL LAND TITLE====================-->       
-<div class="modal animate bounceInUp land_title_<?php echo $li['is_no'];?>" tabindex="-1" role="dialog" aria-hidden="true">
-	<div class="modal-dialog modal-md">
-		<div class="modal-content">
-			<div class="modal-header bg-orange">
-				<button type="button" class="close" id="dclose" data-dismiss="modal"><span aria-hidden="true">×</span></button>
-				<h4 class="modal-title" id="myModalLabel"><span class="fa fa-file-text-o"></span> Land Title</h4>
-			</div>
-			<div class="modal-body">
-				<div style="overflow-x:auto;">
-					<img src="<?= base_url('assets/img/uploaded_documents/'.$ud['is_no'].'/Land Title/'.$ud['land_title'].'') ?> " class="img-responsive">   
-				</div>                                         
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			</div>
-		</div>
-	</div>
-</div>
-<!--====================MODAL TAX DECLERATION====================-->  
-<div class="modal animate bounceInUp latest_tax_dec_<?php echo $li['is_no'];?>" tabindex="-1" role="dialog" aria-hidden="true">
-	<div class="modal-dialog modal-md">
-		<div class="modal-content">
-			<div class="modal-header bg-orange">
-				<button type="button" class="close" id="dclose" data-dismiss="modal"><span aria-hidden="true">×</span></button>
-				<h4 class="modal-title" id="myModalLabel"><span class="fa fa-file-text-o"></span> Latest Tax Declaration</h4>
-			</div>
-			<div class="modal-body">
-				<div style="overflow-x:auto;">
-					<img src="<?= base_url('assets/img/uploaded_documents/'.$ud['is_no'].'/Tax Declaration/'.$ud['latest_tax_dec'].'') ?> " class="img-responsive">   
-				</div>                                        
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			</div>
-		</div>
-	</div>
-</div>
-<!--====================MODAL LAND SKETCH====================-->                 
-<div class="modal animate bounceInUp land_sketch_<?php echo $li['is_no'];?>" tabindex="-1" role="dialog" aria-hidden="true">
-	<div class="modal-dialog modal-md">
-		<div class="modal-content">
-			<div class="modal-header bg-orange">
-				<button type="button" class="close" id="dclose" data-dismiss="modal"><span aria-hidden="true">×</span></button>
-				<h4 class="modal-title" id="myModalLabel"><span class="fa fa-file-text-o"></span> Land Sketch</h4>
-			</div>
-			<div class="modal-body">
-				<div style="overflow-x:auto;">
-					<img src="<?= base_url('assets/img/uploaded_documents/'.$ud['is_no'].'/Land Sketch/'.$ud['land_sketch'].'') ?> " class="img-responsive">   
-				</div>               
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-			</div>
-		</div>
-	</div>
-</div>
 <!--====================SHOW PURPOSE MODAL====================-->
 <?php foreach($getpr_byid_byca_result as $ca){ ?>  
-	<div class="modal animate bounceInUp show_all_p_<?php echo $ca['control_no'] ?>" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" style="padding-top:150px">
+	<div class="modal animate bounceInUp show_all_p_<?php echo $ca['control_no'] ?>" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static" style="padding-top:100px">
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header bg-primary">
 					<button type="button" class="close" id="dclose" data-dismiss="modal" aria-label="Close" ><span aria-hidden="true">×</span></button>
-					<h4 class="modal-title" id="myModalLabel2"><i class="fa fa-info"></i> Cash Advance Purpose</h4>
+					<h6 class="modal-title" id="myModalLabel2"><i class="fa fa-info"></i> Cash Advance Purpose</h6>
 				</div>
 				<div class="modal-body">
 					<?php echo "<h5 style='margin-left: 50px;'>".$ca['purpose']." ".$ca['other_purpose']."</h5>" ?>                            
@@ -102,15 +45,15 @@
 		<div class="modal-content">
 			<div class="modal-header bg-primary">
 				<button type="button" class="close" id="dclose" data-dismiss="modal" aria-label="Close" ><span aria-hidden="true">×</span></button>
-				<h5 class="modal-title"><i class="fa fa-credit-card-alt"></i> <b>Cash Advance</b></h5>
+				<h5 class="modal-title"><i class="fa fa-info"></i> <b>RCA</b></h5>
 			</div>
 
 			<?php echo form_open('Payment/view_inprogress/'.$is_no.'',array('onsubmit' => "return validate_checkbox()")); ?>
 				<div class="modal-body">
-					<center>
-						<img src="<?= base_url('assets/logo/AGC.jpg') ?>" width="200px" height="45px">
-						<h4 class="title_ca">REQUEST CASH ADVANCE</h4>
-					</center>
+					<div class="row text-center">
+						<img src="<?= base_url('assets/logo/AGC.jpg') ?>" width="100px" height="35px">
+						<h4 class="modal-title1" style="margin-top:-1px">REQUEST CASH ADVANCE</h4>
+					</div>
 
 					<div class="x_panel" style="border-radius:10px;background:#E6E9ED;">
 						<input type="text" name="is_no" value="<?php echo $is_no ?>" hidden>
@@ -184,7 +127,7 @@
 		</div>
 	</div>
 </div>
-<!--====================VIEW CASH ADVANCE MODAL====================-->
+<!--====================VIEW REQUEST CASH ADVANCE MODAL====================-->
 <?php
 	if (!empty($getpr_byid_result)) {
 		foreach ($getpr_byid_result as $ca) {
@@ -194,12 +137,12 @@
 			<div class="modal-content">
 				<div class="modal-header bg-primary">
 					<button type="button" class="close" id="dclose" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-					<h5 class="modal-title"><i class="fa fa-credit-card-alt"></i> <b>Cash Advance</b></h5>
+					<h5 class="modal-title"><i class="fa fa-info"></i> <b>RCA</b></h5>
 				</div>
 				<div class="modal-body">
 					<div class="row text-center">
-						<img src="<?= base_url('assets/logo/AGC.jpg') ?>" width="200px" height="45px">
-						<h4>CASH ADVANCE</h4>
+						<img src="<?= base_url('assets/logo/AGC.jpg') ?>" width="100px" height="35px">
+						<h5 class="modal-title1" style="margin-top:-1px">REQUEST CASH ADVANCE</h5>
 					</div>
 
 					<div class="col-md-12 col-sm-12 col-xs-12">
@@ -230,7 +173,7 @@
 						</div>
 					</div>
 
-					<div class="col-md-12 col-sm-12 col-xs-12">
+					<div class="col-md-12 col-sm-12 col-xs-12 space">
 						<p>
 							Cash Advance for Lot. <b class="txt"><?php echo $li['lot'];?></b>,
 							Cad. <b class="txt"><?php echo $li['cad'] ?></b>,
@@ -251,7 +194,7 @@
 									$purposesFromDBArray 	= explode(', ',$purposesFromDB);
 									foreach($purposesFull as $item){
 										$checked = in_array($item,$purposesFromDBArray) ? 'checked' : 'disabled';
-										echo '<input type="checkbox" name="purs[]"'.$checked.' readonly>'.$item;
+										echo '<input type="checkbox" name="purs[]"'.$checked.' disabled>'.$item;
 										echo '<br/>';
 									}
 								?>									 
@@ -304,43 +247,45 @@
 				<!--==========BODY==========-->
 				<div class="modal-body">
 					<div class="row text-center">
-						<img src="<?= base_url('assets/logo/AGC.jpg') ?>" width="200px" height="50px">
-						<h5 class="modal-title1">LOT PURCHASE FORM (LPF)</h5>
+						<img src="<?= base_url('assets/logo/AGC.jpg') ?>" width="100px" height="35px">
+						<h4 class="modal-title1" style="margin-top:-1px">LOT PURCHASE FORM (LPF)</h4>
 					</div>
 
-					<div class="x_panel round-border bg-gray" ><!-- style="border-radius:10px;background:#E6E9ED" -->
-						<div class="col-md-12 space">
-							<label class="col-md-2">LPF Number <b style="float:right">:</b></label>
-							<div class="col-md-3">
+					<div class="x_panel round-border bg-gray" >
+						<div class="row">
+							<label class="col-md-2 col-sm-2 col-xs-2">LPF Number <b style="float:right">:</b></label>
+							<div class="col-md-3 col-sm-3 col-xs-3">
 								<input class="form-control inb" type="text" value="<?= $li['is_no']; ?>" readonly>
 							</div>
-							<div class="col-md-3"></div>
-							<label class="col-md-1">Date <b style="float:right">:</b></label>
-							<div class="col-md-3">
+
+							<div class="col-md-3 col-sm-3 col-xs-3"></div>
+
+							<label class="col-md-1 col-sm-1 col-xs-1">Date <b style="float:right">:</b></label>
+							<div class="col-md-3 col-sm-3 col-xs-3">
 								<input class="form-control inb" type="text" value="<?= date('F j, Y', strtotime($li['date_acquired'])); ?>" readonly>
 							</div>
 						</div>
 
-						<div class="col-md-12 space5">
-							<label class="col-md-2">Lot Location <b style="float:right">:</b></label>
-							<div class="col-md-10">
+						<div class="row">
+							<label class="col-md-2 col-sm-2 col-xs-2">Lot Location <b style="float:right">:</b></label>
+							<div class="col-md-10 col-sm-10 col-xs-10">
 								<input class="form-control inb" type="text" value="<?php echo ucfirst($ll['street']) ?>- <?php echo ucfirst($ll['baranggay']) ?>, <?php echo ucfirst($ll['municipality']) ?>, <?php echo ucfirst($ll['province']) ?>" readonly>
 							</div>
 						</div>
 
-						<div class="col-md-12 space5">
-							<label class="col-md-2">Lot Owner <b style="float:right">:</b></label>
-							<div class="col-md-10">
+						<div class="row">
+							<label class="col-md-2 col-sm-2 col-xs-2">Lot Owner <b style="float:right">:</b></label>
+							<div class="col-md-10 col-sm-10 col-xs-10">
 								<input class="form-control inb" type="text" value="<?php echo ucfirst($oi['firstname']) ?> <?php echo ucfirst($oi['lastname']) ?>" readonly>
 							</div>
 						</div>
 
-						<div class="col-md-12 space5">
-							<label class="col-md-2">Title No./Tax Dec. <b style="float:right">:</b></label>
-							<div class="col-md-10">
+						<div class="row">
+							<label class="col-md-2 col-sm-2 col-xs-2">Title No./Tax Dec. <b style="float:right">:</b></label>
+							<div class="col-md-10 col-sm-10 col-xs-10">
 								<?php
-									$landTitleNo = $li['land_title_no'];
-									$taxDecNo = $li['tax_dec_no'];
+									$landTitleNo 	= $li['land_title_no'];
+									$taxDecNo 		= $li['tax_dec_no'];
 
 									if (!empty($landTitleNo) && !empty($taxDecNo)) {
 											$displayValue = "{$landTitleNo}/{$taxDecNo}";
@@ -356,46 +301,46 @@
 							</div>
 						</div>
 
-						<div class="col-md-12 space5">
-							<label class="col-md-2">Lot Area <b style="float:right">:</b></label>
-							<div class="col-md-10">
+						<div class="row">
+							<label class="col-md-2 col-sm-2 col-xs-2">Lot Area <b style="float:right">:</b></label>
+							<div class="col-md-10 col-sm-10 col-xs-10">
 								<input class="form-control inb" type="text" value="<?= $li['lot_size']; ?> sq.mtrs" readonly>
 							</div>
 						</div>
 
 						<?php if ($li['price_per_sqm'] != 0.00): ?>
-							<div class="col-md-12 space5">
-								<label class="col-md-2">Price per sq.mtrs. <b style="float:right">:</b></label>
-								<div class="col-md-10">
+							<div class="row">
+								<label class="col-md-2 col-sm-2 col-xs-2">Price per sq.mtrs. <b style="float:right">:</b></label>
+								<div class="col-md-10 col-sm-10 col-xs-10">
 									<input class="form-control inb" type="text" value="<?= $li['price_per_sqm']; ?>" readonly>
 								</div>
 							</div>
 						<?php endif; ?>
 
-						<div class="col-md-12 space5">
-							<label class="col-md-2">Computations <b style="float:right">:</b></label>
-							<div class="col-md-10">
-								<i>Lot Price (lot area x price/sq.mtr.)</i>
+						<div class="row">
+							<label class="col-md-2 col-sm-2 col-xs-2">Computations <b style="float:right">:</b></label>
+							<div class="col-md-10 col-sm-10 col-xs-10">
+								<h5><b>Lot Price (lot area x price/sq.mtr.)</b></h5>
 							</div>
 						</div>
 
-						<div class="col-md-12 space5">
-							<label class="col-md-2">Amount in Figures <b style="float:right">:</b></label>
-							<div class="col-md-10">
+						<div class="row">
+							<label class="col-md-2 col-sm-2 col-xs-2">Amount in Figures <b style="float:right">:</b></label>
+							<div class="col-md-10 col-sm-10 col-xs-10">
 								<input class="form-control inb" type="text" value="₱<?php echo number_format($li['total_price'],2) ?>" readonly>
 							</div>
 						</div>
 
-						<div class="col-md-12 space5">
-							<label class="col-md-2">Amount in Words <b style="float:right">:</b></label>
-							<div class="col-md-10">
+						<div class="row">
+							<label class="col-md-2 col-sm-2 col-xs-2">Amount in Words <b style="float:right">:</b></label>
+							<div class="col-md-10 col-sm-10 col-xs-10">
 								<span style="color:#ff6600;text-decoration: underline"><?php echo number_to_words($li['total_price']); ?> Pesos</span>
 							</div>
 						</div>
 
-						<div class="col-md-12 space5">
-							<label class="col-md-2">Purpose/Use <b style="float:right">:</b></label>
-							<div class="col-md-10">
+						<div class="row">
+							<label class="col-md-2 col-sm-2 col-xs-2">Purpose/Use <b style="float:right">:</b></label>
+							<div class="col-md-10 col-sm-10 col-xs-10">
 								<input class="form-control inb" type="text" value="<?php echo empty($fp['purpose_use']) ? '' : $fp['purpose_use']; ?>" readonly>
 							</div>
 						</div>
@@ -424,8 +369,8 @@
 				<!--==========BODY==========-->
 				<div class="modal-body">
 					<div class="row text-center">
-						<img src="<?= base_url('assets/logo/AGC.jpg') ?>" width="200px" height="50px">
-						<h5 style="text-decoration:underline;text-transform:uppercase;font-weight:bold;padding-top:10px">PAYMENT OF A PARCEL OF LAND SITUATED AT <?php echo $ll['baranggay']?>, <?php echo $ll['municipality']?>, <?php echo $ll['province']?></uh5>
+						<img src="<?= base_url('assets/logo/AGC.jpg') ?>" width="100px" height="35px">
+						<h5 style="text-decoration:underline;text-transform:uppercase;font-weight:bold;padding-top:10px">PAYMENT OF A PARCEL OF LAND SITUATED AT <?php echo $ll['baranggay']?>, <?php echo $ll['municipality']?>, <?php echo $ll['province']?></h5>
 					</div>
 
 					<div class="row">
@@ -597,7 +542,7 @@
 			<!--==========BODY==========-->
 			<div class="modal-body">
 				<div class="row text-center">
-					<img src="<?= base_url('assets/logo/AGC.jpg') ?>" width="200px" height="50px">
+					<img src="<?= base_url('assets/logo/AGC.jpg') ?>" width="100px" height="35px">
 					<h5 style="text-decoration:underline;text-transform:uppercase;font-weight:bold;padding-top:10px">PAYMENT OF A PARCEL OF LAND SITUATED AT <?php echo $ll['baranggay']?>, <?php echo $ll['municipality']?>, <?php echo $ll['province']?></h5>
 				</div>
 
@@ -715,7 +660,7 @@
 			<!--==========BODY==========-->
 			<div class="modal-body">
 				<div class="row text-center">
-					<img src="<?= base_url('assets/logo/AGC.jpg') ?>" width="200px" height="50px">
+					<img src="<?= base_url('assets/logo/AGC.jpg') ?>" width="100px" height="35px">
 				</div>
 				<div class="row form-inline text-center">
 					<h5 style="text-transform:uppercase;font-weight:bold;padding-top:10px">
@@ -826,10 +771,10 @@
 			<!--==========BODY==========-->
 			<div class="modal-body">
 				<div class="row text-center">
-					<img src="<?= base_url('assets/logo/AGC.jpg') ?>" width="200px" height="50px">
+					<img src="<?= base_url('assets/logo/AGC.jpg') ?>" width="100px" height="35px">
 				</div>
 				<div class="row form-inline text-center">
-					<h5 class="modal-title1">AGENT COMMISSION</h5>
+					<h4 class="modal-title1" style="margin-top:-1px">AGENT COMMISSION</h4>
 					<h5 style="text-transform:uppercase;font-weight:bold;padding-top:10px">
 						<label>₱</label>
 						<input type="text" class="form-control input_border" id="commission_fee" name="commission_fee" value="<?php echo empty($fp['commission_fee']) ? '' : number_format($fp['commission_fee'], 2); ?>" readonly>-
@@ -942,11 +887,11 @@
 			<!--==========BODY==========-->
 			<div class="modal-body">
 				<textarea class="form-control editor" id="receiptTextareas" name="receipt_file" style="max-width:100%" rows="5" placeholder="Type Here..." readonly>
-					<?php $txt_file = base_url('assets/img/acknowledgement_receipt/'.$is_no.'/'.$fp['acknowledgement_receipt']);
+					<?php $txt_file = FCPATH . 'assets/img/uploaded_documents/' . $is_no . '/Acknowledgement Receipt/' . $fp['acknowledgement_receipt'];
 						$text_content = file_get_contents($txt_file);
-						echo htmlspecialchars($text_content, ENT_QUOTES, 'UTF-8');
+						echo $text_content;
 					?>
-				</textarea>                            
+				</textarea>                     
 			</div>
 			<!--==========END BODY==========-->
 			<div class="modal-footer">

@@ -218,7 +218,7 @@ $config['directory_trigger'] = 'd';
 | your log files will fill up very fast.
 |
 */
-$config['log_threshold'] = 1;
+$config['log_threshold'] = 3;
 
 /*
 |--------------------------------------------------------------------------
@@ -559,7 +559,7 @@ $config['rewrite_short_tags'] = FALSE;
 $config['proxy_ips'] = '';
 
 //  custom configuration
-	// date_default_timezone_set('America/Los_Angeles');
+date_default_timezone_set('Asia/Manila'); // Set timezone to Philippine Time
 // end custom configuration
 
 

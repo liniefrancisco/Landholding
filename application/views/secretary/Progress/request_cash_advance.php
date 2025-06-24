@@ -2,7 +2,7 @@
 	<div class="col-md-12 col-sm-12 col-xs-12">
 		<div class="x_panel" style="border-radius:10px;"> 
 			<!--====================BODY====================-->
-			<center><h5 class="title">DETAILS</h5></center>
+			<center><h5 class="modal-title1">DETAILS</h5></center>
 			<?php if($this->session->userdata('user_type') == 'Secretary'){ ?>
 				<div style="float:right">
 				    <?php

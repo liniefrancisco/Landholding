@@ -134,29 +134,6 @@ class Account extends App_Controller{
 	//END FORM VALIDATION
 	//==================================================
 
-	//==================================================
-	//ADMIN=> CREATE ACCOUNT
-	//==================================================
-	public function add(){
-		$this->render_template('administrator/create_account');
-	}
-
-	public function add_user(){
-		if(isset($_POST['create_user'])){
-			$un = $this->input->post('username');
-			$user = $this->Account_model->check_username($un);
-			if(!empty($user)){
-				$this->session->set_flashdata('notif','Username already exists, it must be unique.'); 
-			}else{
-				$this->Account_model->create_account();
-				$this->session->set_flashdata('notif','User Added Successfully!');
-			}
-			redirect('Account/add');
-		}
-	}
-	//==================================================
-	//END ADMIN=> CREATE ACCOUNT
-	//==================================================
 
 	//==================================================
 	//ADMIN=> LIST OF ACCOUNT
@@ -166,23 +143,12 @@ class Account extends App_Controller{
 		$this->render_template('administrator/remove_user',$data);
 	}
 
-	public function delete_user($id){
-		$this->Account_model->remove_user($id);
-		$this->session->set_flashdata('notif','User Deleted Successfully!');
-		redirect('Account/lists');
-	}
+	// public function delete_user($id){
+	// 	$this->Account_model->remove_user($id);
+	// 	$this->session->set_flashdata('notif','User Deleted Successfully!');
+	// 	redirect('Account/lists');
+	// }
 	//==================================================
 	//END ADMIN=> LIST OF ACCOUNT
-	//==================================================
-
-	//==================================================
-	//ADMIN=> USER LOGS
-	//==================================================
-	public function lists(){
-		$data['user_lists'] = $this->Account_model->getuser_lists();
-		$this->render_template('administrator/list_account',$data);
-	}
-	//==================================================
-	//END ADMIN=> USER LOGS
 	//==================================================
 }

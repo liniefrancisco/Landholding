@@ -506,9 +506,9 @@
 		</div>
 	</div>
 </div>
-<!-- ===================================== END MODAL ========================================================= -->
+<!--====================END MODAL====================-->
 
-<!-- ===================================== EDIT PROOF OF TITLE MODAL HERE ========================================================= -->
+<!--====================EDIT PROOF OF TITLE MODAL HERE====================-->
 <div class="modal fade edit_proof_title" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
 	<div class="modal-dialog modal-lg">
 		<div class="modal-content" style="box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);">
@@ -553,7 +553,7 @@
 					<div class="col-md-12">
 						<!--====================LAND TITLE====================-->
 						<center id="LT" class="titling" style="display: none;">
-							<?php echo form_open_multipart('Secretary/Execute/edit_interview_sheet/'.$li['is_no'], array('onsubmit' => 'return validate_lt()'));?>
+							<?php echo form_open_multipart('Acquisition/edit_interview_sheet/'.$li['is_no'], array('onsubmit' => 'return validate_lt()'));?>
 								<div class="container2 col-md-offset-2">
 									<?php if(!$ud['land_title'] == null){ ?>      
 										<div class="col-md-12 col-sm-12 col-xs-12">
@@ -591,11 +591,9 @@
 								<?php } ?> 
 							</form>
 						</center> 
-						<!--====================END LAND TITLE====================--> 
-
 						<!--====================TCT====================--> 
 						<center id="TCT" class="titling" style="display: none;">
-							<?php echo form_open_multipart('Secretary/Execute/edit_interview_sheet/'.$li['is_no'], array('onsubmit' => 'return validate_tct()'));?>
+							<?php echo form_open_multipart('Acquisition/edit_interview_sheet/'.$li['is_no'], array('onsubmit' => 'return validate_tct()'));?>
 								<div class="container2 col-md-offset-2">
 									<?php if(!$ud['tct'] == null){ ?>      
 										<div class="col-md-12 col-sm-12 col-xs-12">
@@ -626,11 +624,9 @@
 									<?php } ?> 
 							</form>
 						</center> 
-						<!--====================END TCT====================-->
-
 						<!--====================DEED OF SALE====================-->
 						<center id="DOS" class="titling" style="display: none;">
-							<?php echo form_open_multipart('Secretary/Execute/edit_interview_sheet/'.$li['is_no'], array('onsubmit' => 'return validate_dos()'));?>
+							<?php echo form_open_multipart('Acquisition/edit_interview_sheet/'.$li['is_no'], array('onsubmit' => 'return validate_dos()'));?>
 								<div class="container2 col-md-offset-2">
 									<?php if(!$ud['previous_deed_of_sale'] == null){ ?>      
 										<div class="col-md-12 col-sm-12 col-xs-12">
@@ -661,11 +657,9 @@
 									<?php } ?>
 							</form>
 						</center>  
-						<!--====================END DEED OF SALE====================-->
-
 						<!--====================E-CAR====================-->
 						<center id="eCar" class="titling" style="display: none;">
-							<?php echo form_open_multipart('Secretary/Execute/edit_interview_sheet/'.$li['is_no'], array('onsubmit' => 'return validate_ecar()'));?>
+							<?php echo form_open_multipart('Acquisition/edit_interview_sheet/'.$li['is_no'], array('onsubmit' => 'return validate_ecar()'));?>
 								<div class="container2 col-md-offset-2">
 									<?php if(!$ud['e_car'] == null){ ?>      
 										<div class="col-md-12 col-sm-12 col-xs-12">
@@ -696,11 +690,9 @@
 									<?php } ?>
 							</form>
 						</center> 
-						<!--====================END E-CAR====================-->
-
 						<!--====================TAX DECLARATION====================-->
 						<center id="TD" class="titling" style="display: none;">
-							<?php echo form_open_multipart('Secretary/Execute/edit_interview_sheet/'.$li['is_no'], array('onsubmit' => 'return validate_td()'));?>
+							<?php echo form_open_multipart('Acquisition/edit_interview_sheet/'.$li['is_no'], array('onsubmit' => 'return validate_td()'));?>
 								<div class="container2 col-md-offset-2">
 									<?php if(!$ud['latest_tax_dec'] == null){ ?>      
 										<div class="col-md-12 col-sm-12 col-xs-12">
@@ -738,11 +730,9 @@
 								<?php } ?>
 							</form>
 						</center>  
-						<!--====================END TAX DECLARATION====================-->
-
 						<!--====================TAX CLEARANCE====================-->
 						<center id="TC" class="titling" style="display: none;">
-							<?php echo form_open_multipart('Secretary/Execute/edit_interview_sheet/'.$li['is_no'], array('onsubmit' => 'return validate_tc()'));?>
+							<?php echo form_open_multipart('Acquisition/edit_interview_sheet/'.$li['is_no'], array('onsubmit' => 'return validate_tc()'));?>
 								<div class="container2 col-md-offset-2">
 									<?php if(!$ud['tax_clearance'] == null){ ?>      
 										<div class="col-md-12 col-sm-12 col-xs-12">
@@ -773,11 +763,9 @@
 									<?php } ?>
 							</form>
 						</center>  
-						<!--====================END TAX CLEARANCE====================-->
-
 						<!--====================SKETCH PLAN====================-->
 						<center id="LS" class="titling" style="display: none;">
-							<?php echo form_open_multipart('Secretary/Execute/edit_interview_sheet/'.$li['is_no'], array('onsubmit' => 'return validate_ls()'));?>
+							<?php echo form_open_multipart('Acquisition/edit_interview_sheet/'.$li['is_no'], array('onsubmit' => 'return validate_ls()'));?>
 								<div class="container2 col-md-offset-2">
 									<?php if(!$ud['land_sketch'] == null){ ?>      
 										<div class="col-md-12 col-sm-12 col-xs-12">
@@ -808,11 +796,9 @@
 									<?php } ?> 
 							</form>
 						</center>  
-						<!--====================END SKETCH PLAN====================-->
-
 						<!--====================VICINITY MAP====================-->
 						<center id="VM" class="titling" style="display: none;">
-							<?php echo form_open_multipart('Secretary/Execute/edit_interview_sheet/'.$li['is_no'], array('onsubmit' => 'return validate_vm()'));?>
+							<?php echo form_open_multipart('Acquisition/edit_interview_sheet/'.$li['is_no'], array('onsubmit' => 'return validate_vm()'));?>
 								<div class="container2 col-md-offset-2">
 									<?php if(!$ud['vicinity_map'] == null){ ?>      
 										<div class="col-md-12 col-sm-12 col-xs-12">
@@ -843,11 +829,9 @@
 									<?php } ?> 
 							</form>
 						</center>  
-						<!--====================END VICINITY MAP====================-->
-
 						<!--====================CERTIFICATE OF NO IMPROVEMENT====================-->
 						<center id="CNI" class="titling" style="display: none;">
-							<?php echo form_open_multipart('Secretary/Execute/edit_interview_sheet/'.$li['is_no'], array('onsubmit' => 'return validate_cni()'));?>
+							<?php echo form_open_multipart('Acquisition/edit_interview_sheet/'.$li['is_no'], array('onsubmit' => 'return validate_cni()'));?>
 								<div class="container2 col-md-offset-2">
 									<?php if(!$ud['cert_no_improvement'] == null){ ?>      
 										<div class="col-md-12 col-sm-12 col-xs-12">
@@ -878,11 +862,9 @@
 									<?php } ?> 
 							</form>
 						</center>  
-						<!--====================END CERTIFICATE OF NO IMPROVEMENT====================-->
-
 						<!--====================REAL ESTATE TAX====================-->
 						<center id="RET" class="titling" style="display: none;">
-							<?php echo form_open_multipart('Secretary/Execute/edit_interview_sheet/'.$li['is_no'], array('onsubmit' => 'return validate_ret()'));?>
+							<?php echo form_open_multipart('Acquisition/edit_interview_sheet/'.$li['is_no'], array('onsubmit' => 'return validate_ret()'));?>
 								<div class="container2 col-md-offset-2">
 									<?php if(!$ud['real_estate_tax'] == null){ ?>      
 										<div class="col-md-12 col-sm-12 col-xs-12">
@@ -913,11 +895,9 @@
 									<?php } ?> 
 							</form>
 						</center>  
-						<!--====================END REAL ESTATE TAX====================-->
-
 						<!--====================MARRIAGE CONTRACT====================-->
 						<center id="MC" class="titling" style="display: none;">
-							<?php echo form_open_multipart('Secretary/Execute/edit_interview_sheet/'.$li['is_no'], array('onsubmit' => 'return validate_mc()'));?>
+							<?php echo form_open_multipart('Acquisition/edit_interview_sheet/'.$li['is_no'], array('onsubmit' => 'return validate_mc()'));?>
 								<div class="container2 col-md-offset-2">
 									<?php if(!$ud['marriage_contract'] == null){ ?>      
 										<div class="col-md-12 col-sm-12 col-xs-12">
@@ -948,11 +928,9 @@
 									<?php } ?> 
 							</form>
 						</center>  
-						<!--====================END MARRIAGE CONTRACT====================-->
-
 						<!--====================BIRTH CERTIFICATE====================-->
 						<center id="BC" class="titling" style="display: none;">
-							<?php echo form_open_multipart('Secretary/Execute/edit_interview_sheet/'.$li['is_no'], array('onsubmit' => 'return validate_bc()'));?>
+							<?php echo form_open_multipart('Acquisition/edit_interview_sheet/'.$li['is_no'], array('onsubmit' => 'return validate_bc()'));?>
 								<div class="container2 col-md-offset-2">
 									<?php if(!$ud['birth_certificate'] == null){ ?>      
 										<div class="col-md-12 col-sm-12 col-xs-12">
@@ -983,11 +961,9 @@
 									<?php } ?>
 							</form>
 						</center>  
-						<!--====================END BIRTH CERTIFICATE====================-->
-
 						<!--====================VALID ID====================-->
 						<center id="VI" class="titling" style="display: none;">
-							<?php echo form_open_multipart('Secretary/Execute/edit_interview_sheet/'.$li['is_no'], array('onsubmit' => 'return validate_vi()'));?>
+							<?php echo form_open_multipart('Acquisition/edit_interview_sheet/'.$li['is_no'], array('onsubmit' => 'return validate_vi()'));?>
 								<div class="container2 col-md-offset-2">
 									<?php if(!$ud['valid_id'] == null){ ?>      
 										<div class="col-md-12 col-sm-12 col-xs-12">
@@ -1018,11 +994,9 @@
 									<?php } ?>
 							</form>
 						</center>  
-						<!--====================END VALID ID====================-->
-
 						<!--====================SUBDIVISION PLAN====================-->
 						<center id="SP" class="titling" style="display: none;">
-							<?php echo form_open_multipart('Secretary/Execute/edit_interview_sheet/'.$li['is_no'], array('onsubmit' => 'return validate_sp()'));?>
+							<?php echo form_open_multipart('Acquisition/edit_interview_sheet/'.$li['is_no'], array('onsubmit' => 'return validate_sp()'));?>
 								<div class="container2 col-md-offset-2">
 									<?php if(!$ud['subdivision_plan'] == null){ ?>      
 										<div class="col-md-12 col-sm-12 col-xs-12">
@@ -1053,11 +1027,9 @@
 									<?php } ?>
 							</form>
 						</center>  
-						<!--====================END SUBDIVISION PLAN====================-->
-
 						<!--====================SPA====================-->
 						<center id="SPA" class="titling" style="display: none;">
-							<?php echo form_open_multipart('Secretary/Execute/edit_interview_sheet/'.$li['is_no'], array('onsubmit' => 'return validate_spa()'));?>
+							<?php echo form_open_multipart('Acquisition/edit_interview_sheet/'.$li['is_no'], array('onsubmit' => 'return validate_spa()'));?>
 								<div class="container2 col-md-offset-2">
 									<?php if(!$ud['spa'] == null){ ?>      
 										<div class="col-md-12 col-sm-12 col-xs-12">
@@ -1088,11 +1060,9 @@
 									<?php } ?>
 							</form>
 						</center>  
-						<!--====================SPA====================-->
-
 						<!--====================DENR/DAR====================-->
 						<center id="DENR" class="titling" style="display: none;">
-							<?php echo form_open_multipart('Secretary/Execute/edit_interview_sheet/'.$li['is_no'], array('onsubmit' => 'return validate_denr()'));?>
+							<?php echo form_open_multipart('Acquisition/edit_interview_sheet/'.$li['is_no'], array('onsubmit' => 'return validate_denr()'));?>
 								<div class="container2 col-md-offset-2">
 									<?php if(!$ud['denr_dar'] == null){ ?>      
 										<div class="col-md-12 col-sm-12 col-xs-12">
@@ -1123,11 +1093,9 @@
 									<?php } ?>
 							</form>
 						</center>  
-						<!--====================END DENR/DAR====================-->
-
 						<!--====================OTHER====================-->
 						<center id="OTHER" class="titling" style="display: none;">
-							<?php echo form_open_multipart('Secretary/Execute/edit_interview_sheet/'.$li['is_no'], array('onsubmit' => 'return validate_other()'));?>
+							<?php echo form_open_multipart('Acquisition/edit_interview_sheet/'.$li['is_no'], array('onsubmit' => 'return validate_other()'));?>
 								<div class="container2 col-md-offset-2">
 									<?php if(!$ud['other'] == null){ ?>      
 										<div class="col-md-12 col-sm-12 col-xs-12">
@@ -1190,14 +1158,13 @@
 
 			<div class="modal-footer" style="margin-top:10%">
 				<button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-				<!-- <input type="submit" class="btn btn-custom-primary" value="Submit" style="color: #ff9900; border: 2px solid;"> -->
 			</div>
 		</div>
 	</div>
 </div>
-<!-- ===================================== END MODAL ========================================================= -->
+<!--====================END MODAL====================-->
 
-<!-- ===================================== ALERT MODAL ========================================================= -->
+<!--====================ALERT MODAL====================-->
 <div class="modal fade" id="alert_modal" tabindex="-1" role="dialog" aria-hidden="true" style="margin-top: 100px;" >
 	<div class="modal-dialog modal-sm">
 		<div class="modal-content" style="box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);">
@@ -1215,94 +1182,28 @@
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 				<button type="button" class="btn btn-custom-primary">Ok</button>
 			</div>
-
 		</div>
 	</div>
 </div>
-<!-- ===================================== END MODAL ========================================================= -->
-
-<!-- ===================================== LAND TITLE MODAL ========================================================= -->
-<div class="modal animate bounceInUp land_title_<?php echo $li['is_no'];?>" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
-	<div class="modal-dialog modal-lg">
-		<div class="modal-content">
-			<div class="modal-header" style="background-color: #00c851; color: white;">
-				<button type="button" class="close"  data-dismiss="modal"><span aria-hidden="true">×</span></button>
-				<h4 class="modal-title" id="myModalLabel"><span class="fa fa-file-text-o"></span> Land Title (Photocopy)</h4>
-			</div>
-			<div class="modal-body">
-				<center>
-					<div style="overflow-x:auto">
-						<img src="<?= base_url('assets/img/uploaded_documents/'.$ud['is_no'].'/Land Title/'.$ud['land_title'].'') ?> " class="img-responsive">   
-					</div>  
-				</center>                                         
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal" style="color: #00c851; border: 1px solid;">Close</button>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- ===================================== LAND SKETCH MODAL ========================================================= -->
-<div class="modal animate bounceInUp land_sketch_<?php echo $li['is_no'];?>" tabindex="-1" role="dialog" aria-hidden="true">
-	<div class="modal-dialog modal-lg">
-		<div class="modal-content">
-			<div class="modal-header" style="background-color: #00c851; color: white;">
-				<button type="button" class="close" id="dclose" data-dismiss="modal"><span aria-hidden="true">×</span></button>
-				<h4 class="modal-title" id="myModalLabel"><span class="fa fa-file-text-o"></span> Land Sketch</h4>
-			</div>
-			<div class="modal-body">
-				<center>
-					<div style="overflow-x:auto;">
-						<img src="<?= base_url('assets/img/uploaded_documents/'.$ud['is_no'].'/Land Sketch/'.$ud['land_sketch'].'') ?> " class="img-responsive">   
-					</div>   
-				</center>                                  
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal" style="color: #00c851; border: 1px solid;">Close</button>
-			</div>
-		</div>
-	</div>
-</div>
-<!-- ===================================== TAX DECLARATION MODAL ========================================================= -->
-<div class="modal animate bounceInUp latest_tax_dec_<?php echo $li['is_no'];?>" tabindex="-1" role="dialog" aria-hidden="true">
-	<div class="modal-dialog modal-lg">
-		<div class="modal-content">
-			<div class="modal-header" style="background-color: #00c851; color: white;">
-				<button type="button" class="close" id="dclose" data-dismiss="modal"><span aria-hidden="true">×</span></button>
-				<h4 class="modal-title" id="myModalLabel"><span class="fa fa-file-text-o"></span> Latest Tax Declaration (Photocopy)</h4>
-			</div>
-			<div class="modal-body">
-				<center> 
-					<div style="overflow-x:auto;">
-						<img src="<?= base_url('assets/img/uploaded_documents/'.$ud['is_no'].'/Tax Declaration/'.$ud['latest_tax_dec'].'') ?> " class="img-responsive">   
-					</div> 
-				</center>                                           
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal" style="color: #00c851; border: 1px solid;">Close</button>
-			</div>
-		</div>
-	</div>
-</div>
-<!--=========================================================RESUBMIT MODAL=========================================================-->
+<!--====================RESUBMIT MODAL====================-->
 <div class="modal fade resubmit_<?php echo $li['is_no'] ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true" style="margin-top: 100px;">
-	<div class="modal-dialog">
+	<div class="modal-dialog modal-md">
 		<div class="modal-content">
-			<div class="modal-header" style="background:#6b8e23;">
-				<button type="button" class="close" id="dclose" data-dismiss="modal" aria-hidden="true"><span style="color:white;">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel"><i class="fa fa-check-square-o" style="color:white;"></i> <span style="color:#E7E7E7;">Checked</span></h4>
+			<div class="modal-header bg-green">
+				<button type="button" class="close" id="dclose" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h5 class="modal-title" id="myModalLabel"><i class="fa fa-check-square-o"></i> Resubmit</h5>
 			</div>
-			<div class="modal-body" style="overflow-y: auto;">
-				<center><h6><span style="font-family:verdana; font-size:15px">Are you sure you want to resubmit these documents?</span></h6></center>
+			<div class="modal-body text-center" style="overflow-y: auto;">
+				<h6>Are you sure you want to resubmit this request?</h6>
 			</div>
 			<div class="modal-footer">
-				<button style="background-color: #6b8e23;border:#6b8e23" type="submit" class="btn  btn-info resubmit" id="<?php echo $li['is_no'] ?>">Yes</button>
-				<button style="background-color: maroon;border:maroon" type="button" class="btn btn-warning" data-dismiss="modal">No</button>
+				<button type="submit" class="btn btn-success btn-sm resubmit" id="<?php echo $li['is_no'] ?>">Yes</button>
+				<button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">No</button>
 			</div>
 		</div>
 	</div>
 </div>
-<!-- ===================================== END MODAL ========================================================= -->
+<!--====================END MODAL====================-->
 
 <script type="text/javascript">
 	document.addEventListener("DOMContentLoaded", function(event) {
@@ -1378,14 +1279,14 @@
 		});
 		//resubmit JQUERY
 		$(".resubmit").click(function () {
-			var id = $(this).attr("id");
+			var id 		= $(this).attr("id");
+			var status 	= "Resubmitted";
 			$.ajax({
 				url: "<?php echo base_url('Acquisition/resubmit/"+id+"') ?>",
 				type: "post",
 				data: { '<?php echo $this->security->get_csrf_token_name(); ?>': '<?php echo $this->security->get_csrf_hash(); ?>' },
 				success: function () {
-					// alert("The Request has been Approved");
-					window.location.replace("<?php echo base_url('Acquisition/pop_up_resubmit') ?>/" + id + "");
+					window.location.replace("<?php echo base_url('Acquisition/pop_up_notification/"+status+"') ?>");
 				}
 			});
 		});                                                                  

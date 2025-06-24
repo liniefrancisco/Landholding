@@ -6,10 +6,10 @@
 				$a_paid 				= $this->Payment_model->getpaid_ca($is_no);
 			?>
 
-			<center><h5 class="title_ca">DETAILS</h5></center>
+			<center><h5 class="modal-title1">DETAILS</h5></center>
 
 			<div class="col-md-12 col-sm-12 col-xs-12">
-				<a href="<?php echo base_url('Secretary/Pdf/summary_of_payment/'.$is_no);?>" target="blank">
+				<a href="<?php echo base_url('Pdf/summary_of_payment/'.$is_no);?>" target="blank">
 					<button type="button" class="btn btn-md btn-default btn-sm" style="border-color:#cc5a5a;float: right;"><img src="<?php echo base_url();?>/assets/logo/pdf.png" width="10px" height="10px"> <b>Generate to PDF</b></button>
 				</a>
 			</div>

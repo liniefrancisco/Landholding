@@ -3,31 +3,21 @@
 	<div class="row row_container">
 		<div class="col-md-12 col-sm-12 col-xs-12">
 			<!--====================FLASH DATA====================-->
-			<?php if(($this->session->flashdata('notif')=='User Added Successfully!')){?>
-				<div class="alert alert-info alert-dismissible fade in" role="alert" id="saved">
-					<i class="glyphicon glyphicon-ok"></i>  <?php echo $this->session->flashdata('notif'); ?>
+			<?php if(($this->session->flashdata('error')=='Username already exists, it must be unique.')){?>
+				<div class="alert alert-danger alert-dismissible fade in" role="alert" id="saved">
+					<i class="fa fa-info"></i>  <?php echo $this->session->flashdata('error'); ?>
 				</div>
 			<?php } ?>
-			<?php if(($this->session->flashdata('notif')=='Username already exists, it must be unique.')){?>
-				<div class="alert alert-info alert-dismissible fade in" role="alert" id="saved">
-					<i class="fa fa-info"></i>  <?php echo $this->session->flashdata('notif'); ?>
-				</div>
-			<?php } ?>
-			<!--====================END FLASH DATA====================-->
-
 			<!--====================START CONTENT====================-->
 			<div class="x_panel animate zoomIn" style="box-shadow: 5px 8px 16px #888888">
 				<div class="x_title">
-					<h2 class="aua"><i class="fa fa-user"></i> CREATE USER ACCOUNT</h2>
-					<div style="float:right;color: #2a3f54;">
-						<p style="font-size: 13px;font-family: sans-serif;padding-bottom: 3px;letter-spacing: 1px;" id="da"></p>
-						<p style="font-size: 13px;font-family: sans-serif;margin-top: -19px;letter-spacing: 1px;" id="ti"></p>
-					</div>
+					<h6 class="fa fa-user"> <b>Create User Account</b></h6>
+					<a href="#" onclick="window.history.back()" class="btn btn-xs btn-warning pull-right"><span class="fa fa-arrow-left" style="color:#fff"></span> Back</a>
 					<div class="clearfix"></div>
 				</div>
 
 				<div class="col-md-12">
-					<form class="form-horizontal form-label-left" action="<?= base_url('Account/add_user') ?>" method="POST">
+					<form class="form-horizontal form-label-left" action="<?= base_url('Admin/add_user') ?>" method="POST">
 						<div class="col-md-2"></div>
 						<div class="col-md-9">   
 							<div class="form-group">
@@ -110,7 +100,7 @@
 								</div>
 							</div>
 
-							<div class="col-md-4"></div>
+							<div class="col-sm-4"></div>
 							<button name="create_user" class="btn btn-primary">Create</button>
 							<a href="<?= base_url() ?>" class="btn btn-danger">Cancel</a>
 						</div>
@@ -122,12 +112,3 @@
 	</div>
 </div>
 <!--====================END PAGE CONTENT====================-->
-
-
-<style type="text/css">
-	.aua{
-		word-spacing:4px; letter-spacing:1px; font-weight:bold; font-size:14px;color:#2a3f54;padding-top:10px
-	}
-</style>
-
-

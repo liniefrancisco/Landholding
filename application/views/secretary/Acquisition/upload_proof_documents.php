@@ -28,11 +28,11 @@
 					<div class="clearfix"></div>
 				</div>
 
-				<div class="x_panel" style="border-radius:9px; ">
+				<div class="x_panel" style="border-radius:9px">
 					<div class="row">
 
-						<div class="col-md-12 col-sm-12 col-xs-12" style="border-top: 1px solid #ff6600; border-bottom: 1px solid #ff6600;" >
-							<center><h3 style="letter-spacing: 10px; color: black;font-size:16px"><b>UPLOAD PROOF OF TITLE</b></h3></center>
+						<div class="col-md-12 col-sm-12 col-xs-12 text-center" style="border-top: 1px solid #ff6600; border-bottom: 1px solid #ff6600;" >
+							<h5 style="letter-spacing:10px">UPLOAD PROOF OF TITLE</h5>
 						</div>
 
 						<!--====================Dropdown====================-->

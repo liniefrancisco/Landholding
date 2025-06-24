@@ -1,52 +1,46 @@
-<?php foreach($pr_approved as $data): ?>
-<div class="modal fade" id="view_rca_<?= $data['control_no'] ?>" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
-	<div class="modal-dialog modal-lg">
-		<div class="modal-content">
-			<div class="modal-header bg-primary">
-				<button type="button" class="close" id="dclose" data-dismiss="modal" aria-label="Close" ><span aria-hidden="true">×</span></button>
-				<h5><i class="fa fa-file"></i> RCA <u><?php if($data['is_no']){ echo $data['is_no']; } ?></u></h5>
-			</div>
-			<!--====================BODY====================-->
-			<div class="modal-body"> 
-				<center><img src="<?= base_url('assets/logo/AGC.jpg') ?>" width="200px" height="50px">
-					<h5 style="font-family:Times New Roman">ALTURAS SUPERMARKET CORPORATION</h5>
-					<h5 style="margin-top:-8px;font-family:Times New Roman">B. Inting Street, Tagbilaran City</h5>
-					<h4 style="margin-top:-8px;font-family:Times New Roman;font-weight:bold;letter-spacing:3px">REQUEST CASH ADVANCE</h4>
-				</center>
-				
-				<div class="row">
-					<div class="col-md-12 col-sm-12 col-xs-12">
-						<div class="col-md-12 form-inline">
-							<label class="col-md-2">Date Requested <b style="float: right;">:</b></label> 
-							<span><?php echo $data['submission_date']?></span>  
-						</div>
+<?php foreach($rca as $data):?>
+	<div class="modal fade" id="view_rca_<?= $data['control_no'] ?>" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content">
+				<div class="modal-header bg-primary">
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h6 class="fa fa-info"> RCA</h6>
+				</div>
+				<!--====================BODY====================-->
+				<div class="modal-body"> 
+					<div class="row text-center">
+						<img src="<?= base_url('assets/logo/AGC.jpg') ?>" width="120px" height="35px">
+						<h4 class="modal-title1" style="margin-top:-1px">REQUEST CASH ADVANCE</h4>
 					</div>
-
-					<div class="col-md-12 col-sm-12 col-xs-12">
-						<div class="col-md-12 form-inline">
-							<label class="col-md-2">CA Control No. <b style="float: right;">:</b></label>   
-							<span><?php echo $data['control_no']?></span>
+					
+					<div class="row">
+						<div class="col-md-12 space">
+							<label class="col-md-2">Date Requested <b style="float:right">:</b></label>
+							<div class="col-md-10">
+								<input type="text" class="form-control inb" value="<?php echo $data['pr_submission_date'] ?>" readonly>
+							</div>
 						</div>
-					</div>
-
-					<div class="col-md-12 col-sm-12 col-xs-12">
-						<div class="col-md-12 form-inline">
-							<label class="col-md-2">Amount in Figure <b style="float: right;">:</b></label>   
-							<span>₱<?php echo number_format($data['amount'],2)?></span>
+						<div class="col-md-12">
+							<label class="col-md-2">CA Control No. <b style="float:right">:</b></label>
+							<div class="col-md-10">
+								<input type="text" class="form-control inb" value="<?php echo $data['control_no'] ?>" readonly>
+							</div>
 						</div>
-					</div>
-
-					<div class="col-md-12 col-sm-12 col-xs-12">
-						<div class="col-md-12 form-inline">
-							<label class="col-md-2">Amount in Words <b style="float: right;">:</b></label>   
-							<?php $this->load->helper('custom'); ?>
-							<span style="color:#ff6600"><?php echo number_to_words($data['amount'],2)?> Pesos</span>
+						<div class="col-md-12">
+							<label class="col-md-2">Amount in Figure <b style="float:right">:</b></label>
+							<div class="col-md-10">
+								<input type="text" class="form-control inb" value="₱<?php echo number_format($data['pr_amount'],2)?>" readonly>
+							</div>
 						</div>
-					</div>
-
-					<div class="col-md-12"><br/>
-						<div class="col-md-12 form-inline">
-							<p class="paragrap">
+						<div class="col-md-12">
+							<label class="col-md-2">Amount in Words <b style="float:right">:</b></label>
+							<div class="col-md-10">
+								<?php $this->load->helper('custom'); ?>
+								<input type="text" class="form-control inb" value="<?php echo number_to_words($data['pr_amount'],2)?> Pesos" style="color:#ff6600" readonly>
+							</div>
+						</div>
+						<div class="col-md-12 space">
+							<p class="col-md-12">
 								Cash Advance for Lot. <b class="txt"><?php echo $data['lot'];?></b>,
 								Cad. <b class="txt"><?php echo $data['cad'] ?></b>,
 								located at <b class="txt"><i><?php echo $data['street'] ?>, <?php echo $data['baranggay']?>, <?php echo $data['municipality']?>, <?php echo $data['province']?></i></b>,
@@ -55,20 +49,19 @@
 								in the name of <b class="txt"><i><?php echo ucfirst($data['firstname']) ?> <?php echo ucfirst($data['middlename']) ?> <?php echo ucfirst($data['lastname']) ?></i></b>.
 							</p>
 						</div>
-					</div>
 
-					<div class="col-md-12 col-xs-12 col-sm-12">
-						<div class="row" style="border: 2px solid rgba(128, 128, 128, 0.33);">
-							<div class="form-group">
-								<label class="control-label col-md-3">Purpose *</label>
-								<div class="form-horizontal col-md-9">
+						<div class="col-md-12 space">
+							<div class="col-md-12 form-group" style="border: 2px solid rgba(128, 128, 128, 0.33);">
+								<label class="col-md-3">Purpose *</label>
+								<div class="col-md-9 form-horizontal">
 									<?php 
-										$purposesFull=array('Personal','Affidavit of Surrender of Landholdings','Capital Gains Tax','Estate Tax','Notary Fee','Real Property Tax','Documentary Stamp Tax');
-										$purposesFromDB= $data['purpose'];
-										$purposesFromDBArray=explode(', ',$purposesFromDB);
+										$purposesFull 			= array('Personal','Affidavit of Surrender of Landholdings','Capital Gains Tax','Estate Tax','Notary Fee','Real Property Tax','Documentary Stamp Tax');
+										$purposesFromDB 		= $data['purpose'];
+										$purposesFromDBArray 	= explode(', ',$purposesFromDB);
+
 										foreach($purposesFull as $item){
 											$checked = in_array($item,$purposesFromDBArray) ? 'checked' : 'disabled';
-											echo '<input type="checkbox" name="purs[]"'.$checked.'>'.$item;
+											echo '<input type="checkbox" name="purs[]"'.$checked.' disabled>'.$item;
 											echo '<br/>';
 										}
 									?>
@@ -80,12 +73,11 @@
 						</div>
 					</div>
 				</div>
-			</div>
-			<!--====================END BODY====================-->
-			<div class="modal-footer">
-				<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+				<!--====================END BODY====================-->
+				<div class="modal-footer">
+					<button type="button" class="btn btn-sm btn-default" data-dismiss="modal">Close</button>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
 <?php endforeach; ?>

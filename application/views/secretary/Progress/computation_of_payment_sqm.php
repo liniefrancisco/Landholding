@@ -4,11 +4,12 @@
 			<!--====================BODY====================-->
 			<?php echo form_open('Payment/view_inprogress/'.$is_no,array('id' => "edit_cop")); ?>
 
-				<center style="margin-top: 20px;"><img src="<?= base_url('assets/logo/AGC.jpg') ?>" width="200px" height="50px">
+				<div class="row text-center" style="margin-top: 20px;">
+					<img src="<?= base_url('assets/logo/AGC.jpg') ?>" width="120px" height="35px">
 					<h5 style="text-decoration:underline;text-transform:uppercase;font-weight:bold;padding-top:10px">PAYMENT OF A PARCEL OF LAND SITUATED AT <?php echo $ll['baranggay']?>, <?php echo $ll['municipality']?>, <?php echo $ll['province']?></h5>
-				</center><br/>
+				</div>
 
-				<center><div class="change-message">*You have unsaved changes.</div></center>
+				<center><div class="change-message">*You have unsaved changes.</div></center><br/>
 				<input type="hidden" name="is_no" value="<?php echo $is_no?>">
 
 				<div class="form-inline col-md-12 col-sm-12 col-xs-12">
@@ -155,7 +156,7 @@
 				<div class="form-inline col-md-12 col-sm-12 col-xs-12">
 					<div class="col-md-1"></div>
 					<div class="col-md-11">
-						<textarea class="form-control" name="note" placeholder="Type Here..." rows="5" style="max-width:100%;width:100%"><?php echo (!empty($getpr_byid_byfp_row['note'])) ? $getpr_byid_byfp_row['note'] : ''; ?></textarea>
+						<textarea class="form-control" name="note" placeholder="Type Here..." rows="5" style="max-width:100%;width:100%"><?php echo (!empty($fp_info1['note'])) ? $fp_info1['note'] : ''; ?></textarea>
 					</div>
 				</div>
 				

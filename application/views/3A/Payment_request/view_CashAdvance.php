@@ -6,7 +6,7 @@
 				<div class="col-md-9"></div>
 				<div class="col-md-3" style="position: fixed;width: 250px;bottom: 20px;right: 10px;z-index: 99;cursor: pointer;">
 					<button style="float: right;" class="btn btn-danger btn-sm" data-dismiss="modal"  data-toggle="modal" data-target=".disapproved_<?php echo $pr['control_no']; ?>" title="Disapprove" ><span class="fa fa-close"></span> Disapproved</button>
-					<button style="float: right;" class="btn btn-info btn-sm" data-dismiss="modal"  data-toggle="modal" data-target=".approved_<?php echo $pr['control_no']; ?>" title="Approve" ><span class="fa fa-check"></span> Approved</button>
+					<button style="float: right;" class="btn btn-success btn-sm" data-dismiss="modal"  data-toggle="modal" data-target=".approved_<?php echo $pr['control_no']; ?>" title="Approve" ><span class="fa fa-check"></span> Approved</button>
 				</div>
 			</div>
 		<?php } ?>
@@ -16,7 +16,7 @@
 			<div class="x_panel animate slideInDown" style="border:1px; !important;box-shadow: 7px 6px 16px #888888;">
 				<div class="x_title">
 					<div class="title_left">
-						<h2 class="fa fa-money"> <b>Cash Advance <u style="color:#eb5d0c"> <?php if($oi['is_no']) { echo $oi['is_no']; } ?></u></b></h2>
+						<h2 class="fa fa-info"> <b>RCA</b></h2>
 						<div style="float:right">
 	                        <a href="#" onclick="window.history.back()" class="btn btn-sm btn-warning"><span class="fa fa-arrow-left" style="color:#fff"></span> Back</a>
 	                    </div>
@@ -26,7 +26,7 @@
 
 				<div class="col-md-12 form_border">                              
 					<center><img src="<?= base_url('assets/logo/AGC.jpg') ?>" width="200px" height="50px">
-						<h4 class="modal-title1">CASH ADVANCE</h4>
+						<h4 class="modal-title1">REQUEST CASH ADVANCE</h4>
 					</center>
 				</div>
 
@@ -85,7 +85,7 @@
 										$purposesFromDBArray 	= explode(', ',$purposesFromDB);
 										foreach($purposesFull as $item){
 											$checked = in_array($item,$purposesFromDBArray) ? 'checked' : 'disabled';
-											echo '<input type="checkbox" name="purs[]"'.$checked.' readonly>'.$item;
+											echo '<input type="checkbox" name="purs[]"'.$checked.' disabled>'.$item;
 											echo '<br/>';
 										}
 									?>
@@ -110,9 +110,17 @@
 		//DISAPPROVED CASH ADVANCE 
 		$(".disapproved").click(function () {
             var id 		= $(this).attr("id");
-            var reason 	= $("#disapproved_message").val(); // Get the reason from the textarea
+            var reason 	= $("#disapproved_message").val();
+            var status 	= "Disapproved";
+
+            if (reason === "") {
+		        alert("Disapproval message is required.");
+		        $("#disapproved_message").focus();
+		        return false; // Stop form submission
+		    }
+
             $.ajax({
-                url: "<?php echo base_url('Payment/submit_disapproved_payment/"+id+"') ?>",
+                url: "<?php echo base_url('Payment/submit_disapproved_request/"+id+"') ?>",
                 type: "post",
                 data: {
                     'is_no': id,
@@ -120,19 +128,20 @@
                     '<?php echo $this->security->get_csrf_token_name(); ?>': '<?php echo $this->security->get_csrf_hash(); ?>'
                 },
                 success: function (data) {
-                    window.location.replace("<?php echo base_url('Payment/pop_up_disapproved') ?>/" + id + "");
+                    window.location.replace("<?php echo base_url('Payment/pop_up_notification/"+status+"') ?>");
                 }
             });
         });
 		//APPROVED CASH ADVANCE
 		$(".approved").click(function () {
-            var id = $(this).attr("id");
+            var id 		= $(this).attr("id");
+            var status 	= "Approved";
             $.ajax({
-                url: "<?php echo base_url('Payment/submit_approved_payment/"+id+"') ?>",
+                url: "<?php echo base_url('Payment/submit_approved_request/"+id+"') ?>",
                 type: "post",
                 data: { '<?php echo $this->security->get_csrf_token_name(); ?>': '<?php echo $this->security->get_csrf_hash(); ?>' },
                 success: function () {
-                    window.location.replace("<?php echo base_url('Payment/pop_up_approved/"+id+"') ?>");
+                    window.location.replace("<?php echo base_url('Payment/pop_up_notification/"+status+"') ?>");
                 }
             });
         });

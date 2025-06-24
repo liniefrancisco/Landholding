@@ -79,7 +79,7 @@
 				<!--====================TABPANE====================-->
 				<div class="container"><br/><br/><br/><br/>
 					<ul id="myTab" class="nav nav-tabs bar_tabs" role="tablist">
-						<li class="active"><a href="#tab_content_is" id="is-tab" role="tab" data-toggle="tab" aria-expanded="true" style="background-color:#001933; color:white" >Interview Sheet</a></li>
+						<li class="active"><a href="#tab_content_is" id="is-tab" role="tab" data-toggle="tab" aria-expanded="true" style="background: linear-gradient(to top, #09203f 0%, #537895 100%);color: white">Interview Sheet</a></li>
 
 						<li role="presentation" class="dropdown">
 							<?php
@@ -97,19 +97,19 @@
 							}
 
 							if ($canRequestFullPayment) {?>
-								<a href="#" id="expenses-tab" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="background-color: #001933; color: white; font-size: 12px;">Request Full Payment<span class="caret"></span></a>
+								<a href="#" id="expenses-tab" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="background: linear-gradient(to top, #09203f 0%, #537895 100%);color: white">Request Full Payment<span class="caret"></span></a>
 								<ul class="dropdown-menu" role="menu">
 									<?php if($this->session->userdata('user_type') == 'Secretary'){ ?>
-										<li><a href="#lpf" role="tab" data-toggle="tab" style="background-color: #001933; color: white;">Lot Purchase Form</a></li>
-										<li><a href="#cp" role="tab" data-toggle="tab" style="background-color: #001933; color: white;">Computation of Payment</a></li>
-										<li><a href="#nf" role="tab" data-toggle="tab" style="background-color: #001933; color: white;">Notarial Fee</a></li>
+										<li><a href="#lpf" role="tab" data-toggle="tab" style="background: linear-gradient(to top, #09203f 0%, #537895 100%);color: white">Lot Purchase Form</a></li>
+										<li><a href="#cp" role="tab" data-toggle="tab" style="background: linear-gradient(to top, #09203f 0%, #537895 100%);color: white">Computation of Payment</a></li>
+										<li><a href="#nf" role="tab" data-toggle="tab" style="background: linear-gradient(to top, #09203f 0%, #537895 100%);color: white">Notarial Fee</a></li>
 										<?php  if(!empty($bi)){ ?>
-											<li><a href="#ac" role="tab" data-toggle="tab" style="background-color: #001933; color: white;">Agent Commission</a></li> 
+											<li><a href="#ac" role="tab" data-toggle="tab" style="background: linear-gradient(to top, #09203f 0%, #537895 100%);color: white">Agent Commission</a></li> 
 										<?php } ?>
-										<li><a href="#ar" role="tab" data-toggle="tab" style="background-color: #001933; color: white;">Acknowledgement Receipt</a></li>
-										<li><a href="#uod" role="tab" data-toggle="tab" style="background-color: #001933; color: white;">Upload Other Documents</a></li>
+										<li><a href="#ar" role="tab" data-toggle="tab" style="background: linear-gradient(to top, #09203f 0%, #537895 100%);color: white">Acknowledgement Receipt</a></li>
+										<li><a href="#uod" role="tab" data-toggle="tab" style="background: linear-gradient(to top, #09203f 0%, #537895 100%);color: white">Upload Other Documents</a></li>
 									<?php } ?>
-									<li><a href="#view" role="tab" data-toggle="tab" style="background-color: #001933; color: white;">View Details</a></li>
+									<li><a href="#view" role="tab" data-toggle="tab" style="background: linear-gradient(to top, #09203f 0%, #537895 100%);color: white">View Details</a></li>
 								</ul>
 							<?php } else {?>
 								<a href="#" id="expenses-tab" class="dropdown-toggle" data-toggle="dropdown" aria-expanded="false" style="background-color: #001933; color: white; font-size: 12px;" 
@@ -123,11 +123,11 @@
 							<?php } ?>
 						</li>
 
-						<li role="presentation" ><a  href="#rca" role="tab" id="rca-tab" data-toggle="tab" aria-expanded="false" style="background-color: #001933; color: white;font-size: 12px;">Request Cash Advance</a></li>
+						<li role="presentation" ><a  href="#rca" role="tab" id="rca-tab" data-toggle="tab" aria-expanded="false" style="background: linear-gradient(to top, #09203f 0%, #537895 100%);color: white">Request Cash Advance</a></li>
 
-						<li role="presentation" ><a  href="#tab_content_soa" role="tab" id="soa-tab" data-toggle="tab" aria-expanded="false" style="background-color: #001933; color: white;font-size: 12px;">Summary of Payment</a></li>
+						<li role="presentation" ><a  href="#tab_content_soa" role="tab" id="soa-tab" data-toggle="tab" aria-expanded="false" style="background: linear-gradient(to top, #09203f 0%, #537895 100%);color: white">Summary of Payment</a></li>
 
-						<li role="presentation" ><a  href="#tab_content_doc" role="tab" id="doc-tab" data-toggle="tab" aria-expanded="false" style="background-color: #001933; color: white;font-size: 12px;">Seller Documents</a></li>
+						<li role="presentation" ><a  href="#tab_content_doc" role="tab" id="doc-tab" data-toggle="tab" aria-expanded="false" style="background: linear-gradient(to top, #09203f 0%, #537895 100%);color: white">Seller Documents</a></li>
 					</ul>
 
 					<div id="myTabContent" class="tab-content">
@@ -258,7 +258,7 @@
 			$('.errModal').modal('show') 
 			return false;
 		}else{
-			var conf = confirm('Confirm your submition.');
+			var conf = confirm('Confirm your submission.');
 			if(conf === true){
 				return true;
 			}else{

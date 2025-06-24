@@ -1,15 +1,16 @@
 <div class="container">
 	<div class="col-md-12 col-sm-12 col-xs-12">
-		<div class="x_panel" style="border-radius:9px;" id="print-nf"><br/>
+		<div class="x_panel" style="border-radius:9px;" id="print-nf">
 			<!--====================BODY====================-->
 			<?php echo form_open('Payment/view_inprogress/'.$is_no,array('id' => "edit_nf")); ?>
-				<center>
-					<img src="<?= base_url('assets/logo/AGC.jpg') ?>" width="200px" height="50px"><br/>
-					<center><div class="change-message">*You have unsaved changes.</div></center>
-					<div class="form-inline col-md-12 col-sm-12 col-xs-12">
-						<h5 style="text-transform:uppercase;font-weight:bold;padding-top:10px"><label>₱</label><input type="text" class="form-control inb" id="notarial_fee" name="notarial_fee" value="<?php echo empty($getpr_byid_byfp_row['notarial_fee']) ? '' : number_format($getpr_byid_byfp_row['notarial_fee'],2); ?>">- NOTARIAL FEE FOR ATTY. URBANO H. LAGUNAY</h5><br/><br/>
+				<div class="row form-inline text-center space">
+					<img src="<?= base_url('assets/logo/AGC.jpg') ?>" width="120px" height="35px">
+					<div class="change-message">*You have unsaved changes.</div>
+					<div class="form-inline space" style="font-weight:bold">
+						<label>₱</label>
+						<input type="text" class="form-control inb" id="notarial_fee" name="notarial_fee" value="<?php echo empty($fp_info1['notarial_fee']) ? '' : number_format($fp_info1['notarial_fee'],2); ?>">- NOTARIAL FEE FOR ATTY. URBANO H. LAGUNAY
 					</div>
-				</center>
+				</div><br/>
 
 				<div class="form-inline col-md-12 col-sm-12 col-xs-12">
 					<div class="col-md-1"></div>

@@ -21,6 +21,8 @@ class Old_Aspayment extends App_Controller{
 		$data['judicial'] = $this->Aspayment_model->get_js_old();
 		// $data['ud_pending'] = $this->Legal_model->getud_status_pending();
 		// $data['pending_js'] = $this->Aspayment_model->get_pending_js_aspayment();
+		// $data['pending_acq'] = $this->Acquisition_model->get_pending_acq()
+		$data['pending_acq'] = $this->Notification_bar_model->getds_status_pending();
 		$this->render_template('legal/Aspayment/js_land_info', $data);
 
 	}
@@ -39,7 +41,7 @@ class Old_Aspayment extends App_Controller{
 		// }
 		// $data['ud_pending'] = $this->Legal_model->getud_status_pending();
 		$data['extra'] = $this->Aspayment_model->get_es_old();
-		// $data['pending_js'] = $this->Aspayment_model->get_pending_js_aspayment();
+		$data['pending_acq'] = $this->Notification_bar_model->getds_status_pending();
 		$this->render_template('legal/Aspayment/es_land_info', $data);
 	}
 }

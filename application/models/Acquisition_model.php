@@ -19,6 +19,17 @@ class Acquisition_model extends CI_Model{
 		);
 		$this->db->insert('land_info',$data);                                
 	}
+
+	public function get_rpt_details($region, $province, $town){
+		$data = $this->db->select('*')
+						 ->from('lot_location')
+						 ->where('region', $region)
+						 ->where('province', $province)
+						 ->where('municipality', $town)
+						 ->get();
+		return $data->result();
+	}
+
 	public function add_lot_location(){
 		$data = array(
 			'is_no' 		=> $this->input->post('is_no'),
@@ -695,7 +706,7 @@ class Acquisition_model extends CI_Model{
 	    $this->db->from('land_info li');
 	    $this->db->join('document_status ds', 'li.is_no = ds.is_no');
 	    $this->db->where_in('ds.status', $status);
-	    $this->db->where('li.tag', 'New');
+	    $this->db->where_in('li.tag', ['New','New LAPF-JS','New LAPF-ES']);
 	    $query 	= $this->db->get();
     	$result = $query->result_array();
     	return $result;
@@ -876,6 +887,25 @@ class Acquisition_model extends CI_Model{
 		->get("refbrgy");
 		return $result->result();
 	}
+	public function get_table_data($citymunCode) {
+    	$this->db->select("
+        	l.is_no,
+        	CONCAT(oi.firstname, ' ', oi.middlename, ' ', oi.lastname) AS lot_owner,
+        	l.lot_type,
+        	ll.municipality AS lot_location,
+        	l.tax_dec_no AS tax_declaration_no,
+        	l.lot AS lot_no
+    	");
+    	$this->db->from('land_info l');
+    	$this->db->join('lot_location ll', 'll.is_no = l.is_no', 'left');
+    	$this->db->join('owner_info oi', 'oi.is_no = l.is_no', 'left');
+    	$this->db->join('refcitymun rc', 'rc.citymunDesc = ll.municipality', 'left');
+    	$this->db->where('rc.citymunCode', $citymunCode);
+
+    	$query = $this->db->get();
+    	return $query->result_array();
+	}
+
 	public function getland_old(){
         $query = $this->db->query("SELECT * FROM land_info WHERE tag='Old' ");
         return $query->result_array();
@@ -884,7 +914,7 @@ class Acquisition_model extends CI_Model{
 		$query = $this->db->query("SELECT * FROM land_info WHERE tag='New' ");
 		return $query->result_array();
 	}
-	public function geli_rows(){
+	public function getli_rows(){
 		$query = $this->db->query("SELECT * FROM land_info ");
 		return $query->num_rows();
 	}
@@ -924,6 +954,30 @@ class Acquisition_model extends CI_Model{
 		$query = $this->db->get_where('document_status', array('is_no' => $id));
 		return $query->row_array();
 	}
+	public function getcbi_byid($id){
+        $query = $this->db->get_where('customer_bal_info', array('reference_id' => $id));
+        return $query->row_array();
+    }
+    public function getci_byid($id){
+        $query = $this->db->get_where('customer_info', array('reference_id' => $id));
+        return $query->row_array();
+    }
+    public function getca_byid($id){
+        $query = $this->db->get_where('customer_address', array('customer_id' => $id));
+        return $query->row_array();
+    }
+    public function getbidding_byid($id){
+        $query = $this->db->get_where('bidding_details', array('reference_id' => $id));
+        return $query->row_array();
+    }
+    public function getab_byid($id){
+        $query = $this->db->get_where('amount_basis', array('reference_id' => $id));
+        return $query->row_array();
+    }
+    public function getesupload_byid($id){
+        $query = $this->db->get_where('es_uploads', array('reference_id' => $id));
+        return $query->row_array();
+    }
 	public function getforms_byid($id){
 		$query = $this->db->get_where('forms', array('form_no' => $id));
 		return $query->row_array();
@@ -967,4 +1021,5 @@ class Acquisition_model extends CI_Model{
 		}
 		return $filename;
 	}
+
 }

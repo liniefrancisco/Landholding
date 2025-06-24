@@ -1,13 +1,14 @@
 <script src='<?= base_url() ?>resources/tinymce/tinymce.min.js'></script>
 <div class="container">
   	<div class="col-md-12 col-sm-12 col-xs-12">
-		<div class="x_panel" style="border-radius: 9px;"><br/>
+		<div class="x_panel" style="border-radius: 9px;">
 			<?= form_open_multipart('Payment/view_inprogress/'.$is_no); ?> 
 	  			<!--====================BODY====================-->
 				<div class="col-md-12 col-sm-12 col-xs-12 space">
-				  	<center><img src="<?= base_url('assets/logo/AGC.jpg') ?>" width="200px" height="50px">
-						<h4><b>ACKNOWLEDGEMENT RECEIPT</b></h4>
-				  	</center>
+					<div class="row text-center">
+						<img src="<?= base_url('assets/logo/AGC.jpg') ?>" width="100px" height="30px">
+						<h5 class="modal-title1" style="margin-top:-1px">ACKNOWLEDGEMENT RECEIPT</h5>
+					</div>
 
 				  	<textarea class="form-control editor" id="receiptTextarea" name="receipt_file" style="max-width: 100%" rows="15" placeholder="Type Here...">
 						<?php if (!empty($ar)) : ?>

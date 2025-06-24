@@ -124,10 +124,11 @@ class Payment_model extends CI_Model{
 	}
 	public function insert_ar($is_no,$control_no,$amount){
 		$content = $this->input->post('receipt_file');
+		$ar = "Acknowledgement Receipt";
 
 		if (!empty($content)) {
 			// Construct the path where the file will be saved
-			$targetDir = './assets/img/acknowledgement_receipt/' . $is_no . '/';
+			$targetDir = './assets/img/uploaded_documents/' . $is_no . '/' . $ar . '/';
 			if (!file_exists($targetDir)) {
 				@mkdir($targetDir, 0777, true);
 			}
@@ -150,13 +151,14 @@ class Payment_model extends CI_Model{
 			);
 			$this->db->insert('payment_requests', $data);
 		}
-	} 
+	}
 	public function update_ar($is_no) {
 		$content = $this->input->post('receipt_file');
+		$ar = "Acknowledgement Receipt";
 		
 		if (!empty($content)) {
 			// Construct the path where the file will be saved
-			$targetDir = './assets/img/acknowledgement_receipt/' . $is_no . '/';
+			$targetDir = './assets/img/uploaded_documents/' . $is_no . '/' . $ar . '/';
 			if (!file_exists($targetDir)) {
 				@mkdir($targetDir, 0777, true);
 			}
@@ -206,50 +208,87 @@ class Payment_model extends CI_Model{
 	    );
 	    $this->db->insert('notification', $data);
   	}
-  	public function insert_crf($id, $is_no, $amount, $rbal, $tprice, $name, $type){
-		$query 	= $this->db->get_where('payment_transaction', array('is_no' => $is_no));
-		$count 	= $query->num_rows(); // Counting the results from the query
+	public function add_CRF($id, $is_no, $amount, $type) {
+	    $file 	= $this->input->post('attachments');
+	    $crf 	= "CRF";
 
-		if($count === 0){
-			$remaining_balance = $tprice - $amount;
-		}else{
-			$remaining_balance = $rbal - $amount;
-		}
+	    // Detect folder based on is_no prefix
+	    $prefix = substr($is_no, 0, 2); // First two letters
+	    if ($prefix === "NA") {
+	        $baseFolder = './assets/img/uploaded_documents/';
+	    } elseif ($prefix === "ES") {
+	        $baseFolder = './assets/img/es_uploads/';
+	    } elseif ($prefix === "JS") {
+	        $baseFolder = './assets/img/js_uploads/';
+	    } else {
+	        // Fallback folder if needed
+	        $baseFolder = './assets/img/other_uploads/';
+	    }
 
+	    if ($_FILES and $_FILES["attachments"]['name']):
+	        // Create directories if they don't exist
+	        if (!file_exists($baseFolder . $is_no)) {
+	            @mkdir($baseFolder . $is_no, 0777, true);
+	        }
+	        if (!file_exists($baseFolder . $is_no . '/' . $crf)) {
+	            @mkdir($baseFolder . $is_no . '/' . $crf, 0777, true);
+	        }
+	        if (!file_exists($baseFolder . $is_no . '/' . $crf . '/' . $file)) {
+	            @mkdir($baseFolder . $is_no . '/' . $crf . '/' . $file, 0777, true);
+	        }
+
+	        $targetPaths = getcwd() . '/' . $baseFolder . $is_no . '/' . $crf . '/' . $file;
+	        $img = $this->upload_images($targetPaths, "attachments");
+
+	        $data = array(	'pr_id' 			=> $id,
+							'crf_no' 			=> $this->input->post('crf_no'),
+							'is_no' 			=> $is_no,
+							'type' 				=> $type,
+							'pay_to' 			=> $this->input->post('pay_to'),
+							'amount'			=> $amount,
+							'bank' 				=> $this->input->post('bank'),
+							'cheque_no' 		=> $this->input->post('cheque_no'),
+							'cheque_date' 		=> $this->input->post('cheque_date'),
+							'filename' 			=> $img,
+							'prepared_by' 		=> $this->session->userdata('firstname').' '.$this->session->userdata('lastname'),
+							'submission_date' 	=> date("Y-m-d"),
+	        			);
+			$this->db->insert('check_request_form', $data);
+	    endif;
+	}
+	public function add_payment_transaction($id, $is_no, $amount, $rbal, $type) {
+		$data = array(  'pr_id' 			=> $id,
+						'is_no' 			=> $is_no,
+						'type' 				=> $type,
+						'amount' 			=> $amount,
+						'remaining_balance' => $rbal,
+						'transaction_date' 	=> date("Y-m-d g:i:s"),
+					);
+		$this->db->insert('payment_transaction', $data);
+	}
+	public function update_payment_requests($id, $is_no) {
 		$data = array(
-			'pr_id' 			=> $id,
-			'crf_no' 			=> $this->input->post('crf_no'),
-			'is_no' 			=> $this->input->post('is_no'),
-			'type' 				=> $type,
-			'pay_to' 			=> $this->input->post('pay_to'),
-			'amount'			=> $amount,
-			'bank' 				=> $this->input->post('bank'),
-			'cheque_no' 		=> $this->input->post('cheque_no'),
-			'cheque_date' 		=> $this->input->post('cheque_date'),
-			'prepared_by' 		=> $name,
-			'submission_date' 	=> date("Y-m-d"),
-		);
-		$this->db->insert('check_request_form', $data);
-
-		$data1 = array(
-			'pr_id' 			=> $id,
-			'is_no' 			=> $this->input->post('is_no'),
-			'type' 				=> $type,
-			'amount' 			=> $amount,
-			'remaining_balance' => $remaining_balance,
-			'transaction_date' 	=> date("Y-m-d g:i:s"),
-		);
-		$this->db->insert('payment_transaction', $data1);
-
-		$data2 = array(
-			'status' 			=> 'Paid',
-			'date_payed' 		=> date("Y-m-d g:i:s"),
-			'payed_by' 			=> $name,
-		);
+						'status' 		=> 'Paid',
+						'date_payed' 	=> date("Y-m-d g:i:s"),
+						'payed_by' 		=> $this->session->userdata('firstname').' '.$this->session->userdata('lastname'),
+					);
 		$this->db->where('is_no',$is_no);
 		$this->db->where('id',$id);
 		$this->db->where('status','Approved');
-		$this->db->update('payment_requests', $data2);
+		$this->db->update('payment_requests', $data);
+	}
+	public function upload_images($targetPaths, $image_name){
+		$filename = '';
+		$tmpFilePaths = $_FILES[$image_name]['tmp_name'];
+		//Make sure we have a filepath
+		if ($tmpFilePaths != ""){
+			//Setup our new file path
+			$filename =  $_FILES[$image_name]['name'];
+			$newFilePath = $targetPaths . $filename;
+			//Upload the file into the temp dir
+			move_uploaded_file($tmpFilePaths, $newFilePath);
+		}
+		return $filename;
 	}
 	//==================================================
 	//QUERY
@@ -328,25 +367,10 @@ class Payment_model extends CI_Model{
 	    $query = $this->db->get();
 	    
 	    if ($query->num_rows() > 0) {
-	        return $query->row()->total_paid ?? 0;
+	        return isset($query->row()->total_paid) ? $query->row()->total_paid : 0;
 	    }
 	    return 0;
 	}
-
-
-
-
-
-
-
-
-
-
-	// public function getrcp_byid($id){
- //  		$sql 	= "SELECT * from request_check_payment where  is_no = ? ";
- //  		$query 	= $this->db->query($sql, array($id));
- //  		return $query->row_array();		
-	// }
 	public function getca_id() {
 		$query = $this->db->query("SELECT * FROM payment_requests WHERE type = 'Cash Advance' ORDER BY id DESC LIMIT 1;");
 		return $query->row_array();
@@ -369,8 +393,6 @@ class Payment_model extends CI_Model{
 	        return ''; // Return empty string if file does not exist
 	    }
 	}
-	
-	
 	public function getpr_checkfp($is_no){
 		$this->db->where('is_no', $is_no);
 		$this->db->where('type', 'Full Payment');
@@ -382,7 +404,6 @@ class Payment_model extends CI_Model{
 		$query 	= $this->db->query($sql, array($id));
 		return $query->num_rows();
 	}
-	
 	public function getfp_byid($id){
 		$query = $this->db->select('*')
 						  ->from('payment_requests')
@@ -412,7 +433,6 @@ class Payment_model extends CI_Model{
 	    $query = $this->db->get();
 	    return $query->result_array();
 	}
-	
   	public function getpr_approved($id){
 		$sql = "SELECT * from payment_requests where control_no = ? AND  status = 'Approved' ";
 		$query = $this->db->query($sql, array($id));
@@ -423,30 +443,91 @@ class Payment_model extends CI_Model{
 	    return $query->row_array();
   	}
   	public function getpr_approved1() {
-	    $this->db->select('li.*, oi.*, ll.*, pr.*, ds.*, crf.*,
-	    					pr.is_no AS pr_is_no,
-	    					pr.amount AS pr_amount,
-	    					pr.type AS pr_type'
-						)
+  		$this->db->select('li.*, oi.*, ll.*, ds.*,
+  							pr.amount AS pr_amount, 
+  							pr.is_no AS pr_is_no,
+  							pr.type AS pr_type,
+  							pr.control_no,
+  							pr.purpose,
+  							pr.other_purpose,
+  						')
+	             ->from('land_info li')
+	             ->join('owner_info oi', 'li.is_no = oi.is_no', 'left')
+	             ->join('lot_location ll', 'li.is_no = ll.is_no', 'left')
+	             ->join('document_status ds', 'li.is_no = ds.is_no', 'left')
+	             ->join('payment_requests pr', 'li.is_no = pr.is_no', 'left')
+	             ->where('ds.status', 'Approved')
+	             ->where('pr.status', 'Approved')
+	             ->where_in('li.tag', ['New', 'New LAPF-ES', 'New LAPF-JS']);
+
+	    $query = $this->db->get();
+	    return $query->result_array();
+	}
+	public function getdata_crf() {
+  		$this->db->select('li.*, oi.*, ll.*, ds.*, crf.*,
+  							pr.amount AS pr_amount, 
+  							pr.is_no AS pr_is_no,
+  							pr.type AS pr_type,
+  							pr.control_no,
+  							pr.purpose,
+  							pr.other_purpose,
+							pr.submission_date AS pr_submission_date,
+  						')
 	             ->from('land_info li')
 	             ->join('owner_info oi', 'li.is_no = oi.is_no', 'left')
 	             ->join('lot_location ll', 'li.is_no = ll.is_no', 'left')
 	             ->join('document_status ds', 'li.is_no = ds.is_no', 'left')
 	             ->join('payment_requests pr', 'li.is_no = pr.is_no', 'left')
 	             ->join('check_request_form crf', 'pr.id = crf.pr_id', 'left')
-	             ->group_start()
-	                 ->where('ds.status', 'Approved')
-	                 ->where('li.tag', 'New')
-	                 ->group_start()
-	                     ->where('pr.status', 'Approved')
-	                     ->or_where('pr.status', 'Paid')
-	                 ->group_end()
-	             ->group_end();
-	             // ->or_group_start()
-	             //     ->where('ds.status', 'Approved')
-	             //     ->where('li.tag', 'New LAPF-ES')
-	             //     ->where('pr.status', 'Approved')
-	             // ->group_end();
+	             ->where('ds.status', 'Approved')
+	             ->where('pr.status', 'Approved')
+	             ->where_in('li.tag', ['New', 'New LAPF-ES', 'New LAPF-JS']);
+
+	    $query = $this->db->get();
+	    return $query->result_array();
+	}
+	public function getdata_crf1() {
+  		$this->db->select('li.*, oi.*, ll.*, ds.*, crf.*,
+  							pr.amount AS pr_amount, 
+  							pr.is_no AS pr_is_no,
+  							pr.type AS pr_type,
+  							pr.control_no,
+  							pr.purpose,
+  							pr.other_purpose,
+							pr.submission_date AS pr_submission_date,
+  						')
+	             ->from('land_info li')
+	             ->join('owner_info oi', 'li.is_no = oi.is_no', 'left')
+	             ->join('lot_location ll', 'li.is_no = ll.is_no', 'left')
+	             ->join('document_status ds', 'li.is_no = ds.is_no', 'left')
+	             ->join('payment_requests pr', 'li.is_no = pr.is_no', 'left')
+	             ->join('check_request_form crf', 'pr.id = crf.pr_id', 'left')
+	             ->where('ds.status', 'Approved')
+	             ->where('pr.status', 'Paid')
+	             ->where_in('li.tag', ['New', 'New LAPF-ES', 'New LAPF-JS']);
+
+	    $query = $this->db->get();
+	    return $query->result_array();
+	}
+	public function getdata_rca() {
+  		$this->db->select('li.*, oi.*, ll.*, ds.*, crf.*,
+  							pr.amount AS pr_amount, 
+  							pr.is_no AS pr_is_no,
+  							pr.type AS pr_type,
+  							pr.control_no,
+  							pr.purpose,
+  							pr.other_purpose,
+							pr.submission_date AS pr_submission_date,
+  						')
+	             ->from('land_info li')
+	             ->join('owner_info oi', 'li.is_no = oi.is_no', 'left')
+	             ->join('lot_location ll', 'li.is_no = ll.is_no', 'left')
+	             ->join('document_status ds', 'li.is_no = ds.is_no', 'left')
+	             ->join('payment_requests pr', 'li.is_no = pr.is_no', 'left')
+	             ->join('check_request_form crf', 'pr.id = crf.pr_id', 'left')
+	             ->where('ds.status', 'Approved')
+				 ->where_in('pr.status', ['Approved', 'Paid'])
+	             ->where_in('li.tag', ['New']);
 
 	    $query = $this->db->get();
 	    return $query->result_array();
@@ -464,6 +545,19 @@ class Payment_model extends CI_Model{
             return null; // No record found
         }
     }
+
+	// Latest model for CRF
+	public function get_all_payment_requests() {
+        return $this->db->get('payment_requests')->result_array();
+    }
+	public function get_payment_request($id) {
+        return $this->db->get_where('payment_requests', ['id' => $id])->row_array();
+    }
+	public function exists($id) {
+        return $this->db->where('id', $id)->count_all_results('payment_requests') > 0;
+    }
+
+
 	//==================================================
 	//END
 	//==================================================
