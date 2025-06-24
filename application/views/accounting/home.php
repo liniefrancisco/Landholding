@@ -28,7 +28,7 @@
 						</div>
 					</div>
 					<div class="panel-footer" style="background-color:#3e6d90;border:none;">
-						<a class="hov" href="<?= base_url('Accounting/Payment_request/') ?>" style="color:#fff;float:right;">More Info <i class="fa fa-arrow-right"></i></a>
+						<a class="hov" href="<?= base_url('Payment/CRF_tbl') ?>" style="color:#fff;float:right;">More Info <i class="fa fa-arrow-right"></i></a>
 						<div class="clearfix"></div>
 					</div>
 				</div>
@@ -60,7 +60,7 @@
 						</div>
 					</div>
 					<div class="panel-footer" style="background-color:#3e6d90;border:none;">
-						<a class="hov" href="<?= base_url('Accounting/Payment_request/') ?>" style="color:#fff;float:right;">More Info <i class="fa fa-arrow-right"></i></a>
+						<a class="hov" href="<?= base_url('Payment/inprogress1_tbl') ?>" style="color:#fff;float:right;">More Info <i class="fa fa-arrow-right"></i></a>
 						<div class="clearfix"></div>
 					</div>
 				</div>
@@ -76,7 +76,7 @@
 						</div>
 					</div>
 					<div class="panel-footer" style="background-color:#3e6d90;border:none;">
-						<a class="hov" href="<?= base_url('Accounting/Owned/') ?>" style="color:#fff;float:right;">More Info <i class="fa fa-arrow-right"></i></a>
+						<a class="hov" href="<?= base_url('Owned') ?>" style="color:#fff;float:right;">More Info <i class="fa fa-arrow-right"></i></a>
 						<div class="clearfix"></div>
 					</div>
 				</div>

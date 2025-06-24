@@ -14,7 +14,7 @@
 					<i class="glyphicon glyphicon-ok"></i> <?php echo $this->session->flashdata('notif'); ?>
 				</div>
 			<?php } ?>
-			<!--====================FLASH DATA====================-->
+			<!--====================END FLASH DATA====================-->
 			<div class="x_panel animate slideInDown" style="border:1px; !important;box-shadow: 7px 6px 16px #888888;">
 				<div class="x_title">
 					<div class="title_left">
@@ -68,8 +68,8 @@
 								</div>                            
 							</div>
 					
-							<div class="col-md-12 col-xs-12 col-sm-12" style="border-top: 1px solid #ff6600; border-bottom: 1px solid #ff6600">
-								<center><h5 style="letter-spacing: 10px;"><b>LAND INFORMATION</b></h5></center>
+							<div class="col-md-12 col-xs-12 col-sm-12 text-center" style="border-top: 1px solid #ff6600; border-bottom: 1px solid #ff6600">
+								<h5 style="letter-spacing:10px;">LAND INFORMATION</h5>
 							</div>
 
 							<input type="hidden"  name="p_by" value="<?php echo ucfirst($this->session->userdata('firstname')).' '.ucfirst($this->session->userdata('lastname'))?>" class="form-control" onkeydown="return false" readonly/>
@@ -145,7 +145,7 @@
 													<label class="col-md-3 control-label">Municipality<span class="required">*</span></label>
 													<div class="col-md-7">
 														<select class="form-control" id="town" name="town" onchange="loadBrgy()" value="<?php echo set_value('town'); ?>"  required>
-															<option value="">Select City</option>
+															<option value="">Select City/Municipality</option>
 														</select>
 														<input type="hidden" id="selectedCity" name="selectedCity" readonly>
 													</div>
@@ -294,7 +294,7 @@
 					</div>
 					<!--====================END BODY====================-->
 					<div class="col-md-12">
-						<input class="btn btn-custom-primary send btn-sm pull-right" type="submit" name="submit" value="Proceed">
+						<input class="btn btn-custom-primary btn-sm pull-right send" type="submit" name="submit" value="Proceed">
 					</div>
 				</form>
 			</div>
@@ -353,282 +353,3 @@
 		});                                                     
 	});               
 </script>
-
-<script type="text/javascript"> 
-	function loadRegion() {
-		$.ajax({
-			url: "<?php echo site_url("Acquisition/getregion") ?>",
-			method: "POST",
-			success: function(data) {
-				var jObj = JSON.parse(data);
-				console.log('test:',jObj);
-				for (var c = 0; c < jObj.length; c++) {
-					$('#region').append('<option value="' + jObj[c].regCode + '|' + jObj[c].regDesc + '">' + jObj[c].regDesc + '</option>');
-				}
-			}
-		});
-	}
-	loadRegion();
-
-	function loadProvince() {
-		// Clear the province, city, barangay fields when changing the region
-		$("#province").html(""); // Clear the province dropdown
-		$("#town").html("");
-		$("#barangay").html("");
-		$("#selectedRegion").val(""); // Clear the hidden input field
-
-		var reg = $("#region").val();
-		var r = reg.split("|");
-		var regCode = r[0];
-		var regDesc = r[1];
-
-		// Save only the region description in the hidden input field
-		$("#selectedRegion").val(regDesc);
-
-		// Append the "Select Province" option to the province dropdown
-		$('#province').append('<option value="">Select Province</option>');
-
-		$.ajax({
-			url: "<?php echo site_url("Acquisition/getprovince") ?>",
-			method: "POST",
-			dataType: 'json',
-			data: {
-				regCode: regCode
-			},
-			success: function (data) {
-				$.each(data, function (i, data) {
-					$('#province').append('<option value="' + data.provCode + '|' + data.provDesc + '">' + data.provDesc + '</option>');
-				});
-			}
-		});
-	}
-
-	function loadCity() {
-		$("#town").html("");
-		$("#town").append('<option value="">Select City/Municipality</option>');
-		$("#selectedCity").val(""); // Clear the hidden input field
-
-		var prov = $("#province").val();
-		var p = prov.split("|");
-		var provCode = p[0];
-		var provDesc = p[1];
-
-		// Save only the province description in the hidden input field
-		$("#selectedProvince").val(provDesc);
-
-		$.ajax({
-			url: "<?php echo site_url("Acquisition/getcitymun") ?>",
-			method: "POST",
-			dataType: 'json',
-			data: {
-				 provCode: provCode
-			},
-			success: function(data) {
-				$.each(data, function(i, data) {
-					var cityName = data.citymunDesc.split(' ')[0];
-					$('#town').append('<option value="' + data.citymunCode + '|' + cityName + '|' + data.zipcode + '">' + cityName + '</option>');
-				});
-			}
-		});
-
-		// Additional code to handle city selection
-		$("#town").on("change", function() {
-			var selectedOption = $(this).val();
-			if (selectedOption) {
-				var parts = selectedOption.split('|');
-				var cityName = parts[1];
-				var zipcode = parts[2];
-				$("#zipcode").val(zipcode);
-				// Save only the city description in the hidden input field
-				$("#selectedCity").val(cityName);
-			}else{
-				$("#zipcode").val('');
-			}
-		});
-	}
-
-	function loadBrgy() {
-		$("#barangay").html("");
-		$("#barangay").append('<option value="">Select Barangay</option>');
-		$("#selectedBarangay").val(""); // Clear the hidden input field
-
-		var prov = $("#province").val();
-		var p = prov.split("|");
-		var provDesc = p[1];
-
-		var citymun = $("#town").val();
-		var c = citymun.split("|");
-		var citymunCode = c[0];
-		var citymunDesc = c[1];
-
-		// Save only the city description in the hidden input field
-		$("#selectedCity").val(citymunDesc);
-
-		var dist = "";
-		// Rest of your code to load barangays and handle district selection
-
-		$.ajax({
-			url: "<?php echo site_url("Acquisition/getbrgy") ?>",
-			method: "POST",
-			dataType: 'json',
-			data: {
-				 citymunCode: citymunCode
-			},
-			success: function(data) {
-				$.each(data, function(i, data) {
-					$('#barangay').append('<option value="' + data.brgyCode + '|' + data.brgyDesc + '">' + data.brgyDesc + '</option>');
-				});
-			}
-		});
-
-		$('#barangay').on('change', function() {
-			var selectedOption = $(this).find(':selected');
-			var selectedBarangay = selectedOption.text();
-
-			// Save the selected barangay in the hidden input field
-			$("#selectedBaranggay").val(selectedBarangay);
-		});
-	}
-</script>
-
-
-<!--====================STYLE====================-->
-<style type="text/css">
-	.l_info{         
-		width: 100%;
-		padding: 10px 17px;
-		display: inline-block;
-		background: #fff;
-		border: 1px solid #E6E9ED;
-		-webkit-column-break-inside: avoid;
-		-moz-column-break-inside: avoid;
-		column-break-inside: avoid;
-		opacity: 1;
-		transition: all .2s ease;
-	}
-
-	.x_panel2{
-		margin-top: 20px;
-		margin-left: 9px;
-		width: 98%;
-		padding: 10px 17px;
-		display: inline-block;
-		background: #fff;
-		border: 1px solid #E6E9ED;
-		-webkit-column-break-inside: avoid;
-		-moz-column-break-inside: avoid;
-		column-break-inside: avoid;
-		opacity: 1;
-		transition: all .2s ease;
-	}
-
-	.x_panel3{
-			margin-left: 1px;
-			width: 35%;
-			padding: 10px 17px;
-			display: inline-block;
-			background: #fff;
-			border: 1px solid #E6E9ED;
-			-webkit-column-break-inside: avoid;
-			-moz-column-break-inside: avoid;
-			column-break-inside: avoid;
-			opacity: 1;
-			transition: all .2s ease;
-	}
-
-	.x_panel4{
-			margin-top: 8px;
-			margin-left: 1px;
-			width: 100%;
-			padding: 10px 17px;
-			display: inline-block;
-			background: #fff;
-			border: 1px solid #E6E9ED;
-			-webkit-column-break-inside: avoid;
-			-moz-column-break-inside: avoid;
-			column-break-inside: avoid;
-			opacity: 1;
-			transition: all .2s ease;
-	}
-
-	.title{
-			border-bottom: 2px solid #E6E9ED;
-			padding: 1px 485px 6px;
-			margin-bottom: 10px;
-	}
-
-	.title2{
-			border-bottom: 2px solid #E6E9ED;
-			padding: 1px 462px 6px;
-			margin-bottom: 10px;
-	}
-
-	.title3{
-			border-bottom: 2px solid #E6E9ED;
-			/*padding: 1px 462px 6px;*/
-			margin-bottom: 10px;
-	}
-	input[type="text"]:hover {
-			border: 1px solid #3399ff;
-			color: #000000;
-	}
-	input[type="number"]:hover {
-			border: 1px solid #3399ff;
-			color: #000000;
-	}
-	input[type="date"]:hover {
-			border: 1px solid #3399ff;
-			color: #000000;
-	}
-	input[type="email"]:hover {
-			border: 1px solid #3399ff;
-			color: #000000;
-	}
-	textarea:hover {
-			border: 1px solid #3399ff;
-			color: #000000;
-	}
-	button[type="submit"]{
-		 font-size: 18px;
-		 padding: 15px;
-		 border: 2px solid #FFF;
-		 color: #FFF;
-		 display: block;
-		 margin: 50px auto;
-		 background: transparent;
-		 transition: .2s ease-in-out 0s;
-	}
-
-	input[type="submit"]:hover{
-		cursor: pointer;
-		transform: scale(1.10);
-		/*background: #FFF;
-		color: black;*/
-	}
-
-	button[type="a"]{
-		 font-size: 18px;
-		 padding: 15px;
-		 border: 2px solid #FFF;
-		 color: #FFF;
-		 display: block;
-		 margin: 50px auto;
-		 background: transparent;
-		 transition: .2s ease-in-out 0s;
-	}
-
-	a[type="a"]:hover{
-		cursor: pointer;
-		transform: scale(1.10);
-	 /* background: #FFF;
-		color: black;*/
-	}
-	.input-group-addon {
-		font-size: 15px; /* Adjust the size as needed */
-		border:#fff;
-		color:#2A3F54;
-		background-color: #fff;
-		padding-left:0px
-	}
-</style>
-<!--====================STYLE====================-->

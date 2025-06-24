@@ -1,4 +1,4 @@
-<!--====================PAGE CONTENT====================-->
+ <!--====================PAGE CONTENT====================-->
 <div class="right_col" role="main">
 	<div class="row row_container">
 		<!--====================BUTTON====================-->
@@ -9,7 +9,7 @@
 				<div class="col-md-8" style="position: fixed;width: 290px;bottom: 15px;right: 10px;z-index: 99;cursor: pointer;">
 					<button style="float: right;border-radius: 10px" class="btn btn-xs btn-custom-danger" data-dismiss="modal" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target=".disapprove_<?php echo $li['is_no']; ?>" title="Mark as Disapproved"><span class="fa fa-check-square-o"></span> Disapproved</button>
 					<button style="float: right;border-radius: 10px;" class="btn btn-xs btn-warning" data-dismiss="modal" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target=".return_<?php echo $li['is_no']; ?>" title="Mark as Return"><span class="fa fa-close"></span> Return</button>
-					<button style="float: right;border-radius: 10px" class="btn btn-xs btn-primary" data-dismiss="modal" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target=".review_<?php echo $li['is_no']; ?>" title="Mark as Review"><span class="fa fa-check-square-o"></span> Review</button>
+					<button style="float: right;border-radius: 10px" class="btn btn-xs btn-success" data-dismiss="modal" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target=".review_<?php echo $li['is_no']; ?>" title="Mark as Review"><span class="fa fa-check-square-o"></span> Review</button>
 				</div>
 			</div>
 		<?php } elseif ($ds['status'] == 'Reviewed' && $this->session->userdata('user_type') == 'GM') { ?>
@@ -17,7 +17,7 @@
 				<div class="col-md-6"></div>
 				<div class="col-md-6" style="position: fixed;width:100%;bottom: 15px;right: 10px;z-index: 99;cursor: pointer;">
 					<button style="float: right;border-radius: 10px" class="btn btn-xs btn-custom-danger" data-dismiss="modal" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target=".disapprove_<?php echo $li['is_no']; ?>" title="Mark as Disapproved"><span class="fa fa-close"></span> Disapproved</button>
-					<button style="float: right;border-radius: 10px;" class="btn btn-xs btn-primary" data-dismiss="modal" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target=".approve_<?php echo $li['is_no']; ?>" title="Mark as Approve"><span class="fa fa-check-square-o"></span> Approved</button>
+					<button style="float: right;border-radius: 10px;" class="btn btn-xs btn-success" data-dismiss="modal" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target=".approve_<?php echo $li['is_no']; ?>" title="Mark as Approve"><span class="fa fa-check-square-o"></span> Approved</button>
 				</div>
 			</div>
 		<?php } ?>
@@ -88,64 +88,69 @@
 
 									<div class="col-md-12 col-sm-12 col-xs-12 space">
 										<div class="col-md-4 col-sm-4 col-xs-4 form-inline">
-											<label>IS No:</label> <input class="form-control input_border" type="text" name="js_no" value="<?php echo $li['is_no']; ?>" readonly>
+											<label>IS No.:</label> 
+											<input class="form-control" type="text" value="<?php echo $li['is_no']; ?>" readonly>
 										</div>
 										<div class="col-md-4 col-sm-4 col-xs-4 form-inline pull-right">
-											<label>Date Acquired:</label> <input class="form-control input_border" type="text" value="<?php echo date('F j, Y', strtotime($li['date_acquired'])); ?>" name="date" readonly>
+											<label>Date Acquired:</label> 
+											<input class="form-control" type="text" value="<?php echo date('F j, Y', strtotime($li['date_acquired'])); ?>" readonly>
 										</div>
 									</div>
 
-									<div class="col-md-12 col-sm-12 col-xs-12 space" style="border-top: 2px solid #ff6600; border-bottom: 2px solid #ff6600;">
-										<center>
-											<h5 style="letter-spacing: 15px;"><b>LAND INFORMATION</b></h5>
-										</center>
+									<div class="col-md-12 col-sm-12 col-xs-12 space text-center" style="border-top: 2px solid #ff6600; border-bottom: 2px solid #ff6600;">
+										<h5 style="letter-spacing:10px;">LAND INFORMATION</h5>
 									</div>
 
 									<div class="col-md-12 col-sm-12 col-xs-12 space">
 										<div class="col-md-4 col-sm-4 col-xs-4 form-inline">
-											<label>Lot.</label> <input type="text" name="" value="<?php echo $li['lot'] ?>" class="form-control input_border " readonly>
+											<label>Lot.</label> 
+											<input class="form-control" type="text" value="<?php echo $li['lot'] ?>" readonly>
 										</div>
 										<div class="col-md-4 col-sm-4 col-xs-4 form-inline pull-right">
-											<label>Cad.</label> <input type="text" name="" value="<?php echo $li['cad'] ?>" class="form-control input_border" readonly>
+											<label>Cad.</label> 
+											<input class="form-control" type="text" value="<?php echo $li['cad'] ?>"  readonly>
 										</div>
 									</div>
 
 									<div class="col-md-12 col-sm-12 col-xs-12 space">
 										<div class="col-md-3 col-sm-3 col-xs-3 lot_type" style="height: 29px;"><label>Lot Type:</label></div>
 										<div class="col-md-3 col-sm-3 col-xs-3 lot_type">
-											<input type="checkbox" name="" disabled value="<?php ?>" <?php if($li['lot_type'] == 'Agricultural'){ echo 'checked';}?>><label> Agricultural</label>
+											<input type="checkbox" value="<?php ?>" <?php if($li['lot_type'] == 'Agricultural'){ echo 'checked';}?> disabled>
+											<label> Agricultural</label>
 										</div>
 										<div class="col-md-3 col-sm-3 col-xs-3 lot_type">
-											<input type="checkbox" name="" disabled value="<?php ?>" <?php if($li['lot_type'] == 'Commercial'){  echo 'checked';}?>><label> Commercial</label>
+											<input type="checkbox" value="<?php ?>" <?php if($li['lot_type'] == 'Commercial'){  echo 'checked';}?> disabled>
+											<label> Commercial</label>
 										</div>
 										<div class="col-md-3 col-sm-3 col-xs-3 lot_type">
-											<input type="checkbox" name="" disabled value="<?php ?>" <?php if($li['lot_type'] == 'Residential'){ echo 'checked';}?>><label> Residential</label>
+											<input type="checkbox" value="<?php ?>" <?php if($li['lot_type'] == 'Residential'){ echo 'checked';}?> disabled>
+											<label> Residential</label>
 										</div>
 									</div>
 
 									<div class="col-md-12 col-sm-12 col-xs-12 space">
-										<div class="col-md-3 col-sm-3 col-xs-3"><label>Lot Owner:</div>
+										<div class="col-md-3 col-sm-3 col-xs-3"><label>Lot Owner:</label></div>
 										<div class="col-md-3 col-sm-3 col-xs-3">
-											<input type="text" name="" value="<?php echo $oi['firstname'] ?>" class="form-control input_border txt_cent" readonly>
-											<h6 class="name_center"><i>Firstname</i></h6>
+											<input class="form-control text-center" type="text" value="<?php echo $oi['firstname'] ?>" readonly>
+											<h6 class="text-center">Firstname</h6>
 										</div>
 										<div class="col-md-3 col-sm-3 col-xs-3">
-											<input type="text" name="" value="<?php echo $oi['middlename'] ?>" class="form-control input_border txt_cent" readonly>
-											<h6 class="name_center"><i>Middlename</i></h6>
+											<input class="form-control text-center" type="text" value="<?php echo $oi['middlename'] ?>" readonly>
+											<h6 class="text-center">Middlename</h6>
 										</div>
 										<div class="col-md-3 col-sm-3 col-xs-3">
-											<input type="text" name="" value="<?php echo $oi['lastname'] ?>" class="form-control input_border txt_cent" readonly>
-											<h6 class="name_center"><i>Lastname</i></h6>
+											<input class="form-control text-center" type="text" value="<?php echo $oi['lastname'] ?>" readonly>
+											<h6 class="text-center">Lastname</h6>
 										</div>
 									</div>
 
 									<div class="col-md-12 col-sm-12 col-xs-12 space">
 										<div class="col-md-4 col-sm-4 col-xs-4"><label>Owner Information:</label></div>
-										<div class="col-md-4">
+										<div class="col-md-3 col-sm-3 col-xs-3">
 											<input type="checkbox" disabled <?php if ($oi['vital_status'] == 'Alive') { echo 'checked';}?>>
 											<label> Alive</label>
 										</div>
-										<div class="col-md-4 col-sm-4 col-xs-4">
+										<div class="col-md-3 col-sm-3 col-xs-3">
 											<input type="checkbox" disabled <?php if ($oi['vital_status'] == 'Deceased') { echo 'checked';}?>>
 											<label> Deceased</label>
 										</div>
@@ -154,52 +159,52 @@
 									<div class="col-md-12 space">
 										<div class="col-md-3"><label>Lot Location:</div>
 										<div class="col-md-3 col-sm-3 col-xs-3">
-											<input type="text" name="" value="<?php echo $ll['street']; ?>" class="form-control input_border txt_cent" readonly>
-											<h6 class="name_center"><i>Street</i></h6>
+											<input class="form-control text-center" type="text" value="<?php echo $ll['street']; ?>" readonly>
+											<h6 class="text-center">Street</h6>
 										</div>
 										<div class="col-md-3 col-sm-3 col-xs-3">
-											<input type="text" name="" value="<?php echo $ll['baranggay'] ?>" class="form-control input_border txt_cent" readonly>
-											<h6 class="name_center"><i>Baranggay</i></h6>
+											<input class="form-control text-center" type="text" value="<?php echo $ll['baranggay'] ?>" readonly>
+											<h6 class="text-center">Baranggay</h6>
 										</div>
 										<div class="col-md-3 col-sm-3 col-xs-3">
-											<input type="text" name="" value="<?php echo $ll['municipality'] ?>" class="form-control input_border txt_cent" readonly>
-											<h6 class="name_center"><i>Municipality</i></h6>
+											<input class="form-control text-center" type="text" value="<?php echo $ll['municipality'] ?>" readonly>
+											<h6 class="text-center">Municipality</h6>
 										</div>
 
 										<div class="col-md-3 col-sm-3 col-xs-3"></div>
 										<div class="col-md-3 col-sm-3 col-xs-3">
-											<input type="text" name="" value="<?php echo $ll['province'] ?>" class="form-control input_border txt_cent" readonly>
+											<input class="form-control text-center" type="text" value="<?php echo $ll['province'] ?>" readonly>
 											<h6 class="name_center"><i>Province</i></h6>
 										</div>
 										<div class="col-md-3 col-sm-3 col-xs-3">
-											<input type="text" name="" value="<?php echo $ll['region'] ?>" class="form-control input_border txt_cent" readonly>
+											<input class="form-control text-center" type="text" value="<?php echo $ll['region'] ?>" readonly>
 											<h6 class="name_center"><i>Region</i></h6>
 										</div>
 										<div class="col-md-3 col-sm-3 col-xs-3">
-											<input type="text" name="" value="<?php echo $ll['zip_code'] ?>" class="form-control input_border txt_cent" readonly>
+											<input class="form-control text-center" type="text" value="<?php echo $ll['zip_code'] ?>" readonly>
 											<h6 class="name_center"><i>Zip Code</i></h6>
 										</div>
 									</div>
 
 									<div class="col-md-12 col-sm-12 col-xs-12 space">
 										<div class="col-md-4 col-sm-4 col-xs-4"><label>Lot Sold:</label></div>
-										<div class="col-md-4 col-sm-4 col-xs-4">
-											<input type="checkbox" disabled <?php if($li['lot_sold'] == 'Portion'){ echo 'checked';}?>>
+										<div class="col-md-3 col-sm-3 col-xs-3">
+											<input type="checkbox" <?php if($li['lot_sold'] == 'Portion'){ echo 'checked';}?> disabled>
 											<label> Portion</label>
 										</div>
-										<div class="col-md-4 col-sm-4 col-xs-4">
-											<input type="checkbox" disabled <?php if($li['lot_sold'] == 'Whole'){ echo 'checked';}?>>
+										<div class="col-md-3 col-sm-3 col-xs-3">
+											<input type="checkbox" <?php if($li['lot_sold'] == 'Whole'){ echo 'checked';}?> disabled>
 											<label> Whole</label>
 										</div>
 									</div>
 
 									<div class="col-md-12 col-sm-12 col-xs-12 space">
 										<div class="col-md-4 col-sm-4 col-xs-4"><label>Purchase Type:</label></div>
-										<div class="col-md-4 col-sm-4 col-xs-4">
+										<div class="col-md-3 col-sm-3 col-xs-3">
 											<input type="checkbox" disabled <?php if($li['purchase_type'] == 'package'){ echo 'checked';}?>>
 											<label> package</label>
 										</div>
-										<div class="col-md-4 col-sm-4 col-xs-4">
+										<div class="col-md-3 col-sm-3 col-xs-3">
 											<input type="checkbox" disabled <?php if($li['purchase_type'] == 'per/sq.m.'){ echo 'checked';}?>>
 											<label> per sq.m</label>
 										</div>
@@ -219,12 +224,12 @@
 
 									<div class="col-md-12 space">
 										<div class="col-md-12 col-sm-12 col-xs-12"><label>Total Selling Price:</label></div>
-										<div class="col-md-2 col-sm-2 col-xs-2"></div>
+										<div class="col-md-3 col-sm-3 col-xs-3"></div>
 										<div class="col-md-9 col-sm-9 col-xs-9 form-inline">
 											<label>Amount In Figures: ₱</label>
 											<input type="text" value="<?php echo number_format($li['total_price'], 2) ?>" class="form-control input_border" readonly>
 										</div>
-										<div class="col-md-2 col-sm-2 col-xs-2"></div>
+										<div class="col-md-3 col-sm-3 col-xs-3"></div>
 										<div class="col-md-9 col-sm-9 col-xs-9 form-inline">
 											<?php $this->load->helper('custom'); ?>
 											<label>Amount In Words:</label> 
@@ -279,42 +284,36 @@
 													</div>
 												</a>
 												<div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
-													<div class="panel-body">
-														<center>
-															<?php if (!empty($ud['latest_tax_dec'])) { ?>
-																<button class="btn btn-success" data-toggle="modal" data-target=".latest_tax_dec_<?php echo $li['is_no']; ?>" data-backdrop="static" data-keyboard="false">Latest Tax Declaration</button>
-															<?php } else {
-																echo "";
-															} ?>
-															<?php if (!empty($ud['land_title'])) { ?>
-																<button class="btn btn-success" data-toggle="modal" data-target=".land_title_<?php echo $li['is_no']; ?>" data-backdrop="static" data-keyboard="false">Land Title</button>
-															<?php } else {
-																echo "";
-															} ?>
-															<?php if (!empty($ud['brgy_resolution'])) { ?>
-																<button class="btn btn-success" data-toggle="modal" data-target=".brgy_res_<?php echo $li['is_no']; ?>" data-backdrop="static" data-keyboard="false">Barangay Resolution</button>
-															<?php } else {
-																echo "";
-															} ?>
-															<?php if (!empty($ud['land_sketch'])) { ?>
-																<button class="btn btn-success" data-toggle="modal" data-target=".land_sketch_<?php echo $li['is_no']; ?>" data-backdrop="static" data-keyboard="false">Land Sketch</button>
-															<?php } else {
-																echo "";
-															} ?>
-														</center>
+													<div class="panel-body text-center">
+														<?php if (!empty($ud['latest_tax_dec'])) { ?>
+															<?php $latest_tax_dec = base_url('assets/img/uploaded_documents/' . $ud['is_no'] . '/Tax Declaration/' . $ud['latest_tax_dec']); ?>
+												            <button class='btn btn-primary' onclick="viewImage('<?php echo $latest_tax_dec; ?>')">Tax Declaration <span class="glyphicon glyphicon-folder-open"></span></button>
+												        <?php } ?>
+												        <?php if (!empty($ud['land_title'])) { ?>
+												            <?php $land_title = base_url('assets/img/uploaded_documents/' . $ud['is_no'] . '/Land Title/' . $ud['land_title']); ?>
+												            <button class='btn btn-primary' onclick="viewImage('<?php echo $land_title; ?>')">Land Title <span class="glyphicon glyphicon-folder-open"></span></button>
+												        <?php } ?>
+												        <?php if (!empty($ud['brgy_resolution'])) { ?>
+												        	<?php $brgy_resolution = base_url('assets/img/uploaded_documents/' . $ud['is_no'] . '/Barangay Resolution/' . $ud['brgy_resolution']); ?>
+												            <button class='btn btn-primary' onclick="viewImage('<?php echo $brgy_resolution; ?>')">Barangay Resolution <span class="glyphicon glyphicon-folder-open"></span></button>
+												        <?php } ?>
+												        <?php if (!empty($ud['land_sketch'])) { ?>
+												        	<?php $land_sketch = base_url('assets/img/uploaded_documents/' . $ud['is_no'] . '/Land Sketch/' . $ud['land_sketch']); ?>
+												            <button class='btn btn-primary' onclick="viewImage('<?php echo $land_sketch; ?>')">Land Sketch <span class="glyphicon glyphicon-folder-open"></span></button>
+												        <?php } ?>
 													</div>
 												</div>
 											</div>
 										</div>
 									</div>
 
-									<div class="col-md-12 space" style="border-top: 1px solid #ff6600; border-bottom: 1px solid #ff6600; padding-bottom: 10px;padding-top: 10px;margin-bottom:10px">
-										<div class="col-md-12 col-sm-12 col-xs-12" style="text-align:center;font-weight:bold;letter-spacing:5px">MAIN CONTACT PERSON</div>
+									<div class="col-md-12 col-sm-12 col-xs-12 text-center space" style="border-top: 2px solid #ff6600; border-bottom: 2px solid #ff6600;margin-bottom:25px">
+										<h5 style="letter-spacing:5px;">MAIN CONTACT PERSON</h5>
 									</div>
 
 									<div class="col-md-6 col-sm-6 col-xs-6 form-inline">
 										<label class="col-md-4 col-sm-4 col-xs-4">Name:</label>
-										<input type="text" value="<?php echo $cp['name'] ?>" class="form-control input_border" readonly>
+										<input type="text" class="form-control input_border" value="<?php echo $cp['name'] ?>" readonly>
 									</div>
 
 									<div class="col-md-6 col-sm-6 col-xs-6 form-inline">
@@ -733,139 +732,76 @@
 </div>
 <!--====================END PAGE====================-->
 
-<!--====================LAND MODAL TITLE====================-->
-<div class="modal animate bounceInUp land_title_<?php echo $li['is_no']; ?>" tabindex="-1" role="dialog" aria-hidden="true">
-	<div class="modal-dialog modal-lg">
-		<div class="modal-content">
-			<div class="modal-header" style="background-color: #00c851; color: white;">
-				<button type="button" class="close" id="dclose" data-dismiss="modal"><span aria-hidden="true">×</span></button>
-				<h4 class="modal-title" id="myModalLabel"><span class="fa fa-file-text-o"></span> Land Title (Photocopy)</h4>
-			</div>
-			<div class="modal-body">
-				<center>
-					<div style="overflow-x:auto;">
-						<img src="<?= base_url('assets/img/uploaded_documents/' . $ud['is_no'] . '/Land Title/' . $ud['land_title'] . '') ?> " class="img-responsive">
-					</div>
-				</center>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal" style="color: #00c851; border: 1px solid;">Close</button>
-			</div>
-		</div>
-	</div>
-</div>
-<!--====================TAX DECLARATION====================-->
-<div class="modal animate bounceInUp latest_tax_dec_<?php echo $li['is_no']; ?>" tabindex="-1" role="dialog" aria-hidden="true">
-	<div class="modal-dialog modal-lg">
-		<div class="modal-content">
-			<div class="modal-header" style="background-color: #00c851; color: white;">
-				<button type="button" class="close" id="dclose" data-dismiss="modal"><span aria-hidden="true">×</span></button>
-				<h4 class="modal-title" id="myModalLabel"><span class="fa fa-file-text-o"></span> Latest Tax Declaration (Photocopy)</h4>
-			</div>
-			<div class="modal-body">
-				<center>
-					<div style="overflow-x:auto;">
-						<?php if (!empty($ud['latest_tax_dec'])) { ?>
-							<img src="<?= base_url('assets/img/uploaded_documents/' . $ud['is_no'] . '/Tax Declaration/' . $ud['latest_tax_dec'] . '') ?> " class="img-responsive">
-						<?php } ?>
-					</div>
-				</center>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal" style="color: #00c851; border: 1px solid;">Close</button>
-			</div>
-		</div>
-	</div>
-</div>
-<!--====================LAND SKETCH====================-->
-<div class="modal animate bounceInUp land_sketch_<?php echo $li['is_no']; ?>" tabindex="-1" role="dialog" aria-hidden="true">
-	<div class="modal-dialog modal-lg">
-		<div class="modal-content">
-			<div class="modal-header" style="background-color: #00c851; color: white;">
-				<button type="button" class="close" id="dclose" data-dismiss="modal"><span aria-hidden="true">×</span></button>
-				<h4 class="modal-title" id="myModalLabel"><span class="fa fa-file-text-o"></span> Land Sketch</h4>
-			</div>
-			<div class="modal-body">
-				<center>
-					<div style="overflow-x:auto;">
-						<img src="<?= base_url('assets/img/uploaded_documents/' . $ud['is_no'] . '/Land Sketch/' . $ud['land_sketch'] . '') ?> " class="img-responsive">
-					</div>
-				</center>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal" style="color: #00c851; border: 1px solid;">Close</button>
-			</div>
-		</div>
-	</div>
-</div>
 <!--====================REVIEW MODAL====================-->
-<div class="modal fade review_<?php echo $li['is_no'] ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true" style="margin-top: 100px;">
-	<div class="modal-dialog">
+<div class="modal fade review_<?php echo $li['is_no'] ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true" style="margin-top:100px;">
+	<div class="modal-dialog modal-sm">
 		<div class="modal-content">
-			<div class="modal-header" style="background:#6b8e23;">
-				<button type="button" class="close" id="dclose" data-dismiss="modal" aria-hidden="true"><span style="color:white;">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel"><i class="fa fa-check-square-o" style="color:white;"></i> <span style="color:#E7E7E7;">Review</span></h4>
+			<div class="modal-header bg-green">
+				<button type="button" class="close" id="dclose" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h5 class="modal-title" id="myModalLabel"><i class="fa fa-check-square-o"></i> Review</h5>
 			</div>
-			<div class="modal-body" style="overflow-y: auto;">
-				<center><h6><span style="font-family:verdana; font-size:15px">Are you sure, these documents are complete?</span></h6></center>
+			<div class="modal-body text-center" style="overflow-y: auto;">
+				<h6>Are you sure this request is complete?</h6>
 			</div>
 			<div class="modal-footer">
-				<button style="background-color: #6b8e23;border:#6b8e23" type="submit" class="btn  btn-info review" id="<?php echo $li['is_no'] ?>">Yes</button>
-				<button style="background-color: maroon;border:maroon" type="button" class="btn btn-warning" data-dismiss="modal">No</button>
+				<button type="submit" class="btn  btn-success btn-sm review" id="<?php echo $li['is_no'] ?>">Yes</button>
+				<button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">No</button>
 			</div>
 		</div>
 	</div>
 </div>
 <!--====================RETURN MODAL====================-->
-<div class="modal fade return_<?php echo $li['is_no'] ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true" style="margin-top: 100px;">
-	<div class="modal-dialog">
+<div class="modal fade return_<?php echo $li['is_no'] ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true" style="margin-top:100px;">
+	<div class="modal-dialog modal-md">
 		<div class="modal-content">
-			<div class="modal-header" style="background:#6b8e23;">
+			<div class="modal-header bg-green">
 				<button type="button" class="close" id="dclose" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<h4 class="modal-title" id="myModalLabel"><i class="fa fa-envelope" style="color:white;"></i> <span style="color:#E7E7E7;">Write a message</span></h4>
+				<h5 class="modal-title" id="myModalLabel"><i class="fa fa-envelope"></i> Write a message</h5>
 			</div>
 			<div class="modal-body">
-				<textarea class="form-control incomplete_message" name="incomplete_message" id="incomplete_message"></textarea>
+				<label>Reason for Return</label>
+				<textarea class="form-control incomplete_message" name="incomplete_message" id="incomplete_message" required></textarea>
 			</div>
 			<div class="modal-footer">
-				<button style="background-color: #6b8e23;border:#6b8e23" type="submit" class="btn  btn-danger return" id="<?php echo $li['is_no'] ?>">Send</button>
-				<button style="background-color: maroon;border:maroon" type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+				<button type="submit" class="btn btn-success btn-sm return" id="<?php echo $li['is_no'] ?>">Submit</button>
+				<button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
 			</div>
 		</div>
 	</div>
 </div>
 <!--====================DISAPPROVAL MODAL====================-->
-<div class="modal fade disapprove_<?php echo $li['is_no'] ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true" style="margin-top: 100px;">
-	<div class="modal-dialog">
+<div class="modal fade disapprove_<?php echo $li['is_no'] ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true" style="margin-top:100px;">
+	<div class="modal-dialog modal-md">
 		<div class="modal-content">
-			<div class="modal-header" style="background:#6b8e23;">
+			<div class="modal-header bg-green">
 				<button type="button" class="close" id="dclose" data-dismiss="modal" aria-hidden="true">&times;</button>
-				<h4 class="modal-title" id="myModalLabel"><i class="fa fa-envelope" style="color:white;"></i> <span style="color:#E7E7E7;">Write a message</span></h4>
+				<h5 class="modal-title" id="myModalLabel"><i class="fa fa-envelope"></i> Write a message</h5>
 			</div>
 			<div class="modal-body">
-				<textarea class="form-control disapproved_message" name="disapproved_message" id="disapproved_message"></textarea>
+				<label>Reason for Disapproval</label>
+				<textarea class="form-control disapproved_message" name="disapproved_message" id="disapproved_message" required></textarea>
 			</div>
 			<div class="modal-footer">
-				<button style="background-color: #6b8e23;border:#6b8e23" type="submit" class="btn  btn-danger disapprove" id="<?php echo $li['is_no'] ?>">Send</button>
-				<button style="background-color: maroon;border:maroon" type="button" class="btn btn-warning" data-dismiss="modal">Close</button>
+				<button type="submit" class="btn btn-success btn-sm disapprove" id="<?php echo $li['is_no'] ?>">Submit</button>
+				<button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
 			</div>
 		</div>
 	</div>
 </div>
 <!--====================APPROVE MODAL====================-->
 <div class="modal fade approve_<?php echo $li['is_no'] ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2" aria-hidden="true" style="margin-top: 100px;">
-	<div class="modal-dialog">
+	<div class="modal-dialog modal-sm">
 		<div class="modal-content">
-			<div class="modal-header" style="background:#6b8e23;">
-				<button type="button" class="close" id="dclose" data-dismiss="modal" aria-hidden="true"><span style="color:white;">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel"><i class="fa fa-check-square-o" style="color:white;"></i> <span style="color:#E7E7E7;">Approve</span></h4>
+			<div class="modal-header bg-green">
+				<button type="button" class="close" id="dclose" data-dismiss="modal" aria-hidden="true">&times;</button>
+				<h5 class="modal-title" id="myModalLabel"><i class="fa fa-check-square-o"></i> Approve</h5>
 			</div>
-			<div class="modal-body" style="overflow-y: auto;">
-				<center><h6><span style="font-family:verdana; font-size:15px">Are you sure you want to approve these documents?</span></h6></center>
+			<div class="modal-body text-center" style="overflow-y: auto;">
+				<h6>Are you sure you want to approve this request?</h6>
 			</div>
 			<div class="modal-footer">
-				<button style="background-color: #6b8e23;border:#6b8e23" type="submit" class="btn  btn-info approve" id="<?php echo $li['is_no'] ?>">Yes</button>
-				<button style="background-color: maroon;border:maroon" type="button" class="btn btn-warning" data-dismiss="modal">No</button>
+				<button type="submit" class="btn btn-success approve" id="<?php echo $li['is_no'] ?>">Yes</button>
+				<button type="button" class="btn btn-danger" data-dismiss="modal">No</button>
 			</div>
 		</div>
 	</div>
@@ -911,27 +847,27 @@
 	document.addEventListener("DOMContentLoaded", function (event) {
 		//REVIEW JQUERY
 		$(".review").click(function () {
-			var id = $(this).attr("id");
+			var id 		= $(this).attr("id");
+			var status 	= "Reviewed";
 			$.ajax({
-				url: "<?php echo base_url('Acquisition/submit_reviewed_documents/"+id+"') ?>",
+				url: "<?php echo base_url('Acquisition/submit_reviewed_request/"+id+"') ?>",
 				type: "post",
 				data: { '<?php echo $this->security->get_csrf_token_name(); ?>': '<?php echo $this->security->get_csrf_hash(); ?>' },
 				success: function () {
-					// alert("The Request has been Approved");
-					window.location.replace("<?php echo base_url('Acquisition/pop_up_reviewed/"+id+"') ?>");
+					window.location.replace("<?php echo base_url('Acquisition/pop_up_notification/"+status+"') ?>");
 				}
 			});
 		});
 		//APPROVE JQUERY
 		$(".approve").click(function () {
-			var id = $(this).attr("id");
+			var id 		= $(this).attr("id");
+			var status 	= "Approved";
 			$.ajax({
-				url: "<?php echo base_url('Acquisition/submit_approved_documents/"+id+"') ?>",
+				url: "<?php echo base_url('Acquisition/submit_approved_request/"+id+"') ?>",
 				type: "post",
 				data: { '<?php echo $this->security->get_csrf_token_name(); ?>': '<?php echo $this->security->get_csrf_hash(); ?>' },
 				success: function () {
-					// alert("The Request has been Approved");
-					window.location.replace("<?php echo base_url('Acquisition/pop_up_approved') ?>/" + id + "");
+					window.location.replace("<?php echo base_url('Acquisition/pop_up_notification/"+status+"') ?>");
 				}
 			});
 		});
@@ -939,8 +875,16 @@
 		$(".return").click(function () {
 			var id 		= $(this).attr("id");
 			var reason 	= $("#incomplete_message").val(); // Get the reason from the textarea
+			var status 	= "Returned";
+
+			if (reason === "") {
+		        alert("Return message is required.");
+		        $("#incomplete_message").focus();
+		        return false; // Stop form submission
+		    }
+
 			$.ajax({
-				url: "<?php echo base_url('Acquisition/submit_returned_documents/"+id+"') ?>",
+				url: "<?php echo base_url('Acquisition/submit_returned_request/"+id+"') ?>",
 				type: "post",
 				data: {
 					'is_no': id,
@@ -948,16 +892,24 @@
 					'<?php echo $this->security->get_csrf_token_name(); ?>': '<?php echo $this->security->get_csrf_hash(); ?>'
 				},
 				success: function (data) {
-					window.location.replace("<?php echo base_url('Acquisition/pop_up_returned') ?>/" + id + "");
+					window.location.replace("<?php echo base_url('Acquisition/pop_up_notification/"+status+"') ?>");
 				}
 			});
 		});
 		//DISAPPROVE JQUERY 
 		$(".disapprove").click(function () {
-			var id = $(this).attr("id");
-			var reason = $("#disapproved_message").val(); // Get the reason from the textarea
+			var id 		= $(this).attr("id");
+			var reason 	= $("#disapproved_message").val().trim();
+			var status 	= "Disapproved";
+
+			if (reason === "") {
+		        alert("Disapproval message is required.");
+		        $("#disapproved_message").focus();
+		        return false; // Stop form submission
+		    }
+
 			$.ajax({
-				url: "<?php echo base_url('Acquisition/submit_disapproved_documents/"+id+"') ?>",
+				url: "<?php echo base_url('Acquisition/submit_disapproved_request/"+id+"') ?>",
 				type: "post",
 				data: {
 					'is_no': id,
@@ -965,7 +917,7 @@
 					'<?php echo $this->security->get_csrf_token_name(); ?>': '<?php echo $this->security->get_csrf_hash(); ?>'
 				},
 				success: function (data) {
-					window.location.replace("<?php echo base_url('Acquisition/pop_up_disapproved') ?>/" + id + "");
+					window.location.replace("<?php echo base_url('Acquisition/pop_up_notification/"+status+"') ?>");
 				}
 			});
 		});

@@ -25,8 +25,10 @@ class Payment extends App_Controller{
 	    $data['disapproved_acq'] 		= $this->Notification_bar_model->getds_status_disapproved();
 	    $data['pending_payment'] 		= $this->Notification_bar_model->getpr_status_pending();
 	    $data['approved_payment'] 		= $this->Notification_bar_model->getpr_status_approved();
-	    $data['paid_payment'] 			= $this->Notification_bar_model->getpr_status_paid();
+	    $data['approved_payment1'] 		= $this->Notification_bar_model->getpr_status_approved1();
 	    $data['disapproved_payment'] 	= $this->Notification_bar_model->getpr_status_disapproved();
+	    $data['paid_payment'] 			= $this->Notification_bar_model->getpr_status_paid();
+	    $data['pending_aspayment'] 		= $this->Notification_bar_model->getds_status_pending_js_es();
 		#Message Notification
 		$recepient 						=  $this->session->userdata('user_id');
 		$data['all_notifications']		= $this->Notification_model->get_notif_per_user($recepient);
@@ -40,13 +42,13 @@ class Payment extends App_Controller{
 
 		$this->render_template('secretary/Progress/table',$data);
 	}
-	public function payment_datatable(){
+	public function inprogress_datatable(){
 		$data  		= array();
 		$all_info 	= $this->Datatable_model->get_row($_POST);
 			
 		foreach($all_info as $ai){
 			$a_paid 		= $this->Payment_model->getpt_TotalPaidAmount($ai->is_no);
-			$total_price 	= $ai->total_price ?? 0; 
+			$total_price 	= isset($ai->total_price) ? $ai->total_price : 0;
 			$percent 		= 0;
 			if ($total_price > 0) {
 			    $p 			= ($a_paid / $total_price) * 100;
@@ -59,7 +61,7 @@ class Payment extends App_Controller{
 				$approval_date 	= 	$ai->approval_date ? date_format(date_create($ai->approval_date), "F d, Y") : 'N/A';
 
 				$action 		=	'<center>
-										<a type="a" href=" '.base_url('Payment/view_inprogress/'.$ai->is_no).' " class="btn btn-primary btn-xs" style="border-radius: 10px;background:linear-gradient(to top, rgb(9, 32, 63) 0%, rgb(83, 120, 149) 100%); border-color:#fff;" title="View"><span class="fa fa-eye"></span> View</a>
+										<a href=" '.base_url('Payment/view_inprogress/'.$ai->is_no).' " class="btn btn-primary btn-xs" style="border-radius: 10px;border-color:#fff;font-size:9px" title="View"><span class="fa fa-eye"></span> View</a>
 									</center>';
 				if($percent == 100){
 					$bar 	= 	"<div class='progress' style='border: 1px solid #E6E9ED;'>
@@ -94,7 +96,7 @@ class Payment extends App_Controller{
 		$li 			= $this->Acquisition_model->getli_byid($is_no);
 		$ds 			= $this->Acquisition_model->getds_byid($is_no);
 		if(empty($is_no) || $ds['status'] !== "Approved" || $li['tag'] !== "New"){
-			redirect('Secretary/Progress');
+			redirect('');
 		}
 		// check if the uri id is valid==========
 		
@@ -140,20 +142,16 @@ class Payment extends App_Controller{
 		$data['cp']		= $this->Acquisition_model->getcp_byid($oi['id']);
 		$data['rstr']	= $this->Acquisition_model->getrstr_byid($is_no);
 		#Full Payment
-		$data['bi']						= $this->Acquisition_model->getbi_byid($is_no);
-		// $data['pr_status'] 		= $this->Payment_model->check_pr_status($is_no);
-		$data['fp_info'] 				= $this->Payment_model->getpr_byid_byfp_result($is_no);
-		$data['getpr_byid_byfp_row'] 	= $this->Payment_model->getpr_byid_byfp_row($is_no);
-		$data['remaining_balance'] 		= $this->Payment_model->getLatestRemainingBalance($is_no);
-		// $data['ar'] 			= $this->Payment_model->get_acknowledgement_receipt_content($is_no);
-		$existing_data 			= $this->Payment_model->getpr_checkfp($is_no);
+		$data['bi']			= $this->Acquisition_model->getbi_byid($is_no);
+		$data['fp_info'] 	= $this->Payment_model->getpr_byid_byfp_result($is_no);
+		$data['fp_info1'] 	= $this->Payment_model->getpr_byid_byfp_row($is_no);
+		// $data['remaining_balance'] = $this->Payment_model->getLatestRemainingBalance($is_no);
+		$existing_data 		= $this->Payment_model->getpr_checkfp($is_no);
 		#CA & SOP
 		$data['getpr_byid_byca_result'] = $this->Payment_model->getpr_byid_byca_result($is_no);
 		$data['getpt_byid_result'] 		= $this->Payment_model->getpt_byid_result($is_no);
 		$data['getpr_byid_result'] 		= $this->Payment_model->getpr_byid_result($is_no);
 		//end
-
-		
 
 		if(isset($_POST['submit_ca'])){//REQUEST CASH ADVANCE
 			$this->form_validation->set_rules('control_no', 'CA Control No.', 'required');
@@ -481,45 +479,54 @@ class Payment extends App_Controller{
 	}
 	public function Payment_tbl(){
 		$this->sess_gm();
-		$data 					= $this->Notification();
-	    $data['getpr_reason'] 	= $this->Payment_model->getpr_reason();
+		$data 				= $this->Notification();
+	    $data['reason'] 	= $this->Payment_model->getpr_reason();
 
 		$this->render_template('3A/Payment_request/table',$data);        
   	}
-  	public function pending_payment_datatable(){
+  	public function payment_datatable(){
 		$data  		= array();
+		$status 	= $this->input->post('status');
 		$all_info 	= $this->Datatable_model->get_row($_POST);
-			
 		foreach($all_info as $ai){
-			if ($ai->tag == "New" || $ai->tag == "New LAPF-ES") {
+			if ($ai->tag == "New") {
 				$lot_owner 			= 	$ai->firstname." ".substr(($ai->middlename),0,1).". ".$ai->lastname;
 				$lot_location 		= 	$ai->street."- ".$ai->baranggay.", ".$ai->municipality.", ".$ai->province;
-				$submission_date 	= 	$ai->submission_date ? date_format(date_create($ai->submission_date), "F d, Y") : 'N/A';
-
+				$submission_date 	= 	$ai->submission_date ? date_format(date_create($ai->submission_date), "F d, Y") : '';
+				$approval_date 		= 	$ai->approval_date ? date_format(date_create($ai->approval_date), "F d, Y") : '';
+				$disapproval_date 	= 	$ai->disapproval_date ? date_format(date_create($ai->disapproval_date), "F d, Y") : '';
+				$date_payed 		= 	$ai->date_payed ? date_format(date_create($ai->date_payed), "F d, Y") : '';
 				if ($ai->type == "Cash Advance") {
+					$reason 		= 	'<a data-toggle="modal" data-target=".reason_disapproved_'.$ai->control_no.'" data-backdrop="static" data-keyboard="false"><i class="fa fa-eye"></i> View Reason</a>';
 	                $action 		=	'<center>
 	                            			<a href="' . base_url('Payment/request_cash_advance/'.$ai->control_no.'/'.$ai->is_no) . '"
-	                                		class="btn btn-sm btn-info" style="border-radius:10px; background-color:#304b73;border-color:#fff;">
+	                                		class="btn btn-primary btn-xs" style="border-radius:10px;border-color:#fff;">
 	                                		<span class="fa fa-eye"></span> View</a>
 	                        			</center>';
 	            }else if($ai->type == "Full Payment") {
+	            	$reason 		= 	'<a data-toggle="modal" data-target=".reason_disapproved_'.$ai->control_no.'" data-backdrop="static" data-keyboard="false"><i class="fa fa-eye"></i> View Reason</a>';
 	                $action 		=	'<center>
 	                            			<a href="' . base_url('Payment/request_full_payment_view/'.$ai->control_no.'/'.$ai->is_no) . '"
-	                                		class="btn btn-sm btn-info" style="border-radius:10px; background-color:#304b73;border-color:#fff;">
-	                                		<span class="fa fa-eye"></span> View</a>
-	                        			</center>';
-	            }else{
-	            	 $action 		=	'<center>
-	                            			<a href="' . base_url('Payment/request_extrajudicial_view/'.$ai->is_no) . '"
-	                                		class="btn btn-sm btn-info" style="border-radius:10px; background-color:#304b73;border-color:#fff;">
+	                                		class="btn btn-primary btn-xs" style="border-radius:10px;border-color:#fff;">
 	                                		<span class="fa fa-eye"></span> View</a>
 	                        			</center>';
 	            }
 
-				$data[] 			=	array($ai->is_no, $lot_owner,$ai->lot_type,$lot_location,$ai->type,$submission_date,$action);
+				$row =	array($ai->is_no, $lot_owner,$ai->lot_type,$lot_location,$ai->type,$submission_date);
+
+				if ($status === 'Approved') {
+	                $row[] = $approval_date;
+	            }elseif($status === 'Disapproved'){
+	            	$row[] = $disapproval_date;
+	            	$row[] = $reason;
+	            }elseif($status === 'Paid'){
+	            	$row[] = $approval_date;
+	            	$row[] = $date_payed;
+	            }
+	            $row[] 	= $action;
+	            $data[] = $row;
 			}
-		}
-							
+		}				
 		$output = array(
 			"draw" 					=> $_POST['draw'],
 			"recordsTotal" 			=> $this->Datatable_model->countAll(),
@@ -536,37 +543,10 @@ class Payment extends App_Controller{
 		$data['li']			= $this->Acquisition_model->getli_byid($is_no);
 		$data['ll']			= $this->Acquisition_model->getll_byid($is_no);
 		$data['oi']			= $this->Acquisition_model->getoi_byid($is_no);
-		$data['getpr_reason'] 	= $this->Payment_model->getpr_reason();
+		$data['reason'] 	= $this->Payment_model->getpr_reason();
 
 		$this->render_template('3A/Payment_request/view_CashAdvance',$data);   
  	}
- 	public function submit_approved_payment($control_no){
-		$this->sess_gm();
-		$data 	= $this->Payment_model->getform_byid($control_no);
-		$action = "Approved";
-		$name 	=  $this->session->userdata('firstname').' '.$this->session->userdata('lastname');
-
-		$this->Payment_model->approve_cash_advance($control_no,$name,$action);
-		$this->Payment_model->notify_user($data['form_type'], $control_no, $action, $data['user_id']);    
-  	}
-  	public function pop_up_approved($is_no){
-		$this->session->set_flashdata('notif','Request Approved Successfully!');
-		redirect('Payment/Payment_tbl');
-  	}
-  	public function submit_disapproved_payment($control_no){
-		$this->sess_gm();
-		$data 	= $this->Payment_model->getform_byid($control_no);
-		$reason = $this->input->post('disapproved_message');
-		$action = "Disapproved";
-		$name 	= $this->session->userdata('firstname').' '.$this->session->userdata('lastname');
-
-		$this->Payment_model->disapprove_cash_advance($control_no,$name,$action,$reason);
-		$this->Payment_model->notify_user($data['form_type'],$control_no, $action, $data['user_id']);
-  	}
-  	public function pop_up_disapproved($is_no){
-		$this->session->set_flashdata('notif','Request Disapproved Successfully!');
-		redirect('Payment/Payment_tbl');
-  	}
  	public function request_full_payment_view($control_no, $is_no){
 	    $this->sess_gm();
 	    $data['title'] 	= "Request Full Payment";
@@ -581,197 +561,168 @@ class Payment extends App_Controller{
 	    $data['bi'] 	= $this->Acquisition_model->getbi_byid($is_no);
 	    $data['pr']		= $this->Payment_model->getpr_bycntrl($control_no);
 	    $data['ar'] 	= $this->Payment_model->get_acknowledgement_receipt_content($is_no);
-	    $data['getpr_reason'] 	= $this->Payment_model->getpr_reason();
+	    $data['reason'] = $this->Payment_model->getpr_reason();
     
       	$this->render_template('3A/Payment_request/view_FullPayment', $data);
   	}
-  	public function request_extrajudicial_view($is_no){
-	    $this->sess_gm();
-	    $data['title'] = "Extra Judicial Settlement";
+ 	public function submit_approved_request($control_no){
+		$this->sess_gm();
+		$data 	= $this->Payment_model->getform_byid($control_no);
+		$action = "Approved";
+		$name 	=  $this->session->userdata('firstname').' '.$this->session->userdata('lastname');
 
-	    //SIDEBAR NOTIFICATION
-	    $data['gm_acquisition'] = $this->Gm_notification_model->get_acquisition_count();
-	    $data['gm_payment_request'] = $this->Gm_notification_model->get_payment_request_count();
-	    //END SIDEBAR NOTIFICATION
-
-	    //DATA
-	    $data['li'] = $this->Payment_request_model->get_land_info_by_id($is_no);
-	    $data['oi'] = $this->Payment_request_model->get_owner_info_by_id($is_no);
-	    $data['ll'] = $this->Payment_request_model->get_lot_location_by_id($is_no);
-	    $data['ud'] = $this->Payment_request_model->get_uploaded_documents_by_id($is_no);
-	    $data['ab'] = $this->Payment_request_model->getab_byid($is_no);
-	    $data['cbi'] = $this->Payment_request_model->getcbi_byid($is_no);
-	    $data['ci'] = $this->Payment_request_model->getci_byid($is_no);
-	    $data['ca'] = $this->Payment_request_model->getpr_byid_byca($is_no);
-	    $data['eu'] = $this->Payment_request_model->getesupload_byid($is_no);
-	    $data['payment_request'] = $this->Payment_request_model->get_payment_requests_by_es($is_no);
-	    //END DATA
-    
-      	$this->render_template('3A/Payment_request/extrajudicial_settlement_form_view', $data);
+		$this->Payment_model->approve_cash_advance($control_no,$name,$action);
+		$this->Payment_model->notify_user($data['form_type'], $control_no, $action, $data['user_id']);    
   	}
-  	public function approved_payment_datatable(){
-		$data  		= array();
-		$all_info 	= $this->Datatable_model->get_row($_POST);
-			
-		foreach($all_info as $ai){
-			if ($ai->tag == "New" || $ai->tag == "New LAPF-ES") {
-				$lot_owner 			= 	$ai->firstname." ".substr(($ai->middlename),0,1).". ".$ai->lastname;
-				$lot_location 		= 	$ai->street."- ".$ai->baranggay.", ".$ai->municipality.", ".$ai->province;
-				$submission_date 	= 	$ai->submission_date ? date_format(date_create($ai->submission_date), "F d, Y") : 'N/A';
-				$approval_date 		= 	$ai->approval_date ? date_format(date_create($ai->approval_date), "F d, Y") : 'N/A';
+  	public function submit_disapproved_request($control_no){
+		$this->sess_gm();
+		$data 	= $this->Payment_model->getform_byid($control_no);
+		$reason = $this->input->post('disapproved_message');
+		$action = "Disapproved";
+		$name 	= $this->session->userdata('firstname').' '.$this->session->userdata('lastname');
 
-				if ($ai->type == "Cash Advance") {
-		               $action 		=	'<center>
-		                            		<a href="' . base_url('Payment/request_cash_advance/'.$ai->control_no.'/'.$ai->is_no) . '"
-		                                	class="btn btn-sm btn-info" style="border-radius:10px; background-color:#304b73;border-color:#fff;">
-		                                	<span class="fa fa-eye"></span> View</a>
-		                        		</center>';
-	            }else if($ai->type == "Full Payment") {
-	                $action 		=	'<center>
-		                            		<a href="' . base_url('Payment/request_full_payment_view/'.$ai->control_no.'/'.$ai->is_no) . '"
-		                                	class="btn btn-sm btn-info" style="border-radius:10px; background-color:#304b73;border-color:#fff;">
-		                                	<span class="fa fa-eye"></span> View</a>
-		                        		</center>';
-	            }else{
-	            	$action 		=	'<center>
-		                            		<a href="' . base_url('Gm/Payment_request/request_extrajudicial_view/'.$ai->is_no) . '"
-		                                	class="btn btn-sm btn-info" style="border-radius:10px; background-color:#304b73;border-color:#fff;">
-		                                	<span class="fa fa-eye"></span> View</a>
-		                        		</center>';
-	            }
-
-				$data[] 		= 	array($ai->is_no, $lot_owner,$ai->lot_type,$lot_location,$ai->type,$submission_date,$approval_date,$action);
-			}
-		}
-							
-		$output = array(
-			"draw" 				=> $_POST['draw'],
-			"recordsTotal" 		=> $this->Datatable_model->countAll(),
-			"recordsFiltered" 	=> $this->Datatable_model->countFiltered($_POST),
-			"data" 				=> $data,
-		);
-		echo json_encode($output);
-	}
-	public function disapproved_payment_datatable(){
-		$data  		= array();
-		$all_info 	= $this->Datatable_model->get_row($_POST);
-			
-		foreach($all_info as $ai){
-			if ($ai->tag == "New" || $ai->tag == "New LAPF-ES") {
-				$lot_owner 			= 	$ai->firstname." ".substr(($ai->middlename),0,1).". ".$ai->lastname;
-				$lot_location 		= 	$ai->street."- ".$ai->baranggay.", ".$ai->municipality.", ".$ai->province;
-				$submission_date 	= 	$ai->submission_date ? date_format(date_create($ai->submission_date), "F d, Y") : 'N/A';
-				$disapproval_date 	= 	$ai->disapproval_date ? date_format(date_create($ai->disapproval_date), "F d, Y") : 'N/A';
-
-				if ($ai->type == "Cash Advance") {
-					$reason 		= 	'<a data-toggle="modal" data-target=".reason_disapproved_'.$ai->control_no.'" data-backdrop="static" data-keyboard="false"><i class="fa fa-eye"></i> View Reason</a>';
-	                $action 		=	'<center>
-		                            		<a href="' . base_url('Payment/request_cash_advance/'.$ai->control_no.'/'.$ai->is_no) . '"
-		                                	class="btn btn-sm btn-info" style="border-radius:10px; background-color:#304b73;border-color:#fff;">
-		                                	<span class="fa fa-eye"></span> View</a>
-	                        			</center>';
-	            }else if($ai->type == "Full Payment") {
-	            	$reason 		= 	'<a data-toggle="modal" data-target=".reason_disapproved_'.$ai->control_no.'" data-backdrop="static" data-keyboard="false"><i class="fa fa-eye"></i> View Reason</a>';
-	                $action 		=	'<center>
-		                            		<a href="' . base_url('Payment/request_full_payment_view/'.$ai->control_no.'/'.$ai->is_no) . '"
-		                                	class="btn btn-sm btn-info" style="border-radius:10px; background-color:#304b73;border-color:#fff;">
-		                                	<span class="fa fa-eye"></span> View</a>
-		                        		</center>';
-	            }else{
-	            	$reason 		= 	'<a data-toggle="modal" data-target=".es_reason_disapproved_'.$ai->is_no.'" data-backdrop="static" data-keyboard="false"><i class="fa fa-eye"></i> View Reason</a>';
-	            	$action 		=	'<center>
-	                            			<a href="' . base_url('Gm/Payment_request/request_extrajudicial_view/'.$ai->is_no) . '"
-	                                		class="btn btn-sm btn-info" style="border-radius:10px; background-color:#304b73;border-color:#fff;">
-	                                		<span class="fa fa-eye"></span> View</a>
-	                        			</center>';
-	            }
-
-				$data[] 			= 	array($ai->is_no, $lot_owner,$ai->lot_type,$lot_location,$ai->type,$submission_date,$disapproval_date,$reason,$action);
-			}
-		}
-							
-		$output = array(
-			"draw" 					=> $_POST['draw'],
-			"recordsTotal" 			=> $this->Datatable_model->countAll(),
-			"recordsFiltered" 		=> $this->Datatable_model->countFiltered($_POST),
-			"data" 					=> $data,
-		);
-		echo json_encode($output);
-	}
-	public function paid_payment_datatable(){
-		$data  		= array();
-		$all_info 	= $this->Datatable_model->get_row($_POST);
-			
-		foreach($all_info as $ai){
-			if($ai->tag == "New"){
-				$lot_owner 		= 	$ai->firstname." ".substr(($ai->middlename),0,1).". ".$ai->lastname;
-				$lot_location 	= 	$ai->street."- ".$ai->baranggay.", ".$ai->municipality.", ".$ai->province;
-				$submission_date = 	$ai->submission_date ? date_format(date_create($ai->submission_date), "F d, Y") : 'N/A';
-				$approval_date 	= 	$ai->approval_date ? date_format(date_create($ai->approval_date), "F d, Y") : 'N/A';
-				$date_payed 	= 	$ai->date_payed ? date_format(date_create($ai->date_payed), "F d, Y") : 'N/A';
-
-				if ($ai->type == "Cash Advance") {
-	                $action 	=	'<center>
-		                            	<a href="' . base_url('Payment/request_cash_advance/'.$ai->control_no.'/'.$ai->is_no) . '"
-		                                class="btn btn-sm btn-info" style="border-radius:10px; background-color:#304b73;border-color:#fff;">
-		                                <span class="fa fa-eye"></span> View</a>
-	                        		</center>';
-	            } else {
-                	$action 	=	'<center>
-	                            		<a href="' . base_url('Payment/request_full_payment_view/'.$ai->control_no.'/'.$ai->is_no) . '"
-	                                	class="btn btn-sm btn-info" style="border-radius:10px; background-color:#304b73;border-color:#fff;">
-	                                	<span class="fa fa-eye"></span> View</a>
-	                        		</center>';
-	            }
-
-				$data[] 		= 	array($ai->is_no, $lot_owner,$ai->lot_type,$lot_location,$ai->type,$submission_date,$approval_date,$date_payed,$action);
-			}
-		}
-							
-		$output = array(
-			"draw" 				=> $_POST['draw'],
-			"recordsTotal" 		=> $this->Datatable_model->countAll(),
-			"recordsFiltered"	=> $this->Datatable_model->countFiltered($_POST),
-			"data" 				=> $data,
-		);
-		echo json_encode($output);
-	}
-	public function CRF_tbl(){
+		$this->Payment_model->disapprove_cash_advance($control_no,$name,$action,$reason);
+		$this->Payment_model->notify_user($data['form_type'],$control_no, $action, $data['user_id']);
+  	}
+  	public function pop_up_notification($status){
+	    $this->session->set_flashdata('success','Request '. $status .' Successfully!');
+	    redirect('Payment/Payment_tbl');
+  	}
+	public function Crf_tbl(){
 		$this->sess_acctng();
-		$data['title']	 		= "Payment Request";
-		$data 					= $this->Notification();
-		$data['pr_approved']	=$this->Payment_model->getpr_approved1();
-		// $data['payment_processing']	= $this->Payment_model->get_payment_request_processing();
+		$data['title']	 	= "Payment Request";
+		$data 				= $this->Notification();
+		//$data['pr_approved']	= $this->Payment_model->getpr_approved1();
+		$data['crf']		= $this->Payment_model->getdata_crf();
+		$data['crf1']		= $this->Payment_model->getdata_crf1();
+		$data['rca']		= $this->Payment_model->getdata_rca();
 
 		$this->render_template('accounting/payment_request/table',$data);
 	}
-	public function pending_crf_datatable() {
+	public function crf_datatable() {
 	    $data  		= array();
+	    $status 	= $this->input->post('status');
 	    $all_info 	= $this->Datatable_model->get_row($_POST);
 
 	    foreach ($all_info as $ai) {
-	        if ($ai->tag == "New" || $ai->tag == "New LAPF-ES") {
+	        if ($ai->tag == "New" || $ai->tag == "New LAPF-ES" || $ai->tag == "New LAPF-JS") {
 	            $lot_owner 			= 	$ai->firstname . " " . substr(($ai->middlename), 0, 1) . ". " . $ai->lastname;
 	            $lot_location 		= 	$ai->street . "- " . $ai->baranggay . ", " . $ai->municipality . ", " . $ai->province;
 	            $submission_date 	= 	$ai->submission_date ? date_format(date_create($ai->submission_date), "F d, Y") : 'N/A';
 	            $approval_date 		= 	$ai->approval_date ? date_format(date_create($ai->approval_date), "F d, Y") : 'N/A';
 
 	            if ($ai->type == "Cash Advance") {
-	                $action 		= 	'<center>
-	                            			<button class="btn btn-default  btn-xs btn-round" data-toggle="modal" data-target="#crf_' . $ai->control_no . '" title="Create"><i class="fa fa-edit text-dark"></i> CRF</button>
-	                            			<button class="btn btn-default btn-xs btn-round" data-toggle="modal" data-target="#rca_' . $ai->control_no . '" title="View"><i class="fa fa-eye text-dark"></i> VIEW</button>
-	                           			</center>';
+	            	$type 		=	'Cash Advance';
+	            	$action 	= 	'<center>
+								        <div class="btn-group">
+								            <button type="button" class="btn btn-danger btn-xs">Action</button>
+								            <button type="button" class="btn btn-danger btn-xs dropdown-toggle" data-toggle="dropdown">
+								                <span class="caret"></span>
+								                <span class="sr-only">Toggle Dropdown</span>
+								            </button>
+								            <ul class="dropdown-menu" role="menu">';
+								            	if ($status === 'Approved') {
+											        $action .= '<li class="bg-white">
+											                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#AcquisitionCRF_' . $ai->control_no . '"><i class="fa fa-edit"></i> Create CRF</a>
+											                    </li>';
+											    } else if ($status === 'Paid') {
+											        $action .= '<li class="bg-white">
+											                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#ViewAcquisitionCRF_' . $ai->control_no . '">
+											                            <i class="fa fa-eye"></i> View CRF
+											                        </a>
+											                    </li>';
+											    }
+											    $action .= '<li class="bg-white">
+										                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#view_rca_' . $ai->control_no . '">
+										                            <i class="fa fa-eye"></i> View RCA
+										                        </a>
+										                    </li>';
+					$action .= 				'</ul>
+				              			</div>
+				            		</center>';
 	            }else if($ai->type == "Full Payment") {
-	                $action 		= 	'<center>
-	                            			<button class="btn btn-default btn-xs btn-round" data-toggle="modal" data-target="#crf_' . $ai->control_no . '" title="Create"><i class="fa fa-edit text-dark""></i> CRF</button>
-	                            			<a class="btn btn-default btn-xs btn-round" href="' . base_url('Accounting/Progress/view_inprogress/' . $ai->is_no) . '" title="View"><i class="fa fa-eye text-dark"></i> VIEW</a>
-	                           			</center>';
+	            	$type 		= 	'Full Payment';
+	            	$action 	= 	'<center>
+								        <div class="btn-group">
+								            <button type="button" class="btn btn-danger btn-xs">Action</button>
+								            <button type="button" class="btn btn-danger btn-xs dropdown-toggle" data-toggle="dropdown">
+								                <span class="caret"></span>
+								                <span class="sr-only">Toggle Dropdown</Span>
+								            </button>
+								            <ul class="dropdown-menu" role="menu">';
+								            	if ($status === 'Approved') {
+											        $action .= '<li class="bg-white">
+											                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#AcquisitionCRF_' . $ai->control_no . '"><i class="fa fa-edit"></i> Create CRF</a>
+											                    </li>';
+											    } else if ($status === 'Paid') {
+											        $action .= '<li class="bg-white">
+											                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#ViewAcquisitionCRF_' . $ai->control_no . '">
+											                            <i class="fa fa-eye"></i> View CRF
+											                        </a>
+											                    </li>';
+											    }
+											    $action .= '<li class="bg-white">
+										                        <a class="dropdown-item" href="' . base_url('Payment/view_inprogress/' . $ai->is_no) . '"><i class="fa fa-eye"></i> View</a>
+										                    </li>';
+					$action .= 				'</ul>
+				              			</div>
+				            		</center>';
 	            }else{
-	            	$action 		= 	'<center>
-	                            			<button class="btn btn-default btn-xs btn-round" data-toggle="modal" data-target="#crf_collateral_' . $ai->is_no . '" title="Create"><i class="fa fa-edit"> CRF</i></button>
-	                           			</center>';
+	            	$type 	= 	'Collateral';
+				    $action = 	'<center>
+				                	<div class="btn-group">
+					                    <button type="button" class="btn btn-danger btn-xs">Action</button>
+					                    <button type="button" class="btn btn-danger btn-xs dropdown-toggle" data-toggle="dropdown">
+					                        <span class="caret"></span>
+					                        <span class="sr-only">Toggle Dropdown</span>
+					                    </button>
+				                    	<ul class="dropdown-menu" role="menu">';
+										    if ($status === 'Approved') {
+										        $action .= '<li class="bg-white">
+										                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#AspaymentCRF_' . $ai->is_no . '">
+										                            <i class="fa fa-edit"></i> Create CRF
+										                        </a>
+										                    </li>';
+										    } else if ($status === 'Paid') {
+										        $action .= '<li class="bg-white">
+										                        <a class="dropdown-item" href="#" data-toggle="modal" data-target="#ViewAspaymentCRF_' . $ai->is_no . '">
+										                            <i class="fa fa-eye"></i> View CRF
+										                        </a>
+										                    </li>';
+										    }
+
+										    if ($ai->tag == "New LAPF-JS") {
+										        $action .= '<li class="bg-white">
+										                        <a class="dropdown-item" href="' . base_url('Aspayment/judicial_settlement_form/' . $ai->is_no) . '">
+										                            <i class="fa fa-eye"></i> View
+										                        </a>
+										                    </li>';
+										    } else if ($ai->tag == "New LAPF-ES") {
+										        $action .= '<li class="bg-white">
+										                        <a class="dropdown-item" href="' . base_url('Aspayment/extrajudicial_settlement_form/' . $ai->is_no) . '">
+										                            <i class="fa fa-eye"></i> View
+										                        </a>
+										                    </li>';
+										    }
+
+				    $action .= 			'</ul>
+				              		</div>
+				            	</center>';
 	            }
-	            $data[] = array($ai->is_no,$lot_owner,$ai->lot_type,$lot_location,$ai->type,$submission_date,$approval_date,$action);
+
+	            $row = array();
+				if ($status === 'Paid') {
+				    $row[] = $ai->control_no;
+				}
+				$row[] 	= $ai->isno;
+				$row[] 	= $lot_owner;
+				$row[] 	= $ai->lot_type;
+				$row[] 	= $lot_location;
+				$row[] 	= $type;
+				$row[] 	= $submission_date;
+				$row[] 	= $approval_date;
+				$row[] 	= $action;
+	            $data[] = $row;
 	        }
 	    }
 
@@ -783,67 +734,52 @@ class Payment extends App_Controller{
 	    );
 	    echo json_encode($output);
 	}
-	public function submit_crf($control_no, $is_no, $pr_type){
+	public function submit_crf(){
+		$data 			= $this->Notification();
+		$data['pr_approved'] = $this->Payment_model->getpr_approved1();
+		$control_no 	= $this->input->post('control_no');
+		$crf_no 		= $this->input->post('crf_no');
+		$is_no 			= $this->input->post('is_no');
+		$type 			= $this->input->post('type');
+		$attachments 	= $this->input->post('attachments');
+
+		$li 			= $this->Acquisition_model->getli_byid($is_no);
+		$bd 			= $this->Acquisition_model->getbidding_byid($is_no);
+		$pr 			= $this->Payment_model->getpr_approved($control_no);
+		$get 			= $this->Payment_model->getLatestRemainingBalance($is_no);
+		$transaction 	= $this->db->get_where('payment_transaction', array('is_no' => $is_no));
+		$count 			= $transaction->num_rows();
+		$form_type 		= "CRF";
+		$user_id 		= $this->session->userdata('user_id');
+
 		$this->form_validation->set_rules('crf_no', 'CRF No.', 'required');
 		$this->form_validation->set_rules('bank', 'Bank', 'required');
 		$this->form_validation->set_rules('cheque_no', 'Cheque No.', 'required');
 		$this->form_validation->set_rules('cheque_date', 'Cheque Date', 'required');
-		// $this->form_validation->set_rules('particular', 'Particular', 'required');
 
-		$pr_ccn = $this->Payment_model->getpr_bycntrl($control_no);
-		$li 	= $this->Acquisition_model->getli_byid($is_no);
-		$pr 	= $this->Payment_model->getpr_approved($control_no);
-		$get 	= $this->Payment_model->getLatestRemainingBalance($is_no);
-		$a_paid = $this->Payment_model->getpaid_ca($is_no); 
-
-		if($this->form_validation->run() == FALSE){                             
+		if($this->form_validation->run() == FALSE){                   
 			$this->render_template('accounting/payment_request/table',$data);
 		}else{
-			if(!isset($_POST['submit_crf_ca'])){
-				redirect('');
+			if ($count > 0) {
+				$remaining_balance = $get['remaining_balance'] - $pr['amount'];
+				$this->Payment_model->add_CRF($pr['id'], $is_no, $pr['amount'], $type);
+				$this->Payment_model->add_payment_transaction($pr['id'], $is_no, $pr['amount'], $remaining_balance, $type);
+				$this->Payment_model->update_payment_requests($pr['id'], $is_no);
+				$this->Payment_model->insert_form($crf_no, $form_type, $user_id);
+			}else{
+				if (strpos($is_no, 'NA-') === 0){
+					$remaining_balance = $li['total_price'] - $pr['amount']; //Acquisition Formula
+				}else{
+					$remaining_balance = $bd['bid_price'] - $pr['amount']; //Aspayment Formula
+				}
+				$this->Payment_model->add_CRF($pr['id'], $is_no, $pr['amount'], $type);
+				$this->Payment_model->add_payment_transaction($pr['id'], $is_no, $pr['amount'], $remaining_balance, $type);
+				$this->Payment_model->update_payment_requests($pr['id'], $is_no);
+				$this->Payment_model->insert_form($crf_no, $form_type, $user_id);
 			}
-			$name =  $this->session->userdata('firstname').' '.$this->session->userdata('lastname');
-			$this->Payment_model->insert_crf($pr['id'], $is_no, $pr['amount'], $get['remaining_balance'], $li['total_price'], $name, $pr_type);
-
-			$this->session->set_flashdata('notif','CRF has been saved successfully!');
+			$this->session->set_flashdata('notif','Successfully submitted!');
 			redirect('Payment/CRF_tbl');
 		}
-	}
-	public function history_crf_datatable(){
-	    $data  			= array();
-	    $all_info 		= $this->Datatable_model->get_row($_POST);
-	    $unique_entries = array();
-
-	    foreach($all_info as $ai){
-	        if($ai->tag == "New"){
-                $lot_owner 				= 	$ai->firstname . " " . substr(($ai->middlename), 0, 1) . ". " . $ai->lastname;
-                $lot_location 			= 	$ai->street . "- " . $ai->baranggay . ", " . $ai->municipality . ", " . $ai->province;
-                $pr_submission_date 	= 	$ai->pr_submission_date ? date_format(date_create($ai->pr_submission_date), "F d, Y") : 'N/A';
-                $crf_submission_date 	= 	$ai->crf_submission_date ? date_format(date_create($ai->crf_submission_date), "F d, Y") : 'N/A';
-
-                if ($ai->pr_type == "Cash Advance") {
-		            $action   			=	'<center>
-		                                		<button class="btn btn-xs btn-default btn-round" data-toggle="modal" data-target="#view_crf_modal_' . $ai->control_no . '" title="View"><i class="fa fa-eye"> CRF</i></button>
-		                                		<button class="btn btn-xs btn-default btn-round" data-toggle="modal" data-target="#view_rca_' . $ai->control_no . '" title="View"><i class="fa fa-eye"> RCA</i></button>
-		                            		</center>';
-                } else {
-                    $action 			=	'<center>
-		                                		<button class="btn btn-xs btn-default btn-round" data-toggle="modal" data-target="#view_crf_modal_' . $ai->control_no . '" title="View"><i class="fa fa-eye"> CRF</i></button>
-		                                		<a class="btn btn-default btn-xs btn-round" href="' . base_url('Accounting/Progress/view_inprogress/'.$ai->is_no) . '" title="View"><i class="fa fa-file"> VIEW</i></a>
-		                            		</center>';
-                }
-
-                $data[] 				= 	array($ai->crf_no,$ai->is_no, $lot_owner, $ai->lot_type, $lot_location, $ai->pr_type, $pr_submission_date, $crf_submission_date, $action);
-	        }
-	    }
-
-	    $output = array(
-	        "draw" 				=> $_POST['draw'],
-	        "recordsTotal" 		=> $this->Datatable_model->countAll(),
-	        "recordsFiltered" 	=> $this->Datatable_model->countFiltered($_POST),
-	        "data" 				=> $data,
-	    );
-	    echo json_encode($output);
 	}
 	public function inprogress1_tbl(){
     	$this->sess_acctng();
@@ -857,7 +793,7 @@ class Payment extends App_Controller{
 			
 		foreach($all_info as $ai){
 			$a_paid 		= $this->Payment_model->getpt_TotalPaidAmount($ai->is_no);
-			$total_price 	= $ai->total_price ?? 0; 
+			$total_price 	= isset($ai->total_price) ? $ai->total_price : 0;
 			$percent 		= 0;
 			if ($total_price > 0) {
 			    $p 			= ($a_paid / $total_price) * 100;
@@ -870,7 +806,7 @@ class Payment extends App_Controller{
 				$approval_date 	= 	$ai->approval_date ? date_format(date_create($ai->approval_date), "F d, Y") : 'N/A';
 
 				$action 		=	'<center>
-										<a type="a" href=" '.base_url('Payment/view_inprogress/'.$ai->is_no).' " class="btn btn-primary btn-xs" style="border-radius: 10px;background:linear-gradient(to top, rgb(9, 32, 63) 0%, rgb(83, 120, 149) 100%); border-color:#fff;" title="View"><span class="fa fa-eye"></span> View</a>
+										<a href=" '.base_url('Payment/view_inprogress/'.$ai->is_no).' " class="btn btn-primary btn-xs" style="border-radius:10px;border-color:#fff;font-size:9px" title="View"><span class="fa fa-eye"></span> View</a>
 									</center>';
 				if($percent == 100){
 					$bar 	= 	"<div class='progress' style='border: 1px solid #E6E9ED;'>

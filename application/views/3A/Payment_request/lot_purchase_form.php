@@ -2,16 +2,17 @@
 	<div class="col-md-12 col-sm-12 col-xs-12">
 		<div class="x_panel animate fadeIn" style="border-radius:10px;"><br/>
 			<!--====================BODY====================-->
-			<center>
+			<div class="row text-center">
 				<img src="<?= base_url('assets/logo/AGC.jpg') ?>" width="200px" height="50px">
 				<h4><b>LOT PURCHASE FORM (LPF)</b></h4>
-			</center>
+			</div>
 
 			<input type="hidden" name="is_no" value="<?php echo $is_no?>">
 
 			<div class="col-md-12 col-sm-12 col-xs-12 space">
 		        <div class="col-md-4 col-sm-4 col-xs-4 form-inline">
-		          	<label>LPF Number:</label><input class="form-control input_border" type="text" value="<?= $li['is_no']; ?>" readonly>
+		          	<label>LPF Number:</label>
+		          	<input class="form-control input_border" type="text" value="<?= $li['is_no']; ?>" readonly>
 		        </div>
 		        <div class="col-md-4 col-sm-4 col-xs-4 form-inline pull-right">
 		          	<label>Date:</label><input class="form-control input_border" type="text" value="<?= date('F j, Y', strtotime($li['date_acquired'])); ?>" readonly>

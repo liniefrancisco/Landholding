@@ -30,7 +30,7 @@
 						</div>
 					</div>
 					<div class="panel-footer" style="background-color: #3e6d90;border:none;">
-						<a class="hov" href="<?= base_url('Secretary/Execute') ?>" style="color:#fff;float: right;">More Info <i class="fa fa-arrow-right"></i></a>
+						<a class="hov" href="<?= base_url('Acquisition/Acquisition_tbl') ?>" style="color:#fff;float: right;">More Info <i class="fa fa-arrow-right"></i></a>
 						<div class="clearfix"></div>
 					</div>
 				</div>
@@ -42,11 +42,11 @@
 						<div class="count">
 							<p class="numberCircle"><?php echo $pending_payment; ?></p>
 							<img src="<?php echo base_url(); ?>assets/logo/folder2.png" width="45%" style="float: right;"></img>
-							<span class="count_top"><h4><b>Payment Request</b></h4></span>
+							<span class="count_top"><h4><b>Payment</b></h4></span>
 						</div>
 					</div>
 					<div class="panel-footer" style="background-color: #3e6d90;border:none;">
-						<a class="hov" href="<?= base_url('GM/Payment_request') ?>" style="color:#fff;float: right;">More Info <i class="fa fa-arrow-right"></i></a>
+						<a class="hov" href="<?= base_url('Payment/Payment_tbl') ?>" style="color:#fff;float: right;">More Info <i class="fa fa-arrow-right"></i></a>
 						<div class="clearfix"></div>
 					</div>
 				</div>
@@ -58,11 +58,11 @@
 						<div class="count">
 							<p class="numberCircle"><?php echo $pending_acq; ?></p>
 							<img src="<?php echo base_url(); ?>assets/logo/folder2.png" width="45%" style="float: right;"></img>
-							<span class="count_top"><h4><b>Extrajudicial Request</b></h4></span>
+							<span class="count_top"><h4><b>Aspayment</b></h4></span>
 						</div>
 					</div>
 					<div class="panel-footer" style="background-color: #3e6d90;border:none;">
-						<a class="hov" href="<?= base_url('Gm/Acquisition/') ?>" style="color:#fff;float: right;">More Info <i class="fa fa-arrow-right"></i></a>
+						<a class="hov" href="<?= base_url('Aspayment/Aspayment_tbl') ?>" style="color:#fff;float: right;">More Info <i class="fa fa-arrow-right"></i></a>
 						<div class="clearfix"></div>
 					</div>
 				</div>
@@ -78,7 +78,7 @@
 						</div>
 					</div>
 					<div class="panel-footer" style="background-color: #3e6d90;border:none;">
-						<a class="hov" href="<?= base_url('Secretary/Owned') ?>" style="color:#fff;float: right;">More Info <i class="fa fa-arrow-right"></i></a>
+						<a class="hov" href="<?= base_url('Owned') ?>" style="color:#fff;float: right;">More Info <i class="fa fa-arrow-right"></i></a>
 						<div class="clearfix"></div>
 					</div>
 				</div>

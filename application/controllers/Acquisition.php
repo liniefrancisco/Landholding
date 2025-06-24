@@ -23,6 +23,7 @@ class Acquisition extends App_Controller{
 	    $data['returned_acq'] 			= $this->Notification_bar_model->getds_status_returned();
 	    $data['disapproved_acq'] 		= $this->Notification_bar_model->getds_status_disapproved();
 	    $data['pending_payment'] 		= $this->Notification_bar_model->getpr_status_pending();
+	    $data['pending_aspayment'] 		= $this->Notification_bar_model->getds_status_pending_js_es();
 		#Message Notification
 		$recepient 						=  $this->session->userdata('user_id');
 		$data['all_notifications']		= $this->Notification_model->get_notif_per_user($recepient);
@@ -35,7 +36,7 @@ class Acquisition extends App_Controller{
 		$data['title'] 		= "New Acquisition";
 		$data 				= $this->Notification();
 		$data['land_id'] 	= $this->Acquisition_model->getland_new();
-		$count 				= $this->Acquisition_model->geli_rows();
+		$count 				= $this->Acquisition_model->getli_num();
 		$new 				= $this->Acquisition_model->getland_new();
 		$oi 				= null;
 		$ud 				= null;
@@ -378,46 +379,75 @@ class Acquisition extends App_Controller{
 	}
 	public function pop_up_upload($id){
 		$this->session->set_flashdata('success', 'You are all set and done!. You can edit and update the info here if you missed some data entry.');
-		redirect('Secretary/Execute');
+		redirect('Acquisition/Acquisition_tbl');
 	}
 	#EXECUTE
 	public function Acquisition_tbl(){
-		$data['title'] 					= "New Acquisition";
-		$data 							= $this->Notification();
+		$data['title'] 		= "New Acquisition";
+		$data 				= $this->Notification();
 		#DATA FOR MODAL
-	    $status 						= ['Returned','Disapproved'];
-	    $data['return_acquisition']		= $this->Acquisition_model->getds_reason($status);
+	    $status 			= ['Returned','Disapproved'];
+	    $data['reason']		= $this->Acquisition_model->getds_reason($status);
 
 		$this->render_template('secretary/Acquisition/table',$data);
 	}
-	function pending_new_acquisition_datatable(){
+	public function acquisition_datatable(){
 		$data  		= array();
+		$status 	= $this->input->post('status');
 		$all_info 	= $this->Datatable_model->get_row($_POST);
-			
 		foreach($all_info as $ai){
 			if($ai->tag == "New"){
 				$lot_owner 			= 	$ai->firstname." ".substr(($ai->middlename),0,1).". ".$ai->lastname;
 				$lot_location 		= 	$ai->street."- ".$ai->baranggay.", ".$ai->municipality.", ".$ai->province;
-				$submission_date 	= 	$ai->submission_date ? date_format(date_create($ai->submission_date), "F d, Y") : 'N/A';
+				$submission_date 	= 	$ai->submission_date ? date_format(date_create($ai->submission_date), "F d, Y") : '';
+				$reviewed_date 		= 	$ai->reviewed_date ? date_format(date_create($ai->reviewed_date), "F d, Y") : '';
+				$returned_date 		= 	$ai->returned_date ? date_format(date_create($ai->returned_date), "F d, Y") : '';
+				$disapproval_date 	= 	$ai->disapproval_date ? date_format(date_create($ai->disapproval_date), "F d, Y") : '';
+				$approval_date 		= 	$ai->approval_date ? date_format(date_create($ai->approval_date), "F d, Y") : '';
+				$return_reason 		= 	'<a data-toggle="modal" data-target=".return_reason_'.$ai->is_no.'" data-backdrop="static" data-keyboard="false"><i class="fa fa-eye"></i> View Reason</a>';
+				$disapprove_reason 	= 	'<a data-toggle="modal" data-target=".reason_disapproved_'.$ai->is_no.'" data-backdrop="static" data-keyboard="false"><i class="fa fa-eye"></i> View Reason</a>';
+
 				$action 			= 	'<center>
-                    						<a type="a" href="' . base_url('Acquisition/view_interview_sheet/' . $ai->is_no) . '" 
+                    						<a href="' . base_url('Acquisition/view_interview_sheet/' . $ai->is_no) . '" 
                     						class="btn btn-primary btn-xs" 
-                    						style="border-radius: 10px; font-size:12px;background-color:#304b73; border-color:#fff;" 
+                    						style="border-radius:10px; border-color:#fff;font-size:9px"
                     						title="View">
                     						<span class="fa fa-eye"></span> View
                     						</a>';
 
-	        	if ($this->session->userdata('user_type') == 'Secretary') {
-	            	$action 		.= 	'<a type="a" href="' . base_url('Acquisition/edit_interview_sheet/' . $ai->is_no) . '" 
-	            						class="btn btn-primary btn-xs" 
-	                           			style="border-radius: 10px; font-size:12px;background-color:#304b73; border-color:#fff;" 
-	                           			title="Edit">
-	                           			<span class="fa fa-edit"></span> Edit
-	                        			</a>';
-	        	}
+								        	if ($this->session->userdata('user_type') == 'Secretary') {
+												if ($status == 'Pending' || $status == 'Returned') {
+													$action .= 	'<a href="' . base_url('Acquisition/edit_interview_sheet/' . $ai->is_no) . '" 
+																	class="btn btn-primary btn-xs" 
+																	style="border-radius:10px; border-color:#fff;font-size:9px"
+																	title="Edit">
+																	<span class="fa fa-edit"></span> Edit
+																</a>';
+												}
+								        	}
         		$action 			.= 	'</center>';
 
-				$data[] 			= 	array($ai->is_no, $lot_owner,$ai->lot_type,$lot_location,$submission_date,$action);
+				$row 			= 	array($ai->is_no, $lot_owner,$ai->lot_type,$lot_location,$submission_date);
+
+				if ($status === 'Reviewed') {
+	                $row[] 	= $reviewed_date;
+	                $row[] 	= $ai->reviewed_by;
+	            }if ($status === 'Returned') {
+	            	$row[] 	= $returned_date;
+	            	$row[] 	= $ai->returned_by;
+	            	$row[] 	= $return_reason;
+	            }if ($status === 'Disapproved') {
+	            	$row[] 	= $disapproval_date;
+	            	$row[] 	= $ai->disapproved_by;
+	            	$row[] 	= $disapprove_reason;
+	            }if ($status === 'Approved') {
+	            	$row[] 	= $reviewed_date;
+	                $row[] 	= $ai->reviewed_by;
+	            	$row[] 	= $approval_date;
+	            	$row[] 	= $ai->approved_by;
+	            }
+	            $row[] 	= $action;
+	            $data[] = $row;
 			}
 		}
 
@@ -744,132 +774,37 @@ class Acquisition extends App_Controller{
 			redirect('Acquisition/edit_interview_sheet/'.$is_no);
 		}  
 	}
-	public function submit_reviewed_documents($is_no){
+	public function submit_reviewed_request($is_no){
 	    $this->sess_legal();
 	    $name =  $this->session->userdata('firstname').' '.$this->session->userdata('lastname');
 	    $this->Acquisition_model->update_docu_status_reviewed($is_no, $name);      
   	}
-  	public function pop_up_reviewed($id){
-	    $this->session->set_flashdata('notif','Documents successfully Reviewed!');
-	    redirect('Acquisition/table');
-  	}
-  	public function submit_returned_documents($is_no){
+  	public function submit_returned_request($is_no){
 	    $this->sess_legal();
 	    $name 		=  $this->session->userdata('firstname').' '.$this->session->userdata('lastname');
 	    $message 	= $this->input->post('incomplete_message');
 	    $this->Acquisition_model->update_docu_status_returned($is_no, $name,$message);           
   	}
-  	public function pop_up_returned($id){
-	    $this->session->set_flashdata('notif','Documents successfully Return!');
-	    redirect('Acquisition/table');
-  	}
-  	public function submit_disapproved_documents($is_no){
-	    $this->sess_legal();
-	    $name 		=  $this->session->userdata('firstname').' '.$this->session->userdata('lastname');
-	    $message 	= $this->input->post('disapproved_message');
-	    $this->Acquisition_model->update_docu_status_disapproved($is_no, $name,$message);           
-  	}
-  	public function pop_up_disapproved($id){
-	    $this->session->set_flashdata('notif','Documents successfully Disapproved!');
-	    redirect('Acquisition/table');
-  	}
-  	function returned_new_acquisition_datatable(){
-		$data  		= array();
-		$all_info 	= $this->Datatable_model->get_row($_POST);
-			
-		foreach($all_info as $ai){
-			if($ai->tag == "New"){
-				$lot_owner 			= 	$ai->firstname." ".substr(($ai->middlename),0,1).". ".$ai->lastname;
-				$lot_location 		= 	$ai->street."- ".$ai->baranggay.", ".$ai->municipality.", ".$ai->province;
-				$submission_date 	= 	$ai->submission_date ? date_format(date_create($ai->submission_date), "F d, Y") : 'N/A';
-				$returned_date 		= 	$ai->returned_date ? date_format(date_create($ai->returned_date), "F d, Y") : 'N/A';
-				$reason 			= 	'<a data-toggle="modal" data-target=".return_reason_'.$ai->is_no.'" data-backdrop="static" data-keyboard="false"><i class="fa fa-eye"></i> View Reason</a>';
-
-				$action 			= 	'<center>
-                    						<a type="a" href=" '.base_url('Acquisition/view_interview_sheet/'.$ai->is_no).' " 
-                    						class="btn btn-primary btn-xs" style="border-radius: 10px; font-size:12px;background-color:#304b73; border-color:#fff;" 
-                    						title="View"><span class="fa fa-eye"></span> View</a>';
-
-	        	if ($this->session->userdata('user_type') == 'Secretary') {
-	            	$action 		.= 	'<a type="a" href=" '.base_url('Acquisition/edit_interview_sheet/'.$ai->is_no).' " 
-	            						class="btn btn-primary btn-xs" style="border-radius: 10px; font-size:12px;background-color:#304b73; border-color:#fff;" 
-	            						title="Edit"><span class="fa fa-edit"></span> Edit</a>';
-	        	}
-        		$action 			.= 	'</center>';
-
-				$data[] 			= 	array($ai->is_no, $lot_owner,$ai->lot_type,$lot_location,$submission_date,$returned_date,$ai->returned_by,$reason,$action);
-			}
-		}
-							
-		$output = array(
-			"draw" 					=> $_POST['draw'],
-			"recordsTotal" 			=> $this->Datatable_model->countAll(),
-			"recordsFiltered" 		=> $this->Datatable_model->countFiltered($_POST),
-			"data" 					=> $data,
-		);
-		echo json_encode($output);
-	}
-	public function resubmit($is_no) {
+  	public function resubmit($is_no) {
 	    $this->sess_secretary();
 	    $name =  $this->session->userdata('firstname').' '.$this->session->userdata('lastname');
 	    $this->Acquisition_model->resubmit($is_no, $name);
-	    echo json_encode(array('success' => true));
 	}
-	public function pop_up_resubmit($id){
-		$this->session->set_flashdata('success', 'Resubmitted Successfully!');
-		redirect('Acquisition/table');
-	}
-	function disapproved_new_acquisition_datatable(){
-	    $data 		= array();
-	    $all_info 	= $this->Datatable_model->get_row($_POST);
-
-	    foreach($all_info as $ai){
-			if($ai->tag == "New"){
-				$lot_owner 			= 	$ai->firstname." ".substr(($ai->middlename),0,1).". ".$ai->lastname;
-				$lot_location 		= 	$ai->street."- ".$ai->baranggay.", ".$ai->municipality.", ".$ai->province;
-				$submission_date 	= 	$ai->submission_date ? date_format(date_create($ai->submission_date), "F d, Y") : 'N/A';
-				$disapproval_date 	= 	$ai->disapproval_date ? date_format(date_create($ai->disapproval_date), "F d, Y") : 'N/A';
-				$reason 			= 	'<a data-toggle="modal" data-target=".reason_disapproved_'.$ai->is_no.'" data-backdrop="static" data-keyboard="false"><i class="fa fa-eye"></i> View Reason</a>';
-				$action 			=	'<center>
-											<a type="a" href=" '.base_url('Secretary/Execute/view_interview_sheet/'.$ai->is_no).' " class="btn btn-primary btn-xs" style="border-radius: 10px; font-size:12px;background-color:#304b73; border-color:#fff;" title="View"><span class="fa fa-eye"></span> View</a>
-										</center>';
-				$data[] 			= 	array($ai->is_no, $lot_owner,$ai->lot_type,$lot_location,$submission_date,$disapproval_date,$ai->disapproved_by,$reason,$action);
-			}
-		}
-
-	    $output = array(
-	        "draw" 				=> $_POST['draw'],
-	        "recordsTotal" 		=> $this->Datatable_model->countAll(),
-	        "recordsFiltered" 	=> $this->Datatable_model->countFiltered($_POST),
-	        "data" 				=> $data,
-	    );
-	    echo json_encode($output);
-	}
-	function reviewed_new_acquisition_datatable(){
-		$data  		= array();
-		$all_info 	= $this->Datatable_model->get_row($_POST);
-			
-		foreach($all_info as $ai){
-			if($ai->tag == "New"){
-				$lot_owner 			= 	$ai->firstname." ".substr(($ai->middlename),0,1).". ".$ai->lastname;
-				$lot_location 		= 	$ai->street."- ".$ai->baranggay.", ".$ai->municipality.", ".$ai->province;
-				$submission_date	= 	$ai->submission_date ? date_format(date_create($ai->submission_date), "F d, Y") : 'N/A';
-				$reviewed_date 		= 	$ai->reviewed_date ? date_format(date_create($ai->reviewed_date), "F d, Y") : 'N/A';
-				$action 			=	'<center>
-											<a type="a" href=" '.base_url('Acquisition/view_interview_sheet/'.$ai->is_no).' " class="btn btn-primary btn-xs" style="border-radius: 10px; font-size:12px;background-color:#304b73; border-color:#fff;" title="View"><span class="fa fa-eye"></span> View</a>
-										</center>';
-
-				$data[] 			= 	array($ai->is_no, $lot_owner,$ai->lot_type,$lot_location,$submission_date,$reviewed_date,$ai->reviewed_by,$action);
-			}
-		}			
-		$output = array(
-			"draw" 					=> $_POST['draw'],
-			"recordsTotal" 			=> $this->Datatable_model->countAll(),
-			"recordsFiltered" 		=> $this->Datatable_model->countFiltered($_POST),
-			"data" 					=> $data,
-		);
-		echo json_encode($output);
-	}
+  	public function submit_disapproved_request($is_no){
+	    $this->sess_legal();
+	    $name 		=  $this->session->userdata('firstname').' '.$this->session->userdata('lastname');
+	    $message 	= $this->input->post('disapproved_message');
+    	$this->Acquisition_model->update_docu_status_disapproved($is_no, $name,$message);          
+  	}
+  	public function submit_approved_request($is_no){
+	    $this->sess_gm();
+	    $name =  $this->session->userdata('firstname').' '.$this->session->userdata('lastname');
+	    $this->Acquisition_model->update_docu_status_approved($is_no, $name);      
+  	}
+  	public function pop_up_notification($status){
+	    $this->session->set_flashdata('success','Request '. $status .' Successfully!');
+	    redirect('Acquisition/Acquisition_tbl');
+  	}
   	function approved_new_acquisition_datatable(){
 		$data  		= array();
 		$all_info 	= $this->Datatable_model->get_row($_POST);
@@ -898,15 +833,6 @@ class Acquisition extends App_Controller{
 		);
 		echo json_encode($output);
 	}
-	public function submit_approved_documents($is_no){
-	    $this->sess_gm();
-	    $name =  $this->session->userdata('firstname').' '.$this->session->userdata('lastname');
-	    $this->Acquisition_model->update_docu_status_approved($is_no, $name);      
-  	}
-  	public function pop_up_approved($id){
-	    $this->session->set_flashdata('notif','Documents successfully Approved!');
-	    redirect('Acquisition/table');
-  	}	
 	#ADDRESS
 	public function getregion(){
 		$result = $this->Acquisition_model->get_tesdaregion();

@@ -20,19 +20,15 @@ class Account_model extends CI_Model{
         return $query->row_array();
     }
     //==================================================
-    //END QUERY
-    //==================================================
-
-    //==================================================
-    //INSERT, UPDATE, DELETE
+    //CRUD QUERY
     //==================================================
     public function create_account(){
         $data = array(
            'firstname' => $this->input->post('fname'),
-           'lastname' => $this->input->post('lname'),
-           'position' => $this->input->post('position'),
-           'username' => $this->input->post('username'),
-           'password' => $this->encryption->encrypt($this->input->post('password')),
+           'lastname'  => $this->input->post('lname'),
+           'position'  => $this->input->post('position'),
+           'username'  => $this->input->post('username'),
+           'password'  => $this->encryption->encrypt($this->input->post('password')),
            'user_type' => $this->input->post('user_type'),
         );
         $this->db->insert('users', $data);
@@ -80,18 +76,17 @@ class Account_model extends CI_Model{
             $this->db->where('user_id', $id);
             $this->db->update('users', $data);
             $this->session->set_userdata($data);
-            // Close               
-             
+            // Close                 
         endif;              
     }
     public function update_credentials($id){
-        $in = array(
-                'username' => $this->input->post('username'),
-                'password' => $this->encryption->encrypt($this->input->post('pass'))
-            );
+        $data = array(
+            'username' => $this->input->post('username'),
+            'password' => $this->encryption->encrypt($this->input->post('password'))
+        );
         $this->db->where('user_id', $id);
-        $this->db->update('users', $in);
-        $this->session->set_userdata($in);
+        $this->db->update('users', $data);
+        $this->session->set_userdata($data);
     }
     public function upload_images($targetPaths, $image_name){
         $filename = '';
@@ -106,10 +101,6 @@ class Account_model extends CI_Model{
         }
         return $filename;
     }
-    //==================================================
-    //END INSERT, UPDATE, DELETE
-    //==================================================
-
     //==================================================
     //VALIDATION
     //==================================================
@@ -129,10 +120,10 @@ class Account_model extends CI_Model{
         return $user;
     }
     public function check_username($un){
-        $user = array();
-        $query = $this->db->select('*')->from('users')
-                          ->where(array('username' => $un))
-                          ->get()->result_array();       
+        $user   = array();
+        $query  = $this->db->select('*')->from('users')
+                           ->where(array('username' => $un))
+                           ->get()->result_array();       
 
         foreach ($query as $u){
             $user = $u;
