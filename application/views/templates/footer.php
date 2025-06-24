@@ -61,9 +61,7 @@
 <!-- my own script -->
 <script src="<?php echo base_url();?>assets/import/all_js_for_my_own_script/radiohead_purchase_type.js"></script>
 <script src="<?php echo base_url();?>assets/import/all_js_for_my_own_script/bootstrap-datetimepicker.min.js"></script>
-<script src="<?php echo base_url();?>assets/import/all_js_for_my_own_script/navtabs.js"></script>
-<script src="<?php echo base_url();?>assets/import/all_js_for_my_own_script/photoviewer.js"></script>
-<script src="<?php echo base_url();?>assets/import/all_js_for_my_own_script/mvTop.js"></script>
+<!-- auto complete suggestion -->
 <!-- Datatables -->
 <script src="<?php echo base_url();?>assets/import/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 <script src="<?php echo base_url();?>assets/import/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
@@ -92,6 +90,7 @@
 <!-- maskmoney -->
 <script src="<?php echo base_url();?>assets/import/customd-jquery-number-c19aa59/jquery.number.js"></script>
 <script src="<?php echo base_url();?>assets/import/customd-jquery-number-c19aa59/jquery.number.min.js"></script>
+<!-- closed mask money -->
 <!-- PNotify -->
 <script src="<?php echo base_url();?>assets/import/vendors/pnotify/dist/pnotify.js"></script>
 <script src="<?php echo base_url();?>assets/import/vendors/pnotify/dist/pnotify.buttons.js"></script>
@@ -105,22 +104,6 @@
 <script src="<?php echo base_url();?>node_modules/flatpickr/dist/flatpickr.min.js"></script>
 <!--====================END JQUERIES====================-->
 
-<style type="text/css">
-
-.swal2-popup-custom {
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	border-radius: 10px;
-	box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-}
-
-.swal2-title-custom {
-	font-size: 1.5em;
-	color: #333;
-}
-
-</style>
-
-<?php if($this->session->flashdata('success')): ?>
 <script>
 	$(document).ready(function(){
 		//==================================================
@@ -333,7 +316,6 @@
 				"targets": [0],
 				"orderable": true
 			}]
-
 		});
 		//==================================================
 		//LEGAL 
@@ -575,151 +557,231 @@
 		</script>
 <!-- end viewing lot ////////////////////////////////////////////////////////////////////////////////////////////-->
 
-<script type="text/javascript">//zoom view icon 
-	function bigImg(x) {
-		x.style.height 	= "72px";
-		x.style.width 	= "72px";
-	}
-	function normalImg(x) {
-		x.style.height 	= "60px";
-		x.style.width 	= "60px";
-	}
-</script>
 
-<script type="text/javascript">//date time picker java script
-	$(".form_datetime").datetimepicker({
-		format: "dd MM yyyy - HH:ii P",
-		showMeridian: true,
-		autoclose: true,
-		todayBtn: true
-	});
-</script>
+		<!-- zoom view icon -->
+		<script type="text/javascript">
+				function bigImg(x) {
+						x.style.height = "72px";
+						x.style.width = "72px";
+				}
 
-<script type="text/javascript">
-	document.addEventListener("DOMContentLoaded", function(event){ 
-		$(".commission").click(function(){//DISPLAY/HIDE OF COMISSION FEE
-			var v = $(this).attr("value");
-			if(v == 'Fixed'){
-				$("#fix").css('display','block');
-				$("#support_com").css('display','block');
-				$("#per").hide();
-			}else{
-				$("#per").css('display','block');
-				$("#support_com").css('display','block');
-				$("#fix").hide();
-			}
-		});
-		$(".notary").click(function(){// DISPLAY/HIDE OF NOTARY FEE
-			var no = $(this).attr("id");
-			if(no == 1){
-				$("#fixed_notary").css('display','block');
-				$("#support_notary").css('display','block');
-				$("#percentage_notary").hide();
-			}else{
-				$("#percentage_notary").css('display','block');
-				$("#support_notary").css('display','block');
-				$("#fixed_notary").hide();
-			}
-		});
-		$(".trig").click(function(){//DIPLAY/HIDE OF THE OTHERS OPTION ADJUSTMENT
-			var id = $(this).attr("id");
-			if(id == 'Fixed'){
-				$("#other_fixed_notary").css('display','block');
-				$("#other_support_notary").css('display','block');
-				$('#other_percentage_notary').hide();
-			}else{
-				$("#other_percentage_notary").css('display','block');
-				$("#other_support_notary").css('display','block');
-				$('#other_fixed_notary').hide();
-			}
-		});
-		//YEAR DISPLAY
-		var now = new Date();
-		var year = now.getFullYear();
-		$("#y").text("©"+year+" Alturas Group of Companies");
-		//END YEAR DISPLAY
-	});
-</script>
+				function normalImg(x) {
+						x.style.height = "60px";
+						x.style.width = "60px";
+				}
+		</script>
+		
+
+
+
+
+		<!-- date time picker java script-->
+				<script type="text/javascript">
+										$(".form_datetime").datetimepicker({
+												format: "dd MM yyyy - HH:ii P",
+												showMeridian: true,
+												autoclose: true,
+												todayBtn: true
+										});
+				</script>
+		<!-- end date time picker java script-->
+
+		<script type="text/javascript">
+						document.addEventListener("DOMContentLoaded", function(event){ 
+
+								//DISPLAY/HIDE OF COMISSION FEE
+								$(".commission").click(function(){
+												var v = $(this).attr("value");
+
+												if(v == 'Fixed')
+												{
+														$("#fix").css('display','block');
+														$("#support_com").css('display','block');
+														$("#per").hide();
+												}
+												else
+												{
+														$("#per").css('display','block');
+														$("#support_com").css('display','block');
+														$("#fix").hide();
+												}
+								});
+								//END DISPLAY/HIDE OF COMISSION FEE
+
+								// DISPLAY/HIDE OF NOTARY FEE
+								$(".notary").click(function(){
+												var no = $(this).attr("id");
+
+												if(no == 1)
+												{
+														$("#fixed_notary").css('display','block');
+														$("#support_notary").css('display','block');
+														$("#percentage_notary").hide();
+												}
+												else
+												{
+														$("#percentage_notary").css('display','block');
+														$("#support_notary").css('display','block');
+														$("#fixed_notary").hide();
+												}
+								});
+								//END DISPLAY/HIDE OF NOTARY FEE
+
+								//DIPLAY/HIDE OF THE OTHERS OPTION ADJUSTMENT
+								$(".trig").click(function(){
+										var id = $(this).attr("id");
+										if(id == 'Fixed')
+										{
+											$("#other_fixed_notary").css('display','block');
+											$("#other_support_notary").css('display','block');
+											$('#other_percentage_notary').hide();
+										}
+										else
+										{
+											$("#other_percentage_notary").css('display','block');
+											$("#other_support_notary").css('display','block');
+											$('#other_fixed_notary').hide();
+										}
+								});
+								//DISPLAY/HIDE OF THE OTHERS OPTION ADJUSTMENT
+
+								//YEAR DISPLAY
+								var now = new Date();
+								var year = now.getFullYear();
+								$("#y").text("©"+year+" Alturas Group of Companies");
+								//END YEAR DISPLAY
+						});
+
+		</script>
 				
-<script>				
-	$(document).ready(function(){//PNOTIFY QUERY
-		$('.ui-pnotify').remove();
-	});
-</script>
+		<script>
+						//PNOTIFY QUERY
+					 $(document).ready(function(){
 
+						 $('.ui-pnotify').remove();
+
+					 });
+					 //PNOTIFY QUERY
+		</script>
+
+
+<!-- END JQUERY ================================================================================================================================== -->
 <script type="text/javascript">  
-	setInterval(function(){
-		$('#saved').fadeOut('slow');
-	}, 6000);
-	$('button.edit-ass-lvl').qtip({
+		setInterval(function()
+		{
+			$('#saved').fadeOut('slow');
+		}, 6000);
+
+		// $(document).ready(function(){
+		//     $(document).on('click', '#clearMsg', function(){
+		//           $('#saved').hide();
+		//     });
+		//  });
+
+
+
+		$('button.edit-ass-lvl').qtip({
 		content: {
-			text: 'Edit the Assessment Level'
+				text: 'Edit the Assessment Level'
 		}
-	});
-	if(window.location.href !== '<?php echo base_url('account') ?>'){
-		$('a.view_profile').qtip({
-			content: {
-				text: 'Edit your profile and credentials here!'
-			},
 		});
-	}
-	$('a.mam-nena_view_notif').qtip({
-		position: {
-			my: 'top right',
-			at: 'bottom center'
-		},
-		content: {
-			text: 'View notifications here! '
+
+		if(window.location.href !== '<?php echo base_url('account') ?>'){
+
+				$('a.view_profile').qtip({
+								
+								content: {
+										text: 'Edit your profile and credentials here!'
+								},
+								style: { 
+											 //classes: 'qtip-default  qtip qtip-blue qtip-shadow' 
+									 }
+				});
 		}
-	});
+
+		// $('a.user-log-out').qtip({
+		//             position: {
+		//                 my: 'top right',
+		//                 at: 'bottom center'
+		//             },
+		//             content: {
+		//                 text: 'Log out'
+		//             }
+		//     });
+
+		 $('a.mam-nena_view_notif').qtip({
+								position: {
+										my: 'top right',
+										at: 'bottom center'
+								},
+								content: {
+										text: 'View notifications here! '
+								}
+				});
+
+		
+
 </script>
 
+
+
+		<script type="text/javascript">
+
+						$('#checkBtn').click(function() {
+							checked = $("input[type=checkbox]:checked").length;
+							var op = $("#other_p").val().length;
+							if(!checked && op == 0) {
+								alert("You must have your purpose!");
+								return false;
+							}
+
+						});
+
+		</script>
+
+
+
+ <script>
+		$(function() {$( "#dpicker" ).datepicker({
+						 dateFormat: "yy/mm/dd", 
+						 changeMonth: true, 
+						 changeYear: true,
+						 yearRange: "-100:+10",
+						 showButtonPanel: true,
+						 //beforeShowDay: disabledAll
+		});});
+
+
+
+$(document).on('keypress', 'input[type="text"]', function (event) {
+	 if (event.which === 8 || event.which === 9 || event.which === 13) {
+		return;
+	}else{
+		var regex = new RegExp("^[a-zA-Z 0-9.,'-]+$");
+		var key_allow = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+		if (!regex.test(key_allow)) {
+				event.preventDefault();
+				return false;
+		}
+		}
+});
+
+$(document).on('keypress', 'textarea', function (event) {
+	 if (event.which === 8 || event.which === 9 || event.which === 13) {
+		return;
+	}else{
+		var regex = new RegExp("^[a-zA-Z 0-9.,'-]+$");
+		var key_allow = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+		if (!regex.test(key_allow)) {
+				event.preventDefault();
+				return false;
+		}
+		}
+});
+
+ </script>
+<!--==========script for money currency==========-->
 <script type="text/javascript">
-	$('#checkBtn').click(function() {
-		checked = $("input[type=checkbox]:checked").length;
-		var op 	= $("#other_p").val().length;
-		if(!checked && op == 0) {
-			alert("You must have your purpose!");
-			return false;
-		}
-	});
-</script>
-
-<script>
-	$(function() {$( "#dpicker" ).datepicker({
-		dateFormat: "yy/mm/dd", 
-		changeMonth: true, 
-		changeYear: true,
-		yearRange: "-100:+10",
-		showButtonPanel: true,
-	});});
-	$(document).on('keypress', 'input[type="text"]', function (event) {
-		if (event.which === 8 || event.which === 9 || event.which === 13) {
-			return;
-		}else{
-			var regex = new RegExp("^[a-zA-Z 0-9.,'-]+$");
-			var key_allow = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-			if (!regex.test(key_allow)) {
-				event.preventDefault();
-				return false;
-			}
-		}
-	});
-	$(document).on('keypress', 'textarea', function (event) {
-		if (event.which === 8 || event.which === 9 || event.which === 13) {
-			return;
-		}else{
-			var regex = new RegExp("^[a-zA-Z 0-9.,'-]+$");
-			var key_allow = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-			if (!regex.test(key_allow)) {
-				event.preventDefault();
-				return false;
-			}
-		}
-	});
-</script>
-
-<script type="text/javascript">//script for money currency
 	$('#la_form').number( true, 2 );
 	$('#sp_form').number( true, 2 );
 	$('#total_form').number( true, 2 );
@@ -741,84 +803,122 @@
 	$('#notarial_fee').number( true, 2 );
 	$('#commission_fee').number( true, 2 );
 </script>
+<!--==========end script==========-->
+
 
 <script type="text/javascript">
-	$(document).ready(function(){
+		$(document).ready(function(){
 		getNotification();
 		getUpdateNotif_content();
 		time_active(); //call time active function
+
+										//OPEN NOTIFICATION 
+										$(".open").click(function(){
+													var id = $(this).attr("id");
 		
-		$(".open").click(function(){//OPEN NOTIFICATION 
-			var id = $(this).attr("id");
-			$.ajax({
-				url: "<?php echo base_url('Notification/read_notification/"+id+"')?>",
-				type: "post",
-				success:function(){
-					getNotification();
-				}
-			});
-		});
-		$(".read_all").click(function(){//READ NOTIFICATION 
-			$.ajax({
-				url: "<?php echo base_url('Notification/read_all_notif/')?>",
-				type: "post",
-				success:function(response){
-					getNotification();
-					getUpdateNotif_content();
-					$("#load_tap_nav").load(window.location.href + " #load_tap_nav");
-				}
-			});
-		});
-		$(".clear_all").click(function(){//CLEAR NOTIFICATION 
-			$.ajax({
-				url: "<?php echo base_url('Notification/clear_all_notif/')?>",
-				type: "post",
-				success:function(response){
-				 	getNotification();
-				 	getUpdateNotif_content();
-				 	$("#load_tap_nav").load(window.location.href + " #load_tap_nav");
-				}
-			});
-		});
+													$.ajax({
+															url: "<?php echo base_url('Notification/read_notification/"+id+"')?>",
+															type: "post",
+															success:function()
+															{
+																getNotification();
+															 // get_notification_bar();
+															}
+													});
+										});
+										//END   
+
+										//READ NOTIFICATION 
+										$(".read_all").click(function(){
+													$.ajax({
+															url: "<?php echo base_url('Notification/read_all_notif/')?>",
+															type: "post",
+															success:function(response)
+															{
+																getNotification();
+																getUpdateNotif_content();
+																$("#load_tap_nav").load(window.location.href + " #load_tap_nav");
+																// $("#no_of_notif_tab").load(" #no_of_notif_tab");
+																// $('#no_of_notif_tab').html(response.notif_tab);
+																// refresh();
+															}
+													});
+										});
+										//END
+
+										 //CLEAR NOTIFICATION 
+										$(".clear_all").click(function(){
+													//var id = $(this).attr("id");
+
+													$.ajax({
+															url: "<?php echo base_url('Notification/clear_all_notif/')?>",
+															type: "post",
+															success:function(response)
+															{
+															 getNotification();
+															 getUpdateNotif_content();
+															 $("#load_tap_nav").load(window.location.href + " #load_tap_nav");
+																//$("#load_tap_nav").load(" #load_tap_nav");
+																// refresh();
+															}
+													});
+										});
+										//END
+
+
 	});
-	function getNotification(){
-		var url = '<?php echo base_url(); ?>';
-		$.ajax({
-			type: 'POST',
-			url: url + 'Notification/get_notification_number/',
-			dataType: 'json',
-			success:function(response){
-				$('#no_of_notif_tab').html(response.notif_tab);
-				$('#no_of_notif_header').html(response.notif_header);
+
+		 function getNotification(){
+				var url = '<?php echo base_url(); ?>';
+				$.ajax({
+					type: 'POST',
+					url: url + 'Notification/get_notification_number/',
+					dataType: 'json',
+					success:function(response){
+						$('#no_of_notif_tab').html(response.notif_tab);
+						$('#no_of_notif_header').html(response.notif_header);
+					}
+				});
 			}
-		});
-	}
-	function getUpdateNotif_content(){
-		$.ajax({
-			url: "<?php echo base_url('Notification/fetch_notification')?>",
-			type: "post",
-			success:function(response){
-				$('#notif_content').html(response);
+
+			function getUpdateNotif_content(){
+						 $.ajax({
+									url: "<?php echo base_url('Notification/fetch_notification')?>",
+									type: "post",
+									success:function(response)
+									{
+										$('#notif_content').html(response);
+									}
+							});
+
 			}
-		});
-	}
-	function get_notification_bar(){
-		$.ajax({
-			url: "<?php echo base_url('Notification/fetch_notification_bar')?>",
-			type: "post",
-			success:function(response){
-				$('#notif_bar').html(response);
+
+			function get_notification_bar(){
+
+						 $.ajax({
+									url: "<?php echo base_url('Notification/fetch_notification_bar')?>",
+									type: "post",
+									success:function(response)
+									{
+										$('#notif_bar').html(response);
+									}
+							});
 			}
-		});
-	}
-	function time_active(){ //update user log once page was loaded
-		$.ajax({
-			url: "<?php echo base_url('Welcome/set_time_active')?>",
-			type: "post",
-			data: {'<?php echo $this->security->get_csrf_token_name(); ?>':'<?php echo $this->security->get_csrf_hash(); ?>'},
-			success:function(response){}
-		});
-	}		
+
+			function time_active(){ //update user log once page was loaded
+
+						 $.ajax({
+									url: "<?php echo base_url('Welcome/set_time_active')?>",
+									type: "post",
+									data: {'<?php echo $this->security->get_csrf_token_name(); ?>':'<?php echo $this->security->get_csrf_hash(); ?>'},
+									success:function(response)
+									{
+										//alert('success');
+									}
+							});
+			}
+
+			
 </script>
 <!-- locks user account  ========== -->
 <!-- <script type="text/javascript">
@@ -844,3 +944,4 @@
 
 	</body>   
 </html>
+	
