@@ -51,16 +51,46 @@ class Rpt_model extends CI_Model{
             $img = $this->upload_images($targetPaths,"file");
 
             $data = array(
-                'is_no'      => $is_no,
-                'rpt_file'   => $img,
-                'amount'     => $amnt,
-                'year_paid'  => $yr_pd,
-                'status'     => "Paid",
+                'is_no'       => $is_no,
+                'rpt_receipt' => $img,
+                'amount'      => $amnt,
+                'year_paid'   => $yr_pd,
+                'status'      => "Paid",
             );
             $this->db->insert('real_property_tax', $data);      
         endif;
     }
+    public function post_rpt($is_no){
+        $filename = $this->input->post('file');
+        $folder = "Billing";
 
+        if ($_FILES and $_FILES["file"]['name']):
+            if (!file_exists('./assets/img/rpt_uploads/' . $is_no)):
+                @mkdir('./assets/img/rpt_uploads/' . $is_no);
+            endif;
+
+            if (!file_exists('./assets/img/rpt_uploads/' . $is_no . '/' . $folder)):
+                @mkdir('./assets/img/rpt_uploads/' . $is_no . '/' . $folder);
+            endif;
+
+            if (!file_exists('./assets/img/rpt_uploads/' . $is_no . '/' . $folder . '/' . $filename)):
+                @mkdir('./assets/img/rpt_uploads/' . $is_no . '/' . $folder . '/' . $filename);
+            endif;
+
+            $targetPaths    = getcwd() . '/assets/img/rpt_uploads/' . $is_no . '/' . $folder . '/' . $filename;
+            $img            = $this->upload_images($targetPaths, "file");
+
+            // Save
+            $data = array(
+                'posted_date' => date('Y-m-d'),
+                'is_no'       => $is_no,
+                'rpt_bill'    => $img,
+                'status'      => 'Pending'
+            );
+            $this->db->insert('real_property_tax', $data);
+            // Close    
+        endif;
+    }
     #UPLOAD IMAGES QUERY ==================================================
     public function upload_images($targetPaths, $image_name){
         $filename;

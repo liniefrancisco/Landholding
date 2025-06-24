@@ -241,13 +241,61 @@
             alert("Please select at least one item to post.");
             return;
         }
+
+        var fileInput = $('input[type="file"]')[0].files[0];
+        if (!fileInput) {
+            alert("Please attach a file before posting.");
+            return;
+        }
+
         // AJAX post selected IDs
+        // $.ajax({
+        //     url: '<?= base_url("Rpt/Post_PerMunicipality") ?>', // Your controller method
+        //     type: 'POST',
+        //     data: { is_no: selected },
+        //     success: function(response) {
+        //         var res = JSON.parse(response); // Parse the JSON string
+        //         if (res.status === 'success') {
+        //             Swal.fire({
+        //                 icon: 'success',
+        //                 title: 'Posted Successfully',
+        //                 text: 'The selected items have been posted!',
+        //                 confirmButtonColor: '#3085d6',
+        //                 confirmButtonText: 'OK'
+        //             }).then(() => {
+        //                 window.location.reload();
+        //             });
+        //         } else {
+        //             Swal.fire({
+        //                 icon: 'error',
+        //                 title: 'Error',
+        //                 text: res.message || 'Something went wrong.'
+        //             });
+        //         }
+        //     },
+        //     error: function() {
+        //         Swal.fire({
+        //             icon: 'error',
+        //             title: 'Server Error',
+        //             text: 'Failed to post data. Please try again.'
+        //         });
+        //     }
+        // });
+
+        var formData = new FormData();
+        selected.forEach((id) => {
+            formData.append('is_no[]', id);
+        });
+        formData.append('file', fileInput); // Match the name="file" in input
+
         $.ajax({
-            url: '<?= base_url("Rpt/Post_PerMunicipality") ?>', // Your controller method
+            url: '<?= base_url("Rpt/Post_PerMunicipality") ?>',
             type: 'POST',
-            data: { is_no: selected },
-            success: function(response) {
-                var res = JSON.parse(response); // Parse the JSON string
+            data: formData,
+            contentType: false, // Required for file upload
+            processData: false, // Prevent jQuery from processing data
+            success: function (response) {
+                var res = JSON.parse(response);
                 if (res.status === 'success') {
                     Swal.fire({
                         icon: 'success',
@@ -266,7 +314,7 @@
                     });
                 }
             },
-            error: function() {
+            error: function () {
                 Swal.fire({
                     icon: 'error',
                     title: 'Server Error',
