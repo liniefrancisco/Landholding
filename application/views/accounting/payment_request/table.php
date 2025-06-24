@@ -20,40 +20,37 @@
 				</div>
 			<?php } ?>
 			<!--====================END FLASH DATA====================-->
-
-			<!--====================BODY====================-->
-			<div class="x_panel animate slideInDown" style="border:1px; !important;box-shadow: 7px 6px 16px #888888;">
+			<div class="x_panel animate slideInDown" style="box-shadow: 5px 8px 16px #888888">
 				<div class="x_title">
-					<h2 class="fa fa-money"> Payment Request</h2> 
-					<div style="float:right">
-						<a href="#" onclick="window.history.back()" class="btn btn-sm btn-warning"><span class="fa fa-arrow-left" style="color:#fff"></span> Back</a>
-					</div>
+					<h6 class="fa fa-credit-card"> <b>Payment Request</b></h6> 
+					<a href="#" onclick="window.history.back()" class="btn btn-xs btn-warning pull-right"><span class="fa fa-arrow-left" style="color:#fff"></span> Back</a>
 					<div class="clearfix"></div>
 				</div>
+				<!--====================TAB NAVIGATION====================-->
+				<ul class="nav nav-tabs">
+				    <li class="active"><a href="javascript:void(0);" onclick="openTab(event, 'pending', this)">
+				    	<i class="fa fa-ellipsis-h"></i><small> <b>Pending</b></small>
+				    	<sup>
+                            <?php if ($approved_payment1 > 0): ?>
+                                <small class="badge_custom bg-red"><?php echo $approved_payment1; ?></small>
+                            <?php endif; ?>
+                        </sup>
+				    </a></li>
+				    <li><a href="javascript:void(0);" onclick="openTab(event, 'history', this)">
+				    	<i class="fa fa-history"></i><small> <b>History</b></small>
+					    <sup>
+	                        <?php if ($paid_payment > 0): ?>
+	                            <small class="badge_custom bg-red"><?php echo $paid_payment; ?></small>
+	                        <?php endif; ?>
+	                    </sup>
+                    </a></li>
+				</ul>
 
-				<div class="tab">
-					<button id="button1" class="tablinks active" onclick="openTab(event, 'pending')"><i class="fa fa-ellipsis-h"></i> <b>PENDING</b> 
-						<sup>
-							<?php if ($approved_payment > 0): ?>
-							    <span class="badge_custom bg-red"><?php echo $approved_payment; ?></span>
-							<?php endif; ?>
-						</sup>
-					</button>
-
-					<button class="tablinks" onclick="openTab(event, 'created')"><i class="fa fa-refresh"></i> <b>HISTORY</b> 
-						<sup>
-							<?php if ($paid_payment > 0): ?>
-							    <span class="badge_custom bg-red"><?php echo $paid_payment; ?></span>
-							<?php endif; ?>
-						</sup>
-					</button>
-				</div>
-
-				<div class="col-md-12 " style="border: 2px ridge ; border-radius: 5px;">
+				<div class="col-md-12">
 					<!--====================APPROVED====================-->
-					<div id="pending" class="tabcontent">
-						<table id="pending_crf_datatable" class="table table-striped table-bordered" style="border-bottom:2px solid gray;width:100%">
-							<thead>
+					<div id="pending" class="tabcontent space">
+						<table id="pending_crf_datatable" class="table table-bordered table-hover small" style="border-bottom:2px solid gray;width:100%">
+							<thead class="bg-primary">
 								<tr>
 									<th>Is No.</th>
 									<th>Lot Owner</th>
@@ -68,14 +65,12 @@
 							<tbody></tbody>
 						</table>
 					</div>
-					<!--====================END APPROVED====================-->
-
 					<!--====================CREATED====================-->
-					<div id="created" class="tabcontent">
-						<table id="history_crf_datatable" class="table table-striped table-bordered table-hover" style="border-bottom:2px solid gray;width:100%">
-							<thead>
+					<div id="history" class="tabcontent space" style="display: none;">
+						<table id="history_crf_datatable" class="table table-bordered table-hover small" style="border-bottom:2px solid gray;width:100%">
+							<thead class="bg-primary">
 								<tr>
-									<th>CRF#</th>
+									<th>Control #</th>
 									<th>Is No.</th>
 									<th>Lot Owner</th>
 									<th>Lot Type</th>
@@ -96,78 +91,10 @@
 		</div>
 	</div>
 	<?php include 'create_crf_modal.php'; ?>
-	<?php include 'view_crf_modal.php'; ?>
 	<?php include 'view_rca_modal.php'; ?>
+	<?php include 'view_crf_modal.php'; ?>
 </div>
 <!--====================END PAGE CONTENT====================-->
-
-<script>
-	$(document).ready(function() {
-		var confirmationResult = ''; // Initialize outside the function to capture the result
-
-		function displayConfirmationModal(isNo) {
-			console.log('Opening confirmation modal for isNo:', isNo);
-
-			// Set up a Bootstrap confirmation modal
-			$('#confirmationModal').modal('show');
-
-			// Set up event listener for "Yes" and "No" buttons
-			$('#confirmationModal [data-confirmation]').on('click', function() {
-				confirmationResult = $(this).data('confirmation');
-				$('#confirmationModal').modal('hide'); // Close the confirmation modal
-			});
-		}
-
-		// Set up event listener for when the confirmation modal is completely hidden
-		$('#confirmationModal').on('hidden.bs.modal', function () {
-			console.log('Confirmation result:', confirmationResult);
-
-			var isNo = $('.btn-confirm').data('is-no');
-
-			if (confirmationResult === 'yes') {
-				// Show the crf_fp modal
-				console.log('Showing crf_fp modal for isNo:', isNo);
-				$('.crf_fp_' + isNo).modal('show');
-			} else {
-				// Show the crf_ca modal or handle the "No" case as needed
-				console.log('Showing crf_ca modal for isNo:', isNo);
-				$('.no_crf_fp_' + isNo).modal('show');
-			}
-		});
-
-		// Attach click event using jQuery
-		$('.btn-confirm').on('click', function() {
-			var isNo = $(this).data('is-no');
-			displayConfirmationModal(isNo);
-		});
-	});
-</script>
-
-<script>
-	// Set the first button as active on page load
-	document.getElementById('button1').classList.add('active');
-	document.getElementById('pending').style.display = 'block';
-
-	function openTab(evt, tabName) {
-		var i, tabcontent, tablinks;
-
-		// Hide all tab content
-		tabcontent = document.getElementsByClassName("tabcontent");
-		for (i = 0; i < tabcontent.length; i++) {
-			tabcontent[i].style.display = "none";
-		}
-
-		// Remove the "active" class from all tab links
-		tablinks = document.getElementsByClassName("tablinks");
-		for (i = 0; i < tablinks.length; i++) {
-			tablinks[i].classList.remove("active");
-		}
-
-		// Show the selected tab content and mark the button as active
-		document.getElementById(tabName).style.display = "block";
-		evt.currentTarget.classList.add("active");
-	}
-</script>
 
 <script>
 	function convertNumberToWords(number) {
@@ -189,11 +116,9 @@
 		if (Gn) {
 			res += convertNumberToWords(Gn) + " Million";
 		}
-		
 		if (kn) {
 			res += (res === "" ? "" : " ") + convertNumberToWords(kn) + " Thousand";
 		}
-		
 		if (Hn) {
 			res += (res === "" ? "" : " ") + convertNumberToWords(Hn) + " Hundred";
 		}
@@ -215,11 +140,9 @@
 				}
 			}
 		}
-		
 		if (res === "") {
 			res = "zero";
 		}
-		
 		return res;
 	}
 	
@@ -229,93 +152,3 @@
 		document.getElementById('amountWords').value = amountInWords + " Pesos";
 	});
 </script>
-
-<style type="text/css">
-	.inb{
-		font-style: italic;
-		box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.075);
-		border: none;
-		border-bottom: 1px solid #cccccc;
-	}
-	table {
-		font-family: 'Arial';
-		margin: 25px auto;
-		border-collapse: collapse; 
-		border: 1px solid #eee;
-		border-bottom: 2px solid #00cccc;
-		box-shadow: 0px 0px 20px rgba(0,0,0,0.10),
-		0px 10px 20px rgba(0,0,0,0.05),
-		0px 20px 20px rgba(0,0,0,0.05),
-		0px 30px 20px rgba(0,0,0,0.05);
-	}
-	tr {
-		&:hover {
-			background: #f4f4f4;
-
-			td {
-				color: #555;
-			}
-		}
-	}
-	th, td {
-		color: #595959;
-		border: 1px solid #eee;
-		padding: 12px 35px;
-		border-collapse: collapse;
-		font-size: 12px;
-	}
-	th {
-		background:linear-gradient(to top, rgb(9, 32, 63) 0%, rgb(83, 120, 149) 100%);
-		color: #fff;
-		text-transform: uppercase;
-		font-size: 11px;
-		&.last {
-			border-right: none;
-		}
-	}
-	.tab {
-		overflow: visible;
-		background-color: #f1f1f1;
-	}
-	.tab button {
-		background-color: inherit;
-		float: left;
-		border: none;
-		outline: none;
-		cursor: pointer;
-		padding: 5px 10px;
-		transition: 0.3s;
-		font-size: 13px;
-		border: 1px solid #ccc;
-		border-radius: 10px;
-		border-right: none;
-		background-color: #e9e9e9;
-		color: #28282B;
-		border-top: 1px solid gray;
-		border-left: 1px solid gray;
-		border-right: 2px solid #181818;
-		border-bottom: 3px solid #181818;
-	}
-	.tab button:hover {
-		background-color: #002347;
-		color: white;
-	}
-	.tab button.active {
-		background-color:  #002347;
-		color: white;
-	}
-	.tabcontent {
-		display: none;
-		padding: 6px 12px;
-		transition: opacity 0.3s ease;
-	}
-	.fade-in {
-		opacity: 1;
-	}
-	.title{
-		word-spacing: 4px; letter-spacing: 1px; font-weight: bold; font-size: 14px;color: #2a3f54;
-	}
-	.request{
-		font-family: verdana; text-align: center;font-size: 16px;color:#2a3f54;font-weight:bold
-	}
-</style>

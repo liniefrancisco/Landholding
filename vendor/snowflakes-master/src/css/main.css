@@ -1,0 +1,93 @@
+.snowflake {
+    position: absolute;
+
+    user-select: none;
+    pointer-events: none;
+
+    will-change: transform;
+
+    &_animation {
+        animation: snowflake_unknown 10s linear;
+    }
+
+    &_animation-infinity {
+        animation-iteration-count: infinite;
+    }
+
+    &__inner {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        &::before {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+
+            content: '';
+
+            background-size: 100% 100%;
+        }
+
+        &_wind {
+            animation: snowflake_unknown 2s infinite alternate ease-in-out;
+        }
+
+        &_rotation::before {
+            animation: snowflake_rotation 10s infinite linear;
+        }
+
+        &_rotation_reverse::before {
+            animation: snowflake_rotation_reverse 10s infinite linear;
+        }
+    }
+}
+
+@keyframes snowflake_rotation {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes snowflake_rotation_reverse {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(-360deg);
+    }
+}
+
+.snowflakes {
+    pointer-events: none;
+
+    &_paused .snowflake {
+        &,
+        &__inner,
+        &__inner::before {
+            animation-play-state: paused;
+        }
+    }
+
+    &_hidden {
+        visibility: hidden;
+    }
+
+    &_body {
+        position: fixed;
+        top: 0;
+        left: 0;
+
+        width: 100%;
+        height: 1px;
+    }
+}

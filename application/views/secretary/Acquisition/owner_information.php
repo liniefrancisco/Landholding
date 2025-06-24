@@ -63,8 +63,8 @@
 								</div>                               
 							</div>
 
-							<div class="col-md-12 col-sm-12 col-xs-12" style="border-top: 1px solid #ff6600; border-bottom: 1px solid #ff6600;margin-top:10px;margin-bottom:10px">
-								<center><h3 style="letter-spacing: 10px; color: black;font-size: 16px;"><b>OWNER  INFORMATION</b></h3></center>
+							<div class="col-md-12 col-sm-12 col-xs-12 text-center" style="border-top: 1px solid #ff6600; border-bottom: 1px solid #ff6600;margin-top:10px;margin-bottom:10px">
+								<h5 style="letter-spacing:10px">OWNER  INFORMATION</h5>
 							</div>
 
 							<div class="row">

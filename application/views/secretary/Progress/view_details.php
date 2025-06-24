@@ -2,11 +2,11 @@
 	<div class="col-md-12 col-sm-12 col-xs-12">
 		<div class="x_panel" style="border-radius:9px;"> 
 			<!--====================BODY====================-->
-			<center><h5 class="modal-title">DETAILS</h5></center>
+			<center><h5 class="modal-title1">DETAILS</h5></center>
 			
 			<div class="col-md-12"> 
 				<table class="table table-sm table-striped table-bordered dt-responsive nowrap table-hover" cellspacing="0" width="100%">
-					<thead style="background-color:#225282; color:#FFF">
+					<thead class="bg-primary">
 						<tr>
 							<th>DOCUMENT REQUEST</th>
 							<th>DATE REQUEST</th>
@@ -25,15 +25,7 @@
 										echo '<td>Lot Purchase Form</td>';
 										echo '<td>' . date("F d, Y", strtotime($fp['lpf_submission_date'])) . '</td>';
 										if (!$isPendingDisplayed) {
-											if (!empty($remaining_balance)) {
-												echo '<td><center>' . number_format($remaining_balance['amount'], 2) . '</center></td>';
-											}else{
-												if (!empty($li)) {
-													echo '<td><center>' . number_format($li['total_price'], 2) . '</center></td>';
-												}else{
-													echo '<td></td>';
-												}
-											}
+											echo '<td><center>' . number_format($fp['amount'], 2) . '</center></td>';
 											$isPendingDisplayed = true;
 
 											echo '<td>';
@@ -62,15 +54,7 @@
 										echo '<td>Computation of Payment</td>';
 										echo '<td>' . date("F d, Y", strtotime($fp['cop_submission_date'])) . '</td>';
 										if (!$isPendingDisplayed) {
-											if (!empty($remaining_balance)) {
-												echo '<td><center>' . number_format($remaining_balance['remaining_balance'], 2) . '</center></td>';
-											}else{
-												if (!empty($li)) {
-													echo '<td><center>' . number_format($li['total_price'], 2) . '</center></td>';
-												}else{
-													echo '<td></td>';
-												}
-											}
+											echo '<td><center>' . number_format($fp['amount'], 2) . '</center></td>';
 											$isPendingDisplayed = true;
 
 											echo '<td>';
@@ -105,15 +89,7 @@
 										echo '<td>Notarial Fee</td>';
 										echo '<td>' . date("F d, Y", strtotime($fp['nf_submission_date'])) . '</td>';
 										if (!$isPendingDisplayed) {
-											if (!empty($remaining_balance)) {
-												echo '<td><center>' . number_format($remaining_balance['remaining_balance'], 2) . '</center></td>';
-											}else{
-												if (!empty($li)) {
-													echo '<td><center>' . number_format($li['total_price'], 2) . '</center></td>';
-												}else{
-													echo '<td></td>';
-												}
-											}
+											echo '<td><center>' . number_format($fp['amount'], 2) . '</center></td>';
 											$isPendingDisplayed = true;
 
 											echo '<td>';
@@ -143,15 +119,7 @@
 										echo '<td>Agent Commission</td>';
 										echo '<td>' . date("F d, Y", strtotime($fp['ac_submission_date'])) . '</td>';
 										if (!$isPendingDisplayed) {
-											if (!empty($remaining_balance)) {
-												echo '<td><center>' . number_format($remaining_balance['remaining_balance'], 2) . '</center></td>';
-											}else{
-												if (!empty($li)) {
-													echo '<td><center>' . number_format($li['total_price'], 2) . '</center></td>';
-												}else{
-													echo '<td></td>';
-												}
-											}
+											echo '<td><center>' . number_format($fp['amount'], 2) . '</center></td>';
 											$isPendingDisplayed = true;
 
 											echo '<td>';
@@ -180,15 +148,7 @@
 										echo '<td>Acknowledgement Receipt</td>';
 										echo '<td>' . date("F d, Y", strtotime($fp['ar_submission_date'])) . '</td>';
 										if (!$isPendingDisplayed) {
-											if (!empty($remaining_balance)) {
-												echo '<td><center>' . number_format($remaining_balance['remaining_balance'], 2) . '</center></td>';
-											}else{
-												if (!empty($li)) {
-													echo '<td><center>' . number_format($li['total_price'], 2) . '</center></td>';
-												}else{
-													echo '<td></td>';
-												}
-											}
+											echo '<td><center>' . number_format($fp['amount'], 2) . '</center></td>';
 											$isPendingDisplayed = true;
 											
 											echo '<td>';

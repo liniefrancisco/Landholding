@@ -23,6 +23,7 @@ class Welcome extends App_Controller {
 		$data['all_notification_no']	= $this->Notification_model->get_all_notification_no($recepient);
 
 		if($this->session->userdata('user_type') == 'Administrator'){
+			$data['error_logs'] 		= $this->Notification_bar_model->get_unread_error_logs_count();
 			$this->render_template('administrator/home',$data);
 		}elseif($this->session->userdata('user_type') == 'Secretary'){
 			$data['pending_acq'] 		= $this->Notification_bar_model->getds_status_pending();
@@ -38,12 +39,17 @@ class Welcome extends App_Controller {
 			$data['approved_acq1'] 		= $this->Notification_bar_model->getds_status_approved1();
 			$data['reviewed_acq'] 		= $this->Notification_bar_model->getds_status_reviewed();
 			$data['pending_payment'] 	= $this->Notification_bar_model->getpr_status_pending();
+			$data['pending_aspayment'] 	= $this->Notification_bar_model->getds_status_pending_js_es();
 			$this->render_template('3A/home',$data);
 		}elseif($this->session->userdata('user_type') == 'Accounting'){
-			$data['approved_payment'] 	= $this->Notification_bar_model->getpr_status_approved();
 			$data['approved_acq'] 		= $this->Notification_bar_model->getds_status_approved();
+			$data['approved_payment'] 	= $this->Notification_bar_model->getpr_status_approved();
 			$this->render_template('accounting/home',$data);
 		}elseif($this->session->userdata('user_type') == 'CCD'){
+			$data['pending_js'] 		= $this->Notification_bar_model->getds_status_pending_js();
+			$data['approved_js1'] 		= $this->Notification_bar_model->getds_status_approved_js1();
+			$data['pending_es'] 		= $this->Notification_bar_model->getds_status_pending_es();
+			$data['pending_aspayment'] 	= $this->Notification_bar_model->getds_status_pending_js_es();
 			$this->render_template('ccd/home',$data);  
 		}else{
 			redirect('login');

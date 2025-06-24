@@ -7,7 +7,7 @@
                 <div class="col-md-9"></div>
                 <div class="col-md-3" style="position: fixed;width: 250px;bottom: 20px;right: 10px;z-index: 99;cursor: pointer;">
                     <button style="float: right;" class="btn btn-danger btn-sm" data-dismiss="modal"  data-toggle="modal" data-target=".disapproved_<?php echo $pr['control_no']; ?>" title="Disapprove" ><span class="fa fa-close"></span> Disapproved</button>
-                    <button style="float: right;" class="btn btn-info btn-sm" data-dismiss="modal"  data-toggle="modal" data-target=".approved_<?php echo $pr['control_no']; ?>" title="Approve" ><span class="fa fa-check"></span> Approved</button>
+                    <button style="float: right;" class="btn btn-success btn-sm" data-dismiss="modal"  data-toggle="modal" data-target=".approved_<?php echo $pr['control_no']; ?>" title="Approve" ><span class="fa fa-check"></span> Approved</button>
                 </div>
             </div>
         <?php } ?>
@@ -149,22 +149,32 @@
     document.addEventListener("DOMContentLoaded", function (event) {
         //APPROVED FULL PAYMENT
         $(".approved").click(function () {
-            var id = $(this).attr("id");
+            var id      = $(this).attr("id");
+            var status  = "Approved";
+            
             $.ajax({
-                url: "<?php echo base_url('Payment/submit_approved_payment/"+id+"') ?>",
+                url: "<?php echo base_url('Payment/submit_approved_request/"+id+"') ?>",
                 type: "post",
                 data: { '<?php echo $this->security->get_csrf_token_name(); ?>': '<?php echo $this->security->get_csrf_hash(); ?>' },
                 success: function () {
-                    window.location.replace("<?php echo base_url('Payment/pop_up_approved/"+id+"') ?>");
+                    window.location.replace("<?php echo base_url('Payment/pop_up_notification/"+status+"') ?>");
                 }
             });
         });
         //DISAPPROVED CASH ADVANCE
         $(".disapproved").click(function () {
-            var id = $(this).attr("id");
-            var reason = $("#disapproved_message").val(); // Get the reason from the textarea
+            var id      = $(this).attr("id");
+            var reason  = $("#disapproved_message").val();
+            var status  = "Disapproved";
+
+            if (reason === "") {
+                alert("Disapproval message is required.");
+                $("#disapproved_message").focus();
+                return false; // Stop form submission
+            }
+
             $.ajax({
-                url: "<?php echo base_url('Payment/submit_disapproved_payment/"+id+"') ?>",
+                url: "<?php echo base_url('Payment/submit_disapproved_request/"+id+"') ?>",
                 type: "post",
                 data: {
                     'is_no': id,
@@ -172,7 +182,7 @@
                     '<?php echo $this->security->get_csrf_token_name(); ?>': '<?php echo $this->security->get_csrf_hash(); ?>'
                 },
                 success: function (data) {
-                    window.location.replace("<?php echo base_url('Payment/pop_up_disapproved') ?>/" + id + "");
+                    window.location.replace("<?php echo base_url('Payment/pop_up_notification/"+status+"') ?>");
                 }
             });
         });

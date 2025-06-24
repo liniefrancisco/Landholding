@@ -3,19 +3,24 @@
 		<div class="x_panel" style="border-radius:9px;" id="print-ac"> 
 			<!--====================BODY====================-->
 			<?php echo form_open('Payment/view_inprogress/'.$is_no,array('id' => "edit_ac")); ?>
-				<input type="hidden" name="is_no" value="<?php echo $is_no?>">
-				<center style="margin-top: 20px;">
-					<img src="<?= base_url('assets/logo/AGC.jpg') ?>" width="200px" height="50px">
-					<div class="form-inline col-md-12 col-sm-12 col-xs-12" style="text-align:center">
-						<h5 style="text-transform:uppercase;font-weight:bold;padding-top:10px">AGENT COMMISSION</h5>
-						<h5 style="text-transform:uppercase;font-weight:bold;padding-top:10px"><label>₱</label><input type="text" class="form-control inb" id="commission_fee" name="commission_fee" value="<?php echo empty($getpr_fp['commission_fee']) ? '' : number_format($getpr_fp['commission_fee'],2); ?>">-
+				<div class="row text-center space">
+					<img src="<?= base_url('assets/logo/AGC.jpg') ?>" width="100px" height="30px">
+					<h5 class="modal-title1" style="margin-top:-1px">AGENT COMMISSION</h5>
+					<div class="form-inline">
+						<h6 style="text-transform:uppercase;font-weight:bold">
+							<label>₱</label>
+							<input type="text" class="form-control inb" id="commission_fee" name="commission_fee" value="<?php echo empty($fp_info1['commission_fee']) ? '' : number_format($fp_info1['commission_fee'],2); ?>">-
 							PAY TO
 							<?php echo (!empty($bi['firstname'])) ? $bi['firstname'] : ''; ?>
 							<?php echo (!empty($bi['middlename'])) ? $bi['middlename'] : ''; ?>
 							<?php echo (!empty($bi['lastname'])) ? $bi['lastname'] : ''; ?>
-						</h5>
+						</h6>
 					</div>
-				</center>
+				</div>
+
+				<!-- Hidden -->
+				<input type="hidden" name="is_no" value="<?php echo $is_no?>">
+				<!--End Hidden -->
 
 				<div class="form-inline col-md-12 col-sm-12 col-xs-12" style="margin-top:20px;">
 					<div class="col-md-1"></div>

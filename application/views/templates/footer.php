@@ -61,7 +61,9 @@
 <!-- my own script -->
 <script src="<?php echo base_url();?>assets/import/all_js_for_my_own_script/radiohead_purchase_type.js"></script>
 <script src="<?php echo base_url();?>assets/import/all_js_for_my_own_script/bootstrap-datetimepicker.min.js"></script>
-<!-- auto complete suggestion -->
+<script src="<?php echo base_url();?>assets/import/all_js_for_my_own_script/navtabs.js"></script>
+<script src="<?php echo base_url();?>assets/import/all_js_for_my_own_script/photoviewer.js"></script>
+<script src="<?php echo base_url();?>assets/import/all_js_for_my_own_script/mvTop.js"></script>
 <!-- Datatables -->
 <script src="<?php echo base_url();?>assets/import/vendors/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
 <script src="<?php echo base_url();?>assets/import/vendors/datatables.net-buttons/js/dataTables.buttons.min.js"></script>
@@ -90,7 +92,6 @@
 <!-- maskmoney -->
 <script src="<?php echo base_url();?>assets/import/customd-jquery-number-c19aa59/jquery.number.js"></script>
 <script src="<?php echo base_url();?>assets/import/customd-jquery-number-c19aa59/jquery.number.min.js"></script>
-<!-- closed mask money -->
 <!-- PNotify -->
 <script src="<?php echo base_url();?>assets/import/vendors/pnotify/dist/pnotify.js"></script>
 <script src="<?php echo base_url();?>assets/import/vendors/pnotify/dist/pnotify.buttons.js"></script>
@@ -102,21 +103,120 @@
 <script src="<?php echo base_url();?>assets/import/vendors/jquery-ui-1.12.1.custom/jquery-ui.js"></script>
 <script src="<?php echo base_url();?>assets/import/vendors/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
 <script src="<?php echo base_url();?>node_modules/flatpickr/dist/flatpickr.min.js"></script>
+<!-- Sweet Alert -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<!-- Animated CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+
 <!--====================END JQUERIES====================-->
+
+<style type="text/css">
+
+.swal2-popup-custom {
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	border-radius: 10px;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.swal2-title-custom {
+	font-size: 1.5em;
+	color: #333;
+}
+
+</style>
+
+<?php if($this->session->flashdata('success')): ?>
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+		Swal.fire({
+			icon: 'success',
+			title: 'Success!',
+			html: '<strong><?= $this->session->flashdata('success'); ?></strong>',
+			showConfirmButton: false,
+			timer: 3000,
+			background: '#f0f9f8',
+			color: '#0f5132',
+			width: '40em',
+			padding: '2em',
+			showClass: {
+				popup: 'animate__animated animate__fadeInDown'
+			},
+			hideClass: {
+				popup: 'animate__animated animate__fadeOutUp'
+			},
+			customClass: {
+				popup: 'rounded-4 shadow-lg'
+			}
+		});
+  	});
+</script>
+<?php endif; ?>
+
+<?php if($this->session->flashdata('error')): ?>
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+		Swal.fire({
+			icon: 'error',
+			title: 'Oops!',
+			html: '<strong><?= $this->session->flashdata('error'); ?></strong>',
+			confirmButtonText: 'Close',
+			confirmButtonColor: '#e3342f',
+			background: '#fff0f0',
+			color: '#842029',
+			width: '40em',
+			padding: '2em',
+			showClass: {
+				popup: 'animate_animated animate_shakeX'
+			},
+			hideClass: {
+				popup: 'animate__animated animate__fadeOutUp'
+			},
+			customClass: {
+				popup: 'rounded-4 shadow-lg'
+			}
+		});
+	});
+</script>
+<?php endif; ?>
+
+<?php $this->session->unset_userdata('success'); ?>
+<?php $this->session->unset_userdata('error'); ?>
 
 <script>
 	$(document).ready(function(){
-		//==================================================
-		//SECRETARY
-		//==================================================
-		//EXECUTE TABLE
-		$('#pending_new_acquisition_datatable').DataTable( {
+		//SECRETARY ==================================================
+		function initializeAcquisitionTable(tableId, status) {//ACQUISITION TABLE
+		    $('#' + tableId).DataTable({
+		        fixedHeader: false,
+		        processing: true,
+		        serverSide: true,
+		        order: [],
+		        ajax: {
+		            url: "<?php echo base_url('Acquisition/acquisition_datatable/'); ?>",
+		            type: "POST",
+		            data: function(d) {
+		                d.status = status;
+		            }
+		        },
+		        columnDefs: [{
+		            targets: [0],
+		            orderable: true
+		        }]
+		    });
+		}
+		initializeAcquisitionTable('pending_acquisition_datatable', 'Pending');
+		initializeAcquisitionTable('reviewed_acquisition_datatable', 'Reviewed');
+		initializeAcquisitionTable('returned_acquisition_datatable', 'Returned');
+		initializeAcquisitionTable('disapproved_acquisition_datatable', 'Disapproved');
+		initializeAcquisitionTable('approved_acquisition_datatable', 'Approved');
+		
+		$('#inprogress_datatable').DataTable( {//INPROGRESS TABLE
 			fixedHeader: false,
 			"processing": true,
 			"serverSide": true,
 			"order": [],
 			"ajax": {
-				"url": "<?php echo base_url('Acquisition/pending_new_acquisition_datatable'); ?>",
+				"url": "<?php echo base_url('Payment/inprogress_datatable/'); ?>",
 				"type": "POST"
 			},
 			"columnDefs": [{ 
@@ -124,79 +224,7 @@
 				"orderable": true
 			}]
 		});
-		$('#reviewed_new_acquisition_datatable').DataTable( {
-			fixedHeader: false,
-			"processing": true,
-			"serverSide": true,
-			"order": [],
-			"ajax": {
-				"url": "<?php echo base_url('Acquisition/reviewed_new_acquisition_datatable/'); ?>",
-				"type": "POST"
-			},
-			"columnDefs": [{ 
-				"targets": [0],
-				"orderable": true
-			}],
-		});
-		$('#approved_new_acquisition_datatable').DataTable( {
-			fixedHeader: false,
-			"processing": true,
-			"serverSide": true,
-			"order": [],
-			"ajax": {
-				"url": "<?php echo base_url('Acquisition/approved_new_acquisition_datatable/'); ?>",
-				"type": "POST"
-			},
-			"columnDefs": [{ 
-				"targets": [0],
-				"orderable": true
-			}]
-		});
-		$('#returned_new_acquisition_datatable').DataTable( {
-			fixedHeader: false,
-			"processing": true,
-			"serverSide": true,
-			"order": [],
-			"ajax": {
-				"url": "<?php echo base_url('Acquisition/returned_new_acquisition_datatable/'); ?>",
-				"type": "POST"
-			},
-			"columnDefs": [{ 
-				"targets": [0],
-				"orderable": true
-			}]
-		});
-		$('#disapproved_new_acquisition_datatable').DataTable( {
-			fixedHeader: false,
-			"processing": true,
-			"serverSide": true,
-			"order": [],
-			"ajax": {
-				"url": "<?php echo base_url('Acquisition/disapproved_new_acquisition_datatable/'); ?>",
-				"type": "POST"
-			},
-			"columnDefs": [{ 
-				"targets": [0],
-				"orderable": true
-			}]
-		});
-		// INPROGRESS TABLE
-		$('#payment_datatable').DataTable( {
-			fixedHeader: false,
-			"processing": true,
-			"serverSide": true,
-			"order": [],
-			"ajax": {
-				"url": "<?php echo base_url('Payment/payment_datatable/'); ?>",
-				"type": "POST"
-			},
-			"columnDefs": [{ 
-				"targets": [0],
-				"orderable": true
-			}]
-		});
-		//OWNED TABLE
-		$('#owned_land').DataTable( {
+		$('#owned_land').DataTable({//OWNED TABLE
 			fixedHeader: false,
 			"processing": true,
 			"serverSide": true,
@@ -210,100 +238,108 @@
 				"orderable": true
 			}]
 		});
-		//==================================================
-		//GM
-		//==================================================
-		//PAYMENT REQUEST DATATABLE
-		$('#pending_payment_datatable').DataTable( {
-			fixedHeader: false,
-			"processing": true,
-			"serverSide": true,
-			"order": [],
-			"ajax": {
-				"url": "<?php echo base_url('Payment/pending_payment_datatable/'); ?>",
-				"type": "POST"
-			},
-			"columnDefs": [{ 
-				"targets": [0],
-				"orderable": true
-			}]
+		//GM ==================================================
+		function initializePaymentTable(tableId, status) {//PAYMENT TABLE
+		    $('#' + tableId).DataTable({
+		        fixedHeader: false,
+		        processing: true,
+		        serverSide: true,
+		        order: [],
+		        ajax: {
+		            url: "<?php echo base_url('Payment/payment_datatable/'); ?>",
+		            type: "POST",
+		            data: function(d) {
+		                d.status = status;
+		            }
+		        },
+		        columnDefs: [{
+		            targets: [0],
+		            orderable: true
+		        }]
+		    });
+		}
+		initializePaymentTable('pending_datatable', 'Pending');
+		initializePaymentTable('approved_datatable', 'Approved');
+		initializePaymentTable('disapproved_datatable', 'Disapproved');
+		initializePaymentTable('paid_datatable', 'Paid');
+		//ACCOUNTING ==================================================
+		function initializeCRFTable(tableId, status) {//CRF TABLE
+		    $('#' + tableId).DataTable({
+		        fixedHeader: false,
+		        processing: true,
+		        serverSide: true,
+		        order: [],
+		        ajax: {
+		            url: "<?php echo base_url('Payment/crf_datatable/'); ?>",
+		            type: "POST",
+		            data: function(d) {
+		                d.status = status;
+		            }
+		        },
+		        columnDefs: [{
+		            targets: [0],
+		            orderable: true
+		        }]
+		    });
+		}
+		initializeCRFTable('pending_crf_datatable', 'Approved');
+		initializeCRFTable('history_crf_datatable', 'Paid');
+
+		
+		// RPTAX_DATATABLE ======================
+		// var rptaxTable;
+
+		// function initializeRptaxTable() {
+    	// 	if ($.fn.DataTable.isDataTable('#Rptax_datatable')) {
+        // 		rptaxTable.clear().destroy(); // destroy if already initialized
+    	// 	}
+
+    	// 	rptaxTable = $('#Rptax_datatable').DataTable({
+        // 		fixedHeader: false,
+        // 		processing: true,
+        // 		serverSide: true,
+        // 		order: [],
+        // 		ajax: {
+        //     		url: "<?php echo base_url('Rpt/Rptax_datatable'); ?>",
+        //     		type: "POST",
+        //     		data: function (d) {
+        //         		d.region = $('#selectedRegion').val();
+        //         		d.province = $('#selectedProvince').val();
+        //         		d.town = $('#selectedCity').val();
+        //     		}
+        // 		},
+        // 		columns: [
+        //     		{ title: "IS No" },
+        //     		{ title: "Lot Owner" },
+        //     		{ title: "Lot Type" },
+        //     		{ title: "Lot Location" },
+        //     		{ title: "Tax Declaration No." },
+        //     		{ title: "Lot No." },
+        //     		{ title: "Action", orderable: false }
+        // 		],
+        // 		columnDefs: [{
+        //     		targets: [0],
+        //     		orderable: true
+        // 		}]
+    	// 	});
+		// }
+
+		// Call on town dropdown change
+		$('#selectedCity').on('change', function () {
+    		initializeRptaxTable(); // load or reload table on change
 		});
-		$('#approved_payment_datatable').DataTable( {
-			fixedHeader: false,
-			"processing": true,
-			"serverSide": true,
-			"order": [],
-			"ajax": {
-				"url": "<?php echo base_url('Payment/approved_payment_datatable/'); ?>",
-				"type": "POST"
-			},
-			"columnDefs": [{ 
-				"targets": [0],
-				"orderable": true
-			}]
+
+		// Optional: reset button clears table
+		$('#resetButton').on('click', function () {
+    		if (rptaxTable) {
+        		rptaxTable.clear().draw();
+    		}
 		});
-		$('#disapproved_payment_datatable').DataTable( {
-			fixedHeader: false,
-			"processing": true,
-			"serverSide": true,
-			"order": [],
-			"ajax": {
-				"url": "<?php echo base_url('Payment/disapproved_payment_datatable/'); ?>",
-				"type": "POST"
-			},
-			"columnDefs": [{ 
-				"targets": [0],
-				"orderable": true
-			}]
-		});
-		$('#paid_payment_datatable').DataTable( {
-			fixedHeader: false,
-			"processing": true,
-			"serverSide": true,
-			"order": [],
-			"ajax": {
-				"url": "<?php echo base_url('Payment/paid_payment_datatable/'); ?>",
-				"type": "POST"
-			},
-			"columnDefs": [{ 
-				"targets": [0],
-				"orderable": true
-			}]
-		});
-		//==================================================
-		//ACCOUNTING
-		//==================================================
-		//PAYMENT REQUEST
-		$('#pending_crf_datatable').DataTable( {
-			fixedHeader: false,
-			"processing": true,
-			"serverSide": true,
-			"order": [],
-			"ajax": {
-				"url": "<?php echo base_url('Payment/pending_crf_datatable/'); ?>",
-				"type": "POST"
-			},
-			"columnDefs": [{ 
-				"targets": [0],
-				"orderable": true
-			}]
-		});
-		$('#history_crf_datatable').DataTable( {
-			fixedHeader: false,
-			"processing": true,
-			"serverSide": true,
-			"order": [],
-			"ajax": {
-				"url": "<?php echo base_url('Payment/history_crf_datatable/'); ?>",
-				"type": "POST"
-			},
-			"columnDefs": [{ 
-				"targets": [0],
-				"orderable": true
-			}]
-		});
-		//IN PROGRESS
-		$('#inprogress1_datatable').DataTable( {
+
+
+
+		
+		$('#inprogress1_datatable').DataTable( {//INPROGRESS TABLE
 			fixedHeader: false,
 			"processing": true,
 			"serverSide": true,
@@ -316,472 +352,268 @@
 				"targets": [0],
 				"orderable": true
 			}]
-		});
-		//==================================================
-		//LEGAL 
-		//==================================================
-		$('#titling_lists').DataTable({
-			fixedHeader: false,
-			"processing": true,
-			"serverSide": true,
-			"order": [],
-			"ajax": {
-				"url": "<?php echo base_url('Land/get_titling_Lists/'); ?>",
-				"type": "POST"
-			},
-			"columnDefs": [{ 
-				"targets": [0],
-				"orderable": true
-			}]
+
 		});
 
-					 $('#rpt_lists').DataTable({
-							fixedHeader: false,
-							"processing": true,
-							// DataTables server-side processing mode
-							"serverSide": true,
-							// Initial no order.
-							"order": [],
-							// Load data from an Ajax source
-							"ajax": {
-									"url": "<?php echo base_url('Rpt/get_rpt_Lists/'); ?>",
-									"type": "POST"
-							},
-							//Set column definition initialisation properties
-							"columnDefs": [{ 
-									"targets": [0],
-									"orderable": true
-							}]
-					});
 
-					 $('#land_lists').DataTable({
-							fixedHeader: false,
-							"processing": true,
-							// DataTables server-side processing mode
-							"serverSide": true,
-							// Initial no order.
-							"order": [],
-							// Load data from an Ajax source
-							"ajax": {
-									"url": "<?php echo base_url('Land/get_land_Lists/'); ?>",
-									"type": "POST"
-							},
-							//Set column definition initialisation properties
-							"columnDefs": [{ 
-									"targets": [0],
-									"orderable": true
-							}]
-					});
+		//LEGAL ================================================== 
+		var selectedIds = new Set(); // store selected values across pages
+		var rpt_table = $('#rpt_datatable').DataTable({
+		    fixedHeader: false,
+		    processing: true,
+		    serverSide: true,
+		    order: [],
+		    ajax: {
+		        url: "<?php echo base_url('Rpt/Rpt_datatable/'); ?>",
+		        type: "POST",
+		        data: function(d) {
+		            d.region   = $('#selectedRegion').val();
+		            d.province = $('#selectedProvince').val();
+		            d.town     = $('#selectedCity').val();
+		        }
+		    },
+		    columnDefs: [{
+		        targets: [0],
+		        orderable: true
+		    }],
 
-					 $('#legal_lot_ownedLists').DataTable({
-							fixedHeader: false,
-							"processing": true,
-							// DataTables server-side processing mode
-							"serverSide": true,
-							// Initial no order.
-							"order": [],
-							// Load data from an Ajax source
-							"ajax": {
-									"url": "<?php echo base_url('Owned/get_legal_owned_Lists/'); ?>",
-									"type": "POST"
-							},
-							//Set column definition initialisation properties
-							"columnDefs": [{ 
-									"targets": [0],
-									"orderable": true
-							}]
-					});
-
-				$('#examplecdn').DataTable( {
-							dom: 'Bfrtip',
-							buttons: ['print'],
-							fixedHeader: false,
-							"processing": true,
-							"serverSide": true,
-							"order": [],
-							"ajax": {
-									"url": "<?php echo base_url('Report/get_all_report_Lists/'); ?>",
-									"type": "POST"
-							},
-							"columnDefs": [{ 
-									"targets": [0],
-									"orderable": false
-							}]
-				} );
-
-				// $('#largest_lot_tbl').dataTable({ //calling jquery table
-				//     fixedHeader: false,
-				// }); 
-
-				// $('#smallest_lot_tbl').dataTable({ //calling jquery table
-				//     fixedHeader: false
-				// }); 
-
-				$('#report_tct_status').DataTable( {
-							fixedHeader: false,
-							"serverSide": true,
-							"order": [],
-							"ajax": {
-									"url": "<?php echo base_url('Report/get_all_tct_status/'); ?>",
-									"type": "POST"
-							},
-							"columnDefs": [{ 
-									"targets": [0],
-									"orderable": false
-							}]
-				} );
-
-				$('#incomplete_titling').DataTable( {
-							fixedHeader: false,
-							"processing": true,
-							"serverSide": true,
-							"order": [],
-							"ajax": {
-									"url": "<?php echo base_url('Land/get_incomplete_titling_Lists/'); ?>",
-									"type": "POST"
-							},
-							"columnDefs": [{ 
-									"targets": [0],
-									"orderable": true
-							}]
-				} );
-		//==================================================
-		//END LEGAL 
-		//==================================================
-
-		//==================================================
-		//CCD
-		//==================================================
-		//EXECUTE TABLE
-		$('#data_ccd_execute_pending_table').DataTable( {
-			fixedHeader: false,
-			"processing": true,
-			"serverSide": true,
-			"order": [],
-			"ajax": {
-				"url": "<?php echo base_url('Ccd/Execute/data_ccd_execute_pending_table/'); ?>",
-				"type": "POST"
-			},
-			"columnDefs": [{ 
-				"targets": [0],
-				"orderable": true
-			}]
+		    drawCallback: function (settings) {
+		        // Re-check previously selected rows after table reload
+		        $('.row-check').each(function () {
+		            if (selectedIds.has($(this).val())) {
+		                $(this).prop('checked', true);
+		            }
+		        });
+		        // Handle individual row checkbox toggle
+		        $('.row-check').off('change').on('change', function () {
+		            const value = $(this).val();
+		            if (this.checked) {
+		                selectedIds.add(value);
+		            } else {
+		                selectedIds.delete(value);
+		                $('#checkAll').prop('checked', false);
+		            }
+		        });
+		    }
 		});
-		$('#data_ccd_execute_approved_table').DataTable( {
-			fixedHeader: false,
-			"processing": true,
-			"serverSide": true,
-			"order": [],
-			"ajax": {
-				"url": "<?php echo base_url('Ccd/Execute/data_ccd_execute_approved_table/'); ?>",
-				"type": "POST"
-			},
-			"columnDefs": [{ 
-				"targets": [0],
-				"orderable": true
-			}]
-		});
-		$('#data_ccd_execute_disapproved_table').DataTable( {
-			fixedHeader: false,
-			"processing": true,
-			"serverSide": true,
-			"order": [],
-			"ajax": {
-				"url": "<?php echo base_url('Ccd/Execute/data_ccd_execute_disapproved_table/'); ?>",
-				"type": "POST"
-			},
-			"columnDefs": [{ 
-				"targets": [0],
-				"orderable": true
-			}]
-		});
-		//END EXECUTE TABLE
+		$('#checkAll').on('change', function () {// Handle "Check All" toggle
+		    const isChecked = this.checked;
+		    const currentPageRows = rpt_table.rows({ page: 'current' }).nodes();
 
-		//OWNED TABLE
-		$('#ccd_owned_land').DataTable( {
-			fixedHeader: false,
-			"processing": true,
-			"serverSide": true,
-			"order": [],
-			"ajax": {
-				"url": "<?php echo base_url('Ccd/Owned/get_owned_land/'); ?>",
-				"type": "POST"
-			},
-			"columnDefs": [{ 
-				"targets": [0],
-				"orderable": true
-			}]
+		    $('input.row-check', currentPageRows).each(function () {
+		        $(this).prop('checked', isChecked);
+		        const value = $(this).val();
+		        if (isChecked) {
+		            selectedIds.add(value);
+		        } else {
+		            selectedIds.delete(value);
+		        }
+		    });
 		});
-		//END OWNED TABLE
-		//==================================================
-		//END CCD
-		//==================================================
+		$('#searchBtn').on('click', function () {//Handle Search
+		    rpt_table.draw();
+		});
+		//CCD ==================================================
+		function initializeAspaymentTable(tableId, status) {//ASPAYMENT TABLE
+		    $('#' + tableId).DataTable({
+		        fixedHeader: false,
+		        processing: true,
+		        serverSide: true,
+		        order: [],
+		        ajax: {
+		            url: "<?php echo base_url('Aspayment/Aspayment_datatable/'); ?>",
+		            type: "POST",
+		            data: function(d) {
+		                d.status = status;
+		            }
+		        },
+		        columnDefs: [{
+		            targets: [0],
+		            orderable: true
+		        }]
+		    });
+		}
+		initializeAspaymentTable('pending_aspayment_datatable', 'Pending');
+		initializeAspaymentTable('approved_aspayment_datatable', 'Approved');
+		initializeAspaymentTable('disapproved_aspayment_datatable', 'Disapproved');
+		initializeAspaymentTable('paid_aspayment_datatable', 'Paid');
+		//END ==================================================
 	});		
 </script>
 
-
-
-
-<!-- viewing the profile content of lot details /////////////////////////////////////////////////////////////// -->
-		<script type="text/javascript">
-		$('#lot_info').submit(function(event) {
-				var id = $(".v-identifier").attr('id');
-				// var opsel = document.forms["view_lot_info"]["view_lot"].value;
-
-						var req = $.ajax({
-								type: "POST",
-								url: "<?php echo base_url('Land/view_document/"+id+"'); ?>",
-								data: {view: $('#view_select').val()},
-								dataType: 'html',
-								beforeSend: function () {
-										$("#loading").css("visibility", "visible").fadeIn(0);
-								},
-								complete: function () {
-										$('#lot_info')[0].reset();
-										$("#loading").css("visibility", "visible").fadeOut(2000);
-								}
-						});
-						req.done(function (data) {
-							 $('.ledger').html(data);
-						});
-						event.preventDefault();
-						return false;  //stop the actual form post !important!
+<script type="text/javascript">//viewing the profile content of lot details
+	$('#lot_info').submit(function(event) {
+		var id 	= $(".v-identifier").attr('id');
+		var req = $.ajax({
+			type: "POST",
+			url: "<?php echo base_url('Land/view_document/"+id+"'); ?>",
+			data: {view: $('#view_select').val()},
+			dataType: 'html',
+			beforeSend: function () {
+				$("#loading").css("visibility", "visible").fadeIn(0);
+			},
+			complete: function () {
+				$('#lot_info')[0].reset();
+				$("#loading").css("visibility", "visible").fadeOut(2000);
+			}
 		});
-
-		//FUNTION RELOAD
-		function refresh() {
-				window.location.reload();
-		}
-		//END FUNTION RELOAD
-		
-		</script>
-<!-- end viewing lot ////////////////////////////////////////////////////////////////////////////////////////////-->
-
-
-		<!-- zoom view icon -->
-		<script type="text/javascript">
-				function bigImg(x) {
-						x.style.height = "72px";
-						x.style.width = "72px";
-				}
-
-				function normalImg(x) {
-						x.style.height = "60px";
-						x.style.width = "60px";
-				}
-		</script>
-		
-
-
-
-
-		<!-- date time picker java script-->
-				<script type="text/javascript">
-										$(".form_datetime").datetimepicker({
-												format: "dd MM yyyy - HH:ii P",
-												showMeridian: true,
-												autoclose: true,
-												todayBtn: true
-										});
-				</script>
-		<!-- end date time picker java script-->
-
-		<script type="text/javascript">
-						document.addEventListener("DOMContentLoaded", function(event){ 
-
-								//DISPLAY/HIDE OF COMISSION FEE
-								$(".commission").click(function(){
-												var v = $(this).attr("value");
-
-												if(v == 'Fixed')
-												{
-														$("#fix").css('display','block');
-														$("#support_com").css('display','block');
-														$("#per").hide();
-												}
-												else
-												{
-														$("#per").css('display','block');
-														$("#support_com").css('display','block');
-														$("#fix").hide();
-												}
-								});
-								//END DISPLAY/HIDE OF COMISSION FEE
-
-								// DISPLAY/HIDE OF NOTARY FEE
-								$(".notary").click(function(){
-												var no = $(this).attr("id");
-
-												if(no == 1)
-												{
-														$("#fixed_notary").css('display','block');
-														$("#support_notary").css('display','block');
-														$("#percentage_notary").hide();
-												}
-												else
-												{
-														$("#percentage_notary").css('display','block');
-														$("#support_notary").css('display','block');
-														$("#fixed_notary").hide();
-												}
-								});
-								//END DISPLAY/HIDE OF NOTARY FEE
-
-								//DIPLAY/HIDE OF THE OTHERS OPTION ADJUSTMENT
-								$(".trig").click(function(){
-										var id = $(this).attr("id");
-										if(id == 'Fixed')
-										{
-											$("#other_fixed_notary").css('display','block');
-											$("#other_support_notary").css('display','block');
-											$('#other_percentage_notary').hide();
-										}
-										else
-										{
-											$("#other_percentage_notary").css('display','block');
-											$("#other_support_notary").css('display','block');
-											$('#other_fixed_notary').hide();
-										}
-								});
-								//DISPLAY/HIDE OF THE OTHERS OPTION ADJUSTMENT
-
-								//YEAR DISPLAY
-								var now = new Date();
-								var year = now.getFullYear();
-								$("#y").text("©"+year+" Alturas Group of Companies");
-								//END YEAR DISPLAY
-						});
-
-		</script>
-				
-		<script>
-						//PNOTIFY QUERY
-					 $(document).ready(function(){
-
-						 $('.ui-pnotify').remove();
-
-					 });
-					 //PNOTIFY QUERY
-		</script>
-
-
-<!-- END JQUERY ================================================================================================================================== -->
-<script type="text/javascript">  
-		setInterval(function()
-		{
-			$('#saved').fadeOut('slow');
-		}, 6000);
-
-		// $(document).ready(function(){
-		//     $(document).on('click', '#clearMsg', function(){
-		//           $('#saved').hide();
-		//     });
-		//  });
-
-
-
-		$('button.edit-ass-lvl').qtip({
-		content: {
-				text: 'Edit the Assessment Level'
-		}
+		req.done(function (data) {
+			$('.ledger').html(data);
 		});
-
-		if(window.location.href !== '<?php echo base_url('account') ?>'){
-
-				$('a.view_profile').qtip({
-								
-								content: {
-										text: 'Edit your profile and credentials here!'
-								},
-								style: { 
-											 //classes: 'qtip-default  qtip qtip-blue qtip-shadow' 
-									 }
-				});
-		}
-
-		// $('a.user-log-out').qtip({
-		//             position: {
-		//                 my: 'top right',
-		//                 at: 'bottom center'
-		//             },
-		//             content: {
-		//                 text: 'Log out'
-		//             }
-		//     });
-
-		 $('a.mam-nena_view_notif').qtip({
-								position: {
-										my: 'top right',
-										at: 'bottom center'
-								},
-								content: {
-										text: 'View notifications here! '
-								}
-				});
-
+		event.preventDefault();
+		return false;  //stop the actual form post !important!
+	});
 		
-
+	function refresh(){//FUNTION RELOAD
+		window.location.reload();
+	}
 </script>
 
+<script type="text/javascript">//zoom view icon 
+	function bigImg(x) {
+		x.style.height 	= "72px";
+		x.style.width 	= "72px";
+	}
+	function normalImg(x) {
+		x.style.height 	= "60px";
+		x.style.width 	= "60px";
+	}
+</script>
 
+<script type="text/javascript">//date time picker java script
+	$(".form_datetime").datetimepicker({
+		format: "dd MM yyyy - HH:ii P",
+		showMeridian: true,
+		autoclose: true,
+		todayBtn: true
+	});
+</script>
 
-		<script type="text/javascript">
-
-						$('#checkBtn').click(function() {
-							checked = $("input[type=checkbox]:checked").length;
-							var op = $("#other_p").val().length;
-							if(!checked && op == 0) {
-								alert("You must have your purpose!");
-								return false;
-							}
-
-						});
-
-		</script>
-
-
-
- <script>
-		$(function() {$( "#dpicker" ).datepicker({
-						 dateFormat: "yy/mm/dd", 
-						 changeMonth: true, 
-						 changeYear: true,
-						 yearRange: "-100:+10",
-						 showButtonPanel: true,
-						 //beforeShowDay: disabledAll
-		});});
-
-
-
-$(document).on('keypress', 'input[type="text"]', function (event) {
-	 if (event.which === 8 || event.which === 9 || event.which === 13) {
-		return;
-	}else{
-		var regex = new RegExp("^[a-zA-Z 0-9.,'-]+$");
-		var key_allow = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-		if (!regex.test(key_allow)) {
-				event.preventDefault();
-				return false;
-		}
-		}
-});
-
-$(document).on('keypress', 'textarea', function (event) {
-	 if (event.which === 8 || event.which === 9 || event.which === 13) {
-		return;
-	}else{
-		var regex = new RegExp("^[a-zA-Z 0-9.,'-]+$");
-		var key_allow = String.fromCharCode(!event.charCode ? event.which : event.charCode);
-		if (!regex.test(key_allow)) {
-				event.preventDefault();
-				return false;
-		}
-		}
-});
-
- </script>
-<!--==========script for money currency==========-->
 <script type="text/javascript">
+	document.addEventListener("DOMContentLoaded", function(event){ 
+		$(".commission").click(function(){//DISPLAY/HIDE OF COMISSION FEE
+			var v = $(this).attr("value");
+			if(v == 'Fixed'){
+				$("#fix").css('display','block');
+				$("#support_com").css('display','block');
+				$("#per").hide();
+			}else{
+				$("#per").css('display','block');
+				$("#support_com").css('display','block');
+				$("#fix").hide();
+			}
+		});
+		$(".notary").click(function(){// DISPLAY/HIDE OF NOTARY FEE
+			var no = $(this).attr("id");
+			if(no == 1){
+				$("#fixed_notary").css('display','block');
+				$("#support_notary").css('display','block');
+				$("#percentage_notary").hide();
+			}else{
+				$("#percentage_notary").css('display','block');
+				$("#support_notary").css('display','block');
+				$("#fixed_notary").hide();
+			}
+		});
+		$(".trig").click(function(){//DIPLAY/HIDE OF THE OTHERS OPTION ADJUSTMENT
+			var id = $(this).attr("id");
+			if(id == 'Fixed'){
+				$("#other_fixed_notary").css('display','block');
+				$("#other_support_notary").css('display','block');
+				$('#other_percentage_notary').hide();
+			}else{
+				$("#other_percentage_notary").css('display','block');
+				$("#other_support_notary").css('display','block');
+				$('#other_fixed_notary').hide();
+			}
+		});
+		//YEAR DISPLAY
+		var now = new Date();
+		var year = now.getFullYear();
+		$("#y").text("©"+year+" Alturas Group of Companies");
+		//END YEAR DISPLAY
+	});
+</script>
+				
+<script>				
+	$(document).ready(function(){//PNOTIFY QUERY
+		$('.ui-pnotify').remove();
+	});
+</script>
+
+<script type="text/javascript">  
+	setInterval(function(){
+		$('#saved').fadeOut('slow');
+	}, 6000);
+	$('button.edit-ass-lvl').qtip({
+		content: {
+			text: 'Edit the Assessment Level'
+		}
+	});
+	if(window.location.href !== '<?php echo base_url('account') ?>'){
+		$('a.view_profile').qtip({
+			content: {
+				text: 'Edit your profile and credentials here!'
+			},
+		});
+	}
+	$('a.mam-nena_view_notif').qtip({
+		position: {
+			my: 'top right',
+			at: 'bottom center'
+		},
+		content: {
+			text: 'View notifications here! '
+		}
+	});
+</script>
+
+<script type="text/javascript">
+	$('#checkBtn').click(function() {
+		checked = $("input[type=checkbox]:checked").length;
+		var op 	= $("#other_p").val().length;
+		if(!checked && op == 0) {
+			alert("You must have your purpose!");
+			return false;
+		}
+	});
+</script>
+
+<script>
+	$(function() {$( "#dpicker" ).datepicker({
+		dateFormat: "yy/mm/dd", 
+		changeMonth: true, 
+		changeYear: true,
+		yearRange: "-100:+10",
+		showButtonPanel: true,
+	});});
+	$(document).on('keypress', 'input[type="text"]', function (event) {
+		if (event.which === 8 || event.which === 9 || event.which === 13) {
+			return;
+		}else{
+			var regex = new RegExp("^[a-zA-Z 0-9.,'-]+$");
+			var key_allow = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+			if (!regex.test(key_allow)) {
+				event.preventDefault();
+				return false;
+			}
+		}
+	});
+	$(document).on('keypress', 'textarea', function (event) {
+		if (event.which === 8 || event.which === 9 || event.which === 13) {
+			return;
+		}else{
+			var regex = new RegExp("^[a-zA-Z 0-9.,'-]+$");
+			var key_allow = String.fromCharCode(!event.charCode ? event.which : event.charCode);
+			if (!regex.test(key_allow)) {
+				event.preventDefault();
+				return false;
+			}
+		}
+	});
+</script>
+
+<script type="text/javascript">//script for money currency
 	$('#la_form').number( true, 2 );
 	$('#sp_form').number( true, 2 );
 	$('#total_form').number( true, 2 );
@@ -803,145 +635,84 @@ $(document).on('keypress', 'textarea', function (event) {
 	$('#notarial_fee').number( true, 2 );
 	$('#commission_fee').number( true, 2 );
 </script>
-<!--==========end script==========-->
-
 
 <script type="text/javascript">
-		$(document).ready(function(){
+	$(document).ready(function(){
 		getNotification();
 		getUpdateNotif_content();
 		time_active(); //call time active function
-
-										//OPEN NOTIFICATION 
-										$(".open").click(function(){
-													var id = $(this).attr("id");
 		
-													$.ajax({
-															url: "<?php echo base_url('Notification/read_notification/"+id+"')?>",
-															type: "post",
-															success:function()
-															{
-																getNotification();
-															 // get_notification_bar();
-															}
-													});
-										});
-										//END   
-
-										//READ NOTIFICATION 
-										$(".read_all").click(function(){
-													$.ajax({
-															url: "<?php echo base_url('Notification/read_all_notif/')?>",
-															type: "post",
-															success:function(response)
-															{
-																getNotification();
-																getUpdateNotif_content();
-																$("#load_tap_nav").load(window.location.href + " #load_tap_nav");
-																// $("#no_of_notif_tab").load(" #no_of_notif_tab");
-																// $('#no_of_notif_tab').html(response.notif_tab);
-																// refresh();
-															}
-													});
-										});
-										//END
-
-										 //CLEAR NOTIFICATION 
-										$(".clear_all").click(function(){
-													//var id = $(this).attr("id");
-
-													$.ajax({
-															url: "<?php echo base_url('Notification/clear_all_notif/')?>",
-															type: "post",
-															success:function(response)
-															{
-															 getNotification();
-															 getUpdateNotif_content();
-															 $("#load_tap_nav").load(window.location.href + " #load_tap_nav");
-																//$("#load_tap_nav").load(" #load_tap_nav");
-																// refresh();
-															}
-													});
-										});
-										//END
-
-
+		$(".open").click(function(){//OPEN NOTIFICATION 
+			var id = $(this).attr("id");
+			$.ajax({
+				url: "<?php echo base_url('Notification/read_notification/"+id+"')?>",
+				type: "post",
+				success:function(){
+					getNotification();
+				}
+			});
+		});
+		$(".read_all").click(function(){//READ NOTIFICATION 
+			$.ajax({
+				url: "<?php echo base_url('Notification/read_all_notif/')?>",
+				type: "post",
+				success:function(response){
+					getNotification();
+					getUpdateNotif_content();
+					$("#load_tap_nav").load(window.location.href + " #load_tap_nav");
+				}
+			});
+		});
+		$(".clear_all").click(function(){//CLEAR NOTIFICATION 
+			$.ajax({
+				url: "<?php echo base_url('Notification/clear_all_notif/')?>",
+				type: "post",
+				success:function(response){
+				 	getNotification();
+				 	getUpdateNotif_content();
+				 	$("#load_tap_nav").load(window.location.href + " #load_tap_nav");
+				}
+			});
+		});
 	});
-
-		 function getNotification(){
-				var url = '<?php echo base_url(); ?>';
-				$.ajax({
-					type: 'POST',
-					url: url + 'Notification/get_notification_number/',
-					dataType: 'json',
-					success:function(response){
-						$('#no_of_notif_tab').html(response.notif_tab);
-						$('#no_of_notif_header').html(response.notif_header);
-					}
-				});
+	function getNotification(){
+		var url = '<?php echo base_url(); ?>';
+		$.ajax({
+			type: 'POST',
+			url: url + 'Notification/get_notification_number/',
+			dataType: 'json',
+			success:function(response){
+				$('#no_of_notif_tab').html(response.notif_tab);
+				$('#no_of_notif_header').html(response.notif_header);
 			}
-
-			function getUpdateNotif_content(){
-						 $.ajax({
-									url: "<?php echo base_url('Notification/fetch_notification')?>",
-									type: "post",
-									success:function(response)
-									{
-										$('#notif_content').html(response);
-									}
-							});
-
+		});
+	}
+	function getUpdateNotif_content(){
+		$.ajax({
+			url: "<?php echo base_url('Notification/fetch_notification')?>",
+			type: "post",
+			success:function(response){
+				$('#notif_content').html(response);
 			}
-
-			function get_notification_bar(){
-
-						 $.ajax({
-									url: "<?php echo base_url('Notification/fetch_notification_bar')?>",
-									type: "post",
-									success:function(response)
-									{
-										$('#notif_bar').html(response);
-									}
-							});
+		});
+	}
+	function get_notification_bar(){
+		$.ajax({
+			url: "<?php echo base_url('Notification/fetch_notification_bar')?>",
+			type: "post",
+			success:function(response){
+				$('#notif_bar').html(response);
 			}
-
-			function time_active(){ //update user log once page was loaded
-
-						 $.ajax({
-									url: "<?php echo base_url('Welcome/set_time_active')?>",
-									type: "post",
-									data: {'<?php echo $this->security->get_csrf_token_name(); ?>':'<?php echo $this->security->get_csrf_hash(); ?>'},
-									success:function(response)
-									{
-										//alert('success');
-									}
-							});
-			}
-
-			
+		});
+	}
+	function time_active(){ //update user log once page was loaded
+		$.ajax({
+			url: "<?php echo base_url('Welcome/set_time_active')?>",
+			type: "post",
+			data: {'<?php echo $this->security->get_csrf_token_name(); ?>':'<?php echo $this->security->get_csrf_hash(); ?>'},
+			success:function(response){}
+		});
+	}		
 </script>
-<!-- locks user account  ========== -->
-<!-- <script type="text/javascript">
-		var timeout;
-		document.onmousemove = function(){
-			clearTimeout(timeout);
-			timeout = setTimeout(function(){
-				// alert("move your mouse");
-				//$('.user-locked-modal').modal('show');
-
-						$('.user-locked-modal').modal({
-								show: true,
-								keyboard: false,
-								backdrop: 'static'
-						});
 
 
-		}, 60000); //10 mins
-		}
-</script> -->
-<!-- end lock user account ========= -->
-
-
-	</body>   
-</html>
-		

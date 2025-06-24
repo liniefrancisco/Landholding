@@ -5,27 +5,27 @@
 			<div class="col-md-12"> 
 				<div class="tabbable tabs-left">
 					<ul class="nav nav-tabs">
-						<li><a href="#LT1" data-toggle="tab" style="background-color: #001933;color: white">Land Title</a></li>
-						<li><a href="#TCT1" data-toggle="tab" style="background-color: #001933;color: white">TCT</a></li>
-						<li><a href="#DOS1" data-toggle="tab" style="background-color: #001933;color: white">Previous Deed of Sale </a></li>
-						<li><a href="#eCAR1" data-toggle="tab" style="background-color: #001933;color: white">e-CAR </a></li>
-						<li><a href="#TD1" data-toggle="tab" style="background-color: #001933;color: white">Tax Declaration </a></li>
-						<li><a href="#TC1" data-toggle="tab" style="background-color: #001933;color: white"> Tax Clearance</a></li>
-						<li><a href="#SP1" data-toggle="tab" style="background-color: #001933;color: white">Sketch Plan </a></li>
-						<li><a href="#VM1" data-toggle="tab" style="background-color: #001933;color: white"> Vicinity Map </a></li>
-						<li><a href="#CNI1" data-toggle="tab" style="background-color: #001933;color: white"> Certification of No Improvement </a></li>
-						<li><a href="#RET1" data-toggle="tab" style="background-color: #001933;color: white"> Real Estate Property Taxes Receipt</a></li>
-						<li><a href="#MC1" data-toggle="tab" style="background-color: #001933;color: white">Marriage Contract (if married)</a></li>
-						<li><a href="#BC1" data-toggle="tab" style="background-color: #001933;color: white"> Certificate of Birth  </a></li>
-						<li><a href="#VI1" data-toggle="tab" style="background-color: #001933;color: white"> Valid IDs </a></li>
-						<li><a href="#SUBPLAN1" data-toggle="tab" style="background-color: #001933;color: white">Subdivision Plan </a></li>
-						<li><a href="#SPA1" data-toggle="tab" style="background-color: #001933;color: white">SPA of Lot Owner to Lot Owner </a></li>
-						<li><a href="#DENR1" data-toggle="tab" style="background-color: #001933;color: white;font-size: 12px;"> DENR/DAR </a></li>
-						<li><a href="#DS1" data-toggle="tab" style="background-color: #001933;color: white;font-size: 12px;"> Deed of Sale either (DOAS/ DOEJS/<br> AOSHWSS/ DOC) </a></li>
-						<li><a href="#ARU1" data-toggle="tab" style="background-color: #001933;color: white;font-size: 12px;"> Acknowledgement Receipt <br>(Undervalued) </a></li>
-						<li><a href="#ARA1" data-toggle="tab" style="background-color: #001933;color: white;font-size: 12px;"> Acknowledgement Receipt <br> (Actual) </a></li>
-						<li><a href="#SPOA1" data-toggle="tab" style="background-color: #001933;color: white;font-size: 12px;"> Special Power of Attorney </a></li>
-						<li><a href="#OTHERS1" data-toggle="tab" style="background-color: #001933;color: white;font-size: 12px;"> Others</a></li>
+						<li><a href="#LT1" data-toggle="tab" style="background: linear-gradient(to top, #09203f 0%, #537895 100%);color: white">Land Title</a></li>
+						<li><a href="#TCT1" data-toggle="tab" style="background: linear-gradient(to top, #09203f 0%, #537895 100%);color: white">TCT</a></li>
+						<li><a href="#DOS1" data-toggle="tab" style="background: linear-gradient(to top, #09203f 0%, #537895 100%);color: white">Previous Deed of Sale </a></li>
+						<li><a href="#eCAR1" data-toggle="tab" style="background: linear-gradient(to top, #09203f 0%, #537895 100%);color: white">e-CAR </a></li>
+						<li><a href="#TD1" data-toggle="tab" style="background: linear-gradient(to top, #09203f 0%, #537895 100%);color: white">Tax Declaration </a></li>
+						<li><a href="#TC1" data-toggle="tab" style="background: linear-gradient(to top, #09203f 0%, #537895 100%);color: white"> Tax Clearance</a></li>
+						<li><a href="#SP1" data-toggle="tab" style="background: linear-gradient(to top, #09203f 0%, #537895 100%);color: white">Sketch Plan </a></li>
+						<li><a href="#VM1" data-toggle="tab" style="background: linear-gradient(to top, #09203f 0%, #537895 100%);color: white"> Vicinity Map </a></li>
+						<li><a href="#CNI1" data-toggle="tab" style="background: linear-gradient(to top, #09203f 0%, #537895 100%);color: white"> Certification of No Improvement </a></li>
+						<li><a href="#RET1" data-toggle="tab" style="background: linear-gradient(to top, #09203f 0%, #537895 100%);color: white"> Real Estate Property Taxes Receipt</a></li>
+						<li><a href="#MC1" data-toggle="tab" style="background: linear-gradient(to top, #09203f 0%, #537895 100%);color: white">Marriage Contract (if married)</a></li>
+						<li><a href="#BC1" data-toggle="tab" style="background: linear-gradient(to top, #09203f 0%, #537895 100%);color: white"> Certificate of Birth  </a></li>
+						<li><a href="#VI1" data-toggle="tab" style="background: linear-gradient(to top, #09203f 0%, #537895 100%);color: white"> Valid IDs </a></li>
+						<li><a href="#SUBPLAN1" data-toggle="tab" style="background: linear-gradient(to top, #09203f 0%, #537895 100%);color: white">Subdivision Plan </a></li>
+						<li><a href="#SPA1" data-toggle="tab" style="background: linear-gradient(to top, #09203f 0%, #537895 100%);color: white">SPA of Lot Owner to Lot Owner </a></li>
+						<li><a href="#DENR1" data-toggle="tab" style="background: linear-gradient(to top, #09203f 0%, #537895 100%);color: white"> DENR/DAR </a></li>
+						<li><a href="#DS1" data-toggle="tab" style="background: linear-gradient(to top, #09203f 0%, #537895 100%);color: white"> Deed of Sale either (DOAS/ DOEJS/<br> AOSHWSS/ DOC) </a></li>
+						<li><a href="#ARU1" data-toggle="tab" style="background: linear-gradient(to top, #09203f 0%, #537895 100%);color: white"> Acknowledgement Receipt <br>(Undervalued) </a></li>
+						<li><a href="#ARA1" data-toggle="tab" style="background: linear-gradient(to top, #09203f 0%, #537895 100%);color: white"> Acknowledgement Receipt <br> (Actual) </a></li>
+						<li><a href="#SPOA1" data-toggle="tab" style="background: linear-gradient(to top, #09203f 0%, #537895 100%);color: white"> Special Power of Attorney </a></li>
+						<li><a href="#OTHERS1" data-toggle="tab" style="background: linear-gradient(to top, #09203f 0%, #537895 100%);color: white"> Others</a></li>
 					</ul>
 
 					<div class="tab-content">

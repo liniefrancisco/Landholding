@@ -2,127 +2,127 @@
 <?php
 	foreach ($fp_info as $fp) {
 ?>
-<div class="modal animate bounceInUp lpfp<?= $fp['is_no'] ?>" tabindex="-1" role="dialog" aria-hidden="true" >
-	<div class="modal-dialog modal-lg modal-responsive">
-		<div class="modal-content">
-			<!--==========BODY==========-->
-			<div class="modal-body">
-				<center>
-					<img src="<?= base_url('assets/logo/AGC.jpg') ?>" width="200px" height="50px">
-					<h4 style="font-weight:bold;font-family:Times New Roman">LOT PURCHASE FORM (LPF)</h4>
-				</center>
+	<div class="modal animate bounceInUp lpfp<?= $fp['is_no'] ?>" tabindex="-1" role="dialog" aria-hidden="true" >
+		<div class="modal-dialog modal-lg modal-responsive">
+			<div class="modal-content">
+				<!--==========BODY==========-->
+				<div class="modal-body">
+					<center>
+						<img src="<?= base_url('assets/logo/AGC.jpg') ?>" width="150px" height="50px">
+						<h4 style="font-weight:bold;font-family:Times New Roman">LOT PURCHASE FORM (LPF)</h4>
+					</center>
 
-				<div class="row">
-					<div class="col-md-12 space">
-						<label>LPF Number <b style="margin-left:60px">:</b></label> 
-						<label><?php if($li['is_no']){ echo $li['is_no']; }else{ echo "None"; } ?></label>  
-					</div>
+					<div class="row">
+						<div class="col-md-12 col-sm-12 col-xs-12 space">
+							<label>LPF Number <b style="margin-left:60px">:</b></label> 
+							<label><?php if($li['is_no']){ echo $li['is_no']; }else{ echo "None"; } ?></label>  
+						</div>
 
-					<div class="col-md-12 space">
-						<label>Date <b style="margin-left:113px">:</b></label>
-						<label><?= date('F j, Y', strtotime($li['date_acquired'])); ?></label>
-					</div>
-
-					<div class="col-md-12 space">
-						<label>Lot Location <b style="margin-left:60px">:</b></label>
-						<label><?php echo ucfirst($ll['street']) ?>- <?php echo ucfirst($ll['baranggay']) ?>, <?php echo ucfirst($ll['municipality']) ?>, <?php echo ucfirst($ll['province']) ?></label>
-					</div>
-
-					<div class="col-md-12 space">
-						<label>Lot Owner <b style="margin-left:73px">:</b></label>
-						<label><?php echo ucfirst($oi['firstname']) ?> <?php echo ucfirst($oi['lastname']) ?></label>
-					</div>
-
-					<div class="col-md-12 space">
-						<label>Title No. /Tax Dec. <b style="margin-left:20px">:</b></label>
-						<?php
-							$landTitleNo = $li['land_title_no'];
-							$taxDecNo = $li['tax_dec_no'];
-
-							if (!empty($landTitleNo) && !empty($taxDecNo)) {
-									$displayValue = "{$landTitleNo}/{$taxDecNo}";
-							} elseif (!empty($landTitleNo)) {
-									$displayValue = $landTitleNo;
-							} elseif (!empty($taxDecNo)) {
-									$displayValue = $taxDecNo;
-							} else {
-									$displayValue = ''; // Both are empty, you can set a default value or leave it empty
-							}
-						?>
-						<label><?= $displayValue; ?></label>
-					</div>
-
-					<div class="col-md-12 space">
-						<label>Lot Area <b style="margin-left:86px">:</b></label>
-						<label><?= $li['lot_size']; ?> sq.mtrs</label>
-					</div>
-
-					<?php if ($li['price_per_sqm'] != 0.00): ?>
 						<div class="col-md-12 space">
-							<label>Price per sq.mtrs. <b style="margin-left:30px">:</b></label>
-							<label><?= $li['price_per_sqm']; ?></label>
+							<label>Date <b style="margin-left:113px">:</b></label>
+							<label><?= date('F j, Y', strtotime($li['date_acquired'])); ?></label>
 						</div>
-					<?php endif; ?>
 
-					<div class="col-md-12 space">
-						<label>Computations <b style="margin-left:52px">:</b></label>
-						<label>Lot Price (lot area x price/sq.mtr.)</label>
+						<div class="col-md-12 space">
+							<label>Lot Location <b style="margin-left:60px">:</b></label>
+							<label><?php echo ucfirst($ll['street']) ?>- <?php echo ucfirst($ll['baranggay']) ?>, <?php echo ucfirst($ll['municipality']) ?>, <?php echo ucfirst($ll['province']) ?></label>
+						</div>
+
+						<div class="col-md-12 space">
+							<label>Lot Owner <b style="margin-left:73px">:</b></label>
+							<label><?php echo ucfirst($oi['firstname']) ?> <?php echo ucfirst($oi['lastname']) ?></label>
+						</div>
+
+						<div class="col-md-12 space">
+							<label>Title No. /Tax Dec. <b style="margin-left:20px">:</b></label>
+							<?php
+								$landTitleNo = $li['land_title_no'];
+								$taxDecNo = $li['tax_dec_no'];
+
+								if (!empty($landTitleNo) && !empty($taxDecNo)) {
+										$displayValue = "{$landTitleNo}/{$taxDecNo}";
+								} elseif (!empty($landTitleNo)) {
+										$displayValue = $landTitleNo;
+								} elseif (!empty($taxDecNo)) {
+										$displayValue = $taxDecNo;
+								} else {
+										$displayValue = ''; // Both are empty, you can set a default value or leave it empty
+								}
+							?>
+							<label><?= $displayValue; ?></label>
+						</div>
+
+						<div class="col-md-12 space">
+							<label>Lot Area <b style="margin-left:86px">:</b></label>
+							<label><?= $li['lot_size']; ?> sq.mtrs</label>
+						</div>
+
+						<?php if ($li['price_per_sqm'] != 0.00): ?>
+							<div class="col-md-12 space">
+								<label>Price per sq.mtrs. <b style="margin-left:30px">:</b></label>
+								<label><?= $li['price_per_sqm']; ?></label>
+							</div>
+						<?php endif; ?>
+
+						<div class="col-md-12 space">
+							<label>Computations <b style="margin-left:52px">:</b></label>
+							<label>Lot Price (lot area x price/sq.mtr.)</label>
+						</div>
+
+						<div class="col-md-12 space">
+							<label>Amount in Figures <b style="margin-left:21px">:</b></label>
+							<label>₱<?php echo number_format($li['total_price'],2) ?></label>
+						</div>
+
+						<div class="col-md-12 space">
+							<label>Amount in Words <b style="margin-left:28px">:</b></label>
+							<label><?php echo number_to_words($li['total_price']); ?> Pesos</label>
+						</div>
+
+						<div class="col-md-12 space">
+							<label>Purpose/Use <b style="margin-left:61px">:</b></label>
+							<label><?php echo empty($fp['purpose_use']) ? '' : $fp['purpose_use']; ?></label>
+						</div>
+
+						<div class="col-md-12 col-sm-12 col-xs-12" style="margin-top:60px;float:left">
+							<div class="col-md-4 col-sm-4 col-xs-4">
+								<label>PREPARED BY :</label>   
+							</div>
+							<div class="col-md-4 col-sm-4 col-xs-4" style="margin-top:25px;text-transform:uppercase;font-weight:bold;text-align:center">
+								<label><?php echo (!empty($fp['prepared_by'])) ? $fp['prepared_by'] : ''; ?></label>   
+							</div>
+							<div class="col-md-4 col-sm-4 col-xs-4" style="text-align:center">
+								<label>Clerk, Lagunay & Lagunay Office</label>   
+							</div>
+						</div>
+
+						<div class="col-md-12 col-sm-12 col-xs-12" style="margin-top:60px;float:right">
+							<div class="col-md-2 col-sm-2 col-xs-2">
+								<label>APPROVED BY :</label>   
+							</div>
+							<div class="col-md-3 col-sm-3 col-xs-3" style="margin-top:25px;text-transform:uppercase;font-weight:bold;text-align:center">
+								<label>MARLITO C. UY</label>   
+							</div>
+							<div class="col-md-3 col-sm-3 col-xs-3" style="text-align:center">
+								<label>Vice-President/General Manager</label>     
+							</div>
+							<div class="col-md-2 col-sm-2 col-xs-2" style="text-align:center"> 
+								<label>ALTURAS GROUP OF COMPANIES</label> 
+							</div>
+							<div class="col-md-2 col-sm-2 col-xs-2" style="text-align:center">
+								<label>City of Tagbilaran</label>   
+							</div>
+						</div>
+
 					</div>
-
-					<div class="col-md-12 space">
-						<label>Amount in Figures <b style="margin-left:21px">:</b></label>
-						<label>₱<?php echo number_format($li['total_price'],2) ?></label>
-					</div>
-
-					<div class="col-md-12 space">
-						<label>Amount in Words <b style="margin-left:28px">:</b></label>
-						<label><?php echo number_to_words($li['total_price']); ?> Pesos</label>
-					</div>
-
-					<div class="col-md-12 space">
-						<label>Purpose/Use <b style="margin-left:61px">:</b></label>
-						<label><?php echo empty($getpr_fp['purpose_use']) ? '' : $getpr_fp['purpose_use']; ?></label>
-					</div>
-
-					<div class="col-md-12 col-sm-12 col-xs-12" style="margin-top:60px;float:left">
-						<div class="col-md-4 col-sm-4 col-xs-4">
-							<label>PREPARED BY :</label>   
-						</div>
-						<div class="col-md-4 col-sm-4 col-xs-4" style="margin-top:25px;text-transform:uppercase;font-weight:bold;text-align:center">
-							<label><?php echo (!empty($fp['prepared_by'])) ? $fp['prepared_by'] : ''; ?></label>   
-						</div>
-						<div class="col-md-4 col-sm-4 col-xs-4" style="text-align:center">
-							<label>Clerk, Lagunay & Lagunay Office</label>   
-						</div>
-					</div>
-
-					<div class="col-md-12 col-sm-12 col-xs-12" style="margin-top:60px;float:right">
-						<div class="col-md-2 col-sm-2 col-xs-2">
-							<label>APPROVED BY :</label>   
-						</div>
-						<div class="col-md-3 col-sm-3 col-xs-3" style="margin-top:25px;text-transform:uppercase;font-weight:bold;text-align:center">
-							<label>MARLITO C. UY</label>   
-						</div>
-						<div class="col-md-3 col-sm-3 col-xs-3" style="text-align:center">
-							<label>Vice-President/General Manager</label>     
-						</div>
-						<div class="col-md-2 col-sm-2 col-xs-2" style="text-align:center"> 
-							<label>ALTURAS GROUP OF COMPANIES</label> 
-						</div>
-						<div class="col-md-2 col-sm-2 col-xs-2" style="text-align:center">
-							<label>City of Tagbilaran</label>   
-						</div>
-					</div>
-
 				</div>
-			</div>
-			<!--==========END BODY==========-->
-			<div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal" style="color: #33b5e5; border: 1px solid;">Close</button>
+				<!--==========END BODY==========-->
+				<div class="modal-footer">
+					<button type="button" class="btn btn-default" data-dismiss="modal" style="color: #33b5e5; border: 1px solid;">Close</button>
+				</div>
 			</div>
 		</div>
 	</div>
-</div>
 <?php } ?>
 <!--====================PRINT PACKAGE COMPUTATION OF PAYMENT MODAL====================-->
 <?php
@@ -680,7 +680,7 @@ foreach ($fp_info as $fp) {
 
 				<div class="row">
 					<div class="col-md-12 col-sm-12 col-xs-12">
-						<?php $txt_file = base_url('assets/img/acknowledgement_receipt/'.$is_no.'/'.$fp['acknowledgement_receipt']);
+						<?php $txt_file = FCPATH . 'assets/img/uploaded_documents/' . $is_no . '/Acknowledgement Receipt/' . $fp['acknowledgement_receipt'];
 							$text_content = file_get_contents($txt_file);
 							echo $text_content;
 						?>

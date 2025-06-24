@@ -23,6 +23,7 @@ class Owned extends App_Controller{
 	    $data['disapproved_acq'] 		= $this->Notification_bar_model->getds_status_disapproved();
 	    $data['pending_payment'] 		= $this->Notification_bar_model->getpr_status_pending();
 	    $data['approved_payment'] 		= $this->Notification_bar_model->getpr_status_approved();
+	    $data['pending_aspayment'] 		= $this->Notification_bar_model->getds_status_pending_js_es();
 		#Message Notification
 		$recepient 						=  $this->session->userdata('user_id');
 		$data['all_notifications']		= $this->Notification_model->get_notif_per_user($recepient);

@@ -23,10 +23,8 @@
 			<!--====================START CONTENT====================-->
 			<div class="x_panel animate  fadeInLeft" style="box-shadow: 5px 8px 16px #888888">
 				<div class="x_title">
-                    <h2 class="fa fa-bank" style="font-size:15px;"> <b>Settlement</b></h2>
-                    <div style="float:right;color: #2a3f54;">
-                        <a type="a" href="<?= base_url() ?>" class="btn btn-custom-warning btn-hover btn-sm"><i class="fa fa-arrow-left"></i> Back</a>
-                    </div>
+                    <h2 class="fa fa-bank"> <b>Settlement</b></h2>
+                    <a href="#" onclick="window.history.back()" class="btn btn-sm btn-warning pull-right"><span class="fa fa-arrow-left" style="color:#fff"></span> Back</a>
                     <div class="clearfix"></div>
                 </div>
 
@@ -49,39 +47,43 @@
 					} 
 				?>
 
-				<?php echo form_open_multipart('Ccd/aspayment/extrajudicial', array('id' => 'add_lot'));?>
-					<input type="hidden" value="OCT" name="oct_folder">
-					<input type="hidden" value="TCT" name="tct_folder">
-
+				<?php echo form_open_multipart('Aspayment/extrajudicial', array('id' => 'add_lot'));?>
 					<div class="x_panel" style="border-radius:10px;">
-						<center class="space">
+						<div class="row text-center space">
 							<img src="<?= base_url('assets/logo/AGC.jpg') ?>" width="200px" height="50px">
-							<h4><b>LAND AS PAYMENT FORM - EXTRAJUDICIAL SETTLEMENT (LAPF-ES)</b></h4>
-						</center>
+							<h5><b>LAND AS PAYMENT FORM - EXTRAJUDICIAL SETTLEMENT (LAPF-ES)</b></h5>
+						</div>
 
 						<div class="col-md-12 col-sm-12 col-xs-12 space">
-							<div class="col-md-4 col-sm-4 col-xs-4 form-inline">
+							<div class="col-md-6 col-sm-6 col-xs-6 form-inline">
 								<label>LAPF-ES #:</label>
-								<input class="form-control input_border" type="text" name="es_no" value="<?php echo $es_no; ?>" readonly>
+								<input type="text" class="form-control" name="es_no" value="<?php echo $es_no; ?>" readonly>
 							</div>
-							<div class="col-md-4 col-sm-4 col-xs-4 form-inline pull-right">
-								<label>Date:</label>
-								<input type="text" class="form-control input_border" id="date" name="date" readonly>
-							</div>
+							<div class="col-md-6 col-sm-6 col-xs-6 form-inline">
+                                <div class="form-group pull-right">
+                                    <label class="col-md-2">Date:</label>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control has-feedback-left" name="date" id="date" readonly>
+                                        <span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+                                    </div>
+                                </div>                            
+                            </div>
 						</div>
 
-						<div class="col-md-12 col-sm-12 col-xs-12 space" style="border-top:1px solid #ff6600; border-bottom:1px solid #ff6600;">
-							<center><h5 style="letter-spacing: 10px;"><b>LAND INFORMATION</b></h5></center>
+						<div class="col-md-12 col-sm-12 col-xs-12 text-center space" style="border-top:1px solid #ff6600; border-bottom:1px solid #ff6600;">
+							<h6 style="letter-spacing:5px;">LAND INFORMATION</h6>
 						</div>
 
 						<div class="col-md-12 col-sm-12 col-xs-12 space">
-                            <div class="col-md-4 col-xs-4 col-sm-4 form-inline">
+                            <div class="col-md-6 col-xs-6 col-sm-6 form-inline">
                                 <label>Lot :</label>
-                                <input class="form-control input_border" type="text" name="lot" value="<?php if (isset($_POST['lot'])) { echo $_POST['lot'];} ?>" required>
+                                <input type="text" class="form-control" name="lot" value="<?php if (isset($_POST['lot'])) { echo $_POST['lot'];} ?>" required>
                             </div>
-                            <div class="col-md-4 col-sm-4  col-xs-4 form-inline pull-right">
-                                <label>Cad :</label>
-                                <input class="form-control input_border" type="text" name="cad" value="<?php if (isset($_POST['cad'])) { echo $_POST['cad'];} ?>" required>
+                            <div class="col-md-6 col-sm-6 col-xs-6 form-inline">
+                                <div class="form-group pull-right">
+                                    <label>Cad :</label>
+                                    <input type="text" class="form-control" name="cad" value="<?php if (isset($_POST['cad'])) { echo $_POST['cad'];} ?>" required>
+                                </div>
                             </div>
                         </div>
 
@@ -110,46 +112,44 @@
 						<div class="col-md-12 col-sm-12 col-xs-12 space">
 							<div class="col-md-3 col-sm-3 col-xs-3"><label>Lot Owner:</div>
 							<div class="col-md-3 col-sm-3 col-xs-3">
-								<input type="text" name="lot_fname" value="<?php if(isset($_POST['lot_fname'])){ echo $_POST['lot_fname']; } ?>" class="form-control input_border name_center" required>
-								<h6 class="name_center"><i>Firstname</i></h6>
+								<input type="text" class="form-control text-center" name="lot_fname" value="<?php if(isset($_POST['lot_fname'])){ echo $_POST['lot_fname'];} ?>" required>
+								<h6 class="text-center"><i>Firstname</i></h6>
 							</div>
-
 							<div class="col-md-3 col-sm-3 col-xs-3">
-								<input type="text" name="lot_mname" value="<?php if(isset($_POST['lot_mname'])){ echo $_POST['lot_mname']; } ?>" class="form-control input_border name_center" required>
-								<h6 class="name_center"><i>Middlename</i></h6>
+								<input type="text" class="form-control text-center" name="lot_mname" value="<?php if(isset($_POST['lot_mname'])){ echo $_POST['lot_mname']; } ?>" required>
+								<h6 class="text-center"><i>Middlename</i></h6>
 							</div>
-
 							<div class="col-md-3 col-sm-3 col-xs-3">
-								<input type="text" name="lot_lname" value="<?php if(isset($_POST['lot_lname'])){ echo $_POST['lot_lname']; } ?>" class="form-control input_border name_center" required>
-								<h6 class="name_center"><i>Lastname</i></h6>
+								<input type="text" class="form-control text-center" name="lot_lname" value="<?php if(isset($_POST['lot_lname'])){ echo $_POST['lot_lname']; } ?>"  required>
+								<h6 class="text-center"><i>Lastname</i></h6>
 							</div>
 						</div>
 
 						<div class="col-md-12 col-sm-12 col-xs-12 space">
-                            <div class="col-md-4 col-sm-4 col-xs-4"><label>Gender:</label></div>
+                            <div class="col-md-3 col-sm-3 col-xs-3"><label>Gender:</label></div>
                             <div class="col-md-4 col-sm-4 col-xs-4">
-                                <label>
-                                    <input type="radio" name="gender" value="Male" required <?php if(@$_POST['gender'] == "Male"){ echo "checked"; } ?>>
-                                    <label class="control-label">Male</label>
+                                <label class="r-contain">
+                                    <input type="radio" name="gender" value="Male" <?php if(@$_POST['gender'] == "Male"){ echo "checked"; } ?> required>Male
+                                    <span class="checkmark"></span>
                                 </label>
                             </div>
-                            <div class="col-md-4 col-sm-4 col-xs-4">
-                                <label>
-                                    <input type="radio" name="gender" value="Female" required <?php if(@$_POST['gender'] == "Female"){ echo "checked"; } ?>>
-                                    <label class="control-label">Female</label>
+                            <div class="col-md-5 col-sm-5 col-xs-5">
+                                <label class="r-contain">
+                                    <input type="radio" name="gender" value="Female" <?php if(@$_POST['gender'] == "Female"){ echo "checked"; } ?> required>Female
+                                    <span class="checkmark"></span>
                                 </label>
                             </div>
                         </div>
 
 						<div class="col-md-12 col-sm-12 col-xs-12 space">
-							<div class="col-md-4 col-sm-4 col-xs-4"><label>Vital Status:</label></div>
+							<div class="col-md-3 col-sm-3 col-xs-3"><label>Vital Status:</label></div>
 							<div class="col-md-4 col-sm-4 col-xs-4">
 								<label class="r-contain">
 									<input type="radio" name="vital_status" value="Alive" <?php if(@$_POST['vital_status'] == "Alive"){ echo "checked"; } ?> required> Alive 
 									<span class="checkmark"></span>
 								</label>
 							</div>
-							<div class="col-md-4 col-sm-4 col-xs-4">
+							<div class="col-md-5 col-sm-5 col-xs-5">
 								<label class="r-contain">
 									<input type="radio" name="vital_status" value="Deceased" <?php if(@$_POST['vital_status'] == "Deceased"){ echo "checked"; } ?> required> Deceased 
 									<span class="checkmark"></span>
@@ -158,61 +158,56 @@
 						</div>
 
 						<div class="col-md-12 col-sm-12 col-xs-12 space">
-							<div class="col-md-3 col-sm-3 col-xs-3"><label>Lot Location:</div>
+							<div class="col-md-3 col-sm-3 col-xs-3"><label>Lot Location:</label></div>
 								<div class="col-md-3 col-sm-3 col-xs-3">
-									<select class="form-control input_border txt_cent" id="lot_region" name="lot_region" onchange="loadProvince()" required>
+									<select class="form-control text-center" id="region" name="lot_region" onchange="loadProvince()" required>
 										<option value="">Select Region</option>
 									</select>
-									<input type="hidden" id="selected_lot_region" name="selected_lot_region" readonly>
-									<h6 class="name_center"><i>Region</i></h6>
+									<h6 class="text-center"><i>Region</i></h6>
 								</div>
 								<div class="col-md-3 col-sm-3 col-xs-3">
-									<select class="form-control input_border txt_cent" id="lot_province" name="lot_province"  onchange="loadCity()" required>
+									<select class="form-control text-center" id="province" name="lot_province" onchange="loadCity()" required>
 										<option value="">Select Province</option>
 									</select>
-									<input type="hidden" id="selected_lot_province" name="selected_lot_province" readonly>
-									<h6 class="name_center"><i>Province</i></h6>
+									<h6 class="text-center"><i>Province</i></h6>
 								</div>
 								<div class="col-md-3 col-sm-3 col-xs-3">
-									<select class="form-control input_border txt_cent" id="lot_town" name="lot_town" onchange="loadBrgy()" required>
+									<select class="form-control text-center" id="municipality" name="lot_town" onchange="loadBrgy()" required>
 										<option value="">Select City</option>
 									</select>
-									<input type="hidden" id="selected_lot_town" name="selected_lot_town" readonly>
-									<h6 class="name_center"><i>City/Municipality</i></h6>
+									<h6 class="text-center"><i>City/Municipality</i></h6>
 								</div>
 
 								<div class="col-md-3 col-sm-3 col-xs-3"></div>
 
 								<div class="ccol-md-3 col-sm-3 col-xs-3">
-									<select class="form-control input_border txt_cent" id="lot_barangay" name="lot_barangay" required>
+									<select class="form-control text-center" id="barangay" name="lot_barangay" required>
 										<option value="">Select Barangay</option>
 									</select>
-									<input type="hidden" id="selected_lot_barangay" name="selected_lot_barangay" readonly>
-									<h6 class="name_center"><i>Barangay</i></h6>
+									<h6 class="text-center"><i>Barangay</i></h6>
+								</div>
+								<div class="ccol-md-3 col-sm-3 col-xs-3">
+									<input type="text" class="form-control text-center" name="lot_street" value="<?php echo set_value('lot_street') ?>" required>
+									<h6 class="text-center"><i>Street</i></h6>
 								</div>
 
 								<div class="ccol-md-3 col-sm-3 col-xs-3">
-									<input type="text" class="form-control input_border txt_cent" name="lot_street" id="lot_street" value="<?php echo set_value('lot_street') ?>" required>
-									<h6 class="name_center"><i>Street</i></h6>
-								</div>
-
-								<div class="ccol-md-3 col-sm-3 col-xs-3">
-									<input type="text" class="form-control input_border txt_cent" name="lot_zip_code" id="lot_zip_code" value="<?php echo set_value('lot_zip_code') ?>" required>
-									<h6 class="name_center"><i>Zipcode</i></h6>
+									<input type="text" class="form-control text-center" name="lot_zip_code" id="zip_code" value="<?php echo set_value('lot_zip_code') ?>" required readonly>
+									<h6 class="text-center"><i>Zipcode</i></h6>
 								</div>
 							</div>
 
 							<div class="col-md-12 col-sm-12 col-xs-12 space">
-								<div class="col-md-4 col-sm-4 col-xs-4"><label>Lot for payment:</label></div>
+								<div class="col-md-3 col-sm-3 col-xs-3"><label>Lot for payment:</label></div>
 								<div class="col-md-4 col-sm-4 col-xs-4">
 									<label class="r-contain">
-										<input type="radio" name="lot_s" value="Portion" <?php if(@$_POST['lot_s'] == "Portion"){ echo "checked"; } ?> required> Portion 
+										<input type="radio" name="lot_sold" value="Portion" <?php if(@$_POST['lot_sold'] == "Portion"){ echo "checked"; } ?> required> Portion 
 										<span class="checkmark"></span>
 									</label>
 								</div>
-								<div class="col-md-4 col-sm-4 col-xs-4">
+								<div class="col-md-5 col-sm-5 col-xs-5">
 									<label class="r-contain">
-										<input type="radio" name="lot_s" value="Whole" <?php if(@$_POST['lot_s'] == "Whole"){ echo "checked"; } ?> required> Whole 
+										<input type="radio" name="lot_sold" value="Whole" <?php if(@$_POST['lot_sold'] == "Whole"){ echo "checked"; } ?> required> Whole 
 										<span class="checkmark"></span>
 									</label>
 								</div>
@@ -220,14 +215,14 @@
 
 							<div class="col-md-12 col-sm-12 col-xs-12 space">
 	                            <div class="col-md-3 col-sm-3 col-xs-3 form-inline"><label>Lot Size:</label> </div>
-	                            <div class="col-md-4 col-sm-4 col-xs-4 form-inline">
+	                            <div class="col-md-9 col-sm-9 col-xs-9 form-inline">
 	                                <input type="text" value="<?php if(isset($_POST['lot_size'])){ echo $_POST['lot_size']; } ?>" name="lot_size" class="form-control input_border" id="lotsize" required>
 									<label>sq/m</label>
 	                            </div>
 	                        </div>
 
 							<div class="col-md-12 col-sm-12 col-xs-12 space">
-								<div class="col-md-4 col-sm-4 col-xs-4">
+								<div class="col-md-3 col-sm-3 col-xs-3">
 									<label>Available Proof of Title/Ownership:</label>
 								</div>
 								<div class="col-md-4 col-sm-4 col-xs-4">
@@ -236,7 +231,7 @@
 										<span class="checkmark"></span>
 									</label>
 								</div>
-								<div class="col-md-4 col-sm-4 col-xs-4">
+								<div class="col-md-5 col-sm-5 col-xs-5">
 									<label class="r-contain">
 										<input type="radio" name="proof_title" value="tct" class="proof" required> Transfer Certificate of Title (TCT) 
 										<span class="checkmark"></span>
@@ -245,7 +240,7 @@
 							</div>
 
 							<div class="col-md-12 col-sm-12 col-xs-12 space">
-								<div class="col-md-4 col-sm-4 col-xs-4"></div>
+								<div class="col-md-3 col-sm-3 col-xs-3"></div>
 								<div class="col-md-4 col-sm-4 col-xs-4" id="oct">
 									<span class='label label-info file-name-label-oct' id="upload-oct"></span>
 									<label class="btn btn-default" for="oct_file" id="oct_button"
@@ -278,25 +273,25 @@
 										<tr>
 											<td>MV from Latest Tax Declaration</td>
 											<td class="form-inline">₱ 
-												<input type="text" name="mv_tax" value="<?php if(isset($_POST['mv_tax'])){ echo $_POST['mv_tax']; } ?>" class="form-control" id="mv_ltd" required>
+												<input type="text" class="form-control" name="mv_tax" value="<?php if(isset($_POST['mv_tax'])){ echo $_POST['mv_tax']; } ?>"  id="mv_ltd" required>
 											</td>
 										</tr>
 										<tr>
 											<td>Neighboring Inquiry</td>
 											<td class="form-inline">₱ 
-												<input type="text" name="neighbor_inq" value="<?php if(isset($_POST['neighbor_inq'])){ echo $_POST['neighbor_inq']; } ?>" class="form-control" id="neigh_inq" required>
+												<input type="text" class="form-control" name="neighbor_inq" value="<?php if(isset($_POST['neighbor_inq'])){ echo $_POST['neighbor_inq']; } ?>"  id="neigh_inq" required>
 											</td>
 										</tr>
 										<tr>
 											<td>Assessor</td>
 											<td class="form-inline">₱ 
-												<input type="text" name="assessor" value="<?php if(isset($_POST['assessor'])){ echo $_POST['assessor']; } ?>" class="form-control" id="assessor" required>
+												<input type="text" class="form-control" name="assessor" value="<?php if(isset($_POST['assessor'])){ echo $_POST['assessor']; } ?>"  id="assessor" required>
 											</td>
 										</tr>
 										<tr>
 											<td>Banks</td>
 											<td class="form-inline">₱ 
-												<input type="text" name="banks" value="<?php if(isset($_POST['banks'])){ echo $_POST['banks']; } ?>" class="form-control" id="banks" required>
+												<input type="text" class="form-control" name="banks" value="<?php if(isset($_POST['banks'])){ echo $_POST['banks']; } ?>"  id="banks" required>
 											</td>
 										</tr>
 										<tr>
@@ -313,9 +308,8 @@
 								</center>
 							</div>
 						</div>
-						<div style="float: right">
-							<a href="<?php echo base_url('') ?>" class="btn btn-default">Cancel</a>
-							<input type="submit" name="" class="btn btn-custom-primary send" value="Proceed">
+						<div class="row pull-right">
+							<input type="submit" name="" class="btn btn-custom-primary proceed" value="Proceed">
 						</div>
 					</div>
 				</form>
@@ -327,44 +321,130 @@
 <!--====================END PAGE CONTENT====================-->
 
 
-<script>
+<script>//Date
     $(function() {
         $("#date").datepicker({
             dateFormat: 'mm/dd/yy',
         });
-
         // Set current date
-        var d = new Date();
-        var month = d.getMonth() + 1;
-        var day = d.getDate();
-        var output = (month < 10 ? '0' : '') + month + '/' + (day < 10 ? '0' : '') + day + '/' + d.getFullYear();
+        var d 		= new Date();
+        var month 	= d.getMonth() + 1;
+        var day 	= d.getDate();
+        var output 	= (month < 10 ? '0' : '') + month + '/' + (day < 10 ? '0' : '') + day + '/' + d.getFullYear();
         $("#date").val(output);
     });
 </script>
+<script type="text/javascript">//Load Lot Location
+    function loadRegion() {//Load Region
+        $.ajax({
+            url: "<?php echo site_url("Aspayment/getregion") ?>",
+            method: "POST",
+            dataType: "json",
+            success: function (data) {
+                $('#region').empty().append('<option value="">Select Region</option>');
+                data.forEach(region => {
+                    $('#region').append(`<option value="${region.regCode}">${region.regDesc}</option>`);
+                });
+            },
+            error: function (xhr, status, error) {
+                console.error("Error loading regions:", xhr.responseText);
+            }
+        });
+    }
+    loadRegion();
+    function loadProvince() {//Load Province
+        let regCode = $("#region").val();
+        if (!regCode) {
+            $("#province").html('<option value="">Select Province</option>');
+            return;
+        }
 
+        $.ajax({
+            url: "<?php echo site_url("Aspayment/getprovince") ?>",
+            method: "POST",
+            dataType: "json",
+            data: { regCode: regCode },
+            success: function (data) {
+                $('#province').empty().append('<option value="">Select Province</option>');
+                data.forEach(province => {
+                    $('#province').append(`<option value="${province.provCode}">${province.provDesc}</option>`);
+                });
+            },
+            error: function (xhr, status, error) {
+                console.error("Error loading provinces:", xhr.responseText);
+            }
+        });
+    }
+    function loadCity() {//Load Municipality
+        let provCode = $("#province").val();
+
+        if (!provCode) {
+            $("#municipality").html('<option value="">Select City/Municipality</option>');
+            $("#zip_code").val("");
+            return;
+        }
+
+        $.ajax({
+            url: "<?php echo site_url("Aspayment/getcitymun") ?>",
+            method: "POST",
+            dataType: "json",
+            data: { provCode: provCode },
+            success: function (data) {
+                $('#municipality').empty().append('<option value="">Select City/Municipality</option>');
+                $.each(data, function(i, data) {
+                    var cityName = data.citymunDesc.split(' ')[0];
+                    $('#municipality').append('<option value="' + data.citymunCode + '|' + cityName + '|' + data.zipcode + '">' + cityName + '</option>');
+                });
+            },
+            error: function (xhr, status, error) {
+                console.error("Error loading cities:", xhr.responseText);
+            }
+        });
+        $("#municipality").on("change", function() {
+            let selectedOption = $(this).val();
+            if (selectedOption) {
+                let parts       = selectedOption.split('|');
+                let cityName    = parts[1];
+                let zipcode     = parts[2];
+
+                $("#zip_code").val(zipcode);
+            } else {
+                $("#zip_code").val('');
+            }
+        });
+    }
+    function loadBrgy() {//Load Barangay
+        let selectedOption = $("#municipality").val();
+        if (!selectedOption) {
+            $("#barangay").html('<option value="">Select Barangay</option>');
+            return;
+        }
+        let citymunCode = selectedOption.split('|')[0]; // Extract only the citymunCode
+
+        $.ajax({
+            url: "<?php echo site_url("Aspayment/getbrgy") ?>",
+            method: "POST",
+            dataType: "json",
+            data: { citymunCode: citymunCode },
+            success: function (data) {
+                $('#barangay').empty().append('<option value="">Select Barangay</option>');
+                data.forEach(brgy => {
+                    $('#barangay').append(`<option value="${brgy.brgyCode}">${brgy.brgyDesc}</option>`);
+                });
+            },
+            error: function (xhr, status, error) {
+                console.error("Error loading barangays:", xhr.responseText);
+            }
+        });
+    }
+</script>
 <script type="text/javascript">
 	document.addEventListener("DOMContentLoaded", function(event) {
-		$('#ozipcode').on('keydown', function(event) {
-			if ($(this).val().length >= 4 && event.key !== 'Backspace') {
-				event.preventDefault();
-			}
-			if (/^[a-zA-Z]$/.test(event.key)) {
-				event.preventDefault();
-			}
-			if (/^[!@#$%^&*()\-_=+[\]{};':."\\|,<>/?`~]$/.test(event.key)) {
-				event.preventDefault();
-			}
-			if (/\s/.test(event.key)) {
-				event.preventDefault();
-			}
-		});
-
 		//AVAILABLE PROOF OF TITLE/OWNERSHIP JQUERY
 		$(".proof").click(function() {
-			var a = $(this).attr("value");
-			var oct_in = $("#oct_file").val();
-			var tct_in = $("#tct_file").val();
-
+			var a 		= $(this).attr("value");
+			var oct_in 	= $("#oct_file").val();
+			var tct_in 	= $("#tct_file").val();
 			if (a == "oct") {
 				$("#oct_button").show();
 				$("#tct_button").hide();
@@ -375,10 +455,8 @@
 				} else {
 					$("#rmsg-oct").show();
 				}
-
 				$("#oct_file").prop('required', true);
 				$("#tct_file").prop('required', false);
-
 				$('#tct_file').val('');
 			} else {
 				$("#tct_button").show();
@@ -390,22 +468,19 @@
 				} else {
 					$("#rmsg-tct").show();
 				}
-
 				$("#tct_file").prop('required', true);
 				$("#oct_file").prop('required', false);
-
 				$('#oct_file').val('');
 			}
 		});
-		//AVAILABLE PROOF OF TITLE/OWNERSHIP JQUERY
+		//End
 
-		document.querySelector('.send').addEventListener("click", function() {
+		document.querySelector('.proceed').addEventListener("click", function() {
 			window.btn_clicked = true;
 		});
 
-		var $form = $('#add_lot'),
-		origForm = $form.serialize();
-
+		var $form 	= $('#add_lot'),
+		origForm 	= $form.serialize();
 		$('#add_lot :input').on('change input', function() {
 			if ($form.serialize() !== origForm) {
 				window.onbeforeunload = function() {
@@ -415,19 +490,13 @@
 				};
 			}
 		});
-
-		$('#otown').on('change', function() {
-			const selected_op = $('#otown').find('option:selected');
-			$('#ozipcode').val(selected_op.data('zipcode'));
-		});
 	});
 
 	var _validFileExtensions = [".jpg", ".jpeg", ".bmp", ".gif", ".png"];
-
 	function ValidateSingleInput(oInput) {
-		var sFileName = oInput.files[0].name;
-		var oct_in = $("#oct_file").val();
-		var tct_in = $("#tct_file").val();
+		var sFileName 	= oInput.files[0].name;
+		var oct_in 		= $("#oct_file").val();
+		var tct_in 		= $("#tct_file").val();
 		if (oInput.type == "file") {
 			if (sFileName.length > 0) {
 				var blnValid = false;
@@ -463,145 +532,6 @@
 		return true;
 	}
 </script>
-
-<!--====================LOT LOCATION====================-->
-<script>
-    function loadRegion() {
-        $.ajax({
-            url: "<?php echo site_url("Ccd/Aspayment/getregion") ?>",
-            method: "POST",
-            success: function(data) {
-                var jObj = JSON.parse(data);
-                for (var c = 0; c < jObj.length; c++) {
-                    $('#lot_region').append('<option value="' + jObj[c].regCode + '|' + jObj[c].regDesc + '">' + jObj[c].regDesc + '</option>');
-                }
-            }
-        });
-    }
-    loadRegion();
-
-    function loadProvince() {
-        // Clear the province, city, barangay fields when changing the region
-        $("#lot_province").html(""); // Clear the province dropdown
-        $("#lot_town").html("");
-        $("#lot_barangay").html("");
-        $("#selected_lot_region").val(""); // Clear the hidden input field
-
-        var reg = $("#lot_region").val();
-        var r = reg.split("|");
-        var regCode = r[0];
-        var regDesc = r[1];
-
-        // Save only the region description in the hidden input field
-        $("#selected_lot_region").val(regDesc);
-
-        // Append the "Select Province" option to the province dropdown
-        $('#lot_province').append('<option value="">Select Province</option>');
-
-        $.ajax({
-            url: "<?php echo site_url("Ccd/Aspayment/getprovince") ?>",
-            method: "POST",
-            dataType: 'json',
-            data: {
-                regCode: regCode
-            },
-            success: function (data) {
-                $.each(data, function (i, data) {
-                    $('#lot_province').append('<option value="' + data.provCode + '|' + data.provDesc + '">' + data.provDesc + '</option>');
-                });
-            }
-        });
-    }
-
-    function loadCity() {
-        $("#lot_town").html("");
-        $("#lot_town").append('<option value="">Select City/Municipality</option>');
-        $("#selected_lot_town").val(""); // Clear the hidden input field
-
-        var prov = $("#lot_province").val();
-        var p = prov.split("|");
-        var provCode = p[0];
-        var provDesc = p[1];
-
-        // Save only the province description in the hidden input field
-        $("#selected_lot_province").val(provDesc);
-
-        $.ajax({
-            url: "<?php echo site_url("Ccd/Aspayment/getcitymun") ?>",
-            method: "POST",
-            dataType: 'json',
-            data: {
-                provCode: provCode
-            },
-            success: function(data) {
-                $.each(data, function(i, data) {
-                    var cityName = data.citymunDesc.split(' ')[0];
-                    $('#lot_town').append('<option value="' + data.citymunCode + '|' + cityName + '|' + data.zipcode + '">' + cityName + '</option>');
-                });
-            }
-        });
-
-        // Additional code to handle city selection
-        $("#lot_town").on("change", function() {
-            var selectedOption = $(this).val();
-            if (selectedOption) {
-                var parts = selectedOption.split('|');
-                var cityName = parts[1];
-                var zipcode = parts[2];
-                $("#lot_zip_code").val(zipcode);
-                // Save only the city description in the hidden input field
-                $("#selected_lot_town").val(cityName);
-            }else{
-                $("#lot_zip_code").val('');
-            }
-        });
-    }
-
-    function loadBrgy() {
-        $("#lot_barangay").html("");
-        $("#lot_barangay").append('<option value="">Select Barangay</option>');
-        $("#selected_lot_barangay").val(""); // Clear the hidden input field
-
-        var prov = $("#lot_province").val();
-        var p = prov.split("|");
-        var provDesc = p[1];
-
-        var citymun = $("#lot_town").val();
-        var c = citymun.split("|");
-        var citymunCode = c[0];
-        var citymunDesc = c[1];
-
-        // Save only the city description in the hidden input field
-        $("#selected_lot_town").val(citymunDesc);
-
-        var dist = "";
-        // Rest of your code to load barangays and handle district selection
-
-        $.ajax({
-            url: "<?php echo site_url("Ccd/Aspayment/getbrgy") ?>",
-            method: "POST",
-            dataType: 'json',
-            data: {
-                 citymunCode: citymunCode
-            },
-            success: function(data) {
-                $.each(data, function(i, data) {
-                    $('#lot_barangay').append('<option value="' + data.brgyCode + '|' + data.brgyDesc + '">' + data.brgyDesc + '</option>');
-                });
-            }
-        });
-
-        $('#lot_barangay').on('change', function() {
-            var selectedOption = $(this).find(':selected');
-            var selectedBarangay = selectedOption.text();
-
-            // Save the selected barangay in the hidden input field
-            $("#selected_lot_barangay").val(selectedBarangay);
-        });
-    }
-</script>
-<!--====================END LOT LOCATION====================-->
-
 
 <style type="text/css">
 	table {

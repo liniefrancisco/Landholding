@@ -4,15 +4,13 @@
 		<div class="col-md-12 col-sm-12 col-xs-12">
 			<div class="x_panel" style="box-shadow: 5px 8px 16px #888888">
 				<div class="x_title">
-					<h2 class="fa fa-empire"> List of Land Owned <span>[Note: Click Lot Location to view map.]</span></h2>
-					<div style="float:right">
-						<a href="#" onclick="window.history.back()" class="btn btn-sm btn-warning"><span class="fa fa-arrow-left" style="color:#fff"></span> Back</a>
-					</div>
+					<h6 class="fa fa-empire"> <b>List of Land Owned</b> <span>[Note: Click Lot Location to view map.]</span></h6> 
+					<a href="#" onclick="window.history.back()" class="btn btn-xs btn-warning pull-right"><span class="fa fa-arrow-left" style="color:#fff"></span> Back</a>
 					<div class="clearfix"></div>
 				</div>
 
-				<table id="owned_land" class="table table-striped table-bordered" style="border-bottom:1px solid #262626;">
-					<thead>
+				<table id="owned_land" class="table table-bordered table-hover small" style="border-bottom:2px solid gray">
+					<thead class="bg-primary">
 						<tr>
 							<th>Lot No.</th>
 							<th>Lot Location</th>
@@ -29,49 +27,3 @@
 	</div><br/>
 </div>
 <!--====================END PAGE CONTENT====================-->
-
-<style type="text/css">
-	table {
-		font-family: 'Arial';
-		margin: 25px auto;
-		border-collapse: collapse; 
-		border: 1px solid #eee;
-		border-bottom: 2px solid #00cccc;
-		box-shadow: 0px 0px 20px rgba(0,0,0,0.10),
-			0px 10px 20px rgba(0,0,0,0.05),
-			0px 20px 20px rgba(0,0,0,0.05),
-			0px 30px 20px rgba(0,0,0,0.05);
-	}
-	tr {
-		&:hover {
-			background: #f4f4f4;
-			td {
-				color: #555;
-			}
-		}
-	}
-	th, td {
-		color: #595959;
-		border: 1px solid #eee;
-		padding: 12px 35px;
-		border-collapse: collapse;
-	}
-	th {
-		background:linear-gradient(to top, rgb(9, 32, 63) 0%, rgb(83, 120, 149) 100%);
-		color: #fff;
-		text-transform: uppercase;
-		font-size: 12px;
-		&.last {
-			border-right: none;
-		}
-	}
-</style>
-
-
-
-
-
-
-
-
-

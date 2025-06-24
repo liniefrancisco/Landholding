@@ -13,22 +13,20 @@
 				</div>
 			</div>
 		</div>
-		<input type="hidden" id="user" value="<?php if ($this->session->userdata('user_type') == "GM") {
-			echo "GM. Marlito Uy";
-		} ?>">
+		<input type="hidden" id="user" value="<?php if ($this->session->userdata('user_type') == "GM") {echo "GM. Marlito Uy";} ?>">
 
 		<div class="row tile_count">
 			<div class="col-md-3 col-sm-4 col-xs-6 tile_stats_count" style="color:#fff;">
 				<div class="panel panel-primary" style="background-color: #6e91ab;border:none;">
 					<div class="x_panel" style="background-color: #6e91ab; border:none;border-radius:10px;">
 						<div class="count">
-							<p class="numberCircle"></p>
+							<p class="numberCircle"><?php echo $pending_js; ?></p>
 							<img src="<?php echo base_url(); ?>assets/logo/folder2.png" width="45%" style="float: right;"></img>
 							<span class="count_top"><h4><b>Judicial</b></h4></span>
 						</div>
 					</div>
 					<div class="panel-footer" style="background-color: #3e6d90;border:none;">
-						<a class="hov" href="<?= base_url('Ccd/requests/approved_extrajudicial') ?>" style="color:#fff;float: right;">More Info <i class="fa fa-arrow-right"></i></a>
+						<a class="hov" href="<?= base_url('Aspayment/Aspayment_tbl') ?>" style="color:#fff;float: right;">More Info <i class="fa fa-arrow-right"></i></a>
 						<div class="clearfix"></div>
 					</div>
 				</div>
@@ -38,13 +36,13 @@
 				<div class="panel panel-primary" style="background-color: #6e91ab;border:none;">
 					<div class="x_panel" style="background-color: #6e91ab; border:none;border-radius:10px;">
 						<div class="count">
-							<p class="numberCircle"></p>
+							<p class="numberCircle"><?php echo $pending_es; ?></p>
 							<img src="<?php echo base_url(); ?>assets/logo/folder2.png" width="45%" style="float: right;"></img>
 							<span class="count_top"><h4><b>Extrajudicial</b></h4></span>
 						</div>
 					</div>
 					<div class="panel-footer" style="background-color: #3e6d90;border:none;">
-						<a class="hov" href="<?= base_url('Ccd/requests/approved_judicial') ?>" style="color:#fff;float: right;">More Info <i class="fa fa-arrow-right"></i></a>
+						<a class="hov" href="<?= base_url('Aspayment/Aspayment_tbl') ?>" style="color:#fff;float: right;">More Info <i class="fa fa-arrow-right"></i></a>
 						<div class="clearfix"></div>
 					</div>
 				</div>
@@ -53,11 +51,11 @@
 
 		<!--==================== VALUE FOR THE DOUGHNUT CHART ====================-->
 		<?php
-			$Agricultural_area = 0;
-			$commercial_area = 0;
-			$Residential_area = 0;
+			$Agricultural_area 	= 0;
+			$commercial_area 	= 0;
+			$Residential_area 	= 0;
 
-			foreach ($land_info as $c) {
+			foreach ($approved_js1 as $c) {
 				if ($c['lot_type'] == 'Agricultural'):
 					$Agricultural_area += $c['lot_size'];
 				endif;
