@@ -222,60 +222,73 @@
 
     function loadProvince() {
        // Clear the province, city, barangay fields when changing the region
-       $('#province').html(""); //Clear the province dropdown
-       $('#town').html("");
-       $('#barangay').html("");
-       $('#selectedRegion').val(regDesc); 
+       $('#province').html('<option>Loading...</option>').prop('disabled', true); //Clear the province dropdown
+       $('#town').html('<option value="">Select City/Municipality</option>').prop('disabled', true);
+       $('#barangay').html('<option value="">Select Barangay</option>').prop('disabled', true);
+       //$('#selectedRegion').val(regDesc); 
 
-       var reg      = $('#region').val();
-       var r        = reg.split("|");
-       var regCode  = r[0];
-       var regDesc  = r[1];
+       const reg = $('#region').val();
+       if (!reg) return;
 
-       // Clear the province, city, barangay fields when changing the region
-       $('#selectedRegion').val('regDesc');
-        // Append the "Select Province" option to the province dropdown
-       $('#province').append('<option value="">Select Province</option>');
+       const [regCode, regDesc] = reg.split("|");
+       $('#selectedRegion').val(regDesc);
 
        $.ajax({
             url:"<?php echo site_url("Acquisition/getprovince") ?>",
             method: "POST",
             dataType: 'json',
-            data: {regCode: regCode},
+            data: { regCode },
             success: function(data) {
-                $.each(data, function (i, data) {
-                    $('#province').append('<option value="' + data.provCode + '|' + data.provDesc + '">' + data.provDesc + '</option>');
+                const seen = new Set(); 
+                $('#province').html('<option value="">Select Province</option>'); // reset again just to be sure
+
+                $.each(data, function (i, item) {
+                    if (!seen.has(item.provCode)) {
+                        seen.add(item.provCode);
+                        $('#province').append('<option value="' + item.provCode + '|' + item.provDesc + '">' + item.provDesc + '</option>');
+                    }
+                    
                 });
+
+                $('#province').prop('disabled', false);
+            },
+            error: function(xhr, status, error) {
+                console.error("Province loading failed:", error);
+                $('#province').html('<option value="">Failed to load provinces</option>');
+                $('#province').prop('disabled', false);
             }
        });
     }
     function loadCity() {
-        $('#town').html("");
-        $('#town').append('<option value="">Select City/Municipality</option>');
-        $('#selectedCity').val(""); //Clear the hidden input field
+    $('#town').html('<option>Loading...</option>').prop('disabled', true); // Show loading & disable
 
-        var prov        = $('#province').val();
-        var p           = prov.split("|");
-        var provCode    = p[0];
-        var provDesc    = p[1];
+    const prov = $('#province').val();
+    if (!prov) return;
 
-        // Save only the province description in the hidden input field
-        $('#selectedProvince').val(provDesc);
+    const [provCode, provDesc] = prov.split("|");
+    $('#selectedProvince').val(provDesc);
 
-        $.ajax({
-            url: "<?php echo site_url("Acquisition/getcitymun") ?>",
-            method: "POST",
-            dataType: 'json',
-            data: {provCode: provCode},
-            success: function(data) {
-                $.each(data, function(i, data) {
-                    var cityName = data.citymunDesc;
-                    $('#town').append('<option value="' + data.citymunCode + '|' + cityName + '|' + data.zipcode + '">' + cityName + '</option>');
-                });
-            }
-        });
+    $.ajax({
+        url: "<?php echo site_url('Acquisition/getcitymun') ?>",
+        method: "POST",
+        dataType: 'json',
+        data: { provCode },
+        success: function(data) {
+            $('#town').html('<option value="">Select City/Municipality</option>');
+            data.forEach(item => {
+                const cityName = item.citymunDesc;
+                $('#town').append('<option value="' + item.citymunCode + '|' + cityName + '|' + item.zipcode + '">' + cityName + '</option>');
+            });
+            $('#town').prop('disabled', false); // ✅ Enable dropdown again here
+        },
+        error: function(xhr, status, error) {
+            console.error("City load failed:", error);
+            $('#town').html('<option value="">Failed to load cities</option>');
+            $('#town').prop('disabled', false); // Still enable even if failed
+        }
+    });
+}
 
-    }
 
     function extractCleanName(value) {
         let namePart = value.split('|')[1] || value;
@@ -432,9 +445,14 @@
         });
 
         // Enable button logic
-        $('#province').on('change', function () {
+        $('#province').off().on('change', function () {
             $('#addCrfButton').prop('disabled', !$(this).val());
         });
+
+        $('#province').off().on('change', function () {
+            loadCity(); // <<-- Load cities based on selected province
+        });
+
 
         $('#addCrfButton').on('mouseover click', function () {
             const regionVal = $('#region').val();
