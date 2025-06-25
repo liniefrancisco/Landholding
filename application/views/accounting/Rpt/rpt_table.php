@@ -224,8 +224,7 @@
        // Clear the province, city, barangay fields when changing the region
        $('#province').html('<option>Loading...</option>').prop('disabled', true); //Clear the province dropdown
        $('#town').html('<option value="">Select City/Municipality</option>').prop('disabled', true);
-       $('#barangay').html('<option value="">Select Barangay</option>').prop('disabled', true);
-       //$('#selectedRegion').val(regDesc); 
+       //$('#barangay').html('<option value="">Select Barangay</option>').prop('disabled', true); 
 
        const reg = $('#region').val();
        if (!reg) return;
@@ -242,226 +241,155 @@
                 const seen = new Set(); 
                 $('#province').html('<option value="">Select Province</option>'); // reset again just to be sure
 
-                $.each(data, function (i, item) {
+                data.forEach(item => {
                     if (!seen.has(item.provCode)) {
                         seen.add(item.provCode);
-                        $('#province').append('<option value="' + item.provCode + '|' + item.provDesc + '">' + item.provDesc + '</option>');
-                    }
-                    
+                        $('#province').append('<option value="' + item.provCode + '|' + item.provDesc + '">' + item.provDesc + '</option>');                            
+                    }                    
                 });
 
                 $('#province').prop('disabled', false);
             },
             error: function(xhr, status, error) {
                 console.error("Province loading failed:", error);
-                $('#province').html('<option value="">Failed to load provinces</option>');
-                $('#province').prop('disabled', false);
+                $('#province').html('<option value="">Failed to load provinces</option>').prop('disabled', false);
             }
        });
     }
+
     function loadCity() {
-    $('#town').html('<option>Loading...</option>').prop('disabled', true); // Show loading & disable
+        $('#town').html('<option>Loading...</option>').prop('disabled', true); // Show loading & disable
 
-    const prov = $('#province').val();
-    if (!prov) return;
+        const prov = $('#province').val();
+        if (!prov) return;
 
-    const [provCode, provDesc] = prov.split("|");
-    $('#selectedProvince').val(provDesc);
+        const [provCode, provDesc] = prov.split("|");
+        $('#selectedProvince').val(provDesc);
 
-    $.ajax({
-        url: "<?php echo site_url('Acquisition/getcitymun') ?>",
-        method: "POST",
-        dataType: 'json',
-        data: { provCode },
-        success: function(data) {
-            $('#town').html('<option value="">Select City/Municipality</option>');
-            data.forEach(item => {
-                const cityName = item.citymunDesc;
-                $('#town').append('<option value="' + item.citymunCode + '|' + cityName + '|' + item.zipcode + '">' + cityName + '</option>');
-            });
-            $('#town').prop('disabled', false); // ✅ Enable dropdown again here
-        },
-        error: function(xhr, status, error) {
-            console.error("City load failed:", error);
-            $('#town').html('<option value="">Failed to load cities</option>');
-            $('#town').prop('disabled', false); // Still enable even if failed
-        }
-    });
-}
-
-
-    function extractCleanName(value) {
-        let namePart = value.split('|')[1] || value;
-
-        return namePart.replace(/\s*\(.*?\)\s*/g, '').trim();
-    }
-
-    function loadMunicipality() {
-        
-        var formdata = new FormData();
-        var region = $('#region').val().split('|')[1];
-        var province = $('#province').val().split('|')[1];
-        var town = extractCleanName($('#town').val());
-
-        formdata.append('region', region);
-        formdata.append('province', province);
-        formdata.append('town', town);
-
-        // Save only the province description in the hidden input field
-        // $('#selectedProvince').val(provDesc);
-
-       $.ajax({
-          url: "<?php echo site_url("Acquisition/get_rpt_details"); ?>",
-          method: "POST",
-          dataType: 'json',
-          data: formdata,
-          contentType: false,
-          processData: false,
-          success: function(data) {
-
-            $('#lot_location').empty();
-
-            if (data.length === 0) {
-                $('#lot_location').append('<option value="">No data found</option>');
-                return;
-            }
-
-            $.each(data, function(i, item) {
-                var optionText = item.location_description || 'No Description';
-                var optionValue = item.region + '|' + item.municipality + '|' + item.province;
-
-                $('#lot_location').append(
-                    '<option value="' + optionValue + '">' + optionText + '</option>'
-                );
-            });
-              
-          },
-          error: function(xhr, status, error) {
-              console.log("Error:", error);
-          }
-      });
-
-    }
-
-    function checkDropdownsAndToggleButton() {
-        const isEnabled = $('#region').val() && $('#province').val() && $('#town').val();
-        $('#addCrfButton').prop('disabled', !isEnabled);
-    }
-</script>
-
-<script>
-    let table;
-
-    $(document).ready(function () {
-        // Initialize DataTable with server-side processing
-        table = $('#Rptax_datatable').DataTable({
-           // fixedHeader: false,
-            processing: true,
-            serverSide: true,
-            deferLoading: 0,
-            searching: true,
-            ordering: false,
-           // order: [],
-            ajax: {
-                url: "<?php echo base_url('Rpt/Rptax_datatable'); ?>",
-                type: "POST",
-                data: function(d) {
-                    const regionVal   = $('#region').val();
-                    const provinceVal = $('#province').val();
-                    const townVal     = $('#town').val();
-
-                    d.region   = regionVal ? regionVal.split('|')[1] : '';
-                    d.province = provinceVal ? provinceVal.split('|')[1] : '';
-                    d.town     = townVal ? townVal.split('|')[1] : '';
-                },
-                complete: function() {
-                    $('#tableLoader').fadeOut(300);
-                    $('#Rptax_datatable').css('opacity', '1');
-                }
+        $.ajax({
+            url: "<?php echo site_url('Acquisition/getcitymun') ?>",
+            method: "POST",
+            dataType: 'json',
+            data: { provCode },
+            success: function(data) {
+                $('#town').html('<option value="">Select City/Municipality</option>');
+                data.forEach(item => {
+                    const cityName = item.citymunDesc;
+                    $('#town').append('<option value="' + item.citymunCode + '|' + cityName + '|' + item.zipcode + '">' + cityName + '</option>');
+                });
+                $('#town').prop('disabled', false); // ✅ Enable dropdown again here
             },
-            columns: [
-                { title: "IS No", data: 0 },
-                { title: "Lot Owner", data: 1 },
-                { title: "Lot Type", data: 2 },
-                { title: "Lot Location", data: 3 },
-                { title: "Tax Declaration No.", data: 4 },
-                { title: "Lot No.", data: 5 },
-                { title: "Action", orderable: false, data: 6 }
-            ],
-            
+            error: function(xhr, status, error) {
+                console.error("City load failed:", error);
+                $('#town').html('<option value="">Failed to load cities</option>').prop('disabled', false); // Still enable even if failed            
+            }
         });
+    }
 
         // Enable or disable Filter button based on dropdown selection
         function checkDropdowns() {
             const regionVal = $('#region').val();
             const provinceVal = $('#province').val();
             const townVal = $('#town').val();
-
             const enable = regionVal && provinceVal && townVal;
             $('#addCrfButton').prop('disabled', !enable);
         }
 
-        $('#region, #province, #town').on('change', function() {
-            checkDropdowns();
-        });
+        let table;
 
-        // Mao rani siya ang makapa display ug data sa datatable nato
-        $('#addCrfButton').on('click', function() {
-            $('#tableLoader').fadeIn(200);
-            $('#Rptax_datatable').hide();
+        $(document).ready(function () {
+            // Initialize DataTable with server-side processing
+            table = $('#Rptax_datatable').DataTable({
+            // fixedHeader: false,
+                processing: true,
+                serverSide: true,
+                deferLoading: 0,
+                searching: true,
+                ordering: false,
+            // order: [],
+                ajax: {
+                    url: "<?php echo base_url('Rpt/Rptax_datatable'); ?>",
+                    type: "POST",
+                    data: function(d) {
+                        const regionVal   = $('#region').val();
+                        const provinceVal = $('#province').val();
+                        const townVal     = $('#town').val();
 
-            table.ajax.reload(function() {
-                // Callback after data is loaded
-                $('#tableLoader').fadeOut(300);
-                $('#Rptax_datatable').fadeIn(300);
+                        d.region   = regionVal ? regionVal.split('|')[1] : '';
+                        d.province = provinceVal ? provinceVal.split('|')[1] : '';
+                        d.town     = townVal ? townVal.split('|')[1] : '';
+                    },
+                    complete: function() {
+                        $('#tableLoader').fadeOut(300);
+                        $('#Rptax_datatable').css('opacity', '1');
+                    }
+                },
+                columns: [
+                    { title: "IS No", data: 0 },
+                    { title: "Lot Owner", data: 1 },
+                    { title: "Lot Type", data: 2 },
+                    { title: "Lot Location", data: 3 },
+                    { title: "Tax Declaration No.", data: 4 },
+                    { title: "Lot No.", data: 5 },
+                    { title: "Action", orderable: false, data: 6 }
+                ]
+                
             });
+
+
+            // Region change confirmation
+            $('#region').on('change', function () {
+                const previousRegion = $(this).data('previous');
+                const townVal = $('#town').val();
+
+                if (townVal && !confirm('Changing the region will reset your current selection and loaded data. Do you want to proceed?')) {
+                    $(this).val(previousRegion);
+                    return;
+                }
+
+                $('#province').html('<option value="">Select Province</option>');
+                $('#town').html('<option value="">Select City/Municipality</option>');
+                loadProvince();
+                checkDropdowns();
+            });
+
+            $('#province').off().on('change', function () {
+                loadCity(); // <<-- Load cities based on selected province
+                checkDropdowns();
+            });
+
+            $('#town').on('change', function () {
+                checkDropdowns();
+            });
+
+            // Mao rani siya ang makapa display ug data sa datatable nato
+            $('#addCrfButton').on('click', function() {
+                $('#tableLoader').fadeIn(200);
+                $('#Rptax_datatable').hide();
+
+                table.ajax.reload(function() {
+                    // Callback after data is loaded
+                    $('#tableLoader').fadeOut(300);
+                    $('#Rptax_datatable').fadeIn(300);
+                });
+            });
+
+            // Reset button clears dropdowns and table
+            $('#resetButton').on('click', function () {
+                $('#region').val('');
+                $('#province').html('<option value="">Select Province</option>');
+                $('#town').html('<option value="">Select City/Municipality</option>');
+                $('#addCrfButton').prop('disabled', true);
+                table.ajax.reload();
+            });
+
+            $('#addCrfButton').on('mouseover click', function () {
+                const isEnabled = $('#region').val() && $('#province').val() && $('#town').val();
+                $(this).prop('disabled', !isEnabled);
+            });
+
+            checkDropdowns(); // Initial call to disable button if dropdowns empty
         });
-
-        // Initial call to disable button if dropdowns empty
-        checkDropdowns();
-        
-
-        // Reset button clears dropdowns and table
-        $('#resetButton').on('click', function () {
-            $('#region').val('');
-            $('#province').html('<option value="">Select Province</option>');
-            $('#town').html('<option value="">Select City/Municipality</option>');
-            table.ajax.reload();
-            $('#addCrfButton').prop('disabled', true);
-        });
-
-        // Region change confirmation
-        $('#region').on('change', function () {
-            const previousRegion = $(this).data('previous');
-            const townVal = $('#town').val();
-
-            if (townVal && !confirm('Changing the region will reset your current selection and loaded data. Do you want to proceed?')) {
-                $(this).val(previousRegion);
-                return;
-            }
-
-            $('#province').html('<option value="">Select Province</option>');
-            $('#town').html('<option value="">Select City/Municipality</option>');
-        });
-
-        // Enable button logic
-        $('#province').off().on('change', function () {
-            $('#addCrfButton').prop('disabled', !$(this).val());
-        });
-
-        $('#province').off().on('change', function () {
-            loadCity(); // <<-- Load cities based on selected province
-        });
-
-
-        $('#addCrfButton').on('mouseover click', function () {
-            const regionVal = $('#region').val();
-            const provinceVal = $('#province').val();
-            const townVal = $('#town').val();
-            const isEnabled = regionVal && provinceVal && townVal;
-            $(this).prop('disabled', !isEnabled);
-        });
-    });
 </script>
 
  <!-- For CRF add pr_id, is_no, and type -->
