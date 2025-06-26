@@ -270,7 +270,7 @@
                     const cityName = item.citymunDesc;
                     $('#town').append('<option value="' + item.citymunCode + '|' + cityName + '|' + item.zipcode + '">' + cityName + '</option>');
                 });
-                $('#town').prop('disabled', false); // ✅ Enable dropdown again here
+                $('#town').prop('disabled', false); // Enable dropdown again here
             },
             error: function(xhr, status, error) {
                 console.error("City load failed:", error);
