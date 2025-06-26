@@ -1,3 +1,54 @@
+<style>
+  /* Styling for all input and select inside the modal */
+  .modal input[type="text"],
+  .modal input[type="date"],
+  .modal input[type="file"],
+  .modal select {
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    padding: 4px 6px;
+    font-size: 14px;
+    background-color: #ffffff;
+    color: #333;
+    box-shadow: none;
+  }
+
+  .modal input[type="text"]:focus,
+  .modal input[type="date"]:focus,
+  .modal input[type="file"]:focus,
+  .modal select:focus {
+    border-color: #0056b3;
+    outline: none;
+    background-color: #fff;
+  }
+
+  /* 💸 Peso symbol styling for input group */
+  .modal .input-group-addon {
+    background-color: #007bff;
+    color: white;
+    border: 1px solid #007bff;
+  }
+
+  /* Optional: dashed border for file upload */
+  .modal input[type="file"] {
+    border-style: dashed;
+  }
+
+  /* Styling for the amount in words display */
+  #amount_words {
+    background-color: #f1f1f1;
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    display: block;
+    color: #ff6600;
+    font-size: 13px;
+    margin-top: 5px;
+  }
+</style>
+
+<!-- For Modal Form -->
+
 <div class="modal-fade crf modal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
@@ -37,7 +88,6 @@
           <input type="hidden" name="is_no" id="is_no" value="<?= isset($is_no) ? $is_no : '' ?>">
           <input type="hidden" name="type" id="type" value="<?= isset($type) ? $type : '' ?>">
           
-
             <!-- <input type="hidden" name="pr_id" id="pr_id" value="">
             <input type="hidden" name="is_no" id="is_no" value="">
             <input type="hidden" name="type" id="type" value=""> -->
@@ -176,6 +226,8 @@
     </div>
   </div>
 </div>
+
+<!-- End of Modal Form -->
 
 <script>
   const amountInput = document.getElementById('amount');

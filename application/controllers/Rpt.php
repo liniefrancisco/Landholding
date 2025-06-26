@@ -270,21 +270,33 @@ class Rpt extends App_Controller{
 	}
 	public function Rptax_datatable() {
 		$postData	= $this->input->post();
+
+		// Check if any filter is missing
+		if (
+			empty($postData['region']) ||
+			empty($postData['province']) ||
+			empty($postData['town']) 
+		) {
+			// Return empty DataTables response
+			echo json_encode([
+				"draw" => intval($postData['draw']),
+				"recordsTotal" => 0,
+            	"recordsFiltered" => 0,
+            	"data" => []
+			]);
+			return;
+		}
+
+		// Proceed only if filters are complete
 		$data       = array();
 		$all_info   = $this->Datatable_model->get_row($postData);
 		
 		foreach ($all_info as $ai) {
-				// $lot_owner 			= 	$ai->firstname." ".substr(($ai->middlename),0,1).". ".$ai->lastname;
-				// $lot_location   	= 	$ai->street . "- " . $ai->baranggay . ", " . $ai->municipality . ", " . $ai->province;
-
-				//log_message('debug', 'Rptax row data: ' . print_r($ai, true));
-				
 				// Get values from payment_requests directly
 				$pr_id = isset($ai->pr_id) ? $ai->pr_id : '';
 				$is_no = isset($ai->payment_is_no) ? $ai->payment_is_no : '';
 				$type = isset($ai->pr_type) ? $ai->pr_type : '';
 							
-
 				// You can include them as data-* attributes in the button
 	            	$action = '<center>
 						<a href="#" class="btn btn-primary btn-xs openCrfModalBtn" style="border-radius: 10px; border-color: #fff;"

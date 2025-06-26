@@ -2,13 +2,6 @@
 <div class="right_col" role="main">
     <div class="row row_container"> 
         <div class="col-md-12 col-sm-12 col-xs-12">
-         <!-- <?php if($this->session->flashdata('success')): ?>
-            <div class="alert alert-success alert-dismissible fade show" role="alert" style="font-size: 24px;">
-              <strong><i class="fa fa-check-circle"></i> Success!</strong> <?= $this->session->flashdata('success'); ?>
-              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-          <?php endif; ?> -->
-
             <!--====================BODY====================--> 
             <div class="x_panel " style="box-shadow: 5px 8px 16px #888888">
                 <div class="x_title">
@@ -315,9 +308,16 @@
                         const provinceVal = $('#province').val();
                         const townVal     = $('#town').val();
 
-                        d.region   = regionVal ? regionVal.split('|')[1] : '';
-                        d.province = provinceVal ? provinceVal.split('|')[1] : '';
-                        d.town     = townVal ? townVal.split('|')[1] : '';
+                        // Prevent accidental data fetch
+                        if (!regionVal || !provinceVal || !townVal) {
+                            d.region = '';
+                            d.province = '';
+                            d.town = '';
+                        } else {
+                            d.region    = regionVal.split('|')[1];
+                            d.province  = provinceVal.split('|')[1];
+                            d.town      = townVal.split('|')[1];
+                        }
                     },
                     complete: function() {
                         $('#tableLoader').fadeOut(300);
@@ -347,20 +347,36 @@
                     return;
                 }
 
+                $(this).data('previous', $(this).val());
+
                 $('#province').html('<option value="">Select Province</option>');
                 $('#town').html('<option value="">Select City/Municipality</option>');
                 loadProvince();
                 checkDropdowns();
+                clearDataTableIfIncomplete();
             });
 
             $('#province').off().on('change', function () {
                 loadCity(); // <<-- Load cities based on selected province
                 checkDropdowns();
+                clearDataTableIfIncomplete();
             });
 
             $('#town').on('change', function () {
                 checkDropdowns();
+                clearDataTableIfIncomplete();
             });
+
+            function clearDataTableIfIncomplete() {
+                const regionVal   = $('#region').val();
+                const provinceVal = $('#province').val();
+                const townVal     = $('#town').val();
+
+                if (!regionVal || !provinceVal || !townVal) {
+                    table.clear().draw(); // Manual clear
+                    $('#addCrfButton').prop('disabled', true);
+                }
+            }
 
             // Mao rani siya ang makapa display ug data sa datatable nato
             $('#addCrfButton').on('click', function() {
@@ -380,7 +396,7 @@
                 $('#province').html('<option value="">Select Province</option>');
                 $('#town').html('<option value="">Select City/Municipality</option>');
                 $('#addCrfButton').prop('disabled', true);
-                table.ajax.reload();
+                table.clear().draw();
             });
 
             $('#addCrfButton').on('mouseover click', function () {
