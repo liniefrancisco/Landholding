@@ -248,7 +248,6 @@ class Datatable_model extends CI_Model{
 				->where('document_status.status', 'Approved')
 				->where('land_info.tag', 'New'); 
 		}else if ($this->uri->segment(2) == 'Rptax_datatable') {
-
     			$region  = $this->input->post('region');
     			$province = $this->input->post('province');
     			$town    = $this->input->post('town');
@@ -261,46 +260,6 @@ class Datatable_model extends CI_Model{
 					$town = preg_replace('/\s*\(\d+\)/', '', $town);
 				}
 
-				//Build Query Once
-				$this->db->select('
-					land_info.is_no,
-					owner_info.firstname,
-					owner_info.middlename,
-					owner_info.lastname,
-					lot_location.street,
-					lot_location.baranggay,
-					lot_location.municipality,
-					lot_location.province,
-					real_property_tax.status,
-					payment_requests.id AS pr_id,
-					payment_requests.is_no AS payment_is_no,
-					payment_requests.type AS pr_type
-				');
-				$this->db->from('land_info');
-				$this->db->join('real_property_tax', 'real_property_tax.is_no = land_info.is_no', 'left');
-				$this->db->join('owner_info', 'owner_info.is_no = land_info.is_no', 'left');
-				$this->db->join('lot_location', 'lot_location.is_no = land_info.is_no', 'left');
-				$this->db->join('document_status','document_status.is_no = land_info.is_no', 'left');
-				$this->db->join('payment_requests','payment_requests.is_no = land_info.is_no', 'left');
-				$this->db->join('check_request_form', 'check_request_form.pr_id = payment_requests.id', 'left');
-				// Optional: filter by real_property_tax status (if applicable)
-				$this->db->where('real_property_tax.status', 'Pending');
-
-				//Apply Filters
-				if (!empty($region)) {
-					$this->db->where('lot_location.region', $region);
-				}
-				if (!empty($province)) {
-					$this->db->where('lot_location.province', $province);
-				}
-				if (!empty($town)) {
-					
-					$this->db->where('lot_location.municipality', $town);
-				}
-
-				$this->db->reset_query();
-
-				// Rebuild query for execution (important, since compiled select resets query builder)
 				$this->db->select('
 					land_info.*,
 					lot_location.*,
@@ -308,19 +267,18 @@ class Datatable_model extends CI_Model{
 					real_property_tax.*,
 					payment_requests.id AS pr_id,
 					payment_requests.is_no AS payment_is_no,
-					payment_requests.type AS pr_type					
+					payment_requests.type AS pr_type
 				');
 
 				$this->db->from('land_info');
 				$this->db->join('real_property_tax', 'real_property_tax.is_no = land_info.is_no', 'left');
 				$this->db->join('owner_info', 'owner_info.is_no = land_info.is_no', 'left');
 				$this->db->join('lot_location', 'lot_location.is_no = land_info.is_no', 'left');
-				$this->db->join('document_status','document_status.is_no = land_info.is_no', 'left');
-				$this->db->join('payment_requests','payment_requests.is_no = land_info.is_no', 'left');
+				$this->db->join('document_status', 'document_status.is_no = land_info.is_no', 'left');
+				$this->db->join('payment_requests', 'payment_requests.is_no = land_info.is_no', 'left');
 				$this->db->join('check_request_form', 'check_request_form.pr_id = payment_requests.id', 'left');
 				//$this->db->where('real_property_tax.status', 'Pending');
 
-				// Reapply filters
 				if (!empty($region)) {
 					$this->db->where('lot_location.region', $region);
 				}
@@ -328,13 +286,12 @@ class Datatable_model extends CI_Model{
 					$this->db->where('lot_location.province', $province);
 				}
 				if (!empty($town)) {
-					
 					$this->db->where('lot_location.municipality', $town);
 				}
-				// Now safe to apply group/order/limit for actual query
+				
 				$this->db->group_by('land_info.is_no');
-				}
-		
+			}
+
 		$i = 0;
 		// $search_value = $postData['search']['value'] ?? '';
 		$search_value = isset($postData['search']['value']) ? $postData['search']['value'] : '';
