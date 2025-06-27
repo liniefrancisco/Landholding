@@ -1,70 +1,262 @@
 <?php
 class Datatable_model extends CI_Model{
 
-	protected $column_search = ['land_info.is_no', 'owner_info.firstname', 'owner_info.lastname', 'lot_location.municipality'];
-    protected $column_order  = ['land_info.is_no', 'owner_info.firstname', 'land_info.lot_type', 'lot_location.municipality', 'land_info.tax_dec_no', 'land_info.lot']; 
-    protected $order         = ['land_info.is_no' => 'asc'];
+	protected $column_order = [];
+	protected $column_search = [];
+	protected $order = ['land_info.is_no' => 'asc'];
 
 	function __construct() {
+		parent::__construct();
 		// Set table name
 		$this->table = "land_info";
+		$seg = $this->uri->segment(2); // shortcut for route segment
+
 		// Set orderable column fields
-		if($this->uri->segment(2) == 'acquisition_datatable' || $this->uri->segment(2) == 'Aspayment_datatable'){
-			$this->column_order = array('land_info.is_no','firstname','middlename','lastname',"concat(firstname,' ',middlename,' ',lastname)",'lot_type','street', 'baranggay', 'municipality', 'province',"concat(street,'-',baranggay,', ',municipality,', ',province)",'submission_date','approval_date');
+		if ($seg === 'acquisition_datatable' || $seg === 'Aspayment_datatable') {
+			$this->column_order = [
+				'land_info.is_no',
+				'owner_info.firstname',
+				'owner_info.middlename',
+				'owner_info.lastname',
+				"CONCAT(owner_info.firstname, ' ', owner_info.middlename, ' ', owner_info.lastname)",
+				'land_info.lot_type',
+				'lot_location.street',
+				'lot_location.baranggay',
+				'lot_location.municipality',
+				'lot_location.province',
+				"CONCAT(lot_location.street, '-', lot_location.baranggay, ', ', lot_location.municipality, ', ', lot_location.province)",
+				'payment_requests.submission_date',
+				'payment_requests.approval_date',
+			];
 
-		}else if($this->uri->segment(2) == 'inprogress_datatable'){
-			$this->column_order = array('land_info.is_no','firstname','middlename','lastname',"concat(firstname,' ',middlename,' ',lastname)",'lot_type','street', 'baranggay', 'municipality', 'province',"concat(street,'-',baranggay,', ',municipality,', ',province)", 'approval_date');
+		} else if ($seg === 'inprogress_datatable') {
+			$this->column_order = [
+				'land_info.is_no',
+				'owner_info.firstname',
+				'owner_info.middlename',
+				'owner_info.lastname',
+				"CONCAT(owner_info.firstname, ' ', owner_info.middlename, ' ', owner_info.lastname)",
+				'land_info.lot_type',
+				'lot_location.street',
+				'lot_location.baranggay',
+				'lot_location.municipality',
+				'lot_location.province',
+				"CONCAT(lot_location.street, '-', lot_location.baranggay, ', ', lot_location.municipality, ', ', lot_location.province)",
+				'payment_requests.approval_date',
+			];
 
-		}else if($this->uri->segment(2) == 'payment_datatable'){
-			$this->column_order = array('land_info.is_no','firstname','middlename','lastname',"concat(firstname,' ',middlename,' ',lastname)",'lot_type','street', 'baranggay', 'municipality', 'province',"concat(street,'-',baranggay,', ',municipality,', ',province)", 'date_requested');	
+		} else if ($seg === 'payment_datatable') {
+			$this->column_order = [
+				'land_info.is_no',
+				'owner_info.firstname',
+				'owner_info.middlename',
+				'owner_info.lastname',
+				"CONCAT(owner_info.firstname, ' ', owner_info.middlename, ' ', owner_info.lastname)",
+				'land_info.lot_type',
+				'lot_location.street',
+				'lot_location.baranggay',
+				'lot_location.municipality',
+				'lot_location.province',
+				"CONCAT(lot_location.street, '-', lot_location.baranggay, ', ', lot_location.municipality, ', ', lot_location.province)",
+				'payment_requests.date_requested',
+			];
 
-		}else if($this->uri->segment(2) == 'crf_datatable'){
-			$this->column_order = array('land_info.is_no','firstname','middlename','lastname',"concat(firstname,' ',middlename,' ',lastname)",'lot_type','street', 'baranggay', 'municipality', 'province',"concat(street,'-',baranggay,', ',municipality,', ',province)");
+		} else if ($seg === 'crf_datatable') {
+			$this->column_order = [
+				'check_request_form.crf_no',
+				'land_info.is_no',
+				'owner_info.firstname',
+				'owner_info.middlename',
+				'owner_info.lastname',
+				"CONCAT(owner_info.firstname, ' ', owner_info.middlename, ' ', owner_info.lastname)",
+				'land_info.lot_type',
+				'lot_location.street',
+				'lot_location.baranggay',
+				'lot_location.municipality',
+				'lot_location.province',
+				"CONCAT(lot_location.street, '-', lot_location.baranggay, ', ', lot_location.municipality, ', ', lot_location.province)",
+			];
 
-		}else if($this->uri->segment(2) == 'inprogress1_datatable'){
-			$this->column_order = array('land_info.is_no','firstname','middlename','lastname',"concat(firstname,' ',middlename,' ',lastname)",'lot_type','street', 'baranggay', 'municipality', 'province',"concat(street,'-',baranggay,', ',municipality,', ',province)", 'date_requested', 'date_approved', 'date_payed');
+		} else if ($seg === 'inprogress1_datatable') {
+			$this->column_order = [
+				'land_info.is_no',
+				'owner_info.firstname',
+				'owner_info.middlename',
+				'owner_info.lastname',
+				"CONCAT(owner_info.firstname, ' ', owner_info.middlename, ' ', owner_info.lastname)",
+				'land_info.lot_type',
+				'lot_location.street',
+				'lot_location.baranggay',
+				'lot_location.municipality',
+				'lot_location.province',
+				"CONCAT(lot_location.street, '-', lot_location.baranggay, ', ', lot_location.municipality, ', ', lot_location.province)",
+				'payment_requests.date_requested',
+				'payment_requests.date_approved',
+				'payment_requests.date_payed',
+			];
 
-		}else if($this->uri->segment(2) == 'Rpt_datatable'){
-			$this->column_order = array('land_info.is_no','firstname','middlename','lastname',"concat(firstname,' ',middlename,' ',lastname)",'tax_dec_no','lot_type','street', 'baranggay', 'municipality', 'province',"concat(street,'-',baranggay,', ',municipality,', ',province)");
+		} else if ($seg === 'Rpt_datatable') {
+			$this->column_order = [
+				'land_info.is_no',
+				'owner_info.firstname',
+				'owner_info.middlename',
+				'owner_info.lastname',
+				"CONCAT(owner_info.firstname, ' ', owner_info.middlename, ' ', owner_info.lastname)",
+				'land_info.tax_dec_no',
+				'land_info.lot_type',
+				'lot_location.street',
+				'lot_location.baranggay',
+				'lot_location.municipality',
+				'lot_location.province',
+				"CONCAT(lot_location.street, '-', lot_location.baranggay, ', ', lot_location.municipality, ', ', lot_location.province)",
+			];
 
-		}else if($this->uri->segment(2) == 'owned_land'){
-			$this->column_order = array('land_info.is_no','street', 'baranggay', 'municipality', 'province',"concat(street,', ',baranggay,', ',municipality,', ',province)", 'lot_type', 'lot_size', 'date_acquired', 'tag');
+		} else if ($seg === 'owned_land') {
+			$this->column_order = [
+				'land_info.is_no',
+				'lot_location.street',
+				'lot_location.baranggay',
+				'lot_location.municipality',
+				'lot_location.province',
+				"CONCAT(lot_location.street, ', ', lot_location.baranggay, ', ', lot_location.municipality, ', ', lot_location.province)",
+				'land_info.lot_type',
+				'land_info.lot_size',
+				'land_info.date_acquired',
+				'land_info.tag',
+			];
 
-		}
-		else if($this->uri->segment(2) == 'Rptax_datatable'){
-			$this->column_search = array('land_info.is_no', 'firstname','middlename','lastname',"concat(firstname,' ',middlename,' ',lastname)",'lot_type','street', 'baranggay', 'municipality', 'province',"concat(street,'-',baranggay,', ',municipality,', ',province)", 'tax_dec_no', 'lot');
-				
+		} else if ($seg === 'Rptax_datatable') {
+			$this->column_order = [
+				'land_info.is_no',
+				'owner_info.firstname',
+				'owner_info.middlename',
+				'owner_info.lastname',
+				"CONCAT(owner_info.firstname, ' ', owner_info.middlename, ' ', owner_info.lastname)",
+				'land_info.lot_type',
+				'lot_location.street',
+				'lot_location.baranggay',
+				'lot_location.municipality',
+				'lot_location.province',
+				'land_info.tax_dec_no',
+				'land_info.lot',
+			];
 		}
 
 		// Set searchable column fields
-		if($this->uri->segment(2) == 'acquisition_datatable' || $this->uri->segment(2) == 'Aspayment_datatable'){
-			$this->column_search = array('land_info.is_no','firstname','middlename','lastname',"concat(firstname,' ',middlename,' ',lastname)",'lot_type','street', 'baranggay', 'municipality', 'province',"concat(street,'-',baranggay,', ',municipality,', ',province)",'submission_date','approval_date');
+		switch ($seg) {
+			case 'acquisition_datatable':
+			case 'Aspayment_datatable':
+				$this->column_search = [
+					'land_info.is_no',
+					'owner_info.firstname',
+					'owner_info.middlename',
+					'owner_info.lastname',
+					'land_info.lot_type',
+					'lot_location.street',
+					'lot_location.baranggay',
+					'lot_location.municipality',
+					'lot_location.province',
+					'payment_requests.submission_date',
+					'payment_requests.approval_date',
+				];
+				break;
 
-		}else if($this->uri->segment(2) == 'inprogress_datatable'){
-			$this->column_search = array('land_info.is_no','firstname','middlename','lastname',"concat(firstname,' ',middlename,' ',lastname)",'lot_type','street', 'baranggay', 'municipality', 'province',"concat(street,'-',baranggay,', ',municipality,', ',province)", 'approval_date');
+			case 'inprogress_datatable':
+				$this->column_search = [
+					'land_info.is_no',
+					'owner_info.firstname',
+					'owner_info.middlename',
+					'owner_info.lastname',
+					'land_info.lot_type',
+					'lot_location.street',
+					'lot_location.baranggay',
+					'lot_location.municipality',
+					'lot_location.province',
+					'payment_requests.approval_date',
+				];
+				break;
 
-		}else if($this->uri->segment(2) == 'payment_datatable'){
-			$this->column_search = array('land_info.is_no','firstname','middlename','lastname',"concat(firstname,' ',middlename,' ',lastname)",'lot_type','street', 'baranggay', 'municipality', 'province',"concat(street,'-',baranggay,', ',municipality,', ',province)", 'document_status.approval_date');
+			case 'payment_datatable':
+			case 'inprogress1_datatable':
+				$this->column_search = [
+					'land_info.is_no',
+					'owner_info.firstname',
+					'owner_info.middlename',
+					'owner_info.lastname',
+					'land_info.lot_type',
+					'lot_location.street',
+					'lot_location.baranggay',
+					'lot_location.municipality',
+					'lot_location.province',
+					'payment_requests.submission_date',
+					'payment_requests.approval_date',
+				];
+				break;
 
-		}else if($this->uri->segment(2) == 'crf_datatable'){
-			$this->column_search = array('crf_no','land_info.is_no','firstname','middlename','lastname',"concat(firstname,' ',middlename,' ',lastname)",'lot_type','street', 'baranggay', 'municipality', 'province',"concat(street,'-',baranggay,', ',municipality,', ',province)");
+			case 'crf_datatable':
+				$this->column_search = [
+					'check_request_form.crf_no',
+					'land_info.is_no',
+					'owner_info.firstname',
+					'owner_info.middlename',
+					'owner_info.lastname',
+					'land_info.lot_type',
+					'lot_location.street',
+					'lot_location.baranggay',
+					'lot_location.municipality',
+					'lot_location.province',
+				];
+				break;
 
-		}else if($this->uri->segment(2) == 'inprogress1_datatable'){
-			$this->column_search = array('land_info.is_no','firstname','middlename','lastname',"concat(firstname,' ',middlename,' ',lastname)",'lot_type','street', 'baranggay', 'municipality', 'province',"concat(street,'-',baranggay,', ',municipality,', ',province)", 'date_requested', 'date_approved', 'date_payed');
+			case 'Rpt_datatable':
+				$this->column_search = [
+					'land_info.is_no',
+					'owner_info.firstname',
+					'owner_info.middlename',
+					'owner_info.lastname',
+					'land_info.tax_dec_no',
+					'land_info.lot_type',
+					'lot_location.street',
+					'lot_location.baranggay',
+					'lot_location.municipality',
+					'lot_location.province',
+				];
+				break;
 
-		}else if($this->uri->segment(2) == 'Rpt_datatable'){
-			$this->column_search = array('land_info.is_no','firstname','middlename','lastname',"concat(firstname,' ',middlename,' ',lastname)",'tax_dec_no','lot_type','street', 'baranggay', 'municipality', 'province',"concat(street,'-',baranggay,', ',municipality,', ',province)");
-			
-		}else if($this->uri->segment(2) == 'owned_land'){
-			$this->column_search = array('land_info.is_no', 'street', 'baranggay', 'municipality', 'province', "concat(street,', ',baranggay,', ',municipality,', ',province)", 'lot_type', 'lot_size', 'date_acquired', 'tag');
-			
+			case 'owned_land':
+				$this->column_search = [
+					'land_info.is_no',
+					'lot_location.street',
+					'lot_location.baranggay',
+					'lot_location.municipality',
+					'lot_location.province',
+					'land_info.lot_type',
+					'land_info.lot_size',
+					'land_info.date_acquired',
+					'land_info.tag',
+				];
+				break;
+
+			case 'Rptax_datatable':
+				$this->column_search = [
+					'land_info.is_no',
+					'owner_info.firstname',
+					'owner_info.middlename',
+					'owner_info.lastname',
+					'land_info.lot_type',
+					'lot_location.street',
+					'lot_location.baranggay',
+					'lot_location.municipality',
+					'lot_location.province',
+					'land_info.tax_dec_no',
+					'land_info.lot',
+				];
+				break;
 		}
-		else if($this->uri->segment(2) == 'Rptax_datatable'){
-			$this->column_search = array('land_info.is_no','firstname','middlename','lastname',"concat(firstname,' ',middlename,' ',lastname)",'lot_type','street', 'baranggay', 'municipality', 'province',"concat(street,'-',baranggay,', ',municipality,', ',province)", 'tax_dec_no', 'lot');	
-		}
-		// Set default order
-		$this->order = array('land_info.is_no' => 'asc');
-	}	
+		
+		$this->order = ['land_info.is_no' => 'asc'];
+	}
+	
 	/*
 	 * Fetch members data from the database
 	 * @param $_POST filter data based on the posted parameters
@@ -267,7 +459,9 @@ class Datatable_model extends CI_Model{
 					real_property_tax.*,
 					payment_requests.id AS pr_id,
 					payment_requests.is_no AS payment_is_no,
-					payment_requests.type AS pr_type
+					payment_requests.type AS pr_type,
+					payment_requests.submission_date,
+					payment_requests.approval_date
 				');
 
 				$this->db->from('land_info');
@@ -292,26 +486,26 @@ class Datatable_model extends CI_Model{
 				$this->db->group_by('land_info.is_no');
 			}
 
-		$i = 0;
-		// $search_value = $postData['search']['value'] ?? '';
-		$search_value = isset($postData['search']['value']) ? $postData['search']['value'] : '';
-		foreach ($this->column_search as $item) {
-		    if ($search_value) {
-		        if ($i === 0) {
-		            $this->db->group_start();
-		        }
-		        if ($item === 'submission_date' 
-		        	|| $item === 'approval_date') { // Fix condition
-		            $search_value = str_replace(", ", ",", $search_value); // Normalize input
-		            $this->db->or_where("DATE_FORMAT($item, '%M %d,%Y') LIKE", "%".$search_value."%");
-		        } else {
-		            $this->db->or_like($item, $search_value);
-		        }
-		        if (count($this->column_search) - 1 == $i) {
-		            $this->db->group_end();
-		        }
-		    }
-		    $i++;
+
+			// $search_value = $postData['search']['value'] ?? '';
+			$search_value = isset($postData['search']['value']) ? $postData['search']['value'] : '';
+			$i = 0;
+			foreach ($this->column_search as $item) {
+				if ($search_value) {
+					if ($i === 0) {
+						$this->db->group_start(); // Mo-open ug group kung first item
+					}
+					if ($item === 'payment_requests.submission_date' || $item === 'payment_requests.approval_date') { // Fix condition
+						$search_value = str_replace(", ", ",", $search_value); // Normalize input
+						$this->db->or_where("DATE_FORMAT($item, '%M %d,%Y') LIKE", "%".$search_value."%");
+					} else {
+						$this->db->or_like($item, $search_value);
+					}
+					if (count($this->column_search) - 1 == $i) {
+						$this->db->group_end(); // Mo-close group kung last item
+					}
+				}
+				$i++;
 		}
 				 
 		if(isset($postData['order'])){
