@@ -1,3 +1,6 @@
+<!-- Scroll-to-Top Button -->
+<button id="mvTop" onclick="topFunction()" title="Go to top">↑ Top</button>
+
 <!--====================PAGE CONTENT====================-->
 <div class="right_col" role="main">
     <div class="row row_container"> 
@@ -125,6 +128,29 @@
         </div>
     </div>
 </div>
+
+<!-- For Movetop function -->
+<style>
+#mvTop {
+  display: none;
+  position: fixed;
+  bottom: 40px;
+  right: 40px;
+  z-index: 999;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  background-color: #4B5320;
+  color: white;
+  cursor: pointer;
+  padding: 12px 18px;
+  border-radius: 4px;
+}
+#mvTop:hover {
+  background-color: #333;
+}
+</style>
+
 
 <!--====================END PAGE CONTENT====================-->
     <!-- =============LOAD SPINNER AND STYLES============= -->
@@ -406,6 +432,47 @@
 
             checkDropdowns(); // Initial call to disable button if dropdowns empty
         });
+
+        function loadMunicipality() {
+            var formdata = new FormData();
+            var region = $('#region').val().split('|')[1];
+            var province = $('#province').val().split('|')[1];
+            var town = $('#town').val().split('|')[1]; // assumes 'val' is like '123|TownName|Zip'
+
+            formdata.append('region', region);
+            formdata.append('province', province);
+            formdata.append('town', town);
+
+            $.ajax({
+                url: "<?php echo site_url('Acquisition/get_rpt_details'); ?>",
+                method: "POST",
+                dataType: 'json',
+                data: formdata,
+                contentType: false,
+                processData: false,
+                success: function(data) {
+                    $('#lot_location').empty();
+
+                    if (data.length === 0) {
+                        $('#lot_location').append('<option value="">No data found</option>');
+                        return;
+                    }
+
+                    $.each(data, function(i, item) {
+                        var optionText = item.location_description || 'No Description';
+                        var optionValue = item.region + '|' + item.municipality + '|' + item.province;
+
+                        $('#lot_location').append(
+                            '<option value="' + optionValue + '">' + optionText + '</option>'
+                        );
+                    });
+                },
+                error: function(xhr, status, error) {
+                    console.log("Error:", error);
+                }
+            });
+        }
+
 </script>
 
  <!-- For CRF add pr_id, is_no, and type -->

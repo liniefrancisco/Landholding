@@ -253,7 +253,7 @@ class Datatable_model extends CI_Model{
 				];
 				break;
 		}
-		
+		// Final default order
 		$this->order = ['land_info.is_no' => 'asc'];
 	}
 	
