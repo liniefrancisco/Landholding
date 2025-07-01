@@ -22,7 +22,7 @@
     background-color: #fff;
   }
 
-  /* 💸 Peso symbol styling for input group */
+  /* Peso symbol styling for input group */
   .modal .input-group-addon {
     background-color: #007bff;
     color: white;
@@ -47,7 +47,7 @@
   }
 </style>
 
- <!-- For payor name placeholder adjustment -->
+ <!-- For Payor name placeholder adjustment -->
 <style>
   .inb::placeholder {
     padding-left: 8px;
@@ -57,6 +57,31 @@
     padding-left: 6px;
   }
 </style>
+
+ <!-- For Showing month picker -->
+<style>
+  #taxYearGroup label {
+    display: block;
+    font-size: 1.375rem !important;   
+    font-weight: 600;      
+    font-family: "Fira Sans", sans-serif;
+  }
+
+  #taxYearGroup input,
+  #taxYearGroup label {
+    margin: 0.4rem 0;
+  }
+  #taxYearGroup input[type="month"] {
+    border: 1px solid #ced4da !important;
+    border-radius: 0.375rem;    /* Rounded corners */
+    padding: 0.375rem 0.75rem;  /* Bootstrap default padding */
+    background-color: #fff !important;
+    height: 38px;               
+    box-sizing: border-box;
+  }
+</style>
+
+
 
 <!-- For Modal Form -->
 
@@ -124,28 +149,12 @@
             <!-- Add Tax Year To Be Paid dropdown -->
             <div class="col-md-12 col-xs-12 col-sm-12" style="padding-top:15px;" id="taxYearGroup">
               <div class="col-md-2 col-xs-2 col-sm-2">
-                <label>Tax Year to be Paid:</label>
+                <label for="tax_year_paid">Tax Year to be Paid:</label>
               </div>
-              <div class="col-md-5 col-xs-5 col-sm-5">
-                <select name="tax_year_paid" class="form-control inb">
-                  <option value="">-- Select Year & Month --</option>
-                  <?php
-                    $start_year = 2000;
-                    $end_year = date('Y') + 5;
-                    $months = [
-                      '01' => 'January', '02' => 'February', '03' => 'March',
-                      '04' => 'April', '05' => 'May', '06' => 'June',
-                      '07' => 'July', '08' => 'August', '09' => 'September',
-                      '10' => 'October', '11' => 'November', '12' => 'December'
-                    ]; 
-
-                    for ($year = $start_year; $year <= $end_year; $year++) {
-                      foreach ($months as $num => $name) {
-                        echo "<option value=\"$year-$num\">$name $year</option>";
-                      }                      
-                    }
-                  ?>
-                </select>
+              <div class="col-md-3 col-xs-5 col-sm-4">
+                <input type="month" id="tax_year_paid" name="tax_year_paid" 
+                class="form-control inb" 
+                min="2000-01" max="2030-12" required>
               </div>
             </div>
 
@@ -244,6 +253,12 @@
   const amountInput = document.getElementById('amount');
   const amountWords = document.getElementById('amount_words');
 
+  // Function to convert entire string to Title Case
+  function toTitleCase(str) {
+    return str.replace(/\w\S*/g, function(txt){
+      return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+    });
+  }
   amountInput.addEventListener('input', function () {
     // Remove all characters except digits and dots
     let input = this.value.replace(/[^0-9.]/g, '');
@@ -278,7 +293,7 @@
       if (centavos > 0) {
         words += ' and ' + convertNumberToWords(centavos) + ' centavo' + (centavos !== 1 ? 's' : '');
       }
-      amountWords.innerText = words + ' only';
+      amountWords.innerText = toTitleCase(words) + ' Only';
     } else {
       amountWords.innerText = '';
     }

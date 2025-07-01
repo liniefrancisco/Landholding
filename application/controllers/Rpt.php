@@ -368,12 +368,12 @@ class Rpt extends App_Controller{
 
 		$data = array(
 			'crf_no'		=> $this->input->post('crf_no', TRUE),
-			//'date_requested' => $this->input->post('date_requested'),
             'pay_to'         => $this->input->post('pay_to', TRUE),
             'amount'         => $amount,
             'bank'           => $this->input->post('bank', TRUE),
             'cheque_no'      => $this->input->post('cheque_no', TRUE),
             'cheque_date'    => $this->input->post('cheque_date', TRUE),
+			'tax_year_paid'	 =>	$this->input->post('tax_year_paid', TRUE),
 			'filename'       => $img,
 			'prepared_by' 	 => $fullname,
 			'submission_date' => date('Y-m-d'),
@@ -383,9 +383,6 @@ class Rpt extends App_Controller{
 		);
 
 		//log_message('debug', 'Submitted CRF RPT Data: ' . print_r($data, true));
-
-		//log_message('error', 'Rpt_model actual class file: ' . (new ReflectionClass($this->Rpt_model))->getFileName());
-
 
 		$inserted = $this->Rpt_model->insert_crf_rpt($data); // Call model to save
 
