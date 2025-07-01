@@ -20,6 +20,15 @@ class Rpt_model extends CI_Model{
         $query = $this->db->get_where('real_property_tax', ['is_no' => $is_no]);
         return $query->result_array();
     }
+    public function insert_crf_rpt($data) {
+        // For the tale 'check_request_form'
+        if ($this->db->insert('check_request_form', $data)) {
+            return $this->db->insert_id(); // return the inserted ID
+        } else {
+            return false;
+        }
+    }
+
 	#CRUD QUERY ==================================================
 	public function add_assessment($is_no){
 		$data = array(

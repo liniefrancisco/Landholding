@@ -275,7 +275,6 @@ class Datatable_model extends CI_Model{
 	 * Count all records
 	*/
 	public function countAll(){
-		//$this->db->from($this->table);
 		$this->db->from('land_info');
     	$this->db->join('real_property_tax', 'real_property_tax.is_no = land_info.is_no', 'left');
 

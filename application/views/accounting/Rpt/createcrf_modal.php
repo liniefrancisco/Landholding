@@ -47,6 +47,17 @@
   }
 </style>
 
+ <!-- For payor name placeholder adjustment -->
+<style>
+  .inb::placeholder {
+    padding-left: 8px;
+  }
+
+  .inb {
+    padding-left: 6px;
+  }
+</style>
+
 <!-- For Modal Form -->
 
 <div class="modal-fade crf modal" tabindex="-1" role="dialog" aria-hidden="true" data-backdrop="static">

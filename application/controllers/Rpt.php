@@ -382,7 +382,10 @@ class Rpt extends App_Controller{
 			'type'	 		 => $type 
 		);
 
-		//log_message('debug', 'CRF Insert Data: ' . print_r($data, true));
+		//log_message('debug', 'Submitted CRF RPT Data: ' . print_r($data, true));
+
+		//log_message('error', 'Rpt_model actual class file: ' . (new ReflectionClass($this->Rpt_model))->getFileName());
+
 
 		$inserted = $this->Rpt_model->insert_crf_rpt($data); // Call model to save
 
