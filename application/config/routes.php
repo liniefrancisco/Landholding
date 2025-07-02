@@ -54,3 +54,4 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['login'] = 'auth/login';
 $route['logout'] = 'welcome/logout';
+// $route['Payment/view_inprogress/(:any)'] = 'Payment/view_inprogress/$1';

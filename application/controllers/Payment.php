@@ -90,7 +90,11 @@ class Payment extends App_Controller{
 		
 		echo json_encode($output);
 	}
-	public function view_inprogress($is_no){
+	public function view_inprogress($is_no = null){
+		if (empty($is_no)) {
+			show_404();
+			return;
+		}
 		$data 			= $this->Notification(); 
 		// check if the uri id is valid==========
 		$li 			= $this->Acquisition_model->getli_byid($is_no);
@@ -783,8 +787,8 @@ class Payment extends App_Controller{
 	}
 	public function inprogress1_tbl(){
     	$this->sess_acctng();
-	    $data['title'] 		= "In Progress";
 	    $data 				= $this->Notification();
+		$data['title'] 		= "In Progress";
 	    $this->render_template('accounting/in_progress/table',$data);
 	}
 	public function inprogress1_datatable(){

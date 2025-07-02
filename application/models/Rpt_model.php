@@ -21,7 +21,7 @@ class Rpt_model extends CI_Model{
         return $query->result_array();
     }
     public function insert_crf_rpt($data) {
-        // For the tale 'check_request_form'
+        // For the table 'check_request_form'
         if ($this->db->insert('check_request_form', $data)) {
             return $this->db->insert_id(); // return the inserted ID
         } else {

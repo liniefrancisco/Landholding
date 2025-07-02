@@ -299,11 +299,8 @@ class Rpt extends App_Controller{
 							
 				// You can include them as data-* attributes in the button
 	            	$action = '<center>
-						<a href="#" class="btn btn-primary btn-xs openCrfModalBtn" style="border-radius: 10px; border-color: #fff;"
-						data-pr_id="' . htmlspecialchars($pr_id ?? '', ENT_QUOTES) . '"
-						data-is_no="' . htmlspecialchars($is_no ?? '', ENT_QUOTES) . '"
-						data-type="' . htmlspecialchars($type ?? '', ENT_QUOTES) . '">
-						<span class="fa fa-clipboard"></span> Create CRF
+						<a href="' . base_url('Payment/view_inprogress/'.$is_no) . '" class="btn btn-warning btn-xs" style="border-radius: 10px; border-color: #fff;">
+						<span class="fa fa-eye"></span> View
 						</a>
 					</center>';
 				

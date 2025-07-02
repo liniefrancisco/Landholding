@@ -10,7 +10,7 @@
       		<div class="col-md-12 col-sm-12 col-xs-12 form-inline space">
 		        <div class="col-md-1 col-sm-1 col-xs-1"><label>IS No:</label></div>
 		        <div class="col-md-4 col-sm-4 col-xs-4">
-		          	<input class="form-control" type="text" value="<?php echo $li['is_no'];?>" readonly>
+		          	<input class="form-control" type="text" value="<?php echo $li['is_no'];?>" readonly style="font-weight: bold;">
 		        </div>
 		        <div class="col-md-2 col-sm-2 col-xs-2"></div>
 		        <div class="col-md-2 col-sm-2 col-xs-2"><label>Date Acquired:</label></div>

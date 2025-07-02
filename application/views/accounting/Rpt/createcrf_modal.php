@@ -58,7 +58,7 @@
   }
 </style>
 
- <!-- For Showing month picker -->
+ <!-- For Show month picker -->
 <style>
   #taxYearGroup label {
     display: block;
@@ -80,7 +80,6 @@
     box-sizing: border-box;
   }
 </style>
-
 
 
 <!-- For Modal Form -->
