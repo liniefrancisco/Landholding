@@ -54,4 +54,5 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 $route['login'] = 'auth/login';
 $route['logout'] = 'welcome/logout';
+$route['Rpt/interview_sheet_info/(:any)'] = 'Rpt/interview_sheet_info/$1';
 // $route['Payment/view_inprogress/(:any)'] = 'Payment/view_inprogress/$1';

@@ -341,17 +341,7 @@
   }
 </script>
 
-<!-- <script>
-document.querySelector('form').addEventListener('submit', function(e) {
-    const type = document.querySelector('[name="type"]').value;
-    const taxYear = document.querySelector('[name="tax_year_paid"]').value;
 
-    if (type === 'RPT' && taxYear === '') {
-        alert('Please select Tax Year to be Paid for RPT type.');
-        e.preventDefault();
-    }
-});
-</script> -->
 
 
 

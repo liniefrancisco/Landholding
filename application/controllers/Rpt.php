@@ -15,6 +15,7 @@ class Rpt extends App_Controller{
 		$this->load->library('session');
 		$this->load->helper('url');
 		$this->load->helper('security');
+		$this->load->helper('number');
 	}
 	public function Notification(){
 		$data = array();
@@ -266,65 +267,109 @@ class Rpt extends App_Controller{
 		$data['type'] = '';
 
 		// Render the view with all data
+		$data['li'] = [
+			'is_no' => '',
+			'date_acquired' => '',
+			'lot' => '',
+			'cad' => '',
+			'lot_type' => '',
+			'lot_sold' => '',
+			'purchase_type' => '',
+			'lot_size' => 0,
+			'price_per_sqm' => 0,
+			'total_price' => 0,
+		];
+
+		$data['oi'] = [
+			'firstname' => '',
+			'middlename' => '',
+			'lastname' => '',
+			'vital_status' => '', // 'Alive' or 'Deceased'
+		];
+
+		$data['ll'] = [
+			'street' => '',
+			'baranggay' => '',
+			'municipality' => '',
+			'province' => '',
+			'region' => '',
+			'zip_code' => '',
+		];
+
+		$data['rstr'] = [
+			'liens' => '',
+			'easement' => '',
+			'encumbrances' => '',
+		];
+
+		$data['ud'] = [
+			'is_no' => '',
+			'land_title' => '',
+			'latest_tax_dec' => '',
+			'brgy_resolution' => '',
+			'land_sketch' => '',
+		];
+
+		$data['cp'] = [
+			'name' => '',
+			'address' => '',
+			'tel_no' => '',
+			'phone_no' => '',
+			'email_ad' => '',
+		];
+
 		$this->render_template('accounting/Rpt/rpt_table', $data);
 	}
 	public function Rptax_datatable() {
-		$postData	= $this->input->post();
+		$postData = $this->input->post();
 
-		// Check if any filter is missing
-		if (
-			empty($postData['region']) ||
-			empty($postData['province']) ||
-			empty($postData['town']) 
-		) {
-			// Return empty DataTables response
+		$draw = isset($postData['draw']) ? intval($postData['draw']) : 0;
+
+		if (empty($postData['region']) || empty($postData['province']) || empty($postData['town'])) {
 			echo json_encode([
-				"draw" => intval($postData['draw']),
+				"draw" => $draw,
 				"recordsTotal" => 0,
-            	"recordsFiltered" => 0,
-            	"data" => []
+				"recordsFiltered" => 0,
+				"data" => []
 			]);
 			return;
 		}
 
-		// Proceed only if filters are complete
-		$data       = array();
-		$all_info   = $this->Datatable_model->get_row($postData);
-		
+		$data = [];
+		$all_info = $this->Datatable_model->get_row($postData) ?: [];
+
 		foreach ($all_info as $ai) {
-				// Get values from payment_requests directly
-				$pr_id = isset($ai->pr_id) ? $ai->pr_id : '';
-				$is_no = isset($ai->payment_is_no) ? $ai->payment_is_no : '';
-				$type = isset($ai->pr_type) ? $ai->pr_type : '';
-							
-				// You can include them as data-* attributes in the button
-	            	$action = '<center>
-						<a href="' . base_url('Payment/view_inprogress/'.$is_no) . '" class="btn btn-warning btn-xs" style="border-radius: 10px; border-color: #fff;">
-						<span class="fa fa-eye"></span> View
-						</a>
-					</center>';
-				
+			$pr_id = isset($ai->pr_id) ? $ai->pr_id : '';
+			$is_no = isset($ai->payment_is_no) ? $ai->payment_is_no : '';
+			$type = isset($ai->pr_type) ? $ai->pr_type : '';
 
-				$data[] = array(
-        			$ai->is_no,
-					$ai->firstname . ' ' . $ai->lastname,
-					$ai->lot_type,
-					$ai->street . ' - ' . $ai->baranggay . ', ' . $ai->municipality,
-					$ai->tax_dec_no,
-					$ai->lot,
-					$action
-    			);
-			}	
-				
-    	$output = array(
-        	"draw"            => intval($postData['draw']),
-        	"recordsTotal"    => $this->Datatable_model->countAll(),
-        	"recordsFiltered" => $this->Datatable_model->countFiltered($postData),
-        	"data"            => $data
+			$action = '<div style="text-align:center;">
+							<button data-toggle="modal" onclick="openInterviewSheetModal(\'' . htmlspecialchars($is_no, ENT_QUOTES) . '\')" class="btn btn-success btn-xs">
+								<span class="fa fa-eye"></span> View
+							</button>
+					</div>';
 
-    	);
-    	echo json_encode($output);
+			$data[] = [
+				htmlspecialchars($ai->is_no ?? '', ENT_QUOTES),
+				htmlspecialchars($ai->firstname ?? '', ENT_QUOTES) . ' ' . htmlspecialchars($ai->lastname ?? '', ENT_QUOTES),
+				htmlspecialchars($ai->lot_type ?? '', ENT_QUOTES),
+				htmlspecialchars($ai->street ?? '', ENT_QUOTES) . ' - ' . htmlspecialchars($ai->baranggay ?? '', ENT_QUOTES) . ', ' . htmlspecialchars($ai->municipality ?? '', ENT_QUOTES),
+				htmlspecialchars($ai->tax_dec_no ?? '', ENT_QUOTES),
+				htmlspecialchars($ai->lot ?? '', ENT_QUOTES),
+				$action
+			];
+		}
+
+		$output = [
+			"draw" 				=> intval($postData['draw']),
+			"recordsTotal" 		=> $this->Datatable_model->countAll(),
+			"recordsFiltered" 	=> $this->Datatable_model->countFiltered($postData),
+			"data" 				=> $data
+		];
+
+		echo json_encode($output);
 	}
+
 	public function submit_crf_rpt() {
 		$this->load->model('Rpt_model');	
 
@@ -381,7 +426,7 @@ class Rpt extends App_Controller{
 
 		//log_message('debug', 'Submitted CRF RPT Data: ' . print_r($data, true));
 
-		$inserted = $this->Rpt_model->insert_crf_rpt($data); // Call model to save
+		$inserted = $this->Rpt_model->insert_crf_rpt($data);
 
 		 // Redirect or return success
         if ($inserted) {
@@ -392,6 +437,42 @@ class Rpt extends App_Controller{
 		redirect('Rpt/Rpt_table/');
 
 	}
+	public function interview_sheet_info($is_no) {
+		// Load necessary models
+		$this->load->model('Acquisition_model');
+		$this->load->model('Payment_model');
 
+		// Get Land Information and DS Info
+		$li = $this->Acquisition_model->getli_byid($is_no);
+		$ds = $this->Acquisition_model->getds_byid($is_no);
+
+		// Validate if info is complete
+		if (empty($ds) || $ds['status'] !== "Approved" || (isset($li['tag']) && $li['tag'] !== "New")) {
+			show_404();
+		}
+
+		// Get Owner Info and ensure it has valid ID
+		$oi = $this->Acquisition_model->getoi_byid($is_no);
+		if (empty($oi) || !isset($oi['id'])) {
+			show_error('Owner information not found or incomplete.');
+		}
+
+		// Prepare all data with null coalescing fallback
+		$data = [
+			'is_no' => $is_no,
+			'li'    => $li ?? [],
+			'ds'    => $ds ?? [],
+			'oi'    => $oi,
+			'll'    => $this->Acquisition_model->getll_byid($is_no) ?? [],
+			'ud'    => $this->Acquisition_model->getud_byid($is_no) ?? [],
+			'cp'    => $this->Acquisition_model->getcp_byid($oi['id']) ?? [],
+			'rstr'  => $this->Acquisition_model->getrstr_byid($is_no) ?? [],
+			'bi'    => $this->Acquisition_model->getbi_byid($is_no) ?? [],
+			'fp_info'  => $this->Payment_model->getpr_byid_byfp_result($is_no) ?? [],
+			'fp_info1' => $this->Payment_model->getpr_byid_byfp_row($is_no) ?? [],
+		];
+
+		$this->load->view('accounting/Rpt/interviewsheet_modal', $data);
+	}
 
 }

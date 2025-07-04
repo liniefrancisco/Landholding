@@ -1,4 +1,4 @@
-<!-- Scroll-to-Top Button -->
+
 <button id="mvTop" onclick="topFunction()" title="Go to top">↑ Top</button>
 
 <!--====================PAGE CONTENT====================-->
@@ -67,7 +67,7 @@
                     </div>
                     <!-- Modal code include from external file -->
                     <?php include 'createcrf_modal.php'; ?>
-    
+
                     <div class="col-md-12 space">
                         <!-- Wrapper para sa table ug spinner -->
                         <div id="tableWrapper" style="position: relative;">
@@ -128,6 +128,35 @@
         </div>
     </div>
 </div>
+
+<!-- Modal Container -->
+<div class="modal fade" id="interviewModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      <!-- This will be filled by AJAX -->
+    </div>
+  </div>
+</div>
+
+
+<!-- For View button file -->
+<style>
+  .dropdown-menu li a.dropdown-action-link {
+    display: block;
+    padding: 5px 15px;
+    font-size: 12px;
+    color: #333 !important;
+    background-color: #fff !important;
+    text-decoration: none;
+    border-radius: 3px;
+  }
+
+  .dropdown-menu li a.dropdown-action-link:hover {
+    background-color: #f5f5f5 !important;
+    color: #000 !important;
+  }
+</style>
+
 
 <!-- For Movetop function -->
 <style>
@@ -511,6 +540,30 @@
     }
   });
   
+</script>
+
+<!-- Define base_url before your JS -->
+<script>
+    const base_url = "<?= base_url(); ?>";
+</script>
+
+<script>
+function openInterviewSheetModal(is_no) {
+    const url = base_url + "Rpt/interview_sheet_info/" + is_no;
+
+    $.ajax({
+        url: url,
+        method: "GET",
+        success: function(response) {
+            $('#interviewModal .modal-content').html(response);
+            $('#interviewModal').modal('show');
+        },
+        error: function(xhr) {
+            alert('Failed to load interview sheet. Please try again.');
+            console.error("Error loading modal:", xhr.responseText);
+        }
+    });
+}
 </script>
 
 
