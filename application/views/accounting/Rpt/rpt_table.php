@@ -1,5 +1,5 @@
 
-<button id="mvTop" onclick="topFunction()" title="Go to top">↑ Top</button>
+<!-- <button id="mvTop" onclick="topFunction()" title="Go to top">↑ Top</button> -->
 
 <!--====================PAGE CONTENT====================-->
 <div class="right_col" role="main">
@@ -65,6 +65,7 @@
                             </div>
                         </div>
                     </div>
+
                     <!-- Modal code include from external file -->
                     <?php include 'createcrf_modal.php'; ?>
 
@@ -94,7 +95,19 @@
                                             <th style="text-align: center;">Action</th>
                                         </tr>
                                     </thead>
-                                    <tbody></tbody>
+                                    <tbody>
+                                    <!-- your data rows here -->
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="6" style="text-align: right; font-weight: bold; padding-right: 10px;"></td>
+                                            <td style="text-align: center;">
+                                                <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#createCrfModal">
+                                                    Create CRF
+                                                </button>
+                                            </td>
+                                        </tr>
+                                    </tfoot>
                                 </table>
                             </div>
                         </div>

@@ -343,11 +343,16 @@ class Rpt extends App_Controller{
 			$is_no = isset($ai->payment_is_no) ? $ai->payment_is_no : '';
 			$type = isset($ai->pr_type) ? $ai->pr_type : '';
 
-			$action = '<div style="text-align:center;">
+			
+			if (!empty($is_no)) {
+				$action = '<div style="text-align:center;">
 							<button data-toggle="modal" onclick="openInterviewSheetModal(\'' . htmlspecialchars($is_no, ENT_QUOTES) . '\')" class="btn btn-success btn-xs">
 								<span class="fa fa-eye"></span> View
 							</button>
-					</div>';
+						</div>';
+			} else {
+				// $action = '<div style="text-align:center;"><button class="btn btn-secondary btn-xs" disabled>No Data</button></div>';
+			}		
 
 			$data[] = [
 				htmlspecialchars($ai->is_no ?? '', ENT_QUOTES),
