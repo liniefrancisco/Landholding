@@ -89,12 +89,12 @@
     <div class="modal-content">
       <div class="modal-header bg-primary">
         <button type="button" class="close" id="dclose" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
-        <h5><i class="fa fa-edit"></i>Add CRF</h5>
+        <h5><i class="fa fa-edit"></i>Create CRF</h5>
       </div>
       <!-- ============BODY=========== -->
       <div class="modal-body" style="border-radius: 5px;">
         <div style="text-align: center;">
-          <img src="<?= base_url('assets/logo/AGC.jpg') ?>" alt="AGC Logo" style="width: 200px; height: 50px;">
+          <img src="<?= base_url('assets/logo/AGC.jpg') ?>" alt="AGC Logo" style="width: 180px; height: 50px;">
           <h5 style="font-family: 'Times New Roman', serif; margin: 5px 0;">ICM Northwing, Dampas Dist., Tagbilaran City</h5>
           <h5 style="font-family: 'Times New Roman', serif; margin: 3px 0; font-weight: bold;">CHEQUE REQUEST FORM</h5>  
         </div>

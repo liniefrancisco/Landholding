@@ -95,15 +95,14 @@
                                             <th style="text-align: center;">Action</th>
                                         </tr>
                                     </thead>
-                                    <tbody>
-                                    <!-- your data rows here -->
-                                    </tbody>
+                                    <tbody></tbody>
                                     <tfoot>
                                         <tr>
                                             <td colspan="6" style="text-align: right; font-weight: bold; padding-right: 10px;"></td>
                                             <td style="text-align: center;">
-                                                <button class="btn btn-warning btn-sm" data-toggle="modal" data-target="#createCrfModal">
-                                                    Create CRF
+                                                <button class="btn btn-danger btn-sm" id="createCrfBtn" data-toggle="modal" data-target="#createCrfModal" disabled
+                                                style="border-radius: 30px;">
+                                                <i class="fa fa-file"></i> Create CRF
                                                 </button>
                                             </td>
                                         </tr>
@@ -151,6 +150,20 @@
   </div>
 </div>
 
+
+<!-- For Create Crf hover button -->
+<style>
+    #createCrfBtn:hover:not([disabled]) {
+        background-color: #ff8c00 !important;
+        border-color: #e9ab17 !important;
+        color: #fff !important;
+    }
+
+    /* Optional: smooth transition effect */
+    #createCrfBtn {
+        transition: background-color 0.3s, border-color 0.3s;
+    }
+</style>
 
 <!-- For View button file -->
 <style>
@@ -266,6 +279,7 @@
 
    <!-- ==================END LOAD SPINNER AND STYLES================== -->
     
+   
 <script> //Loads region, province, and city options dynamically using AJAX and stores selected descriptions in hidden fields.
     function loadRegion() {
         $.ajax({
@@ -352,8 +366,17 @@
             const regionVal = $('#region').val();
             const provinceVal = $('#province').val();
             const townVal = $('#town').val();
+
             const enable = regionVal && provinceVal && townVal;
+
+            // Enable or disable Filter button
             $('#addCrfButton').prop('disabled', !enable);
+
+            // Clear DataTable and disable Create CRF button if incomplete
+            if (!enable) {
+                table.clear().draw();
+                $('#createCrfBtn').prop('disabled', true);
+            }
         }
 
         let table;
@@ -465,6 +488,9 @@
                 $('#town').html('<option value="">Select City/Municipality</option>');
                 $('#addCrfButton').prop('disabled', true);
                 table.clear().draw();
+
+                // Also disable Create CRF button
+                $('#createCrfBtn').prop('disabled', true);
             });
 
             $('#addCrfButton').on('mouseover click', function () {
@@ -514,6 +540,44 @@
                 }
             });
         }
+
+        // Disable Create CRF button initially
+        $('#createCrfBtn').prop('disabled', true);
+
+        // Enable Create CRF button only if dropdowns are selected and Filter was clicked
+        function updateCreateCrfButton() {
+            const regionVal   = $('#region').val();
+            const provinceVal = $('#province').val();
+            const townVal     = $('#town').val();
+            const isFiltered  = table.data().any(); // Check if DataTable has loaded data
+
+            const enableBtn = regionVal && provinceVal && townVal && isFiltered;
+
+            $('#createCrfBtn').prop('disabled', !enableBtn);
+        }
+
+        // Call this after dropdown change or filter click
+        $('#region, #province, #town').on('change', function () {
+            updateCreateCrfButton(); // Always check when dropdown changes
+        });
+
+        $('#addCrfButton').on('click', function () {
+            $('#tableLoader').fadeIn(200);
+            $('#Rptax_datatable').hide();
+
+            table.ajax.reload(function () {
+                $('#tableLoader').fadeOut(300);
+                $('#Rptax_datatable').fadeIn(300);
+
+                updateCreateCrfButton(); // Enable Create CRF button if filter has results
+            });
+        });
+
+        // Disable again on reset
+        $('#resetButton').on('click', function () {
+            $('#createCrfBtn').prop('disabled', true);
+        });
+
 
 </script>
 
