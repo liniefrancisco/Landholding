@@ -292,7 +292,7 @@
       if (centavos > 0) {
         words += ' and ' + convertNumberToWords(centavos) + ' centavo' + (centavos !== 1 ? 's' : '');
       }
-      amountWords.innerText = toTitleCase(words) + ' Only';
+      amountWords.innerText = toTitleCase(words) + ' only';
     } else {
       amountWords.innerText = '';
     }
