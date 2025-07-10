@@ -44977,3 +44977,3956 @@ DEBUG - 2025-07-10 16:06:49 --> Session class already loaded. Second attempt ign
 INFO - 2025-07-10 16:06:49 --> Helper loaded: security_helper
 INFO - 2025-07-10 16:06:49 --> Final output sent to browser
 DEBUG - 2025-07-10 16:06:49 --> Total execution time: 0.1180
+INFO - 2025-07-10 16:09:42 --> Config Class Initialized
+INFO - 2025-07-10 16:09:42 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:09:42 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:09:42 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:09:42 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:09:42 --> URI Class Initialized
+INFO - 2025-07-10 16:09:42 --> Router Class Initialized
+INFO - 2025-07-10 16:09:43 --> Output Class Initialized
+INFO - 2025-07-10 16:09:43 --> Security Class Initialized
+DEBUG - 2025-07-10 16:09:43 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:09:43 --> Input Class Initialized
+INFO - 2025-07-10 16:09:43 --> Language Class Initialized
+INFO - 2025-07-10 16:09:43 --> Loader Class Initialized
+INFO - 2025-07-10 16:09:43 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:09:43 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:09:43 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:09:43 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:09:43 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:09:43 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:09:43 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:09:43 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:09:43 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:09:43 --> Encryption Class Initialized
+INFO - 2025-07-10 16:09:43 --> Controller Class Initialized
+INFO - 2025-07-10 16:09:43 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:09:43 --> Model "Payment_model" initialized
+INFO - 2025-07-10 16:09:43 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:09:43 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:09:43 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:09:43 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:09:43 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:09:43 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:09:43 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:09:43 --> File loaded: C:\laragon\www\Landholding\application\views\templates/header.php
+INFO - 2025-07-10 16:09:44 --> File loaded: C:\laragon\www\Landholding\application\views\templates/bar.php
+INFO - 2025-07-10 16:09:44 --> File loaded: C:\laragon\www\Landholding\application\views\legal/Rpt/rpt_table.php
+INFO - 2025-07-10 16:09:44 --> File loaded: C:\laragon\www\Landholding\application\views\templates/footer.php
+INFO - 2025-07-10 16:09:44 --> Final output sent to browser
+DEBUG - 2025-07-10 16:09:44 --> Total execution time: 1.7494
+INFO - 2025-07-10 16:09:44 --> Config Class Initialized
+INFO - 2025-07-10 16:09:44 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:09:44 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:09:44 --> Config Class Initialized
+INFO - 2025-07-10 16:09:44 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:09:44 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:09:44 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:09:44 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:09:44 --> Config Class Initialized
+INFO - 2025-07-10 16:09:44 --> Hooks Class Initialized
+INFO - 2025-07-10 16:09:44 --> URI Class Initialized
+DEBUG - 2025-07-10 16:09:44 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:09:44 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:09:44 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:09:44 --> Router Class Initialized
+INFO - 2025-07-10 16:09:44 --> URI Class Initialized
+INFO - 2025-07-10 16:09:44 --> Output Class Initialized
+DEBUG - 2025-07-10 16:09:44 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:09:44 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:09:44 --> Router Class Initialized
+INFO - 2025-07-10 16:09:44 --> Security Class Initialized
+INFO - 2025-07-10 16:09:44 --> URI Class Initialized
+INFO - 2025-07-10 16:09:44 --> Output Class Initialized
+DEBUG - 2025-07-10 16:09:44 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:09:44 --> Input Class Initialized
+INFO - 2025-07-10 16:09:44 --> Language Class Initialized
+INFO - 2025-07-10 16:09:44 --> Security Class Initialized
+INFO - 2025-07-10 16:09:44 --> Router Class Initialized
+INFO - 2025-07-10 16:09:44 --> Config Class Initialized
+DEBUG - 2025-07-10 16:09:44 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:09:44 --> Hooks Class Initialized
+INFO - 2025-07-10 16:09:44 --> Input Class Initialized
+INFO - 2025-07-10 16:09:44 --> Output Class Initialized
+DEBUG - 2025-07-10 16:09:44 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:09:44 --> Language Class Initialized
+INFO - 2025-07-10 16:09:44 --> Security Class Initialized
+DEBUG - 2025-07-10 16:09:44 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2025-07-10 16:09:44 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:09:44 --> Input Class Initialized
+INFO - 2025-07-10 16:09:44 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:09:44 --> Language Class Initialized
+INFO - 2025-07-10 16:09:44 --> URI Class Initialized
+INFO - 2025-07-10 16:09:44 --> Loader Class Initialized
+INFO - 2025-07-10 16:09:44 --> Router Class Initialized
+INFO - 2025-07-10 16:09:44 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:09:44 --> Loader Class Initialized
+INFO - 2025-07-10 16:09:44 --> Output Class Initialized
+INFO - 2025-07-10 16:09:44 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:09:44 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:09:44 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:09:44 --> Security Class Initialized
+INFO - 2025-07-10 16:09:44 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:09:44 --> Helper loaded: number_helper
+DEBUG - 2025-07-10 16:09:44 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:09:44 --> Input Class Initialized
+INFO - 2025-07-10 16:09:44 --> Language Class Initialized
+INFO - 2025-07-10 16:09:44 --> Config Class Initialized
+INFO - 2025-07-10 16:09:44 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:09:44 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:09:44 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:09:44 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:09:44 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:09:44 --> URI Class Initialized
+INFO - 2025-07-10 16:09:44 --> Router Class Initialized
+DEBUG - 2025-07-10 16:09:44 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:09:44 --> Session: Class initialized using 'files' driver.
+INFO - 2025-07-10 16:09:44 --> Output Class Initialized
+DEBUG - 2025-07-10 16:09:44 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+INFO - 2025-07-10 16:09:44 --> Security Class Initialized
+DEBUG - 2025-07-10 16:09:44 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:09:44 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:09:44 --> Encryption Class Initialized
+DEBUG - 2025-07-10 16:09:44 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:09:44 --> Controller Class Initialized
+INFO - 2025-07-10 16:09:44 --> Input Class Initialized
+INFO - 2025-07-10 16:09:44 --> Language Class Initialized
+INFO - 2025-07-10 16:09:44 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:09:44 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:09:44 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:09:44 --> Loader Class Initialized
+INFO - 2025-07-10 16:09:44 --> File loaded: C:\laragon\www\Landholding\application\views\notification/ajax_notification_page.php
+INFO - 2025-07-10 16:09:44 --> Final output sent to browser
+INFO - 2025-07-10 16:09:44 --> Helper loaded: url_helper
+DEBUG - 2025-07-10 16:09:44 --> Total execution time: 0.0712
+INFO - 2025-07-10 16:09:44 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:09:44 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:09:44 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:09:44 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:09:44 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:09:44 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:09:44 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:09:44 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:09:44 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:09:44 --> Encryption Class Initialized
+INFO - 2025-07-10 16:09:44 --> Controller Class Initialized
+INFO - 2025-07-10 16:09:44 --> Model "Account_model" initialized
+INFO - 2025-07-10 16:09:44 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:09:44 --> Model "Notification_bar_model" initialized
+DEBUG - 2025-07-10 16:09:44 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:09:44 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:09:44 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:09:44 --> Loader Class Initialized
+INFO - 2025-07-10 16:09:44 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:09:44 --> Loader Class Initialized
+INFO - 2025-07-10 16:09:44 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:09:44 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:09:44 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:09:44 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:09:44 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:09:44 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:09:44 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:09:44 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2025-07-10 16:09:44 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:09:44 --> User Agent Class Initialized
+INFO - 2025-07-10 16:09:44 --> Final output sent to browser
+DEBUG - 2025-07-10 16:09:44 --> Total execution time: 0.1730
+INFO - 2025-07-10 16:09:44 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:09:44 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:09:44 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:09:44 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:09:44 --> Encryption Class Initialized
+INFO - 2025-07-10 16:09:44 --> Controller Class Initialized
+INFO - 2025-07-10 16:09:44 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:09:44 --> Model "Payment_model" initialized
+INFO - 2025-07-10 16:09:44 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:09:44 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:09:44 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:09:44 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:09:44 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:09:44 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:09:44 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:09:44 --> Final output sent to browser
+DEBUG - 2025-07-10 16:09:44 --> Total execution time: 0.1632
+INFO - 2025-07-10 16:09:44 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:09:44 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:09:44 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:09:44 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:09:44 --> Encryption Class Initialized
+INFO - 2025-07-10 16:09:44 --> Controller Class Initialized
+INFO - 2025-07-10 16:09:44 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:09:44 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:09:44 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:09:44 --> Final output sent to browser
+DEBUG - 2025-07-10 16:09:44 --> Total execution time: 0.2336
+INFO - 2025-07-10 16:09:44 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:09:44 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:09:44 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:09:44 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:09:44 --> Encryption Class Initialized
+INFO - 2025-07-10 16:09:44 --> Controller Class Initialized
+INFO - 2025-07-10 16:09:44 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:09:44 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:09:44 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:09:44 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:09:44 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:09:44 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:09:44 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:09:44 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:09:44 --> Final output sent to browser
+DEBUG - 2025-07-10 16:09:44 --> Total execution time: 0.2287
+INFO - 2025-07-10 16:09:50 --> Config Class Initialized
+INFO - 2025-07-10 16:09:50 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:09:50 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:09:50 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:09:50 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:09:50 --> URI Class Initialized
+INFO - 2025-07-10 16:09:50 --> Router Class Initialized
+INFO - 2025-07-10 16:09:50 --> Output Class Initialized
+INFO - 2025-07-10 16:09:50 --> Security Class Initialized
+DEBUG - 2025-07-10 16:09:50 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:09:50 --> Input Class Initialized
+INFO - 2025-07-10 16:09:50 --> Language Class Initialized
+INFO - 2025-07-10 16:09:50 --> Loader Class Initialized
+INFO - 2025-07-10 16:09:50 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:09:50 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:09:50 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:09:50 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:09:50 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:09:50 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:09:50 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:09:50 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:09:50 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:09:50 --> Encryption Class Initialized
+INFO - 2025-07-10 16:09:50 --> Controller Class Initialized
+INFO - 2025-07-10 16:09:50 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:09:50 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:09:50 --> Model "Payment_model" initialized
+INFO - 2025-07-10 16:09:50 --> Model "LandProfile_model" initialized
+INFO - 2025-07-10 16:09:50 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:09:50 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:09:50 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:09:50 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:09:50 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:09:50 --> File loaded: C:\laragon\www\Landholding\application\views\templates/header.php
+INFO - 2025-07-10 16:09:50 --> File loaded: C:\laragon\www\Landholding\application\views\templates/bar.php
+INFO - 2025-07-10 16:09:50 --> File loaded: C:\laragon\www\Landholding\application\views\legal/LandProfile/table.php
+INFO - 2025-07-10 16:09:50 --> File loaded: C:\laragon\www\Landholding\application\views\templates/footer.php
+INFO - 2025-07-10 16:09:50 --> Final output sent to browser
+DEBUG - 2025-07-10 16:09:50 --> Total execution time: 0.1483
+INFO - 2025-07-10 16:09:51 --> Config Class Initialized
+INFO - 2025-07-10 16:09:51 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:09:51 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:09:51 --> Config Class Initialized
+INFO - 2025-07-10 16:09:51 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:09:51 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:09:51 --> Utf8 Class Initialized
+DEBUG - 2025-07-10 16:09:51 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:09:51 --> URI Class Initialized
+INFO - 2025-07-10 16:09:51 --> Router Class Initialized
+DEBUG - 2025-07-10 16:09:51 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:09:51 --> Output Class Initialized
+INFO - 2025-07-10 16:09:51 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:09:51 --> URI Class Initialized
+INFO - 2025-07-10 16:09:51 --> Router Class Initialized
+INFO - 2025-07-10 16:09:51 --> Security Class Initialized
+DEBUG - 2025-07-10 16:09:51 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:09:51 --> Output Class Initialized
+INFO - 2025-07-10 16:09:51 --> Input Class Initialized
+INFO - 2025-07-10 16:09:51 --> Language Class Initialized
+INFO - 2025-07-10 16:09:51 --> Security Class Initialized
+DEBUG - 2025-07-10 16:09:51 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:09:51 --> Input Class Initialized
+INFO - 2025-07-10 16:09:51 --> Loader Class Initialized
+INFO - 2025-07-10 16:09:51 --> Language Class Initialized
+INFO - 2025-07-10 16:09:51 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:09:51 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:09:51 --> Loader Class Initialized
+INFO - 2025-07-10 16:09:51 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:09:51 --> Config Class Initialized
+INFO - 2025-07-10 16:09:51 --> Hooks Class Initialized
+INFO - 2025-07-10 16:09:51 --> Helper loaded: url_helper
+DEBUG - 2025-07-10 16:09:51 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:09:51 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:09:51 --> Helper loaded: number_helper
+DEBUG - 2025-07-10 16:09:51 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:09:51 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:09:51 --> URI Class Initialized
+INFO - 2025-07-10 16:09:51 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:09:51 --> Router Class Initialized
+INFO - 2025-07-10 16:09:51 --> Output Class Initialized
+INFO - 2025-07-10 16:09:51 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:09:51 --> Security Class Initialized
+DEBUG - 2025-07-10 16:09:51 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2025-07-10 16:09:51 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:09:51 --> Input Class Initialized
+INFO - 2025-07-10 16:09:51 --> Language Class Initialized
+DEBUG - 2025-07-10 16:09:51 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:09:51 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:09:51 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+INFO - 2025-07-10 16:09:51 --> Config Class Initialized
+INFO - 2025-07-10 16:09:51 --> Hooks Class Initialized
+INFO - 2025-07-10 16:09:51 --> Loader Class Initialized
+DEBUG - 2025-07-10 16:09:51 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:09:51 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:09:51 --> Encryption Class Initialized
+DEBUG - 2025-07-10 16:09:51 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:09:51 --> Controller Class Initialized
+INFO - 2025-07-10 16:09:51 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:09:51 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:09:51 --> Helper loaded: form_helper
+DEBUG - 2025-07-10 16:09:51 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:09:51 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:09:51 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:09:51 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:09:51 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:09:51 --> URI Class Initialized
+INFO - 2025-07-10 16:09:51 --> Final output sent to browser
+DEBUG - 2025-07-10 16:09:51 --> Total execution time: 0.0687
+INFO - 2025-07-10 16:09:51 --> Router Class Initialized
+INFO - 2025-07-10 16:09:51 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:09:51 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:09:51 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:09:51 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:09:51 --> Encryption Class Initialized
+INFO - 2025-07-10 16:09:51 --> Controller Class Initialized
+INFO - 2025-07-10 16:09:51 --> Output Class Initialized
+INFO - 2025-07-10 16:09:51 --> Model "Account_model" initialized
+INFO - 2025-07-10 16:09:51 --> Security Class Initialized
+INFO - 2025-07-10 16:09:51 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:09:51 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:09:51 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:09:51 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:09:51 --> Form Validation Class Initialized
+INFO - 2025-07-10 16:09:51 --> Input Class Initialized
+DEBUG - 2025-07-10 16:09:51 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:09:51 --> User Agent Class Initialized
+DEBUG - 2025-07-10 16:09:51 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:09:51 --> Language Class Initialized
+INFO - 2025-07-10 16:09:51 --> Final output sent to browser
+DEBUG - 2025-07-10 16:09:51 --> Total execution time: 0.0853
+INFO - 2025-07-10 16:09:51 --> Session: Class initialized using 'files' driver.
+INFO - 2025-07-10 16:09:51 --> Loader Class Initialized
+DEBUG - 2025-07-10 16:09:51 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+INFO - 2025-07-10 16:09:51 --> Helper loaded: url_helper
+DEBUG - 2025-07-10 16:09:51 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:09:51 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:09:51 --> Encryption Class Initialized
+INFO - 2025-07-10 16:09:51 --> Controller Class Initialized
+INFO - 2025-07-10 16:09:51 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:09:51 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:09:51 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:09:51 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:09:51 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:09:51 --> File loaded: C:\laragon\www\Landholding\application\views\notification/ajax_notification_page.php
+INFO - 2025-07-10 16:09:51 --> Final output sent to browser
+DEBUG - 2025-07-10 16:09:51 --> Total execution time: 0.0751
+INFO - 2025-07-10 16:09:51 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:09:51 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:09:51 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:09:51 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:09:51 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:09:51 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:09:51 --> Encryption Class Initialized
+INFO - 2025-07-10 16:09:51 --> Controller Class Initialized
+INFO - 2025-07-10 16:09:51 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:09:51 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:09:51 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:09:51 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:09:51 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:09:51 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:09:51 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:09:51 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:09:51 --> Final output sent to browser
+DEBUG - 2025-07-10 16:09:51 --> Total execution time: 0.1301
+INFO - 2025-07-10 16:09:52 --> Config Class Initialized
+INFO - 2025-07-10 16:09:52 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:09:52 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:09:52 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:09:52 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:09:52 --> URI Class Initialized
+INFO - 2025-07-10 16:09:52 --> Router Class Initialized
+INFO - 2025-07-10 16:09:52 --> Output Class Initialized
+INFO - 2025-07-10 16:09:52 --> Security Class Initialized
+DEBUG - 2025-07-10 16:09:52 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:09:52 --> Input Class Initialized
+INFO - 2025-07-10 16:09:52 --> Language Class Initialized
+INFO - 2025-07-10 16:09:52 --> Loader Class Initialized
+INFO - 2025-07-10 16:09:52 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:09:52 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:09:52 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:09:52 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:09:52 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:09:52 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:09:52 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:09:52 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:09:52 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:09:52 --> Encryption Class Initialized
+INFO - 2025-07-10 16:09:52 --> Controller Class Initialized
+INFO - 2025-07-10 16:09:52 --> Model "Report_model" initialized
+INFO - 2025-07-10 16:09:52 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:09:52 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:09:52 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:09:52 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:09:52 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:09:52 --> File loaded: C:\laragon\www\Landholding\application\views\templates/header.php
+INFO - 2025-07-10 16:09:52 --> File loaded: C:\laragon\www\Landholding\application\views\templates/bar.php
+INFO - 2025-07-10 16:09:52 --> File loaded: C:\laragon\www\Landholding\application\views\legal/Report/report.php
+INFO - 2025-07-10 16:09:52 --> File loaded: C:\laragon\www\Landholding\application\views\templates/footer.php
+INFO - 2025-07-10 16:09:52 --> Final output sent to browser
+DEBUG - 2025-07-10 16:09:52 --> Total execution time: 0.2441
+INFO - 2025-07-10 16:09:52 --> Config Class Initialized
+INFO - 2025-07-10 16:09:52 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:09:52 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:09:52 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:09:52 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:09:52 --> URI Class Initialized
+INFO - 2025-07-10 16:09:52 --> Router Class Initialized
+INFO - 2025-07-10 16:09:52 --> Output Class Initialized
+INFO - 2025-07-10 16:09:52 --> Security Class Initialized
+INFO - 2025-07-10 16:09:52 --> Config Class Initialized
+DEBUG - 2025-07-10 16:09:52 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:09:52 --> Hooks Class Initialized
+INFO - 2025-07-10 16:09:52 --> Input Class Initialized
+DEBUG - 2025-07-10 16:09:52 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:09:52 --> Language Class Initialized
+INFO - 2025-07-10 16:09:52 --> Loader Class Initialized
+INFO - 2025-07-10 16:09:52 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:09:52 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:09:52 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:09:52 --> Config Class Initialized
+INFO - 2025-07-10 16:09:52 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:09:52 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:09:52 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:09:52 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:09:52 --> URI Class Initialized
+INFO - 2025-07-10 16:09:52 --> Config Class Initialized
+INFO - 2025-07-10 16:09:52 --> Hooks Class Initialized
+INFO - 2025-07-10 16:09:52 --> Router Class Initialized
+INFO - 2025-07-10 16:09:52 --> Output Class Initialized
+INFO - 2025-07-10 16:09:52 --> Security Class Initialized
+INFO - 2025-07-10 16:09:52 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:09:52 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2025-07-10 16:09:52 --> UTF-8 Support Enabled
+DEBUG - 2025-07-10 16:09:52 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:09:52 --> Input Class Initialized
+INFO - 2025-07-10 16:09:52 --> Language Class Initialized
+DEBUG - 2025-07-10 16:09:52 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:09:52 --> Loader Class Initialized
+DEBUG - 2025-07-10 16:09:52 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:09:52 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:09:52 --> Session: Class initialized using 'files' driver.
+INFO - 2025-07-10 16:09:52 --> URI Class Initialized
+INFO - 2025-07-10 16:09:52 --> Helper loaded: url_helper
+DEBUG - 2025-07-10 16:09:52 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+INFO - 2025-07-10 16:09:52 --> Router Class Initialized
+INFO - 2025-07-10 16:09:52 --> Helper loaded: form_helper
+DEBUG - 2025-07-10 16:09:52 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:09:52 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:09:52 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:09:52 --> Encryption Class Initialized
+INFO - 2025-07-10 16:09:52 --> Controller Class Initialized
+INFO - 2025-07-10 16:09:52 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:09:52 --> URI Class Initialized
+INFO - 2025-07-10 16:09:52 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:09:52 --> Router Class Initialized
+INFO - 2025-07-10 16:09:52 --> Output Class Initialized
+INFO - 2025-07-10 16:09:52 --> Security Class Initialized
+INFO - 2025-07-10 16:09:52 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:09:52 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:09:52 --> Output Class Initialized
+INFO - 2025-07-10 16:09:52 --> Input Class Initialized
+INFO - 2025-07-10 16:09:52 --> Language Class Initialized
+INFO - 2025-07-10 16:09:52 --> Security Class Initialized
+DEBUG - 2025-07-10 16:09:52 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:09:52 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:09:52 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:09:52 --> Input Class Initialized
+INFO - 2025-07-10 16:09:52 --> Language Class Initialized
+INFO - 2025-07-10 16:09:52 --> Final output sent to browser
+DEBUG - 2025-07-10 16:09:52 --> Total execution time: 0.0789
+DEBUG - 2025-07-10 16:09:52 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:09:52 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:09:52 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+INFO - 2025-07-10 16:09:52 --> Loader Class Initialized
+INFO - 2025-07-10 16:09:52 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:09:52 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:09:52 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:09:52 --> Loader Class Initialized
+INFO - 2025-07-10 16:09:52 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:09:52 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:09:52 --> Helper loaded: number_helper
+DEBUG - 2025-07-10 16:09:52 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:09:52 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:09:52 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:09:52 --> Encryption Class Initialized
+INFO - 2025-07-10 16:09:52 --> Controller Class Initialized
+INFO - 2025-07-10 16:09:52 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:09:52 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:09:52 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2025-07-10 16:09:52 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:09:52 --> File loaded: C:\laragon\www\Landholding\application\views\notification/ajax_notification_page.php
+INFO - 2025-07-10 16:09:52 --> Final output sent to browser
+DEBUG - 2025-07-10 16:09:52 --> Total execution time: 0.0761
+INFO - 2025-07-10 16:09:52 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:09:52 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:09:52 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:09:52 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:09:52 --> Encryption Class Initialized
+INFO - 2025-07-10 16:09:52 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:09:52 --> Controller Class Initialized
+INFO - 2025-07-10 16:09:52 --> Model "Account_model" initialized
+INFO - 2025-07-10 16:09:52 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:09:52 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:09:52 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:09:52 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2025-07-10 16:09:52 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:09:52 --> User Agent Class Initialized
+INFO - 2025-07-10 16:09:52 --> Final output sent to browser
+DEBUG - 2025-07-10 16:09:52 --> Total execution time: 0.1296
+INFO - 2025-07-10 16:09:52 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:09:52 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:09:52 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:09:52 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:09:52 --> Encryption Class Initialized
+INFO - 2025-07-10 16:09:52 --> Controller Class Initialized
+INFO - 2025-07-10 16:09:52 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:09:52 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:09:52 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:09:52 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:09:52 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:09:52 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:09:52 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:09:52 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:09:52 --> Final output sent to browser
+DEBUG - 2025-07-10 16:09:52 --> Total execution time: 0.1149
+INFO - 2025-07-10 16:09:54 --> Config Class Initialized
+INFO - 2025-07-10 16:09:54 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:09:54 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:09:54 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:09:54 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:09:54 --> URI Class Initialized
+INFO - 2025-07-10 16:09:54 --> Router Class Initialized
+INFO - 2025-07-10 16:09:54 --> Output Class Initialized
+INFO - 2025-07-10 16:09:54 --> Security Class Initialized
+DEBUG - 2025-07-10 16:09:54 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:09:54 --> Input Class Initialized
+INFO - 2025-07-10 16:09:54 --> Language Class Initialized
+INFO - 2025-07-10 16:09:54 --> Loader Class Initialized
+INFO - 2025-07-10 16:09:54 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:09:54 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:09:54 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:09:54 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:09:54 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:09:54 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:09:54 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:09:54 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:09:54 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:09:54 --> Encryption Class Initialized
+INFO - 2025-07-10 16:09:54 --> Controller Class Initialized
+INFO - 2025-07-10 16:09:54 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:09:54 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:09:54 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:09:54 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:09:54 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:09:54 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:09:54 --> File loaded: C:\laragon\www\Landholding\application\views\templates/header.php
+INFO - 2025-07-10 16:09:54 --> File loaded: C:\laragon\www\Landholding\application\views\templates/bar.php
+INFO - 2025-07-10 16:09:54 --> File loaded: C:\laragon\www\Landholding\application\views\secretary/Owned/owned_land.php
+INFO - 2025-07-10 16:09:54 --> File loaded: C:\laragon\www\Landholding\application\views\templates/footer.php
+INFO - 2025-07-10 16:09:54 --> Final output sent to browser
+DEBUG - 2025-07-10 16:09:54 --> Total execution time: 0.1001
+INFO - 2025-07-10 16:09:54 --> Config Class Initialized
+INFO - 2025-07-10 16:09:54 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:09:54 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:09:54 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:09:54 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:09:54 --> URI Class Initialized
+INFO - 2025-07-10 16:09:54 --> Router Class Initialized
+INFO - 2025-07-10 16:09:54 --> Config Class Initialized
+INFO - 2025-07-10 16:09:54 --> Output Class Initialized
+INFO - 2025-07-10 16:09:54 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:09:54 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:09:54 --> Security Class Initialized
+DEBUG - 2025-07-10 16:09:54 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:09:54 --> Input Class Initialized
+DEBUG - 2025-07-10 16:09:54 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:09:54 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:09:54 --> Language Class Initialized
+INFO - 2025-07-10 16:09:54 --> URI Class Initialized
+INFO - 2025-07-10 16:09:54 --> Router Class Initialized
+INFO - 2025-07-10 16:09:54 --> Loader Class Initialized
+INFO - 2025-07-10 16:09:54 --> Output Class Initialized
+INFO - 2025-07-10 16:09:54 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:09:54 --> Security Class Initialized
+INFO - 2025-07-10 16:09:54 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:09:54 --> Helper loaded: number_helper
+DEBUG - 2025-07-10 16:09:54 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:09:54 --> Input Class Initialized
+INFO - 2025-07-10 16:09:54 --> Language Class Initialized
+INFO - 2025-07-10 16:09:54 --> Config Class Initialized
+INFO - 2025-07-10 16:09:54 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:09:54 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:09:54 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:09:54 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:09:54 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:09:54 --> URI Class Initialized
+DEBUG - 2025-07-10 16:09:54 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:09:54 --> Config Class Initialized
+INFO - 2025-07-10 16:09:54 --> Session: Class initialized using 'files' driver.
+INFO - 2025-07-10 16:09:54 --> Hooks Class Initialized
+INFO - 2025-07-10 16:09:54 --> Router Class Initialized
+DEBUG - 2025-07-10 16:09:54 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:09:54 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:09:54 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:09:54 --> Output Class Initialized
+INFO - 2025-07-10 16:09:54 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:09:54 --> Encryption Class Initialized
+INFO - 2025-07-10 16:09:54 --> Controller Class Initialized
+INFO - 2025-07-10 16:09:54 --> Security Class Initialized
+DEBUG - 2025-07-10 16:09:54 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:09:54 --> Utf8 Class Initialized
+DEBUG - 2025-07-10 16:09:54 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:09:54 --> Input Class Initialized
+INFO - 2025-07-10 16:09:54 --> URI Class Initialized
+INFO - 2025-07-10 16:09:54 --> Language Class Initialized
+INFO - 2025-07-10 16:09:54 --> Router Class Initialized
+INFO - 2025-07-10 16:09:54 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:09:54 --> Output Class Initialized
+INFO - 2025-07-10 16:09:54 --> Loader Class Initialized
+INFO - 2025-07-10 16:09:54 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:09:54 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:09:54 --> Security Class Initialized
+INFO - 2025-07-10 16:09:54 --> Helper loaded: url_helper
+DEBUG - 2025-07-10 16:09:54 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:09:54 --> Form Validation Class Initialized
+INFO - 2025-07-10 16:09:54 --> Input Class Initialized
+INFO - 2025-07-10 16:09:54 --> Helper loaded: form_helper
+DEBUG - 2025-07-10 16:09:54 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:09:54 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:09:54 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:09:54 --> Loader Class Initialized
+INFO - 2025-07-10 16:09:54 --> Final output sent to browser
+INFO - 2025-07-10 16:09:54 --> Config Class Initialized
+DEBUG - 2025-07-10 16:09:54 --> Total execution time: 0.0841
+INFO - 2025-07-10 16:09:54 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:09:54 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:09:54 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:09:54 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:09:54 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:09:54 --> URI Class Initialized
+INFO - 2025-07-10 16:09:54 --> Router Class Initialized
+INFO - 2025-07-10 16:09:54 --> Output Class Initialized
+INFO - 2025-07-10 16:09:54 --> Security Class Initialized
+DEBUG - 2025-07-10 16:09:54 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:09:54 --> Input Class Initialized
+INFO - 2025-07-10 16:09:54 --> Language Class Initialized
+INFO - 2025-07-10 16:09:54 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:09:54 --> Loader Class Initialized
+INFO - 2025-07-10 16:09:54 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:09:54 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:09:54 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:09:54 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:09:54 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:09:54 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:09:54 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:09:54 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:09:54 --> Language Class Initialized
+DEBUG - 2025-07-10 16:09:54 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:09:54 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:09:54 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+INFO - 2025-07-10 16:09:54 --> Loader Class Initialized
+DEBUG - 2025-07-10 16:09:54 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:09:54 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:09:54 --> Encryption Class Initialized
+DEBUG - 2025-07-10 16:09:54 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:09:54 --> Controller Class Initialized
+INFO - 2025-07-10 16:09:54 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:09:54 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:09:54 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:09:54 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:09:54 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:09:54 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:09:54 --> File loaded: C:\laragon\www\Landholding\application\views\notification/ajax_notification_page.php
+INFO - 2025-07-10 16:09:54 --> Final output sent to browser
+DEBUG - 2025-07-10 16:09:54 --> Total execution time: 0.1139
+INFO - 2025-07-10 16:09:54 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:09:54 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:09:54 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:09:54 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:09:54 --> Encryption Class Initialized
+INFO - 2025-07-10 16:09:54 --> Controller Class Initialized
+INFO - 2025-07-10 16:09:54 --> Model "Account_model" initialized
+INFO - 2025-07-10 16:09:54 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:09:54 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:09:54 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:09:54 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:09:54 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:09:54 --> User Agent Class Initialized
+INFO - 2025-07-10 16:09:54 --> Final output sent to browser
+DEBUG - 2025-07-10 16:09:54 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2025-07-10 16:09:54 --> Total execution time: 0.1283
+INFO - 2025-07-10 16:09:54 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:09:54 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:09:54 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:09:54 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:09:54 --> Encryption Class Initialized
+INFO - 2025-07-10 16:09:54 --> Controller Class Initialized
+INFO - 2025-07-10 16:09:54 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:09:54 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:09:54 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:09:54 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:09:54 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:09:54 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:09:54 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:09:54 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:09:54 --> Final output sent to browser
+DEBUG - 2025-07-10 16:09:54 --> Total execution time: 0.1786
+INFO - 2025-07-10 16:09:54 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:09:54 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:09:54 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:09:54 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:09:54 --> Encryption Class Initialized
+INFO - 2025-07-10 16:09:54 --> Controller Class Initialized
+INFO - 2025-07-10 16:09:54 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:09:54 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:09:54 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:09:54 --> Final output sent to browser
+DEBUG - 2025-07-10 16:09:54 --> Total execution time: 0.1624
+INFO - 2025-07-10 16:09:56 --> Config Class Initialized
+INFO - 2025-07-10 16:09:56 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:09:56 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:09:56 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:09:56 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:09:56 --> URI Class Initialized
+INFO - 2025-07-10 16:09:56 --> Router Class Initialized
+INFO - 2025-07-10 16:09:56 --> Output Class Initialized
+INFO - 2025-07-10 16:09:56 --> Security Class Initialized
+DEBUG - 2025-07-10 16:09:56 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:09:56 --> Input Class Initialized
+INFO - 2025-07-10 16:09:56 --> Language Class Initialized
+INFO - 2025-07-10 16:09:56 --> Loader Class Initialized
+INFO - 2025-07-10 16:09:56 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:09:56 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:09:56 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:09:56 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:09:56 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:09:56 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:09:56 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:09:56 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:09:56 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:09:56 --> Encryption Class Initialized
+INFO - 2025-07-10 16:09:56 --> Controller Class Initialized
+INFO - 2025-07-10 16:09:56 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:09:56 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:09:56 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:09:56 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:09:56 --> File loaded: C:\laragon\www\Landholding\application\views\templates/header.php
+INFO - 2025-07-10 16:09:56 --> File loaded: C:\laragon\www\Landholding\application\views\templates/bar.php
+INFO - 2025-07-10 16:09:56 --> File loaded: C:\laragon\www\Landholding\application\views\templates/about_us.php
+INFO - 2025-07-10 16:09:56 --> File loaded: C:\laragon\www\Landholding\application\views\templates/footer.php
+INFO - 2025-07-10 16:09:56 --> Final output sent to browser
+DEBUG - 2025-07-10 16:09:56 --> Total execution time: 0.0868
+INFO - 2025-07-10 16:09:56 --> Config Class Initialized
+INFO - 2025-07-10 16:09:56 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:09:56 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:09:56 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:09:56 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:09:56 --> Config Class Initialized
+INFO - 2025-07-10 16:09:56 --> Config Class Initialized
+INFO - 2025-07-10 16:09:56 --> Config Class Initialized
+INFO - 2025-07-10 16:09:56 --> Hooks Class Initialized
+INFO - 2025-07-10 16:09:56 --> Hooks Class Initialized
+INFO - 2025-07-10 16:09:56 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:09:56 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:09:56 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:09:56 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:09:56 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:09:56 --> Utf8 Class Initialized
+DEBUG - 2025-07-10 16:09:56 --> UTF-8 Support Enabled
+DEBUG - 2025-07-10 16:09:56 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:09:56 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:09:56 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:09:56 --> URI Class Initialized
+INFO - 2025-07-10 16:09:56 --> URI Class Initialized
+INFO - 2025-07-10 16:09:56 --> URI Class Initialized
+INFO - 2025-07-10 16:09:56 --> Router Class Initialized
+INFO - 2025-07-10 16:09:56 --> Router Class Initialized
+INFO - 2025-07-10 16:09:56 --> Output Class Initialized
+INFO - 2025-07-10 16:09:56 --> Router Class Initialized
+INFO - 2025-07-10 16:09:56 --> Output Class Initialized
+INFO - 2025-07-10 16:09:56 --> Security Class Initialized
+INFO - 2025-07-10 16:09:56 --> Output Class Initialized
+INFO - 2025-07-10 16:09:56 --> Security Class Initialized
+DEBUG - 2025-07-10 16:09:56 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:09:56 --> Security Class Initialized
+DEBUG - 2025-07-10 16:09:56 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:09:56 --> Input Class Initialized
+DEBUG - 2025-07-10 16:09:56 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:09:56 --> Language Class Initialized
+INFO - 2025-07-10 16:09:56 --> Input Class Initialized
+INFO - 2025-07-10 16:09:56 --> Language Class Initialized
+INFO - 2025-07-10 16:09:56 --> Loader Class Initialized
+INFO - 2025-07-10 16:09:56 --> URI Class Initialized
+INFO - 2025-07-10 16:09:56 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:09:56 --> Loader Class Initialized
+INFO - 2025-07-10 16:09:56 --> Input Class Initialized
+INFO - 2025-07-10 16:09:56 --> Router Class Initialized
+INFO - 2025-07-10 16:09:56 --> Language Class Initialized
+INFO - 2025-07-10 16:09:56 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:09:56 --> Output Class Initialized
+INFO - 2025-07-10 16:09:56 --> Loader Class Initialized
+INFO - 2025-07-10 16:09:56 --> Security Class Initialized
+INFO - 2025-07-10 16:09:56 --> Helper loaded: form_helper
+DEBUG - 2025-07-10 16:09:56 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:09:56 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:09:56 --> Input Class Initialized
+INFO - 2025-07-10 16:09:56 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:09:56 --> Language Class Initialized
+INFO - 2025-07-10 16:09:56 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:09:56 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:09:56 --> Loader Class Initialized
+INFO - 2025-07-10 16:09:56 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:09:56 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:09:56 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:09:56 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:09:56 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:09:56 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:09:56 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:09:56 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:09:56 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:09:56 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+DEBUG - 2025-07-10 16:09:56 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:09:56 --> Encryption Class Initialized
+INFO - 2025-07-10 16:09:56 --> Controller Class Initialized
+INFO - 2025-07-10 16:09:56 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:09:56 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:09:56 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:09:56 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:09:56 --> Final output sent to browser
+DEBUG - 2025-07-10 16:09:56 --> Total execution time: 0.0763
+INFO - 2025-07-10 16:09:56 --> Session: Class initialized using 'files' driver.
+INFO - 2025-07-10 16:09:56 --> Helper loaded: number_helper
+DEBUG - 2025-07-10 16:09:56 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:09:56 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:09:56 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:09:56 --> Encryption Class Initialized
+INFO - 2025-07-10 16:09:56 --> Controller Class Initialized
+INFO - 2025-07-10 16:09:56 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:09:56 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:09:56 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:09:56 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:09:56 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:09:56 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:09:56 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:09:56 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:09:56 --> Final output sent to browser
+DEBUG - 2025-07-10 16:09:56 --> Total execution time: 0.1194
+INFO - 2025-07-10 16:09:56 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:09:56 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:09:56 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:09:56 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:09:56 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:09:56 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:09:56 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:09:56 --> Encryption Class Initialized
+INFO - 2025-07-10 16:09:56 --> Controller Class Initialized
+INFO - 2025-07-10 16:09:56 --> Model "Account_model" initialized
+INFO - 2025-07-10 16:09:56 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:09:56 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:09:56 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:09:56 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2025-07-10 16:09:56 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:09:56 --> User Agent Class Initialized
+INFO - 2025-07-10 16:09:56 --> Final output sent to browser
+DEBUG - 2025-07-10 16:09:56 --> Total execution time: 0.1691
+INFO - 2025-07-10 16:09:56 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:09:56 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:09:56 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:09:56 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:09:56 --> Encryption Class Initialized
+INFO - 2025-07-10 16:09:56 --> Controller Class Initialized
+INFO - 2025-07-10 16:09:56 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:09:56 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:09:56 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:09:56 --> File loaded: C:\laragon\www\Landholding\application\views\notification/ajax_notification_page.php
+INFO - 2025-07-10 16:09:56 --> Final output sent to browser
+DEBUG - 2025-07-10 16:09:56 --> Total execution time: 0.1652
+INFO - 2025-07-10 16:09:58 --> Config Class Initialized
+INFO - 2025-07-10 16:09:58 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:09:58 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:09:58 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:09:58 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:09:58 --> URI Class Initialized
+INFO - 2025-07-10 16:09:58 --> Router Class Initialized
+INFO - 2025-07-10 16:09:58 --> Output Class Initialized
+INFO - 2025-07-10 16:09:58 --> Security Class Initialized
+DEBUG - 2025-07-10 16:09:58 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:09:58 --> Input Class Initialized
+INFO - 2025-07-10 16:09:58 --> Language Class Initialized
+INFO - 2025-07-10 16:09:58 --> Loader Class Initialized
+INFO - 2025-07-10 16:09:58 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:09:58 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:09:58 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:09:58 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:09:58 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:09:58 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:09:58 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:09:58 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:09:58 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:09:58 --> Encryption Class Initialized
+INFO - 2025-07-10 16:09:58 --> Controller Class Initialized
+INFO - 2025-07-10 16:09:58 --> Model "Report_model" initialized
+INFO - 2025-07-10 16:09:58 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:09:58 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:09:58 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:09:58 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:09:58 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:09:58 --> File loaded: C:\laragon\www\Landholding\application\views\templates/header.php
+INFO - 2025-07-10 16:09:58 --> File loaded: C:\laragon\www\Landholding\application\views\templates/bar.php
+INFO - 2025-07-10 16:09:58 --> File loaded: C:\laragon\www\Landholding\application\views\legal/Report/report.php
+INFO - 2025-07-10 16:09:58 --> File loaded: C:\laragon\www\Landholding\application\views\templates/footer.php
+INFO - 2025-07-10 16:09:58 --> Final output sent to browser
+DEBUG - 2025-07-10 16:09:58 --> Total execution time: 0.0833
+INFO - 2025-07-10 16:09:58 --> Config Class Initialized
+INFO - 2025-07-10 16:09:58 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:09:58 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:09:58 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:09:58 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:09:58 --> URI Class Initialized
+INFO - 2025-07-10 16:09:58 --> Router Class Initialized
+INFO - 2025-07-10 16:09:58 --> Output Class Initialized
+INFO - 2025-07-10 16:09:58 --> Security Class Initialized
+DEBUG - 2025-07-10 16:09:58 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:09:58 --> Input Class Initialized
+INFO - 2025-07-10 16:09:58 --> Language Class Initialized
+INFO - 2025-07-10 16:09:58 --> Config Class Initialized
+INFO - 2025-07-10 16:09:58 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:09:58 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:09:58 --> Loader Class Initialized
+INFO - 2025-07-10 16:09:58 --> Helper loaded: url_helper
+DEBUG - 2025-07-10 16:09:58 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:09:58 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:09:58 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:09:58 --> Config Class Initialized
+INFO - 2025-07-10 16:09:58 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:09:58 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:09:58 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:09:58 --> Config Class Initialized
+INFO - 2025-07-10 16:09:58 --> Hooks Class Initialized
+INFO - 2025-07-10 16:09:58 --> URI Class Initialized
+DEBUG - 2025-07-10 16:09:58 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:09:58 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:09:58 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:09:58 --> Router Class Initialized
+INFO - 2025-07-10 16:09:58 --> URI Class Initialized
+INFO - 2025-07-10 16:09:58 --> Output Class Initialized
+INFO - 2025-07-10 16:09:58 --> Router Class Initialized
+DEBUG - 2025-07-10 16:09:58 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:09:58 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:09:58 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:09:58 --> Security Class Initialized
+INFO - 2025-07-10 16:09:58 --> URI Class Initialized
+INFO - 2025-07-10 16:09:58 --> Router Class Initialized
+DEBUG - 2025-07-10 16:09:58 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:09:58 --> Input Class Initialized
+INFO - 2025-07-10 16:09:58 --> Language Class Initialized
+INFO - 2025-07-10 16:09:58 --> Output Class Initialized
+DEBUG - 2025-07-10 16:09:58 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:09:58 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:09:58 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+INFO - 2025-07-10 16:09:58 --> Security Class Initialized
+DEBUG - 2025-07-10 16:09:58 --> Encryption: Auto-configured driver 'openssl'.
+DEBUG - 2025-07-10 16:09:58 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:09:58 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:09:58 --> Input Class Initialized
+INFO - 2025-07-10 16:09:58 --> Encryption Class Initialized
+INFO - 2025-07-10 16:09:58 --> Controller Class Initialized
+INFO - 2025-07-10 16:09:58 --> Language Class Initialized
+INFO - 2025-07-10 16:09:58 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:09:58 --> Loader Class Initialized
+INFO - 2025-07-10 16:09:58 --> Form Validation Class Initialized
+INFO - 2025-07-10 16:09:58 --> Loader Class Initialized
+DEBUG - 2025-07-10 16:09:58 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:09:58 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:09:58 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:09:58 --> Final output sent to browser
+DEBUG - 2025-07-10 16:09:58 --> Total execution time: 0.0666
+INFO - 2025-07-10 16:09:58 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:09:58 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:09:58 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:09:58 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:09:58 --> Output Class Initialized
+INFO - 2025-07-10 16:09:58 --> Security Class Initialized
+DEBUG - 2025-07-10 16:09:58 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:09:58 --> Input Class Initialized
+INFO - 2025-07-10 16:09:58 --> Language Class Initialized
+INFO - 2025-07-10 16:09:58 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:09:58 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:09:58 --> Loader Class Initialized
+INFO - 2025-07-10 16:09:58 --> Helper loaded: url_helper
+DEBUG - 2025-07-10 16:09:58 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2025-07-10 16:09:58 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:09:58 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:09:58 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+INFO - 2025-07-10 16:09:58 --> Helper loaded: form_helper
+DEBUG - 2025-07-10 16:09:58 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:09:58 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:09:58 --> Encryption Class Initialized
+INFO - 2025-07-10 16:09:58 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:09:58 --> Controller Class Initialized
+INFO - 2025-07-10 16:09:58 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:09:58 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:09:58 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:09:58 --> File loaded: C:\laragon\www\Landholding\application\views\notification/ajax_notification_page.php
+INFO - 2025-07-10 16:09:58 --> Final output sent to browser
+DEBUG - 2025-07-10 16:09:58 --> Total execution time: 0.0666
+INFO - 2025-07-10 16:09:58 --> Session: Class initialized using 'files' driver.
+INFO - 2025-07-10 16:09:58 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:09:58 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:09:58 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:09:58 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:09:58 --> Encryption Class Initialized
+INFO - 2025-07-10 16:09:58 --> Controller Class Initialized
+DEBUG - 2025-07-10 16:09:58 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:09:58 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:09:58 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:09:58 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:09:58 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:09:58 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:09:58 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:09:58 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:09:58 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:09:58 --> Final output sent to browser
+DEBUG - 2025-07-10 16:09:58 --> Total execution time: 0.0952
+INFO - 2025-07-10 16:09:58 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:09:58 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:09:58 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:09:58 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:09:58 --> Encryption Class Initialized
+INFO - 2025-07-10 16:09:58 --> Controller Class Initialized
+INFO - 2025-07-10 16:09:58 --> Model "Account_model" initialized
+INFO - 2025-07-10 16:09:58 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:09:58 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:09:58 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:09:58 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:09:58 --> User Agent Class Initialized
+INFO - 2025-07-10 16:09:58 --> Final output sent to browser
+DEBUG - 2025-07-10 16:09:58 --> Total execution time: 0.1098
+INFO - 2025-07-10 16:09:59 --> Config Class Initialized
+INFO - 2025-07-10 16:09:59 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:09:59 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:09:59 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:09:59 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:09:59 --> URI Class Initialized
+INFO - 2025-07-10 16:09:59 --> Router Class Initialized
+INFO - 2025-07-10 16:09:59 --> Output Class Initialized
+INFO - 2025-07-10 16:09:59 --> Security Class Initialized
+DEBUG - 2025-07-10 16:09:59 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:09:59 --> Input Class Initialized
+INFO - 2025-07-10 16:09:59 --> Language Class Initialized
+INFO - 2025-07-10 16:09:59 --> Loader Class Initialized
+INFO - 2025-07-10 16:09:59 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:09:59 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:09:59 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:09:59 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:09:59 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:09:59 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:09:59 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:09:59 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:09:59 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:09:59 --> Encryption Class Initialized
+INFO - 2025-07-10 16:09:59 --> Controller Class Initialized
+INFO - 2025-07-10 16:09:59 --> Model "Account_model" initialized
+INFO - 2025-07-10 16:09:59 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:09:59 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:09:59 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:09:59 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:09:59 --> User Agent Class Initialized
+INFO - 2025-07-10 16:09:59 --> Config Class Initialized
+INFO - 2025-07-10 16:09:59 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:09:59 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:09:59 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:09:59 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:09:59 --> URI Class Initialized
+DEBUG - 2025-07-10 16:09:59 --> No URI present. Default controller set.
+INFO - 2025-07-10 16:09:59 --> Router Class Initialized
+INFO - 2025-07-10 16:09:59 --> Output Class Initialized
+INFO - 2025-07-10 16:09:59 --> Security Class Initialized
+DEBUG - 2025-07-10 16:09:59 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:09:59 --> Input Class Initialized
+INFO - 2025-07-10 16:09:59 --> Language Class Initialized
+INFO - 2025-07-10 16:09:59 --> Loader Class Initialized
+INFO - 2025-07-10 16:09:59 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:09:59 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:09:59 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:09:59 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:09:59 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:09:59 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:09:59 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:09:59 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:09:59 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:09:59 --> Encryption Class Initialized
+INFO - 2025-07-10 16:09:59 --> Controller Class Initialized
+INFO - 2025-07-10 16:09:59 --> Config Class Initialized
+INFO - 2025-07-10 16:09:59 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:09:59 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:09:59 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:09:59 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:09:59 --> URI Class Initialized
+INFO - 2025-07-10 16:09:59 --> Router Class Initialized
+INFO - 2025-07-10 16:09:59 --> Output Class Initialized
+INFO - 2025-07-10 16:09:59 --> Security Class Initialized
+DEBUG - 2025-07-10 16:09:59 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:09:59 --> Input Class Initialized
+INFO - 2025-07-10 16:09:59 --> Language Class Initialized
+INFO - 2025-07-10 16:10:00 --> Loader Class Initialized
+INFO - 2025-07-10 16:10:00 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:10:00 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:10:00 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:10:00 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:10:00 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:10:00 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:10:00 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:10:00 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:10:00 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:10:00 --> Encryption Class Initialized
+INFO - 2025-07-10 16:10:00 --> Controller Class Initialized
+INFO - 2025-07-10 16:10:00 --> Model "Account_model" initialized
+INFO - 2025-07-10 16:10:00 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:10:00 --> Encryption class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:10:00 --> File loaded: C:\laragon\www\Landholding\application\views\login/login_page.php
+INFO - 2025-07-10 16:10:00 --> Final output sent to browser
+DEBUG - 2025-07-10 16:10:00 --> Total execution time: 0.1399
+INFO - 2025-07-10 16:10:09 --> Config Class Initialized
+INFO - 2025-07-10 16:10:09 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:10:09 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:10:09 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:10:09 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:10:09 --> URI Class Initialized
+INFO - 2025-07-10 16:10:09 --> Router Class Initialized
+INFO - 2025-07-10 16:10:09 --> Output Class Initialized
+INFO - 2025-07-10 16:10:09 --> Security Class Initialized
+DEBUG - 2025-07-10 16:10:09 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:10:09 --> Input Class Initialized
+INFO - 2025-07-10 16:10:09 --> Language Class Initialized
+INFO - 2025-07-10 16:10:09 --> Loader Class Initialized
+INFO - 2025-07-10 16:10:09 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:10:09 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:10:09 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:10:09 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:10:09 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:10:09 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:10:09 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:10:09 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:10:09 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:10:09 --> Encryption Class Initialized
+INFO - 2025-07-10 16:10:09 --> Controller Class Initialized
+INFO - 2025-07-10 16:10:09 --> Model "Account_model" initialized
+INFO - 2025-07-10 16:10:09 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:10:09 --> Encryption class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:10:09 --> Language file loaded: language/english/form_validation_lang.php
+INFO - 2025-07-10 16:10:09 --> Final output sent to browser
+DEBUG - 2025-07-10 16:10:09 --> Total execution time: 0.0571
+INFO - 2025-07-10 16:10:10 --> Config Class Initialized
+INFO - 2025-07-10 16:10:10 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:10:10 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:10:10 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:10:10 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:10:10 --> URI Class Initialized
+INFO - 2025-07-10 16:10:10 --> Router Class Initialized
+INFO - 2025-07-10 16:10:10 --> Output Class Initialized
+INFO - 2025-07-10 16:10:10 --> Security Class Initialized
+DEBUG - 2025-07-10 16:10:10 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:10:10 --> Input Class Initialized
+INFO - 2025-07-10 16:10:10 --> Language Class Initialized
+INFO - 2025-07-10 16:10:10 --> Loader Class Initialized
+INFO - 2025-07-10 16:10:10 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:10:10 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:10:10 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:10:10 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:10:10 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:10:10 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:10:10 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:10:10 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:10:10 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:10:10 --> Encryption Class Initialized
+INFO - 2025-07-10 16:10:10 --> Controller Class Initialized
+INFO - 2025-07-10 16:10:10 --> Model "Account_model" initialized
+INFO - 2025-07-10 16:10:10 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:10:10 --> Encryption class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:10:10 --> Config Class Initialized
+INFO - 2025-07-10 16:10:10 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:10:10 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:10:10 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:10:10 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:10:10 --> URI Class Initialized
+INFO - 2025-07-10 16:10:10 --> Router Class Initialized
+INFO - 2025-07-10 16:10:10 --> Output Class Initialized
+INFO - 2025-07-10 16:10:10 --> Security Class Initialized
+DEBUG - 2025-07-10 16:10:10 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:10:10 --> Input Class Initialized
+INFO - 2025-07-10 16:10:10 --> Language Class Initialized
+INFO - 2025-07-10 16:10:10 --> Loader Class Initialized
+INFO - 2025-07-10 16:10:10 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:10:10 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:10:10 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:10:10 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:10:10 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:10:10 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:10:10 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:10:10 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:10:10 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:10:10 --> Encryption Class Initialized
+INFO - 2025-07-10 16:10:10 --> Controller Class Initialized
+INFO - 2025-07-10 16:10:10 --> Model "Account_model" initialized
+INFO - 2025-07-10 16:10:10 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:10:10 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:10:10 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:10:10 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:10:10 --> User Agent Class Initialized
+INFO - 2025-07-10 16:10:10 --> File loaded: C:\laragon\www\Landholding\application\views\templates/header.php
+INFO - 2025-07-10 16:10:10 --> File loaded: C:\laragon\www\Landholding\application\views\templates/bar.php
+INFO - 2025-07-10 16:10:10 --> File loaded: C:\laragon\www\Landholding\application\views\accounting/home.php
+INFO - 2025-07-10 16:10:10 --> File loaded: C:\laragon\www\Landholding\application\views\templates/footer.php
+INFO - 2025-07-10 16:10:10 --> Final output sent to browser
+DEBUG - 2025-07-10 16:10:10 --> Total execution time: 0.0655
+INFO - 2025-07-10 16:10:10 --> Config Class Initialized
+INFO - 2025-07-10 16:10:10 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:10:10 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:10:10 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:10:10 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:10:10 --> URI Class Initialized
+INFO - 2025-07-10 16:10:10 --> Router Class Initialized
+INFO - 2025-07-10 16:10:10 --> Output Class Initialized
+INFO - 2025-07-10 16:10:10 --> Security Class Initialized
+DEBUG - 2025-07-10 16:10:10 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:10:10 --> Input Class Initialized
+INFO - 2025-07-10 16:10:10 --> Language Class Initialized
+INFO - 2025-07-10 16:10:10 --> Config Class Initialized
+INFO - 2025-07-10 16:10:10 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:10:10 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:10:10 --> Loader Class Initialized
+INFO - 2025-07-10 16:10:10 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:10:10 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:10:10 --> Helper loaded: number_helper
+DEBUG - 2025-07-10 16:10:10 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:10:10 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:10:10 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:10:10 --> URI Class Initialized
+INFO - 2025-07-10 16:10:11 --> Router Class Initialized
+INFO - 2025-07-10 16:10:11 --> Output Class Initialized
+INFO - 2025-07-10 16:10:11 --> Security Class Initialized
+DEBUG - 2025-07-10 16:10:11 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:10:11 --> Input Class Initialized
+INFO - 2025-07-10 16:10:11 --> Language Class Initialized
+INFO - 2025-07-10 16:10:11 --> Config Class Initialized
+INFO - 2025-07-10 16:10:11 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:10:11 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:10:11 --> Loader Class Initialized
+DEBUG - 2025-07-10 16:10:11 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:10:11 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:10:11 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:10:11 --> Config Class Initialized
+INFO - 2025-07-10 16:10:11 --> URI Class Initialized
+INFO - 2025-07-10 16:10:11 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:10:11 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:10:11 --> Router Class Initialized
+INFO - 2025-07-10 16:10:11 --> Output Class Initialized
+DEBUG - 2025-07-10 16:10:11 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:10:11 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:10:11 --> Security Class Initialized
+INFO - 2025-07-10 16:10:11 --> URI Class Initialized
+DEBUG - 2025-07-10 16:10:11 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:10:11 --> Input Class Initialized
+INFO - 2025-07-10 16:10:11 --> Language Class Initialized
+INFO - 2025-07-10 16:10:11 --> Router Class Initialized
+INFO - 2025-07-10 16:10:11 --> Output Class Initialized
+INFO - 2025-07-10 16:10:11 --> Loader Class Initialized
+INFO - 2025-07-10 16:10:11 --> Security Class Initialized
+INFO - 2025-07-10 16:10:11 --> Helper loaded: url_helper
+DEBUG - 2025-07-10 16:10:11 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:10:11 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:10:11 --> Input Class Initialized
+INFO - 2025-07-10 16:10:11 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:10:11 --> Language Class Initialized
+INFO - 2025-07-10 16:10:11 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:10:11 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:10:11 --> Loader Class Initialized
+INFO - 2025-07-10 16:10:11 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:10:11 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:10:11 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:10:11 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:10:11 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:10:11 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:10:11 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:10:11 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:10:11 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:10:11 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:10:11 --> Encryption Class Initialized
+DEBUG - 2025-07-10 16:10:11 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2025-07-10 16:10:11 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:10:11 --> Controller Class Initialized
+INFO - 2025-07-10 16:10:11 --> Model "Account_model" initialized
+INFO - 2025-07-10 16:10:11 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:10:11 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:10:11 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:10:11 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:10:11 --> User Agent Class Initialized
+INFO - 2025-07-10 16:10:11 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:10:11 --> Final output sent to browser
+DEBUG - 2025-07-10 16:10:11 --> Total execution time: 0.0710
+INFO - 2025-07-10 16:10:11 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:10:11 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2025-07-10 16:10:11 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:10:11 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:10:11 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:10:11 --> Encryption Class Initialized
+INFO - 2025-07-10 16:10:11 --> Controller Class Initialized
+INFO - 2025-07-10 16:10:11 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:10:11 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:10:11 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:10:11 --> Final output sent to browser
+DEBUG - 2025-07-10 16:10:11 --> Total execution time: 0.1458
+INFO - 2025-07-10 16:10:11 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:10:11 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:10:11 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:10:11 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:10:11 --> Encryption Class Initialized
+INFO - 2025-07-10 16:10:11 --> Controller Class Initialized
+INFO - 2025-07-10 16:10:11 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:10:11 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:10:11 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:10:11 --> File loaded: C:\laragon\www\Landholding\application\views\notification/ajax_notification_page.php
+INFO - 2025-07-10 16:10:11 --> Final output sent to browser
+DEBUG - 2025-07-10 16:10:11 --> Total execution time: 0.1636
+INFO - 2025-07-10 16:10:11 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:10:11 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:10:11 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:10:11 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:10:11 --> Encryption Class Initialized
+INFO - 2025-07-10 16:10:11 --> Controller Class Initialized
+INFO - 2025-07-10 16:10:11 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:10:11 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:10:11 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:10:11 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:10:11 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:10:11 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:10:11 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:10:11 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:10:11 --> Final output sent to browser
+DEBUG - 2025-07-10 16:10:11 --> Total execution time: 0.1077
+INFO - 2025-07-10 16:10:12 --> Config Class Initialized
+INFO - 2025-07-10 16:10:12 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:10:12 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:10:12 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:10:12 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:10:12 --> URI Class Initialized
+INFO - 2025-07-10 16:10:12 --> Router Class Initialized
+INFO - 2025-07-10 16:10:12 --> Output Class Initialized
+INFO - 2025-07-10 16:10:12 --> Security Class Initialized
+DEBUG - 2025-07-10 16:10:12 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:10:12 --> Input Class Initialized
+INFO - 2025-07-10 16:10:12 --> Language Class Initialized
+INFO - 2025-07-10 16:10:12 --> Loader Class Initialized
+INFO - 2025-07-10 16:10:12 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:10:12 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:10:12 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:10:12 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:10:12 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:10:12 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:10:12 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:10:12 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:10:12 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:10:12 --> Encryption Class Initialized
+INFO - 2025-07-10 16:10:12 --> Controller Class Initialized
+INFO - 2025-07-10 16:10:12 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:10:12 --> Model "Payment_model" initialized
+INFO - 2025-07-10 16:10:12 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:10:12 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:10:12 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:10:12 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:10:12 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:10:12 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:10:12 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:10:12 --> File loaded: C:\laragon\www\Landholding\application\views\templates/header.php
+INFO - 2025-07-10 16:10:12 --> File loaded: C:\laragon\www\Landholding\application\views\templates/bar.php
+INFO - 2025-07-10 16:10:12 --> File loaded: C:\laragon\www\Landholding\application\views\accounting/Rpt/rpt_table.php
+INFO - 2025-07-10 16:10:12 --> File loaded: C:\laragon\www\Landholding\application\views\templates/footer.php
+INFO - 2025-07-10 16:10:12 --> Final output sent to browser
+DEBUG - 2025-07-10 16:10:12 --> Total execution time: 0.0722
+INFO - 2025-07-10 16:10:12 --> Config Class Initialized
+INFO - 2025-07-10 16:10:12 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:10:12 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:10:12 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:10:12 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:10:12 --> URI Class Initialized
+INFO - 2025-07-10 16:10:12 --> Router Class Initialized
+INFO - 2025-07-10 16:10:12 --> Output Class Initialized
+INFO - 2025-07-10 16:10:12 --> Security Class Initialized
+DEBUG - 2025-07-10 16:10:12 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:10:12 --> Input Class Initialized
+INFO - 2025-07-10 16:10:12 --> Language Class Initialized
+INFO - 2025-07-10 16:10:12 --> Loader Class Initialized
+INFO - 2025-07-10 16:10:12 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:10:12 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:10:12 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:10:12 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:10:12 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:10:12 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:10:12 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:10:12 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:10:12 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:10:12 --> Encryption Class Initialized
+INFO - 2025-07-10 16:10:12 --> Controller Class Initialized
+INFO - 2025-07-10 16:10:12 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:10:12 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:10:12 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:10:12 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:10:12 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:10:12 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:10:12 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:10:12 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:10:12 --> Final output sent to browser
+DEBUG - 2025-07-10 16:10:12 --> Total execution time: 0.0722
+INFO - 2025-07-10 16:10:12 --> Config Class Initialized
+INFO - 2025-07-10 16:10:12 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:10:12 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:10:12 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:10:12 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:10:12 --> URI Class Initialized
+INFO - 2025-07-10 16:10:12 --> Router Class Initialized
+INFO - 2025-07-10 16:10:12 --> Output Class Initialized
+INFO - 2025-07-10 16:10:12 --> Security Class Initialized
+DEBUG - 2025-07-10 16:10:12 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:10:12 --> Input Class Initialized
+INFO - 2025-07-10 16:10:12 --> Config Class Initialized
+INFO - 2025-07-10 16:10:12 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:10:12 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:10:12 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:10:12 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:10:12 --> URI Class Initialized
+INFO - 2025-07-10 16:10:12 --> Router Class Initialized
+INFO - 2025-07-10 16:10:12 --> Output Class Initialized
+INFO - 2025-07-10 16:10:12 --> Security Class Initialized
+DEBUG - 2025-07-10 16:10:12 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:10:12 --> Input Class Initialized
+INFO - 2025-07-10 16:10:12 --> Language Class Initialized
+INFO - 2025-07-10 16:10:12 --> Loader Class Initialized
+INFO - 2025-07-10 16:10:12 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:10:12 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:10:12 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:10:12 --> Config Class Initialized
+INFO - 2025-07-10 16:10:12 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:10:12 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:10:12 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:10:12 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:10:12 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:10:12 --> URI Class Initialized
+INFO - 2025-07-10 16:10:12 --> Router Class Initialized
+DEBUG - 2025-07-10 16:10:12 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:10:12 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:10:12 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+INFO - 2025-07-10 16:10:12 --> Language Class Initialized
+INFO - 2025-07-10 16:10:12 --> Loader Class Initialized
+INFO - 2025-07-10 16:10:12 --> Config Class Initialized
+INFO - 2025-07-10 16:10:12 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:10:12 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:10:12 --> Helper loaded: url_helper
+DEBUG - 2025-07-10 16:10:12 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:10:12 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+DEBUG - 2025-07-10 16:10:12 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:10:12 --> Encryption Class Initialized
+INFO - 2025-07-10 16:10:12 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:10:12 --> Controller Class Initialized
+INFO - 2025-07-10 16:10:12 --> URI Class Initialized
+INFO - 2025-07-10 16:10:12 --> Router Class Initialized
+INFO - 2025-07-10 16:10:12 --> Output Class Initialized
+INFO - 2025-07-10 16:10:12 --> Model "Account_model" initialized
+INFO - 2025-07-10 16:10:12 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:10:12 --> Security Class Initialized
+INFO - 2025-07-10 16:10:12 --> Model "Notification_bar_model" initialized
+DEBUG - 2025-07-10 16:10:12 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:10:12 --> Input Class Initialized
+INFO - 2025-07-10 16:10:12 --> Form Validation Class Initialized
+INFO - 2025-07-10 16:10:12 --> Language Class Initialized
+INFO - 2025-07-10 16:10:12 --> Helper loaded: form_helper
+DEBUG - 2025-07-10 16:10:12 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:10:12 --> User Agent Class Initialized
+INFO - 2025-07-10 16:10:12 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:10:12 --> Loader Class Initialized
+INFO - 2025-07-10 16:10:12 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:10:12 --> Config Class Initialized
+INFO - 2025-07-10 16:10:12 --> Hooks Class Initialized
+INFO - 2025-07-10 16:10:12 --> Helper loaded: form_helper
+DEBUG - 2025-07-10 16:10:12 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:10:12 --> Helper loaded: number_helper
+DEBUG - 2025-07-10 16:10:12 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:10:12 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:10:12 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:10:12 --> URI Class Initialized
+INFO - 2025-07-10 16:10:12 --> Router Class Initialized
+DEBUG - 2025-07-10 16:10:12 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:10:12 --> Output Class Initialized
+INFO - 2025-07-10 16:10:12 --> Output Class Initialized
+INFO - 2025-07-10 16:10:12 --> Security Class Initialized
+INFO - 2025-07-10 16:10:12 --> Security Class Initialized
+DEBUG - 2025-07-10 16:10:12 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:10:12 --> Input Class Initialized
+DEBUG - 2025-07-10 16:10:12 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:10:12 --> Input Class Initialized
+INFO - 2025-07-10 16:10:12 --> Language Class Initialized
+INFO - 2025-07-10 16:10:12 --> Loader Class Initialized
+INFO - 2025-07-10 16:10:12 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:10:12 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:10:12 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:10:12 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:10:12 --> Language Class Initialized
+DEBUG - 2025-07-10 16:10:12 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:10:12 --> Final output sent to browser
+DEBUG - 2025-07-10 16:10:12 --> Total execution time: 0.1315
+INFO - 2025-07-10 16:10:12 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:10:12 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+INFO - 2025-07-10 16:10:12 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:10:12 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:10:12 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:10:12 --> Encryption Class Initialized
+INFO - 2025-07-10 16:10:12 --> Controller Class Initialized
+DEBUG - 2025-07-10 16:10:12 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:10:12 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:10:12 --> Model "Payment_model" initialized
+INFO - 2025-07-10 16:10:12 --> Loader Class Initialized
+INFO - 2025-07-10 16:10:12 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:10:12 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:10:12 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:10:12 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:10:12 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:10:12 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:10:12 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:10:12 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:10:12 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:10:13 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:10:13 --> Final output sent to browser
+DEBUG - 2025-07-10 16:10:13 --> Total execution time: 0.1878
+INFO - 2025-07-10 16:10:13 --> Session: Class initialized using 'files' driver.
+INFO - 2025-07-10 16:10:13 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:10:13 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:10:13 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2025-07-10 16:10:13 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:10:13 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:10:13 --> Encryption Class Initialized
+INFO - 2025-07-10 16:10:13 --> Controller Class Initialized
+INFO - 2025-07-10 16:10:13 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:10:13 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:10:13 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:10:13 --> Final output sent to browser
+DEBUG - 2025-07-10 16:10:13 --> Total execution time: 0.1211
+INFO - 2025-07-10 16:10:13 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:10:13 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:10:13 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:10:13 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:10:13 --> Encryption Class Initialized
+INFO - 2025-07-10 16:10:13 --> Controller Class Initialized
+INFO - 2025-07-10 16:10:13 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:10:13 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:10:13 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:10:13 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:10:13 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:10:13 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:10:13 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:10:13 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:10:13 --> Final output sent to browser
+DEBUG - 2025-07-10 16:10:13 --> Total execution time: 0.1697
+INFO - 2025-07-10 16:10:13 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:10:13 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:10:13 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:10:13 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:10:13 --> Encryption Class Initialized
+INFO - 2025-07-10 16:10:13 --> Controller Class Initialized
+INFO - 2025-07-10 16:10:13 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:10:13 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:10:13 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:10:13 --> File loaded: C:\laragon\www\Landholding\application\views\notification/ajax_notification_page.php
+INFO - 2025-07-10 16:10:13 --> Final output sent to browser
+DEBUG - 2025-07-10 16:10:13 --> Total execution time: 0.1440
+INFO - 2025-07-10 16:10:15 --> Config Class Initialized
+INFO - 2025-07-10 16:10:15 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:10:15 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:10:15 --> Config Class Initialized
+INFO - 2025-07-10 16:10:15 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:10:15 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:10:15 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:10:15 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:10:15 --> URI Class Initialized
+DEBUG - 2025-07-10 16:10:15 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:10:15 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:10:15 --> Router Class Initialized
+INFO - 2025-07-10 16:10:15 --> URI Class Initialized
+INFO - 2025-07-10 16:10:15 --> Output Class Initialized
+INFO - 2025-07-10 16:10:15 --> Security Class Initialized
+DEBUG - 2025-07-10 16:10:15 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:10:15 --> Input Class Initialized
+INFO - 2025-07-10 16:10:15 --> Language Class Initialized
+INFO - 2025-07-10 16:10:15 --> Loader Class Initialized
+INFO - 2025-07-10 16:10:15 --> Config Class Initialized
+INFO - 2025-07-10 16:10:15 --> Hooks Class Initialized
+INFO - 2025-07-10 16:10:15 --> Helper loaded: url_helper
+DEBUG - 2025-07-10 16:10:15 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:10:15 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:10:15 --> Helper loaded: number_helper
+DEBUG - 2025-07-10 16:10:15 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:10:15 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:10:15 --> URI Class Initialized
+INFO - 2025-07-10 16:10:15 --> Router Class Initialized
+INFO - 2025-07-10 16:10:15 --> Output Class Initialized
+INFO - 2025-07-10 16:10:15 --> Config Class Initialized
+INFO - 2025-07-10 16:10:15 --> Hooks Class Initialized
+INFO - 2025-07-10 16:10:15 --> Security Class Initialized
+DEBUG - 2025-07-10 16:10:15 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:10:15 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:10:15 --> Input Class Initialized
+INFO - 2025-07-10 16:10:15 --> Language Class Initialized
+DEBUG - 2025-07-10 16:10:15 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:10:15 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:10:15 --> URI Class Initialized
+INFO - 2025-07-10 16:10:15 --> Loader Class Initialized
+INFO - 2025-07-10 16:10:15 --> Router Class Initialized
+INFO - 2025-07-10 16:10:15 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:10:15 --> Output Class Initialized
+INFO - 2025-07-10 16:10:15 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:10:15 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:10:15 --> Security Class Initialized
+INFO - 2025-07-10 16:10:15 --> Router Class Initialized
+INFO - 2025-07-10 16:10:15 --> Output Class Initialized
+INFO - 2025-07-10 16:10:15 --> Security Class Initialized
+INFO - 2025-07-10 16:10:15 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:10:15 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:10:15 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:10:15 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:10:15 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:10:15 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:10:15 --> Input Class Initialized
+DEBUG - 2025-07-10 16:10:15 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2025-07-10 16:10:15 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:10:15 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:10:15 --> Language Class Initialized
+INFO - 2025-07-10 16:10:15 --> Encryption Class Initialized
+INFO - 2025-07-10 16:10:15 --> Controller Class Initialized
+INFO - 2025-07-10 16:10:15 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:10:15 --> Config Class Initialized
+INFO - 2025-07-10 16:10:15 --> Hooks Class Initialized
+INFO - 2025-07-10 16:10:15 --> Model "Datatable_model" initialized
+DEBUG - 2025-07-10 16:10:15 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:10:15 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:10:15 --> Loader Class Initialized
+INFO - 2025-07-10 16:10:15 --> Model "Notification_bar_model" initialized
+DEBUG - 2025-07-10 16:10:15 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:10:15 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:10:15 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:10:15 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:10:15 --> URI Class Initialized
+INFO - 2025-07-10 16:10:15 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:10:15 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:10:15 --> Router Class Initialized
+INFO - 2025-07-10 16:10:15 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:10:15 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:10:15 --> Output Class Initialized
+INFO - 2025-07-10 16:10:15 --> Final output sent to browser
+INFO - 2025-07-10 16:10:15 --> Helper loaded: number_helper
+DEBUG - 2025-07-10 16:10:15 --> Total execution time: 0.0948
+INFO - 2025-07-10 16:10:15 --> Session: Class initialized using 'files' driver.
+INFO - 2025-07-10 16:10:15 --> Security Class Initialized
+DEBUG - 2025-07-10 16:10:15 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:10:15 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:10:15 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:10:15 --> Encryption Class Initialized
+INFO - 2025-07-10 16:10:15 --> Controller Class Initialized
+INFO - 2025-07-10 16:10:15 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:10:15 --> Model "Payment_model" initialized
+INFO - 2025-07-10 16:10:15 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:10:15 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:10:15 --> Model "Acquisition_model" initialized
+DEBUG - 2025-07-10 16:10:15 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:10:15 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:10:15 --> Input Class Initialized
+INFO - 2025-07-10 16:10:15 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:10:15 --> Language Class Initialized
+INFO - 2025-07-10 16:10:15 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:10:15 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:10:15 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:10:15 --> Final output sent to browser
+DEBUG - 2025-07-10 16:10:15 --> Total execution time: 0.1086
+DEBUG - 2025-07-10 16:10:15 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:10:15 --> Loader Class Initialized
+INFO - 2025-07-10 16:10:15 --> Session: Class initialized using 'files' driver.
+INFO - 2025-07-10 16:10:15 --> Helper loaded: url_helper
+DEBUG - 2025-07-10 16:10:15 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:10:15 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:10:15 --> Input Class Initialized
+INFO - 2025-07-10 16:10:15 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:10:15 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:10:15 --> Language Class Initialized
+INFO - 2025-07-10 16:10:15 --> Loader Class Initialized
+INFO - 2025-07-10 16:10:15 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:10:15 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:10:15 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:10:15 --> Helper loaded: number_helper
+DEBUG - 2025-07-10 16:10:15 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2025-07-10 16:10:15 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:10:15 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:10:15 --> Encryption Class Initialized
+INFO - 2025-07-10 16:10:15 --> Controller Class Initialized
+INFO - 2025-07-10 16:10:15 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:10:15 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:10:15 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:10:15 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:10:15 --> Model "Notification_bar_model" initialized
+DEBUG - 2025-07-10 16:10:15 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:10:15 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:10:15 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:10:15 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:10:15 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:10:15 --> Final output sent to browser
+DEBUG - 2025-07-10 16:10:15 --> Total execution time: 0.1141
+INFO - 2025-07-10 16:10:15 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:10:15 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:10:15 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:10:15 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:10:15 --> Encryption Class Initialized
+INFO - 2025-07-10 16:10:15 --> Controller Class Initialized
+INFO - 2025-07-10 16:10:15 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:10:15 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:10:15 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:10:15 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:10:15 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:10:15 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:10:15 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:10:15 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:10:15 --> Final output sent to browser
+DEBUG - 2025-07-10 16:10:15 --> Total execution time: 0.1716
+INFO - 2025-07-10 16:10:15 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:10:15 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:10:15 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:10:15 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:10:15 --> Encryption Class Initialized
+INFO - 2025-07-10 16:10:15 --> Controller Class Initialized
+INFO - 2025-07-10 16:10:15 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:10:15 --> Model "Payment_model" initialized
+INFO - 2025-07-10 16:10:15 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:10:15 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:10:15 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:10:15 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:10:15 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:10:15 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:10:15 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:10:15 --> Final output sent to browser
+DEBUG - 2025-07-10 16:10:15 --> Total execution time: 0.1607
+INFO - 2025-07-10 16:10:16 --> Config Class Initialized
+INFO - 2025-07-10 16:10:16 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:10:16 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:10:16 --> Config Class Initialized
+INFO - 2025-07-10 16:10:16 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:10:16 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:10:16 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:10:16 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:10:16 --> URI Class Initialized
+INFO - 2025-07-10 16:10:16 --> Router Class Initialized
+DEBUG - 2025-07-10 16:10:16 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:10:16 --> Output Class Initialized
+INFO - 2025-07-10 16:10:16 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:10:16 --> URI Class Initialized
+INFO - 2025-07-10 16:10:16 --> Security Class Initialized
+INFO - 2025-07-10 16:10:16 --> Router Class Initialized
+DEBUG - 2025-07-10 16:10:16 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:10:16 --> Input Class Initialized
+INFO - 2025-07-10 16:10:16 --> Language Class Initialized
+INFO - 2025-07-10 16:10:16 --> Output Class Initialized
+INFO - 2025-07-10 16:10:16 --> Security Class Initialized
+DEBUG - 2025-07-10 16:10:16 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:10:16 --> Input Class Initialized
+INFO - 2025-07-10 16:10:16 --> Loader Class Initialized
+INFO - 2025-07-10 16:10:16 --> Language Class Initialized
+INFO - 2025-07-10 16:10:16 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:10:16 --> Loader Class Initialized
+INFO - 2025-07-10 16:10:16 --> Config Class Initialized
+INFO - 2025-07-10 16:10:16 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:10:16 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:10:16 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:10:16 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:10:16 --> Helper loaded: number_helper
+DEBUG - 2025-07-10 16:10:16 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:10:16 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:10:16 --> URI Class Initialized
+INFO - 2025-07-10 16:10:16 --> Router Class Initialized
+INFO - 2025-07-10 16:10:16 --> Output Class Initialized
+INFO - 2025-07-10 16:10:16 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:10:16 --> Security Class Initialized
+DEBUG - 2025-07-10 16:10:16 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:10:16 --> Input Class Initialized
+INFO - 2025-07-10 16:10:16 --> Language Class Initialized
+DEBUG - 2025-07-10 16:10:16 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:10:16 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:10:16 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:10:16 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:10:16 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:10:16 --> Encryption Class Initialized
+INFO - 2025-07-10 16:10:16 --> Controller Class Initialized
+INFO - 2025-07-10 16:10:16 --> Loader Class Initialized
+INFO - 2025-07-10 16:10:16 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:10:16 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:10:16 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:10:16 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:10:16 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:10:16 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:10:16 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:10:16 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:10:16 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:10:16 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:10:16 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:10:16 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2025-07-10 16:10:16 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:10:16 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:10:16 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:10:16 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:10:16 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:10:16 --> Final output sent to browser
+DEBUG - 2025-07-10 16:10:16 --> Total execution time: 0.0894
+INFO - 2025-07-10 16:10:16 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:10:16 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:10:16 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:10:16 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:10:16 --> Encryption Class Initialized
+INFO - 2025-07-10 16:10:16 --> Controller Class Initialized
+INFO - 2025-07-10 16:10:16 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:10:16 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:10:16 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:10:16 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:10:16 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:10:16 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:10:16 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:10:16 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:10:16 --> Final output sent to browser
+DEBUG - 2025-07-10 16:10:16 --> Total execution time: 0.0952
+INFO - 2025-07-10 16:10:16 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:10:16 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:10:16 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:10:16 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:10:16 --> Encryption Class Initialized
+INFO - 2025-07-10 16:10:16 --> Controller Class Initialized
+INFO - 2025-07-10 16:10:16 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:10:16 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:10:16 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:10:16 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:10:16 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:10:16 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:10:16 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:10:16 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:10:16 --> Final output sent to browser
+DEBUG - 2025-07-10 16:10:16 --> Total execution time: 0.1372
+INFO - 2025-07-10 16:10:18 --> Config Class Initialized
+INFO - 2025-07-10 16:10:18 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:10:18 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:10:18 --> Config Class Initialized
+INFO - 2025-07-10 16:10:18 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:10:18 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:10:18 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:10:18 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:10:18 --> URI Class Initialized
+INFO - 2025-07-10 16:10:18 --> Router Class Initialized
+DEBUG - 2025-07-10 16:10:18 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:10:18 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:10:18 --> Output Class Initialized
+INFO - 2025-07-10 16:10:18 --> Security Class Initialized
+DEBUG - 2025-07-10 16:10:18 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:10:18 --> Input Class Initialized
+INFO - 2025-07-10 16:10:18 --> Language Class Initialized
+INFO - 2025-07-10 16:10:18 --> URI Class Initialized
+INFO - 2025-07-10 16:10:18 --> Router Class Initialized
+INFO - 2025-07-10 16:10:18 --> Output Class Initialized
+INFO - 2025-07-10 16:10:18 --> Loader Class Initialized
+INFO - 2025-07-10 16:10:18 --> Security Class Initialized
+INFO - 2025-07-10 16:10:18 --> Helper loaded: url_helper
+DEBUG - 2025-07-10 16:10:18 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:10:18 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:10:18 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:10:18 --> Input Class Initialized
+INFO - 2025-07-10 16:10:18 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:10:18 --> Language Class Initialized
+DEBUG - 2025-07-10 16:10:18 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:10:18 --> Loader Class Initialized
+INFO - 2025-07-10 16:10:18 --> Session: Class initialized using 'files' driver.
+INFO - 2025-07-10 16:10:18 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:10:18 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:10:18 --> Helper loaded: number_helper
+DEBUG - 2025-07-10 16:10:18 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:10:18 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:10:18 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:10:18 --> Encryption Class Initialized
+INFO - 2025-07-10 16:10:18 --> Controller Class Initialized
+INFO - 2025-07-10 16:10:18 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:10:18 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:10:18 --> Model "Datatable_model" initialized
+DEBUG - 2025-07-10 16:10:18 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:10:18 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:10:18 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:10:18 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:10:18 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:10:18 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:10:18 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:10:18 --> Final output sent to browser
+DEBUG - 2025-07-10 16:10:18 --> Total execution time: 0.0778
+INFO - 2025-07-10 16:10:18 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:10:18 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:10:18 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:10:18 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:10:18 --> Encryption Class Initialized
+INFO - 2025-07-10 16:10:18 --> Controller Class Initialized
+INFO - 2025-07-10 16:10:18 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:10:18 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:10:18 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:10:18 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:10:18 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:10:18 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:10:18 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:10:18 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:10:18 --> Final output sent to browser
+DEBUG - 2025-07-10 16:10:18 --> Total execution time: 0.0938
+INFO - 2025-07-10 16:10:20 --> Config Class Initialized
+INFO - 2025-07-10 16:10:20 --> Hooks Class Initialized
+INFO - 2025-07-10 16:10:20 --> Config Class Initialized
+INFO - 2025-07-10 16:10:20 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:10:20 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:10:20 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:10:20 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:10:20 --> Utf8 Class Initialized
+DEBUG - 2025-07-10 16:10:20 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:10:20 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:10:20 --> URI Class Initialized
+INFO - 2025-07-10 16:10:20 --> URI Class Initialized
+INFO - 2025-07-10 16:10:20 --> Router Class Initialized
+INFO - 2025-07-10 16:10:20 --> Router Class Initialized
+INFO - 2025-07-10 16:10:20 --> Output Class Initialized
+INFO - 2025-07-10 16:10:20 --> Output Class Initialized
+INFO - 2025-07-10 16:10:20 --> Security Class Initialized
+INFO - 2025-07-10 16:10:20 --> Security Class Initialized
+DEBUG - 2025-07-10 16:10:20 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:10:20 --> Input Class Initialized
+DEBUG - 2025-07-10 16:10:20 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:10:20 --> Language Class Initialized
+INFO - 2025-07-10 16:10:20 --> Input Class Initialized
+INFO - 2025-07-10 16:10:20 --> Language Class Initialized
+INFO - 2025-07-10 16:10:20 --> Loader Class Initialized
+INFO - 2025-07-10 16:10:20 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:10:20 --> Loader Class Initialized
+INFO - 2025-07-10 16:10:20 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:10:20 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:10:20 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:10:20 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:10:20 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:10:20 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:10:20 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:10:20 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:10:20 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:10:20 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:10:20 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2025-07-10 16:10:20 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:10:20 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:10:20 --> Encryption Class Initialized
+INFO - 2025-07-10 16:10:20 --> Controller Class Initialized
+INFO - 2025-07-10 16:10:20 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:10:20 --> Model "Payment_model" initialized
+INFO - 2025-07-10 16:10:20 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:10:20 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:10:20 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:10:20 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:10:20 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:10:20 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:10:20 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:10:20 --> Final output sent to browser
+DEBUG - 2025-07-10 16:10:20 --> Total execution time: 0.0760
+INFO - 2025-07-10 16:10:20 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:10:20 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:10:20 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:10:20 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:10:20 --> Encryption Class Initialized
+INFO - 2025-07-10 16:10:20 --> Controller Class Initialized
+INFO - 2025-07-10 16:10:20 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:10:20 --> Model "Payment_model" initialized
+INFO - 2025-07-10 16:10:20 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:10:20 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:10:20 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:10:20 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:10:20 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:10:20 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:10:20 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:10:20 --> Final output sent to browser
+DEBUG - 2025-07-10 16:10:20 --> Total execution time: 0.1076
+INFO - 2025-07-10 16:10:21 --> Config Class Initialized
+INFO - 2025-07-10 16:10:21 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:10:21 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:10:21 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:10:21 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:10:22 --> URI Class Initialized
+INFO - 2025-07-10 16:10:22 --> Router Class Initialized
+INFO - 2025-07-10 16:10:22 --> Output Class Initialized
+INFO - 2025-07-10 16:10:22 --> Security Class Initialized
+DEBUG - 2025-07-10 16:10:22 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:10:22 --> Input Class Initialized
+INFO - 2025-07-10 16:10:22 --> Language Class Initialized
+INFO - 2025-07-10 16:10:22 --> Loader Class Initialized
+INFO - 2025-07-10 16:10:22 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:10:22 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:10:22 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:10:22 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:10:22 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:10:22 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:10:22 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:10:22 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:10:22 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:10:22 --> Encryption Class Initialized
+INFO - 2025-07-10 16:10:22 --> Controller Class Initialized
+INFO - 2025-07-10 16:10:22 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:10:22 --> Model "Payment_model" initialized
+INFO - 2025-07-10 16:10:22 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:10:22 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:10:22 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:10:22 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:10:22 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:10:22 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:10:22 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:10:22 --> Helper loaded: custom_helper
+INFO - 2025-07-10 16:10:22 --> File loaded: C:\laragon\www\Landholding\application\views\accounting/Rpt/interviewsheet_modal.php
+INFO - 2025-07-10 16:10:22 --> Final output sent to browser
+DEBUG - 2025-07-10 16:10:22 --> Total execution time: 0.0662
+INFO - 2025-07-10 16:10:25 --> Config Class Initialized
+INFO - 2025-07-10 16:10:25 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:10:25 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:10:25 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:10:25 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:10:25 --> URI Class Initialized
+INFO - 2025-07-10 16:10:25 --> Router Class Initialized
+INFO - 2025-07-10 16:10:25 --> Output Class Initialized
+INFO - 2025-07-10 16:10:25 --> Security Class Initialized
+DEBUG - 2025-07-10 16:10:25 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:10:25 --> Input Class Initialized
+INFO - 2025-07-10 16:10:25 --> Language Class Initialized
+INFO - 2025-07-10 16:10:25 --> Loader Class Initialized
+INFO - 2025-07-10 16:10:25 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:10:25 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:10:25 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:10:25 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:10:25 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:10:25 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:10:25 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:10:25 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:10:25 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:10:25 --> Encryption Class Initialized
+INFO - 2025-07-10 16:10:25 --> Controller Class Initialized
+INFO - 2025-07-10 16:10:25 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:10:25 --> Model "Payment_model" initialized
+INFO - 2025-07-10 16:10:25 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:10:25 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:10:25 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:10:25 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:10:25 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:10:25 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:10:25 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:10:25 --> Helper loaded: custom_helper
+INFO - 2025-07-10 16:10:25 --> File loaded: C:\laragon\www\Landholding\application\views\accounting/Rpt/interviewsheet_modal.php
+INFO - 2025-07-10 16:10:25 --> Final output sent to browser
+DEBUG - 2025-07-10 16:10:25 --> Total execution time: 0.0669
+INFO - 2025-07-10 16:13:43 --> Config Class Initialized
+INFO - 2025-07-10 16:13:43 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:13:43 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:13:43 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:43 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:43 --> URI Class Initialized
+INFO - 2025-07-10 16:13:43 --> Router Class Initialized
+INFO - 2025-07-10 16:13:43 --> Output Class Initialized
+INFO - 2025-07-10 16:13:43 --> Security Class Initialized
+DEBUG - 2025-07-10 16:13:43 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:43 --> Input Class Initialized
+INFO - 2025-07-10 16:13:43 --> Language Class Initialized
+INFO - 2025-07-10 16:13:43 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:43 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:43 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:43 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:43 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:13:43 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:43 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:43 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:43 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:43 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:43 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:43 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:43 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:13:43 --> Model "Payment_model" initialized
+INFO - 2025-07-10 16:13:43 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:13:43 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:43 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:43 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:43 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:43 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:13:43 --> File loaded: C:\laragon\www\Landholding\application\views\templates/header.php
+INFO - 2025-07-10 16:13:43 --> File loaded: C:\laragon\www\Landholding\application\views\templates/bar.php
+INFO - 2025-07-10 16:13:43 --> Helper loaded: custom_helper
+INFO - 2025-07-10 16:13:43 --> File loaded: C:\laragon\www\Landholding\application\views\accounting/payment_request/table.php
+INFO - 2025-07-10 16:13:43 --> File loaded: C:\laragon\www\Landholding\application\views\templates/footer.php
+INFO - 2025-07-10 16:13:43 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:43 --> Total execution time: 0.4269
+INFO - 2025-07-10 16:13:44 --> Config Class Initialized
+INFO - 2025-07-10 16:13:44 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:13:44 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:13:44 --> Config Class Initialized
+INFO - 2025-07-10 16:13:44 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:13:44 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:13:44 --> Config Class Initialized
+INFO - 2025-07-10 16:13:44 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:13:44 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:13:44 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:44 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:44 --> URI Class Initialized
+INFO - 2025-07-10 16:13:44 --> Config Class Initialized
+INFO - 2025-07-10 16:13:44 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:13:44 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:13:44 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:44 --> Router Class Initialized
+INFO - 2025-07-10 16:13:44 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:44 --> URI Class Initialized
+INFO - 2025-07-10 16:13:44 --> Output Class Initialized
+INFO - 2025-07-10 16:13:44 --> Router Class Initialized
+INFO - 2025-07-10 16:13:44 --> Security Class Initialized
+INFO - 2025-07-10 16:13:44 --> Output Class Initialized
+DEBUG - 2025-07-10 16:13:44 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:44 --> Input Class Initialized
+INFO - 2025-07-10 16:13:44 --> Security Class Initialized
+INFO - 2025-07-10 16:13:44 --> Language Class Initialized
+DEBUG - 2025-07-10 16:13:44 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:44 --> Input Class Initialized
+INFO - 2025-07-10 16:13:44 --> Language Class Initialized
+DEBUG - 2025-07-10 16:13:44 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:44 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:44 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:44 --> URI Class Initialized
+INFO - 2025-07-10 16:13:44 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:44 --> Router Class Initialized
+INFO - 2025-07-10 16:13:44 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:44 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:44 --> Output Class Initialized
+INFO - 2025-07-10 16:13:44 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:44 --> Security Class Initialized
+INFO - 2025-07-10 16:13:44 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:44 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:44 --> Helper loaded: number_helper
+DEBUG - 2025-07-10 16:13:44 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:44 --> Input Class Initialized
+INFO - 2025-07-10 16:13:44 --> Language Class Initialized
+INFO - 2025-07-10 16:13:44 --> Config Class Initialized
+INFO - 2025-07-10 16:13:44 --> Hooks Class Initialized
+INFO - 2025-07-10 16:13:44 --> Loader Class Initialized
+DEBUG - 2025-07-10 16:13:44 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:13:44 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:44 --> Helper loaded: form_helper
+DEBUG - 2025-07-10 16:13:44 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:44 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:44 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:44 --> URI Class Initialized
+INFO - 2025-07-10 16:13:44 --> Router Class Initialized
+INFO - 2025-07-10 16:13:44 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:13:44 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:44 --> Output Class Initialized
+INFO - 2025-07-10 16:13:44 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:44 --> URI Class Initialized
+INFO - 2025-07-10 16:13:44 --> Security Class Initialized
+DEBUG - 2025-07-10 16:13:44 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:44 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:13:44 --> Router Class Initialized
+DEBUG - 2025-07-10 16:13:44 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:44 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:44 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+INFO - 2025-07-10 16:13:44 --> Input Class Initialized
+DEBUG - 2025-07-10 16:13:44 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:44 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:44 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:44 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:44 --> Language Class Initialized
+INFO - 2025-07-10 16:13:44 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:13:44 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:13:44 --> Loader Class Initialized
+DEBUG - 2025-07-10 16:13:44 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:44 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:13:44 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:44 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:44 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:44 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:44 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:44 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:44 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:44 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:13:44 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:44 --> Total execution time: 0.1095
+INFO - 2025-07-10 16:13:44 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:44 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:44 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:44 --> Config Class Initialized
+INFO - 2025-07-10 16:13:44 --> Hooks Class Initialized
+INFO - 2025-07-10 16:13:44 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:44 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:44 --> Controller Class Initialized
+DEBUG - 2025-07-10 16:13:44 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:13:44 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:13:44 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:13:44 --> Model "Payment_model" initialized
+DEBUG - 2025-07-10 16:13:44 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:44 --> Utf8 Class Initialized
+DEBUG - 2025-07-10 16:13:44 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:44 --> URI Class Initialized
+INFO - 2025-07-10 16:13:44 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:13:44 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:44 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:44 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:44 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:44 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:13:44 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:13:44 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:44 --> Total execution time: 0.1653
+INFO - 2025-07-10 16:13:44 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:44 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:44 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:44 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:44 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:44 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:44 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:44 --> Form Validation Class Initialized
+INFO - 2025-07-10 16:13:44 --> Output Class Initialized
+DEBUG - 2025-07-10 16:13:44 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:44 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:44 --> Total execution time: 0.0934
+INFO - 2025-07-10 16:13:44 --> Security Class Initialized
+DEBUG - 2025-07-10 16:13:44 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:44 --> Input Class Initialized
+INFO - 2025-07-10 16:13:44 --> Language Class Initialized
+DEBUG - 2025-07-10 16:13:44 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:44 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:44 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:44 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:44 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:44 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:44 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:44 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:44 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:44 --> Model "Account_model" initialized
+INFO - 2025-07-10 16:13:44 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:44 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:44 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:44 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:44 --> Form Validation Class Initialized
+INFO - 2025-07-10 16:13:44 --> Router Class Initialized
+DEBUG - 2025-07-10 16:13:44 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:44 --> User Agent Class Initialized
+INFO - 2025-07-10 16:13:44 --> Output Class Initialized
+INFO - 2025-07-10 16:13:44 --> Security Class Initialized
+DEBUG - 2025-07-10 16:13:44 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:44 --> Final output sent to browser
+INFO - 2025-07-10 16:13:44 --> Input Class Initialized
+DEBUG - 2025-07-10 16:13:44 --> Total execution time: 0.1830
+INFO - 2025-07-10 16:13:44 --> Language Class Initialized
+INFO - 2025-07-10 16:13:44 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:44 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:44 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:44 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:44 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:13:44 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:13:44 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:44 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:44 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:44 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:44 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:44 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:44 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:44 --> Model "Notification_model" initialized
+DEBUG - 2025-07-10 16:13:44 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:44 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:44 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:44 --> File loaded: C:\laragon\www\Landholding\application\views\notification/ajax_notification_page.php
+INFO - 2025-07-10 16:13:44 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:44 --> Total execution time: 0.1495
+INFO - 2025-07-10 16:13:44 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:44 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:44 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:44 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:44 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:44 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:44 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:13:44 --> Model "Payment_model" initialized
+INFO - 2025-07-10 16:13:44 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:13:44 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:44 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:44 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:44 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:44 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:13:44 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:44 --> Total execution time: 0.3021
+INFO - 2025-07-10 16:13:45 --> Config Class Initialized
+INFO - 2025-07-10 16:13:45 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:13:45 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:13:45 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:45 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:45 --> URI Class Initialized
+DEBUG - 2025-07-10 16:13:45 --> No URI present. Default controller set.
+INFO - 2025-07-10 16:13:45 --> Router Class Initialized
+INFO - 2025-07-10 16:13:45 --> Output Class Initialized
+INFO - 2025-07-10 16:13:45 --> Security Class Initialized
+DEBUG - 2025-07-10 16:13:45 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:45 --> Input Class Initialized
+INFO - 2025-07-10 16:13:45 --> Language Class Initialized
+INFO - 2025-07-10 16:13:45 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:45 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:45 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:45 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:45 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:13:45 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:45 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:45 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:45 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:45 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:45 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:45 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:45 --> Model "Account_model" initialized
+INFO - 2025-07-10 16:13:45 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:45 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:45 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:45 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:45 --> User Agent Class Initialized
+INFO - 2025-07-10 16:13:45 --> File loaded: C:\laragon\www\Landholding\application\views\templates/header.php
+INFO - 2025-07-10 16:13:45 --> File loaded: C:\laragon\www\Landholding\application\views\templates/bar.php
+INFO - 2025-07-10 16:13:45 --> File loaded: C:\laragon\www\Landholding\application\views\accounting/home.php
+INFO - 2025-07-10 16:13:45 --> File loaded: C:\laragon\www\Landholding\application\views\templates/footer.php
+INFO - 2025-07-10 16:13:45 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:45 --> Total execution time: 0.0695
+INFO - 2025-07-10 16:13:45 --> Config Class Initialized
+INFO - 2025-07-10 16:13:45 --> Hooks Class Initialized
+INFO - 2025-07-10 16:13:45 --> Config Class Initialized
+DEBUG - 2025-07-10 16:13:45 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:13:45 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:13:45 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:13:45 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:45 --> Utf8 Class Initialized
+DEBUG - 2025-07-10 16:13:45 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:45 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:45 --> URI Class Initialized
+INFO - 2025-07-10 16:13:45 --> URI Class Initialized
+INFO - 2025-07-10 16:13:45 --> Router Class Initialized
+INFO - 2025-07-10 16:13:45 --> Config Class Initialized
+INFO - 2025-07-10 16:13:45 --> Hooks Class Initialized
+INFO - 2025-07-10 16:13:45 --> Router Class Initialized
+DEBUG - 2025-07-10 16:13:45 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:13:45 --> Output Class Initialized
+INFO - 2025-07-10 16:13:45 --> Output Class Initialized
+INFO - 2025-07-10 16:13:45 --> Security Class Initialized
+DEBUG - 2025-07-10 16:13:45 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:45 --> Utf8 Class Initialized
+DEBUG - 2025-07-10 16:13:45 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:45 --> URI Class Initialized
+INFO - 2025-07-10 16:13:45 --> Input Class Initialized
+INFO - 2025-07-10 16:13:45 --> Language Class Initialized
+INFO - 2025-07-10 16:13:45 --> Router Class Initialized
+INFO - 2025-07-10 16:13:45 --> Security Class Initialized
+INFO - 2025-07-10 16:13:45 --> Output Class Initialized
+DEBUG - 2025-07-10 16:13:45 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:45 --> Input Class Initialized
+INFO - 2025-07-10 16:13:45 --> Security Class Initialized
+INFO - 2025-07-10 16:13:45 --> Language Class Initialized
+INFO - 2025-07-10 16:13:45 --> Loader Class Initialized
+DEBUG - 2025-07-10 16:13:45 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:45 --> Input Class Initialized
+INFO - 2025-07-10 16:13:45 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:45 --> Language Class Initialized
+INFO - 2025-07-10 16:13:45 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:45 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:45 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:45 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:45 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:45 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:45 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:45 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:45 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:45 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:45 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:13:45 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:13:45 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2025-07-10 16:13:45 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:45 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:13:45 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:45 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:45 --> Encryption: Auto-configured driver 'openssl'.
+DEBUG - 2025-07-10 16:13:45 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:45 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:45 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:45 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:45 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:45 --> Config Class Initialized
+INFO - 2025-07-10 16:13:45 --> Form Validation Class Initialized
+INFO - 2025-07-10 16:13:45 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:13:45 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2025-07-10 16:13:45 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:13:45 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:45 --> Total execution time: 0.0673
+INFO - 2025-07-10 16:13:45 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:45 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:45 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:45 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:45 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:45 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:45 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:13:45 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:13:45 --> Model "Acquisition_model" initialized
+DEBUG - 2025-07-10 16:13:45 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:45 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:45 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:45 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:45 --> URI Class Initialized
+INFO - 2025-07-10 16:13:45 --> Router Class Initialized
+INFO - 2025-07-10 16:13:45 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:45 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:45 --> Output Class Initialized
+INFO - 2025-07-10 16:13:45 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:13:45 --> Security Class Initialized
+DEBUG - 2025-07-10 16:13:45 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:45 --> Input Class Initialized
+INFO - 2025-07-10 16:13:45 --> Final output sent to browser
+INFO - 2025-07-10 16:13:45 --> Language Class Initialized
+DEBUG - 2025-07-10 16:13:45 --> Total execution time: 0.1094
+INFO - 2025-07-10 16:13:45 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:45 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+INFO - 2025-07-10 16:13:45 --> Loader Class Initialized
+DEBUG - 2025-07-10 16:13:45 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:45 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:45 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:45 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:45 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:45 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:45 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:45 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:45 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:45 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:45 --> File loaded: C:\laragon\www\Landholding\application\views\notification/ajax_notification_page.php
+INFO - 2025-07-10 16:13:45 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:45 --> Total execution time: 0.1271
+INFO - 2025-07-10 16:13:45 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:13:45 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:45 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:45 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:45 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:45 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:45 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:45 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:45 --> Model "Account_model" initialized
+INFO - 2025-07-10 16:13:45 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:45 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:45 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:45 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:45 --> User Agent Class Initialized
+INFO - 2025-07-10 16:13:45 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:45 --> Total execution time: 0.1456
+INFO - 2025-07-10 16:13:46 --> Config Class Initialized
+INFO - 2025-07-10 16:13:46 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:13:46 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:13:46 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:46 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:46 --> URI Class Initialized
+INFO - 2025-07-10 16:13:46 --> Router Class Initialized
+INFO - 2025-07-10 16:13:46 --> Output Class Initialized
+INFO - 2025-07-10 16:13:46 --> Security Class Initialized
+DEBUG - 2025-07-10 16:13:46 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:46 --> Input Class Initialized
+INFO - 2025-07-10 16:13:46 --> Language Class Initialized
+INFO - 2025-07-10 16:13:46 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:46 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:46 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:46 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:46 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:13:46 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:46 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:46 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:46 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:46 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:46 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:46 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:46 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:13:46 --> Model "Payment_model" initialized
+INFO - 2025-07-10 16:13:46 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:13:46 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:46 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:46 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:46 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:46 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:13:46 --> File loaded: C:\laragon\www\Landholding\application\views\templates/header.php
+INFO - 2025-07-10 16:13:46 --> File loaded: C:\laragon\www\Landholding\application\views\templates/bar.php
+INFO - 2025-07-10 16:13:46 --> Helper loaded: custom_helper
+INFO - 2025-07-10 16:13:46 --> File loaded: C:\laragon\www\Landholding\application\views\accounting/payment_request/table.php
+INFO - 2025-07-10 16:13:46 --> File loaded: C:\laragon\www\Landholding\application\views\templates/footer.php
+INFO - 2025-07-10 16:13:46 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:46 --> Total execution time: 0.0950
+INFO - 2025-07-10 16:13:46 --> Config Class Initialized
+INFO - 2025-07-10 16:13:46 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:13:46 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:13:46 --> Config Class Initialized
+INFO - 2025-07-10 16:13:46 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:13:46 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:13:46 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:46 --> Utf8 Class Initialized
+DEBUG - 2025-07-10 16:13:46 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:46 --> URI Class Initialized
+INFO - 2025-07-10 16:13:46 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:46 --> URI Class Initialized
+INFO - 2025-07-10 16:13:46 --> Router Class Initialized
+INFO - 2025-07-10 16:13:46 --> Router Class Initialized
+INFO - 2025-07-10 16:13:46 --> Output Class Initialized
+INFO - 2025-07-10 16:13:46 --> Security Class Initialized
+INFO - 2025-07-10 16:13:46 --> Output Class Initialized
+DEBUG - 2025-07-10 16:13:46 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:46 --> Input Class Initialized
+INFO - 2025-07-10 16:13:46 --> Security Class Initialized
+INFO - 2025-07-10 16:13:46 --> Language Class Initialized
+DEBUG - 2025-07-10 16:13:46 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:46 --> Input Class Initialized
+INFO - 2025-07-10 16:13:46 --> Language Class Initialized
+INFO - 2025-07-10 16:13:46 --> Config Class Initialized
+INFO - 2025-07-10 16:13:46 --> Hooks Class Initialized
+INFO - 2025-07-10 16:13:46 --> Config Class Initialized
+INFO - 2025-07-10 16:13:46 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:13:46 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:13:46 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:46 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:46 --> URI Class Initialized
+DEBUG - 2025-07-10 16:13:46 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:13:46 --> Router Class Initialized
+INFO - 2025-07-10 16:13:46 --> Output Class Initialized
+INFO - 2025-07-10 16:13:46 --> Config Class Initialized
+INFO - 2025-07-10 16:13:46 --> Hooks Class Initialized
+INFO - 2025-07-10 16:13:46 --> Security Class Initialized
+DEBUG - 2025-07-10 16:13:46 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:13:46 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:46 --> Input Class Initialized
+INFO - 2025-07-10 16:13:46 --> Language Class Initialized
+DEBUG - 2025-07-10 16:13:46 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:46 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:46 --> URI Class Initialized
+INFO - 2025-07-10 16:13:46 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:46 --> Router Class Initialized
+INFO - 2025-07-10 16:13:46 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:46 --> Output Class Initialized
+INFO - 2025-07-10 16:13:46 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:46 --> Security Class Initialized
+INFO - 2025-07-10 16:13:46 --> Helper loaded: number_helper
+DEBUG - 2025-07-10 16:13:46 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:46 --> Input Class Initialized
+INFO - 2025-07-10 16:13:46 --> Language Class Initialized
+INFO - 2025-07-10 16:13:46 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:46 --> Config Class Initialized
+INFO - 2025-07-10 16:13:46 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:13:46 --> Hooks Class Initialized
+INFO - 2025-07-10 16:13:46 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:46 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:46 --> Helper loaded: number_helper
+DEBUG - 2025-07-10 16:13:46 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:46 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:46 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:46 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:46 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:46 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:46 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:46 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:46 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:46 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:46 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:46 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:46 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:13:46 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:46 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:46 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:46 --> Total execution time: 0.0783
+DEBUG - 2025-07-10 16:13:46 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:46 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:46 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+INFO - 2025-07-10 16:13:46 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:13:46 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:46 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:46 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:46 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:46 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:46 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:13:46 --> Model "Payment_model" initialized
+INFO - 2025-07-10 16:13:46 --> Helper loaded: url_helper
+DEBUG - 2025-07-10 16:13:46 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:46 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:13:46 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:46 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:46 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:46 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:46 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:46 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:46 --> Helper loaded: security_helper
+DEBUG - 2025-07-10 16:13:46 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:46 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:46 --> URI Class Initialized
+INFO - 2025-07-10 16:13:46 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:46 --> Total execution time: 0.0804
+INFO - 2025-07-10 16:13:46 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:13:46 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:46 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:46 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:46 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:46 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:46 --> Controller Class Initialized
+DEBUG - 2025-07-10 16:13:46 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:46 --> Model "Rpt_model" initialized
+DEBUG - 2025-07-10 16:13:46 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:13:46 --> Router Class Initialized
+INFO - 2025-07-10 16:13:46 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:13:46 --> Output Class Initialized
+INFO - 2025-07-10 16:13:46 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:13:46 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:46 --> Security Class Initialized
+INFO - 2025-07-10 16:13:46 --> Model "Notification_model" initialized
+DEBUG - 2025-07-10 16:13:46 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:46 --> Input Class Initialized
+INFO - 2025-07-10 16:13:46 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:46 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:46 --> Language Class Initialized
+DEBUG - 2025-07-10 16:13:46 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:46 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:46 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:13:46 --> URI Class Initialized
+INFO - 2025-07-10 16:13:46 --> Final output sent to browser
+INFO - 2025-07-10 16:13:46 --> Router Class Initialized
+DEBUG - 2025-07-10 16:13:46 --> Total execution time: 0.1421
+INFO - 2025-07-10 16:13:46 --> Session: Class initialized using 'files' driver.
+INFO - 2025-07-10 16:13:46 --> Loader Class Initialized
+DEBUG - 2025-07-10 16:13:46 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+INFO - 2025-07-10 16:13:46 --> Output Class Initialized
+DEBUG - 2025-07-10 16:13:46 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:46 --> Security Class Initialized
+INFO - 2025-07-10 16:13:46 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:46 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:46 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:46 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:46 --> Model "Account_model" initialized
+INFO - 2025-07-10 16:13:46 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:46 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:46 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:46 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:46 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:46 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:46 --> Input Class Initialized
+DEBUG - 2025-07-10 16:13:46 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:46 --> Language Class Initialized
+INFO - 2025-07-10 16:13:46 --> User Agent Class Initialized
+INFO - 2025-07-10 16:13:46 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:46 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:46 --> Total execution time: 0.1630
+INFO - 2025-07-10 16:13:46 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:46 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:46 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:46 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:13:46 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:46 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:46 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:46 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:46 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:46 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:46 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:46 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:47 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:47 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:47 --> File loaded: C:\laragon\www\Landholding\application\views\notification/ajax_notification_page.php
+INFO - 2025-07-10 16:13:47 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:47 --> Total execution time: 0.1446
+INFO - 2025-07-10 16:13:47 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:13:47 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:47 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:47 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:47 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:47 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:47 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:47 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:47 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:13:47 --> Model "Payment_model" initialized
+INFO - 2025-07-10 16:13:47 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:13:47 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:47 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:47 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:47 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:47 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:13:47 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:47 --> Total execution time: 0.2583
+INFO - 2025-07-10 16:13:47 --> Config Class Initialized
+INFO - 2025-07-10 16:13:47 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:13:47 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:13:47 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:47 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:47 --> URI Class Initialized
+INFO - 2025-07-10 16:13:47 --> Router Class Initialized
+INFO - 2025-07-10 16:13:47 --> Output Class Initialized
+INFO - 2025-07-10 16:13:47 --> Security Class Initialized
+DEBUG - 2025-07-10 16:13:47 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:47 --> Input Class Initialized
+INFO - 2025-07-10 16:13:47 --> Language Class Initialized
+INFO - 2025-07-10 16:13:47 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:47 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:47 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:47 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:47 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:13:47 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:47 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:47 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:47 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:47 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:47 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:47 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:47 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:13:47 --> Model "Payment_model" initialized
+INFO - 2025-07-10 16:13:47 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:13:47 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:13:47 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:47 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:47 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:47 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:47 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:13:47 --> File loaded: C:\laragon\www\Landholding\application\views\templates/header.php
+INFO - 2025-07-10 16:13:47 --> File loaded: C:\laragon\www\Landholding\application\views\templates/bar.php
+INFO - 2025-07-10 16:13:47 --> File loaded: C:\laragon\www\Landholding\application\views\accounting/Rpt/rpt_table.php
+INFO - 2025-07-10 16:13:47 --> File loaded: C:\laragon\www\Landholding\application\views\templates/footer.php
+INFO - 2025-07-10 16:13:47 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:47 --> Total execution time: 0.0749
+INFO - 2025-07-10 16:13:47 --> Config Class Initialized
+INFO - 2025-07-10 16:13:47 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:13:47 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:13:47 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:47 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:47 --> URI Class Initialized
+INFO - 2025-07-10 16:13:47 --> Router Class Initialized
+INFO - 2025-07-10 16:13:47 --> Output Class Initialized
+INFO - 2025-07-10 16:13:47 --> Security Class Initialized
+DEBUG - 2025-07-10 16:13:47 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:47 --> Input Class Initialized
+INFO - 2025-07-10 16:13:47 --> Language Class Initialized
+INFO - 2025-07-10 16:13:47 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:47 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:47 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:47 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:47 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:13:47 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:47 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:47 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:47 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:47 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:47 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:47 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:47 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:13:47 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:13:47 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:13:47 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:47 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:47 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:47 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:47 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:13:47 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:47 --> Total execution time: 0.0766
+INFO - 2025-07-10 16:13:47 --> Config Class Initialized
+INFO - 2025-07-10 16:13:47 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:13:47 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:13:47 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:47 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:47 --> URI Class Initialized
+INFO - 2025-07-10 16:13:47 --> Router Class Initialized
+INFO - 2025-07-10 16:13:47 --> Output Class Initialized
+INFO - 2025-07-10 16:13:47 --> Security Class Initialized
+DEBUG - 2025-07-10 16:13:47 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:47 --> Input Class Initialized
+INFO - 2025-07-10 16:13:47 --> Language Class Initialized
+INFO - 2025-07-10 16:13:47 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:47 --> Config Class Initialized
+INFO - 2025-07-10 16:13:47 --> Config Class Initialized
+INFO - 2025-07-10 16:13:47 --> Hooks Class Initialized
+INFO - 2025-07-10 16:13:47 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:13:47 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:13:47 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:13:47 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:47 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:47 --> URI Class Initialized
+INFO - 2025-07-10 16:13:47 --> Router Class Initialized
+INFO - 2025-07-10 16:13:47 --> Output Class Initialized
+INFO - 2025-07-10 16:13:47 --> Security Class Initialized
+DEBUG - 2025-07-10 16:13:47 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:47 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:47 --> Input Class Initialized
+INFO - 2025-07-10 16:13:47 --> Language Class Initialized
+INFO - 2025-07-10 16:13:47 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:47 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:47 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:47 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:47 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:47 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:47 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:13:47 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:13:47 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:47 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:47 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:47 --> Encryption: Auto-configured driver 'openssl'.
+DEBUG - 2025-07-10 16:13:47 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:47 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:47 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:47 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:47 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:13:47 --> Model "Payment_model" initialized
+INFO - 2025-07-10 16:13:47 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:13:47 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:13:47 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:47 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:47 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:47 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:47 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:13:47 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:47 --> Total execution time: 0.1056
+INFO - 2025-07-10 16:13:47 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:47 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:47 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:47 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:47 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:47 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:47 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:13:47 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:13:47 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:13:47 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:47 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:47 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:47 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2025-07-10 16:13:47 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:47 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:47 --> Config Class Initialized
+INFO - 2025-07-10 16:13:47 --> URI Class Initialized
+INFO - 2025-07-10 16:13:47 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:13:47 --> Hooks Class Initialized
+INFO - 2025-07-10 16:13:47 --> Router Class Initialized
+DEBUG - 2025-07-10 16:13:47 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:13:47 --> Config Class Initialized
+INFO - 2025-07-10 16:13:47 --> Output Class Initialized
+INFO - 2025-07-10 16:13:47 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:13:47 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:13:47 --> Security Class Initialized
+DEBUG - 2025-07-10 16:13:47 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2025-07-10 16:13:47 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:47 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:47 --> URI Class Initialized
+DEBUG - 2025-07-10 16:13:47 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:47 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:47 --> URI Class Initialized
+INFO - 2025-07-10 16:13:47 --> Router Class Initialized
+INFO - 2025-07-10 16:13:47 --> Router Class Initialized
+INFO - 2025-07-10 16:13:47 --> Output Class Initialized
+INFO - 2025-07-10 16:13:47 --> Output Class Initialized
+INFO - 2025-07-10 16:13:47 --> Security Class Initialized
+DEBUG - 2025-07-10 16:13:47 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:47 --> Input Class Initialized
+INFO - 2025-07-10 16:13:47 --> Security Class Initialized
+INFO - 2025-07-10 16:13:47 --> Language Class Initialized
+DEBUG - 2025-07-10 16:13:47 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:47 --> Input Class Initialized
+INFO - 2025-07-10 16:13:47 --> Language Class Initialized
+INFO - 2025-07-10 16:13:47 --> Input Class Initialized
+INFO - 2025-07-10 16:13:47 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:47 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:47 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:47 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:47 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:47 --> Language Class Initialized
+INFO - 2025-07-10 16:13:47 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:47 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:47 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:47 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:47 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:13:47 --> Helper loaded: url_helper
+DEBUG - 2025-07-10 16:13:47 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:47 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:47 --> Total execution time: 0.1449
+INFO - 2025-07-10 16:13:47 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:47 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:47 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+INFO - 2025-07-10 16:13:47 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:13:47 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:47 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:47 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:47 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:47 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:47 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:47 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:47 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:47 --> File loaded: C:\laragon\www\Landholding\application\views\notification/ajax_notification_page.php
+INFO - 2025-07-10 16:13:47 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:47 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2025-07-10 16:13:47 --> Total execution time: 0.0823
+INFO - 2025-07-10 16:13:47 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:47 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:47 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:47 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:47 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:47 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:47 --> Model "Account_model" initialized
+INFO - 2025-07-10 16:13:47 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:47 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:47 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:13:47 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:47 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:47 --> User Agent Class Initialized
+DEBUG - 2025-07-10 16:13:47 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:47 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:47 --> Total execution time: 0.1824
+INFO - 2025-07-10 16:13:47 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:47 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:47 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:47 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:47 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:47 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:47 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:47 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:47 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:47 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:47 --> Total execution time: 0.1369
+INFO - 2025-07-10 16:13:49 --> Config Class Initialized
+INFO - 2025-07-10 16:13:49 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:13:49 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:13:49 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:49 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:49 --> URI Class Initialized
+INFO - 2025-07-10 16:13:49 --> Router Class Initialized
+INFO - 2025-07-10 16:13:49 --> Output Class Initialized
+INFO - 2025-07-10 16:13:49 --> Security Class Initialized
+DEBUG - 2025-07-10 16:13:49 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:49 --> Input Class Initialized
+INFO - 2025-07-10 16:13:49 --> Language Class Initialized
+INFO - 2025-07-10 16:13:49 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:49 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:49 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:49 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:49 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:13:49 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:49 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:49 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:49 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:49 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:49 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:49 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:49 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:13:49 --> Model "Payment_model" initialized
+INFO - 2025-07-10 16:13:49 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:13:49 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:49 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:49 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:49 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:49 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:13:49 --> File loaded: C:\laragon\www\Landholding\application\views\templates/header.php
+INFO - 2025-07-10 16:13:49 --> File loaded: C:\laragon\www\Landholding\application\views\templates/bar.php
+INFO - 2025-07-10 16:13:49 --> File loaded: C:\laragon\www\Landholding\application\views\accounting/in_progress/table.php
+INFO - 2025-07-10 16:13:49 --> File loaded: C:\laragon\www\Landholding\application\views\templates/footer.php
+INFO - 2025-07-10 16:13:49 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:49 --> Total execution time: 0.0753
+INFO - 2025-07-10 16:13:49 --> Config Class Initialized
+INFO - 2025-07-10 16:13:49 --> Hooks Class Initialized
+INFO - 2025-07-10 16:13:49 --> Config Class Initialized
+INFO - 2025-07-10 16:13:49 --> Config Class Initialized
+INFO - 2025-07-10 16:13:49 --> Hooks Class Initialized
+INFO - 2025-07-10 16:13:49 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:13:49 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:13:49 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:13:49 --> UTF-8 Support Enabled
+DEBUG - 2025-07-10 16:13:49 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:49 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:49 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:49 --> URI Class Initialized
+INFO - 2025-07-10 16:13:49 --> Config Class Initialized
+INFO - 2025-07-10 16:13:49 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:13:49 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:13:49 --> Router Class Initialized
+INFO - 2025-07-10 16:13:49 --> URI Class Initialized
+INFO - 2025-07-10 16:13:49 --> Output Class Initialized
+DEBUG - 2025-07-10 16:13:49 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:13:49 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:49 --> Security Class Initialized
+INFO - 2025-07-10 16:13:49 --> Utf8 Class Initialized
+DEBUG - 2025-07-10 16:13:49 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:49 --> URI Class Initialized
+INFO - 2025-07-10 16:13:49 --> Input Class Initialized
+INFO - 2025-07-10 16:13:49 --> Language Class Initialized
+INFO - 2025-07-10 16:13:49 --> Router Class Initialized
+INFO - 2025-07-10 16:13:49 --> Output Class Initialized
+INFO - 2025-07-10 16:13:49 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:49 --> Security Class Initialized
+INFO - 2025-07-10 16:13:49 --> Helper loaded: url_helper
+DEBUG - 2025-07-10 16:13:49 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:49 --> Input Class Initialized
+INFO - 2025-07-10 16:13:49 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:49 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:49 --> Language Class Initialized
+INFO - 2025-07-10 16:13:49 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:49 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:49 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:13:49 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:49 --> Helper loaded: number_helper
+DEBUG - 2025-07-10 16:13:49 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:49 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:49 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:49 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:49 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:49 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:49 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:49 --> Model "Account_model" initialized
+INFO - 2025-07-10 16:13:49 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:49 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:49 --> Router Class Initialized
+INFO - 2025-07-10 16:13:49 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:49 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:49 --> User Agent Class Initialized
+DEBUG - 2025-07-10 16:13:49 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:49 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:49 --> Final output sent to browser
+INFO - 2025-07-10 16:13:49 --> URI Class Initialized
+DEBUG - 2025-07-10 16:13:49 --> Total execution time: 0.0708
+INFO - 2025-07-10 16:13:49 --> Router Class Initialized
+INFO - 2025-07-10 16:13:49 --> Config Class Initialized
+INFO - 2025-07-10 16:13:49 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:13:49 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:13:49 --> Output Class Initialized
+INFO - 2025-07-10 16:13:49 --> Security Class Initialized
+DEBUG - 2025-07-10 16:13:49 --> UTF-8 Support Enabled
+DEBUG - 2025-07-10 16:13:49 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:49 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:49 --> Input Class Initialized
+INFO - 2025-07-10 16:13:49 --> Language Class Initialized
+INFO - 2025-07-10 16:13:49 --> URI Class Initialized
+INFO - 2025-07-10 16:13:49 --> Router Class Initialized
+INFO - 2025-07-10 16:13:49 --> Output Class Initialized
+INFO - 2025-07-10 16:13:49 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:49 --> Security Class Initialized
+INFO - 2025-07-10 16:13:49 --> Helper loaded: url_helper
+DEBUG - 2025-07-10 16:13:49 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:49 --> Input Class Initialized
+INFO - 2025-07-10 16:13:49 --> Language Class Initialized
+INFO - 2025-07-10 16:13:49 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:49 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:49 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:13:49 --> Output Class Initialized
+INFO - 2025-07-10 16:13:49 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:49 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:49 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:49 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:13:49 --> Helper loaded: number_helper
+DEBUG - 2025-07-10 16:13:49 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:49 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:49 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:49 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:49 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:49 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:49 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:49 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:13:49 --> Model "Payment_model" initialized
+DEBUG - 2025-07-10 16:13:49 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:49 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:13:49 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:49 --> Security Class Initialized
+INFO - 2025-07-10 16:13:49 --> Model "Notification_model" initialized
+DEBUG - 2025-07-10 16:13:49 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:49 --> Input Class Initialized
+INFO - 2025-07-10 16:13:49 --> Form Validation Class Initialized
+INFO - 2025-07-10 16:13:49 --> Language Class Initialized
+DEBUG - 2025-07-10 16:13:49 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:49 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:13:49 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:49 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:49 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:49 --> Final output sent to browser
+INFO - 2025-07-10 16:13:49 --> Helper loaded: number_helper
+DEBUG - 2025-07-10 16:13:49 --> Total execution time: 0.1695
+INFO - 2025-07-10 16:13:49 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:13:49 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:49 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:49 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:49 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:49 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:49 --> Controller Class Initialized
+DEBUG - 2025-07-10 16:13:49 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:49 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:49 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:13:49 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:49 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2025-07-10 16:13:49 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:49 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:49 --> Total execution time: 0.1780
+INFO - 2025-07-10 16:13:49 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:49 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:49 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:49 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:49 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:49 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:49 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:13:49 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:13:49 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:13:49 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:49 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:49 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:49 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:49 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:13:49 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:49 --> Total execution time: 0.1701
+INFO - 2025-07-10 16:13:49 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:49 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:49 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:49 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:49 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:49 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:49 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:49 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:49 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:49 --> File loaded: C:\laragon\www\Landholding\application\views\notification/ajax_notification_page.php
+INFO - 2025-07-10 16:13:49 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:49 --> Total execution time: 0.1981
+INFO - 2025-07-10 16:13:50 --> Config Class Initialized
+INFO - 2025-07-10 16:13:50 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:13:50 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:13:50 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:50 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:50 --> URI Class Initialized
+INFO - 2025-07-10 16:13:50 --> Router Class Initialized
+INFO - 2025-07-10 16:13:50 --> Output Class Initialized
+INFO - 2025-07-10 16:13:50 --> Security Class Initialized
+DEBUG - 2025-07-10 16:13:50 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:50 --> Input Class Initialized
+INFO - 2025-07-10 16:13:50 --> Language Class Initialized
+INFO - 2025-07-10 16:13:50 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:50 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:50 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:50 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:50 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:13:50 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:50 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:50 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:50 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:50 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:50 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:50 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:50 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:13:50 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:50 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:50 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:50 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:50 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:13:50 --> File loaded: C:\laragon\www\Landholding\application\views\templates/header.php
+INFO - 2025-07-10 16:13:50 --> File loaded: C:\laragon\www\Landholding\application\views\templates/bar.php
+INFO - 2025-07-10 16:13:50 --> File loaded: C:\laragon\www\Landholding\application\views\secretary/Owned/owned_land.php
+INFO - 2025-07-10 16:13:50 --> File loaded: C:\laragon\www\Landholding\application\views\templates/footer.php
+INFO - 2025-07-10 16:13:50 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:50 --> Total execution time: 0.0752
+INFO - 2025-07-10 16:13:50 --> Config Class Initialized
+INFO - 2025-07-10 16:13:50 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:13:50 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:13:50 --> Config Class Initialized
+INFO - 2025-07-10 16:13:50 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:13:50 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:13:50 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:50 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:50 --> URI Class Initialized
+INFO - 2025-07-10 16:13:50 --> Config Class Initialized
+INFO - 2025-07-10 16:13:50 --> Hooks Class Initialized
+INFO - 2025-07-10 16:13:50 --> Config Class Initialized
+DEBUG - 2025-07-10 16:13:50 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:13:50 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:13:50 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:13:50 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:50 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:50 --> Config Class Initialized
+INFO - 2025-07-10 16:13:50 --> Hooks Class Initialized
+INFO - 2025-07-10 16:13:50 --> URI Class Initialized
+DEBUG - 2025-07-10 16:13:50 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:13:50 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:50 --> Router Class Initialized
+INFO - 2025-07-10 16:13:50 --> Router Class Initialized
+INFO - 2025-07-10 16:13:50 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:50 --> URI Class Initialized
+INFO - 2025-07-10 16:13:50 --> Output Class Initialized
+INFO - 2025-07-10 16:13:50 --> Output Class Initialized
+INFO - 2025-07-10 16:13:50 --> Router Class Initialized
+INFO - 2025-07-10 16:13:50 --> Security Class Initialized
+DEBUG - 2025-07-10 16:13:50 --> UTF-8 Support Enabled
+DEBUG - 2025-07-10 16:13:50 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:50 --> Output Class Initialized
+INFO - 2025-07-10 16:13:50 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:50 --> Input Class Initialized
+INFO - 2025-07-10 16:13:50 --> Security Class Initialized
+INFO - 2025-07-10 16:13:50 --> URI Class Initialized
+INFO - 2025-07-10 16:13:50 --> Language Class Initialized
+DEBUG - 2025-07-10 16:13:50 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:50 --> Router Class Initialized
+INFO - 2025-07-10 16:13:50 --> Input Class Initialized
+INFO - 2025-07-10 16:13:50 --> Language Class Initialized
+INFO - 2025-07-10 16:13:50 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:50 --> Output Class Initialized
+INFO - 2025-07-10 16:13:50 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:50 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:50 --> Security Class Initialized
+INFO - 2025-07-10 16:13:50 --> Helper loaded: form_helper
+DEBUG - 2025-07-10 16:13:50 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:50 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:50 --> Input Class Initialized
+INFO - 2025-07-10 16:13:50 --> Language Class Initialized
+DEBUG - 2025-07-10 16:13:50 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:50 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:50 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:50 --> URI Class Initialized
+INFO - 2025-07-10 16:13:50 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:50 --> Router Class Initialized
+INFO - 2025-07-10 16:13:50 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:50 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:50 --> Output Class Initialized
+INFO - 2025-07-10 16:13:50 --> Security Class Initialized
+DEBUG - 2025-07-10 16:13:50 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:50 --> Input Class Initialized
+INFO - 2025-07-10 16:13:50 --> Language Class Initialized
+INFO - 2025-07-10 16:13:50 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:13:50 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:13:50 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:50 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:50 --> Helper loaded: form_helper
+DEBUG - 2025-07-10 16:13:50 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:50 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:50 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:50 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:50 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:50 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:50 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:50 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:50 --> Model "Account_model" initialized
+INFO - 2025-07-10 16:13:50 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:50 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:50 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:13:50 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:50 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:50 --> User Agent Class Initialized
+DEBUG - 2025-07-10 16:13:50 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:50 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:50 --> Security Class Initialized
+INFO - 2025-07-10 16:13:50 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:50 --> Total execution time: 0.0827
+INFO - 2025-07-10 16:13:50 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:51 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:51 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:51 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:51 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:51 --> Controller Class Initialized
+DEBUG - 2025-07-10 16:13:51 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:51 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:13:51 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:51 --> Input Class Initialized
+INFO - 2025-07-10 16:13:51 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:51 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:51 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:51 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:51 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:51 --> Helper loaded: security_helper
+DEBUG - 2025-07-10 16:13:51 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:51 --> Language Class Initialized
+INFO - 2025-07-10 16:13:51 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:13:51 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:51 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:51 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:51 --> Helper loaded: number_helper
+DEBUG - 2025-07-10 16:13:51 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:51 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:13:51 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:51 --> Total execution time: 0.1349
+INFO - 2025-07-10 16:13:51 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:51 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:51 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:51 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:51 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:51 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:51 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:51 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:51 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:51 --> File loaded: C:\laragon\www\Landholding\application\views\notification/ajax_notification_page.php
+INFO - 2025-07-10 16:13:51 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:51 --> Total execution time: 0.1696
+INFO - 2025-07-10 16:13:51 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:51 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:51 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2025-07-10 16:13:51 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:51 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:51 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:51 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:51 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:51 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:51 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:51 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:51 --> Total execution time: 0.1890
+INFO - 2025-07-10 16:13:51 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:51 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:51 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:51 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:51 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:51 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:51 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:13:51 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:13:51 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:13:51 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:51 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:51 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:51 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:51 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:13:51 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:51 --> Total execution time: 0.1966
+INFO - 2025-07-10 16:13:52 --> Config Class Initialized
+INFO - 2025-07-10 16:13:52 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:13:52 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:13:52 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:52 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:52 --> URI Class Initialized
+INFO - 2025-07-10 16:13:52 --> Router Class Initialized
+INFO - 2025-07-10 16:13:52 --> Output Class Initialized
+INFO - 2025-07-10 16:13:52 --> Security Class Initialized
+DEBUG - 2025-07-10 16:13:52 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:52 --> Input Class Initialized
+INFO - 2025-07-10 16:13:52 --> Language Class Initialized
+INFO - 2025-07-10 16:13:52 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:52 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:52 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:52 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:52 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:13:52 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:52 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:52 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:52 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:52 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:52 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:52 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:52 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:13:52 --> Model "Payment_model" initialized
+INFO - 2025-07-10 16:13:52 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:13:52 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:13:52 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:52 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:52 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:52 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:52 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:13:52 --> File loaded: C:\laragon\www\Landholding\application\views\templates/header.php
+INFO - 2025-07-10 16:13:52 --> File loaded: C:\laragon\www\Landholding\application\views\templates/bar.php
+INFO - 2025-07-10 16:13:52 --> File loaded: C:\laragon\www\Landholding\application\views\accounting/Rpt/rpt_table.php
+INFO - 2025-07-10 16:13:52 --> File loaded: C:\laragon\www\Landholding\application\views\templates/footer.php
+INFO - 2025-07-10 16:13:52 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:52 --> Total execution time: 0.0757
+INFO - 2025-07-10 16:13:52 --> Config Class Initialized
+INFO - 2025-07-10 16:13:52 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:13:52 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:13:52 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:52 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:52 --> URI Class Initialized
+INFO - 2025-07-10 16:13:52 --> Router Class Initialized
+INFO - 2025-07-10 16:13:52 --> Output Class Initialized
+INFO - 2025-07-10 16:13:52 --> Security Class Initialized
+DEBUG - 2025-07-10 16:13:52 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:52 --> Input Class Initialized
+INFO - 2025-07-10 16:13:52 --> Language Class Initialized
+INFO - 2025-07-10 16:13:52 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:52 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:52 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:52 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:52 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:13:52 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:52 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:52 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:52 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:52 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:52 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:52 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:52 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:13:52 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:13:52 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:13:52 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:52 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:52 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:52 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:52 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:13:52 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:52 --> Total execution time: 0.0772
+INFO - 2025-07-10 16:13:52 --> Config Class Initialized
+INFO - 2025-07-10 16:13:52 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:13:52 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:13:52 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:52 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:52 --> URI Class Initialized
+INFO - 2025-07-10 16:13:52 --> Router Class Initialized
+INFO - 2025-07-10 16:13:52 --> Output Class Initialized
+INFO - 2025-07-10 16:13:52 --> Security Class Initialized
+DEBUG - 2025-07-10 16:13:52 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:52 --> Input Class Initialized
+INFO - 2025-07-10 16:13:52 --> Config Class Initialized
+INFO - 2025-07-10 16:13:52 --> Hooks Class Initialized
+INFO - 2025-07-10 16:13:52 --> Config Class Initialized
+DEBUG - 2025-07-10 16:13:52 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:13:52 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:13:52 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:13:52 --> Language Class Initialized
+DEBUG - 2025-07-10 16:13:52 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:52 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:52 --> URI Class Initialized
+INFO - 2025-07-10 16:13:52 --> Router Class Initialized
+INFO - 2025-07-10 16:13:52 --> Output Class Initialized
+INFO - 2025-07-10 16:13:52 --> Config Class Initialized
+INFO - 2025-07-10 16:13:52 --> Security Class Initialized
+INFO - 2025-07-10 16:13:52 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:13:52 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:13:52 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:52 --> Input Class Initialized
+INFO - 2025-07-10 16:13:52 --> Language Class Initialized
+DEBUG - 2025-07-10 16:13:52 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:52 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:52 --> URI Class Initialized
+INFO - 2025-07-10 16:13:52 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:52 --> Router Class Initialized
+INFO - 2025-07-10 16:13:52 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:52 --> Output Class Initialized
+INFO - 2025-07-10 16:13:52 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:52 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:52 --> Security Class Initialized
+DEBUG - 2025-07-10 16:13:52 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:52 --> Input Class Initialized
+INFO - 2025-07-10 16:13:52 --> Language Class Initialized
+INFO - 2025-07-10 16:13:52 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:52 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:52 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:13:52 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:52 --> Helper loaded: number_helper
+DEBUG - 2025-07-10 16:13:52 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:52 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:52 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:52 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:52 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:53 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:13:53 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:53 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:53 --> Model "Notification_model" initialized
+DEBUG - 2025-07-10 16:13:53 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:53 --> Loader Class Initialized
+DEBUG - 2025-07-10 16:13:53 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:53 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:53 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:53 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:53 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:53 --> Final output sent to browser
+INFO - 2025-07-10 16:13:53 --> Helper loaded: number_helper
+DEBUG - 2025-07-10 16:13:53 --> Total execution time: 0.0904
+INFO - 2025-07-10 16:13:53 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:53 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+INFO - 2025-07-10 16:13:53 --> Config Class Initialized
+INFO - 2025-07-10 16:13:53 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:13:53 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:13:53 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:13:53 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:53 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:53 --> Encryption Class Initialized
+DEBUG - 2025-07-10 16:13:53 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:53 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:53 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:53 --> URI Class Initialized
+INFO - 2025-07-10 16:13:53 --> Model "Account_model" initialized
+INFO - 2025-07-10 16:13:53 --> Router Class Initialized
+INFO - 2025-07-10 16:13:53 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:53 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:53 --> Output Class Initialized
+INFO - 2025-07-10 16:13:53 --> Form Validation Class Initialized
+INFO - 2025-07-10 16:13:53 --> Security Class Initialized
+INFO - 2025-07-10 16:13:53 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:53 --> URI Class Initialized
+DEBUG - 2025-07-10 16:13:53 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:53 --> Input Class Initialized
+INFO - 2025-07-10 16:13:53 --> Language Class Initialized
+DEBUG - 2025-07-10 16:13:53 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:53 --> Router Class Initialized
+DEBUG - 2025-07-10 16:13:53 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:53 --> User Agent Class Initialized
+INFO - 2025-07-10 16:13:53 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:53 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:53 --> Output Class Initialized
+INFO - 2025-07-10 16:13:53 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:53 --> Security Class Initialized
+INFO - 2025-07-10 16:13:53 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:53 --> Total execution time: 0.0965
+INFO - 2025-07-10 16:13:53 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:53 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:53 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:53 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:53 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:53 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:53 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:53 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:13:53 --> Model "Payment_model" initialized
+INFO - 2025-07-10 16:13:53 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:13:53 --> Model "Datatable_model" initialized
+DEBUG - 2025-07-10 16:13:53 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:53 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:13:53 --> Model "Notification_bar_model" initialized
+DEBUG - 2025-07-10 16:13:53 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:53 --> Input Class Initialized
+INFO - 2025-07-10 16:13:53 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:53 --> Language Class Initialized
+INFO - 2025-07-10 16:13:53 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:53 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:53 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:13:53 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:53 --> Total execution time: 0.1806
+INFO - 2025-07-10 16:13:53 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:53 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+INFO - 2025-07-10 16:13:53 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:53 --> Helper loaded: url_helper
+DEBUG - 2025-07-10 16:13:53 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:53 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:53 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:53 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:53 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:53 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:53 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:53 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:53 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:53 --> File loaded: C:\laragon\www\Landholding\application\views\notification/ajax_notification_page.php
+INFO - 2025-07-10 16:13:53 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:53 --> Total execution time: 0.0788
+INFO - 2025-07-10 16:13:53 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:13:53 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:53 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:53 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:53 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:53 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:53 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:53 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:53 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:13:53 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:13:53 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:13:53 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:53 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:53 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:53 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:53 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:13:53 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:53 --> Total execution time: 0.1990
+INFO - 2025-07-10 16:13:54 --> Config Class Initialized
+INFO - 2025-07-10 16:13:54 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:13:54 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:13:54 --> Config Class Initialized
+INFO - 2025-07-10 16:13:54 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:13:54 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:13:54 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:54 --> Utf8 Class Initialized
+DEBUG - 2025-07-10 16:13:54 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:54 --> URI Class Initialized
+INFO - 2025-07-10 16:13:54 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:54 --> URI Class Initialized
+INFO - 2025-07-10 16:13:54 --> Router Class Initialized
+INFO - 2025-07-10 16:13:54 --> Router Class Initialized
+INFO - 2025-07-10 16:13:54 --> Output Class Initialized
+INFO - 2025-07-10 16:13:54 --> Security Class Initialized
+INFO - 2025-07-10 16:13:54 --> Output Class Initialized
+DEBUG - 2025-07-10 16:13:54 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:54 --> Input Class Initialized
+INFO - 2025-07-10 16:13:54 --> Security Class Initialized
+INFO - 2025-07-10 16:13:54 --> Language Class Initialized
+DEBUG - 2025-07-10 16:13:54 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:54 --> Input Class Initialized
+INFO - 2025-07-10 16:13:54 --> Language Class Initialized
+INFO - 2025-07-10 16:13:54 --> Config Class Initialized
+INFO - 2025-07-10 16:13:54 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:13:54 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:13:54 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:54 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:54 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:54 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:54 --> URI Class Initialized
+INFO - 2025-07-10 16:13:54 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:54 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:54 --> Router Class Initialized
+INFO - 2025-07-10 16:13:54 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:54 --> Config Class Initialized
+INFO - 2025-07-10 16:13:54 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:54 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:54 --> Hooks Class Initialized
+INFO - 2025-07-10 16:13:54 --> Helper loaded: number_helper
+DEBUG - 2025-07-10 16:13:54 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:13:54 --> Output Class Initialized
+INFO - 2025-07-10 16:13:54 --> Security Class Initialized
+DEBUG - 2025-07-10 16:13:54 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:54 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:13:54 --> Input Class Initialized
+INFO - 2025-07-10 16:13:54 --> Language Class Initialized
+INFO - 2025-07-10 16:13:54 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:13:54 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:54 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:54 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:54 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:54 --> Loader Class Initialized
+DEBUG - 2025-07-10 16:13:54 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:54 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:54 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:54 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:54 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:54 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:13:54 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:13:54 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:54 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:54 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:13:54 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:54 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:54 --> Config Class Initialized
+INFO - 2025-07-10 16:13:54 --> Hooks Class Initialized
+INFO - 2025-07-10 16:13:54 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:54 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:54 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:13:54 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:54 --> Total execution time: 0.0741
+INFO - 2025-07-10 16:13:54 --> Session: Class initialized using 'files' driver.
+INFO - 2025-07-10 16:13:54 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:13:54 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:54 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:54 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:54 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:54 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:54 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:13:54 --> Model "Datatable_model" initialized
+DEBUG - 2025-07-10 16:13:54 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:54 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:54 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:13:54 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:54 --> URI Class Initialized
+INFO - 2025-07-10 16:13:54 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:54 --> Router Class Initialized
+INFO - 2025-07-10 16:13:54 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:54 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:54 --> Output Class Initialized
+INFO - 2025-07-10 16:13:54 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:13:54 --> Security Class Initialized
+INFO - 2025-07-10 16:13:54 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:54 --> Total execution time: 0.0885
+DEBUG - 2025-07-10 16:13:54 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:54 --> Input Class Initialized
+INFO - 2025-07-10 16:13:54 --> Language Class Initialized
+DEBUG - 2025-07-10 16:13:54 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:13:54 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:54 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:54 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:54 --> Helper loaded: number_helper
+DEBUG - 2025-07-10 16:13:54 --> UTF-8 Support Enabled
+DEBUG - 2025-07-10 16:13:54 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:54 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:54 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+INFO - 2025-07-10 16:13:54 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:13:54 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:54 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:54 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:54 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:54 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:13:54 --> Utf8 Class Initialized
+DEBUG - 2025-07-10 16:13:54 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:54 --> URI Class Initialized
+INFO - 2025-07-10 16:13:54 --> Router Class Initialized
+INFO - 2025-07-10 16:13:54 --> Output Class Initialized
+INFO - 2025-07-10 16:13:54 --> Security Class Initialized
+DEBUG - 2025-07-10 16:13:54 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:54 --> Input Class Initialized
+INFO - 2025-07-10 16:13:54 --> Language Class Initialized
+INFO - 2025-07-10 16:13:54 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:13:54 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:54 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:13:54 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:54 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:54 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:54 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:54 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:54 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:54 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:54 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:13:54 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:54 --> Total execution time: 0.1290
+INFO - 2025-07-10 16:13:54 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:54 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:54 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:54 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:54 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:54 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:54 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:13:54 --> Model "Payment_model" initialized
+INFO - 2025-07-10 16:13:54 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:13:54 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:13:54 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:54 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:54 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:13:54 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:54 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:54 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:13:54 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:54 --> Total execution time: 0.1392
+DEBUG - 2025-07-10 16:13:54 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:54 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:54 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:54 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:54 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:54 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:54 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:54 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:13:54 --> Model "Payment_model" initialized
+INFO - 2025-07-10 16:13:54 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:13:54 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:13:54 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:54 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:54 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:54 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:54 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:13:54 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:54 --> Total execution time: 0.1602
+INFO - 2025-07-10 16:13:55 --> Config Class Initialized
+INFO - 2025-07-10 16:13:55 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:13:55 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:13:55 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:55 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:55 --> URI Class Initialized
+INFO - 2025-07-10 16:13:55 --> Router Class Initialized
+INFO - 2025-07-10 16:13:55 --> Config Class Initialized
+INFO - 2025-07-10 16:13:55 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:13:55 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:13:55 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:55 --> Config Class Initialized
+INFO - 2025-07-10 16:13:55 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:55 --> URI Class Initialized
+INFO - 2025-07-10 16:13:55 --> Hooks Class Initialized
+INFO - 2025-07-10 16:13:55 --> Output Class Initialized
+INFO - 2025-07-10 16:13:55 --> Router Class Initialized
+DEBUG - 2025-07-10 16:13:55 --> Accessing maintenance hook!
+INFO - 2025-07-10 16:13:55 --> Output Class Initialized
+INFO - 2025-07-10 16:13:55 --> Security Class Initialized
+DEBUG - 2025-07-10 16:13:55 --> Global POST, GET and COOKIE data sanitized
+DEBUG - 2025-07-10 16:13:55 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:55 --> Input Class Initialized
+INFO - 2025-07-10 16:13:55 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:55 --> Language Class Initialized
+INFO - 2025-07-10 16:13:55 --> URI Class Initialized
+INFO - 2025-07-10 16:13:55 --> Security Class Initialized
+DEBUG - 2025-07-10 16:13:55 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:55 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:55 --> Router Class Initialized
+INFO - 2025-07-10 16:13:55 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:55 --> Output Class Initialized
+INFO - 2025-07-10 16:13:55 --> Input Class Initialized
+INFO - 2025-07-10 16:13:55 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:55 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:55 --> Language Class Initialized
+INFO - 2025-07-10 16:13:55 --> Security Class Initialized
+DEBUG - 2025-07-10 16:13:55 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:55 --> Input Class Initialized
+INFO - 2025-07-10 16:13:55 --> Language Class Initialized
+INFO - 2025-07-10 16:13:55 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:55 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:13:55 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:55 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:55 --> Helper loaded: form_helper
+DEBUG - 2025-07-10 16:13:55 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:55 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:55 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:55 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:55 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+INFO - 2025-07-10 16:13:55 --> Helper loaded: form_helper
+DEBUG - 2025-07-10 16:13:55 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:55 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:55 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:55 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:55 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:13:55 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:13:55 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:13:55 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:13:55 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:55 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:55 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:55 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:55 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:13:55 --> Helper loaded: security_helper
+DEBUG - 2025-07-10 16:13:55 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:55 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:13:55 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:55 --> Total execution time: 0.0762
+INFO - 2025-07-10 16:13:55 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:55 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:55 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:55 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:55 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:55 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:55 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:13:55 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:13:55 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:13:55 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:55 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:55 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:55 --> Session class already loaded. Second attempt ignored.
+DEBUG - 2025-07-10 16:13:55 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:55 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:13:55 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:55 --> Total execution time: 0.1065
+INFO - 2025-07-10 16:13:55 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:55 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:55 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:55 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:55 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:55 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:55 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:13:55 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:13:55 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:13:55 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:55 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:55 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:55 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:55 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:13:55 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:55 --> Total execution time: 0.1326
+INFO - 2025-07-10 16:13:57 --> Config Class Initialized
+INFO - 2025-07-10 16:13:57 --> Hooks Class Initialized
+INFO - 2025-07-10 16:13:57 --> Config Class Initialized
+INFO - 2025-07-10 16:13:57 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:13:57 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:13:57 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:13:57 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:57 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:57 --> URI Class Initialized
+INFO - 2025-07-10 16:13:57 --> Router Class Initialized
+DEBUG - 2025-07-10 16:13:57 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:13:57 --> Output Class Initialized
+INFO - 2025-07-10 16:13:57 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:13:57 --> Security Class Initialized
+INFO - 2025-07-10 16:13:57 --> URI Class Initialized
+DEBUG - 2025-07-10 16:13:57 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:57 --> Input Class Initialized
+INFO - 2025-07-10 16:13:57 --> Language Class Initialized
+INFO - 2025-07-10 16:13:57 --> Router Class Initialized
+INFO - 2025-07-10 16:13:57 --> Output Class Initialized
+INFO - 2025-07-10 16:13:57 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:57 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:57 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:57 --> Security Class Initialized
+INFO - 2025-07-10 16:13:57 --> Helper loaded: number_helper
+DEBUG - 2025-07-10 16:13:57 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:13:57 --> Input Class Initialized
+INFO - 2025-07-10 16:13:57 --> Language Class Initialized
+INFO - 2025-07-10 16:13:57 --> Loader Class Initialized
+INFO - 2025-07-10 16:13:57 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:13:57 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:13:57 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:13:57 --> Helper loaded: number_helper
+DEBUG - 2025-07-10 16:13:57 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:57 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:57 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:57 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:57 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:57 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:57 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:57 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:13:57 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:13:57 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:13:57 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:13:57 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:57 --> Model "Notification_model" initialized
+DEBUG - 2025-07-10 16:13:57 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:13:57 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:57 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:57 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:13:57 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:57 --> Total execution time: 0.0709
+INFO - 2025-07-10 16:13:57 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:13:57 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:13:57 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:13:57 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:13:57 --> Encryption Class Initialized
+INFO - 2025-07-10 16:13:57 --> Controller Class Initialized
+INFO - 2025-07-10 16:13:57 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:13:57 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:13:57 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:13:57 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:13:57 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:13:57 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:13:57 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:13:57 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:13:57 --> Final output sent to browser
+DEBUG - 2025-07-10 16:13:57 --> Total execution time: 0.0911
+INFO - 2025-07-10 16:14:00 --> Config Class Initialized
+INFO - 2025-07-10 16:14:00 --> Config Class Initialized
+INFO - 2025-07-10 16:14:00 --> Hooks Class Initialized
+INFO - 2025-07-10 16:14:00 --> Hooks Class Initialized
+DEBUG - 2025-07-10 16:14:00 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:14:00 --> Accessing maintenance hook!
+DEBUG - 2025-07-10 16:14:00 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:14:00 --> Utf8 Class Initialized
+DEBUG - 2025-07-10 16:14:00 --> UTF-8 Support Enabled
+INFO - 2025-07-10 16:14:00 --> Utf8 Class Initialized
+INFO - 2025-07-10 16:14:00 --> URI Class Initialized
+INFO - 2025-07-10 16:14:00 --> URI Class Initialized
+INFO - 2025-07-10 16:14:00 --> Router Class Initialized
+INFO - 2025-07-10 16:14:00 --> Router Class Initialized
+INFO - 2025-07-10 16:14:00 --> Output Class Initialized
+INFO - 2025-07-10 16:14:00 --> Security Class Initialized
+DEBUG - 2025-07-10 16:14:00 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:14:00 --> Input Class Initialized
+INFO - 2025-07-10 16:14:00 --> Language Class Initialized
+INFO - 2025-07-10 16:14:00 --> Output Class Initialized
+INFO - 2025-07-10 16:14:00 --> Security Class Initialized
+DEBUG - 2025-07-10 16:14:00 --> Global POST, GET and COOKIE data sanitized
+INFO - 2025-07-10 16:14:00 --> Input Class Initialized
+INFO - 2025-07-10 16:14:00 --> Loader Class Initialized
+INFO - 2025-07-10 16:14:00 --> Language Class Initialized
+INFO - 2025-07-10 16:14:00 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:14:00 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:14:00 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:14:00 --> Loader Class Initialized
+INFO - 2025-07-10 16:14:00 --> Helper loaded: url_helper
+INFO - 2025-07-10 16:14:00 --> Helper loaded: form_helper
+INFO - 2025-07-10 16:14:00 --> Helper loaded: number_helper
+INFO - 2025-07-10 16:14:00 --> Database Driver Class Initialized
+INFO - 2025-07-10 16:14:00 --> Database Driver Class Initialized
+DEBUG - 2025-07-10 16:14:00 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+DEBUG - 2025-07-10 16:14:00 --> Session: "sess_save_path" is empty; using "session.save_path" value from php.ini.
+INFO - 2025-07-10 16:14:00 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:14:00 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:14:00 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:14:00 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:14:00 --> Encryption Class Initialized
+INFO - 2025-07-10 16:14:00 --> Controller Class Initialized
+INFO - 2025-07-10 16:14:00 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:14:00 --> Model "Payment_model" initialized
+INFO - 2025-07-10 16:14:00 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:14:00 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:14:00 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:14:00 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:14:00 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:14:00 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:14:00 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:14:00 --> Final output sent to browser
+DEBUG - 2025-07-10 16:14:00 --> Total execution time: 0.0947
+INFO - 2025-07-10 16:14:00 --> Session: Class initialized using 'files' driver.
+DEBUG - 2025-07-10 16:14:00 --> C:\laragon\www\Landholding\application\libraries/Encryption.php exists, but does not declare CI_Encryption
+DEBUG - 2025-07-10 16:14:00 --> Encryption: Auto-configured driver 'openssl'.
+INFO - 2025-07-10 16:14:00 --> Encryption: OpenSSL initialized with method AES-128-CBC.
+INFO - 2025-07-10 16:14:00 --> Encryption Class Initialized
+INFO - 2025-07-10 16:14:00 --> Controller Class Initialized
+INFO - 2025-07-10 16:14:00 --> Model "Rpt_model" initialized
+INFO - 2025-07-10 16:14:00 --> Model "Payment_model" initialized
+INFO - 2025-07-10 16:14:00 --> Model "Datatable_model" initialized
+INFO - 2025-07-10 16:14:00 --> Model "Acquisition_model" initialized
+INFO - 2025-07-10 16:14:00 --> Model "Notification_bar_model" initialized
+INFO - 2025-07-10 16:14:00 --> Model "Notification_model" initialized
+INFO - 2025-07-10 16:14:00 --> Form Validation Class Initialized
+DEBUG - 2025-07-10 16:14:00 --> Session class already loaded. Second attempt ignored.
+INFO - 2025-07-10 16:14:00 --> Helper loaded: security_helper
+INFO - 2025-07-10 16:14:00 --> Final output sent to browser
+DEBUG - 2025-07-10 16:14:00 --> Total execution time: 0.1274
