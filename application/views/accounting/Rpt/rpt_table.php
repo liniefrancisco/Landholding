@@ -92,14 +92,14 @@
                                             <th style="text-align: center;">Lot Location</th>
                                             <th style="text-align: center; width: 120px;">Tax Declaration No.</th>
                                             <th style="text-align: center;">Lot No.</th>
-                                            <th style="text-align: center; width: 120px;">Action</th>
+                                            <th style="text-align: center; width: 100px;">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody></tbody>
                                     <tfoot>
                                         <tr>
                                             <td colspan="6" style="text-align: right; font-weight: bold; padding-right: 10px;"></td>
-                                            <td style="text-align: center; width: 120px;">
+                                            <td style="text-align: center; width: 100px;">
                                                 <button class="btn btn-primary btn-sm" id="createCrfBtn" data-toggle="modal" data-target="#createCrfModal" disabled
                                                 style="border-radius: 30px;">
                                                 <i class="fa fa-file"></i> Create CRF

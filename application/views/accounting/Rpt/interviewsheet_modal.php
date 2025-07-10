@@ -1,9 +1,9 @@
 <div class="container">
   	<div class="col-md-12 col-sm-12 col-xs-12">
-      <div class="modal-header bg-primary">
+      <!-- <div class="modal-header bg-primary">
         <button type="button" class="close" id="dclose" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
         <h4><i class="fa fa-file-text-o"></i>Interview Sheet Details</h4>
-      </div>
+      </div> -->
 
         <div class="x_panel" style="border-radius:3px;"><br/>
             <!--====================BODY====================-->
