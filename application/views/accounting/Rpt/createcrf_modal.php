@@ -47,7 +47,7 @@
   }
 </style>
 
- <!-- For Payor name placeholder adjustment -->
+ <!-- For Payor Name placeholder adjustment -->
 <style>
   .inb::placeholder {
     padding-left: 8px;
@@ -123,10 +123,6 @@
           <input type="hidden" name="is_no" id="is_no" value="<?= isset($is_no) ? $is_no : '' ?>">
           <input type="hidden" name="type" id="type" value="<?= isset($type) ? $type : '' ?>">
           
-            <!-- <input type="hidden" name="pr_id" id="pr_id" value="">
-            <input type="hidden" name="is_no" id="is_no" value="">
-            <input type="hidden" name="type" id="type" value=""> -->
-
             <div class="col-md-12 col-xs-12 col-sm-12" style="padding-top:15px;">
               <div class="col-md-2 col-xs-2 col-sm-2">
                 <label>CRF #:</label>

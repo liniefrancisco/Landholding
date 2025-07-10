@@ -345,11 +345,11 @@ class Rpt extends App_Controller{
 
 			
 			
-				$action = '<div style="text-align:center;">
-							<button data-toggle="modal" onclick="openInterviewSheetModal(\'' . htmlspecialchars($is_no, ENT_QUOTES) . '\')" class="btn btn-success btn-xs">
-							<i class="fa fa-search"></i> View
-							</button>
-						</div>';
+			$action = '<div style="text-align:center;">
+						<button data-toggle="modal" onclick="openInterviewSheetModal(\'' . htmlspecialchars($is_no, ENT_QUOTES) . '\')" class="btn btn-success btn-xs">
+						<i class="fa fa-search"></i> View
+						</button>
+					</div>';
 			
 
 			$data[] = [

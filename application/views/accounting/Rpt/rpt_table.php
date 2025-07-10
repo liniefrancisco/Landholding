@@ -70,7 +70,7 @@
                     <?php include 'createcrf_modal.php'; ?>
 
                     <div class="col-md-12 space">
-                        <!-- Wrapper para sa table ug spinner -->
+                        <!-- Wrapper for table & spinner -->
                         <div id="tableWrapper" style="position: relative;">
                             <!-- Spinner loader placeholder - naa na siya gawas sa table -->
                             <div id="tableLoader" style="display: none;">
@@ -90,7 +90,7 @@
                                             <th style="text-align: center;">Lot Owner</th>
                                             <th style="text-align: center;">Lot Type</th>
                                             <th style="text-align: center;">Lot Location</th>
-                                            <th style="text-align: center;">Tax Declaration No.</th>
+                                            <th style="text-align: center; width: 120px;">Tax Declaration No.</th>
                                             <th style="text-align: center;">Lot No.</th>
                                             <th style="text-align: center; width: 120px;">Action</th>
                                         </tr>
@@ -185,7 +185,7 @@
 
 
 <!-- For Movetop function -->
-<style>
+<!-- <style>
 #mvTop {
   display: none;
   position: fixed;
@@ -204,11 +204,12 @@
 #mvTop:hover {
   background-color: #333;
 }
-</style>
-
+</style> -->
 
 <!--====================END PAGE CONTENT====================-->
-    <!-- =============LOAD SPINNER AND STYLES============= -->
+
+
+<!-- =============LOAD SPINNER AND STYLES CSS============= -->
 
 <style>
     /* Container wrapping the table */
@@ -389,7 +390,7 @@
                 serverSide: true,
                 deferLoading: 0,
                 searching: true,
-                ordering: false,
+                ordering: true,
             // order: [],
                 ajax: {
                     url: "<?php echo base_url('Rpt/Rptax_datatable'); ?>",
@@ -420,9 +421,9 @@
                     { title: "Lot Owner", data: 1 },
                     { title: "Lot Type", data: 2 },
                     { title: "Lot Location", data: 3 },
-                    { title: "Tax Declaration No.", data: 4 },
+                    { title: "Tax Declaration No.", orderable: false, data: 4 },
                     { title: "Lot No.", data: 5 },
-                    { title: "Action", orderable: false, data: 6 }
+                    { title: "Action", data: 6 }
                 ]
                 
             });

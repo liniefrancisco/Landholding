@@ -334,7 +334,6 @@ class Datatable_model extends CI_Model{
 
 	}
 
-
 	/*
 	 * Perform the SQL queries needed for an server-side processing requested
 	 * @param $_POST filter data based on the posted parameters
