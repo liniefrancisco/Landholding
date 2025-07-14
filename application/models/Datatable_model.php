@@ -469,7 +469,7 @@ class Datatable_model extends CI_Model{
 				$this->db->join('document_status', 'document_status.is_no = land_info.is_no', 'left');
 				$this->db->join('payment_requests', 'payment_requests.is_no = land_info.is_no', 'left');
 				$this->db->join('check_request_form', 'check_request_form.pr_id = payment_requests.id', 'left');
-				//$this->db->where('real_property_tax.status', 'Pending');
+				$this->db->where('real_property_tax.status', 'Pending');
 
 				if (!empty($region)) {
 					$this->db->where('lot_location.region', $region);
