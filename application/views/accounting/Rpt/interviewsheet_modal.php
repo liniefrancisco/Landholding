@@ -276,6 +276,6 @@
 <!--==================== MODAL FOOTER ====================-->
 <div class="modal-footer" style="border-top: none; background-color:hsl(208, 39.40%, 93.50%);">
   <div class="container text-right">
-    <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
   </div>
 </div>
